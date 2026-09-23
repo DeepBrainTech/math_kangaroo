@@ -20,6 +20,10 @@ function formatGrade(value: string) {
   return value.replace(/^Grades\b/, "Grade");
 }
 
+function sameImageTarget(left: ImageTarget | null, right: ImageTarget) {
+  return left?.kind === right.kind && (left.kind !== "option" || (right.kind === "option" && left.optionIndex === right.optionIndex));
+}
+
 function fileToDataUrl(file: File) {
   return new Promise<string>((resolve, reject) => {
     const reader = new FileReader();
@@ -47,6 +51,7 @@ export default function EditPage() {
   const [imageTarget, setImageTarget] = useState<ImageTarget | null>(null);
   const [pendingImageRemovals, setPendingImageRemovals] = useState<string[]>([]);
   const imageInputRef = useRef<HTMLInputElement>(null);
+  const hoveredImageTargetRef = useRef<ImageTarget | null>(null);
 
   const quiz = questionSets[setId];
   const yearEntries = useMemo(() => setEntries.filter((entry) => entry.grades === quiz.grades), [quiz.grades, setEntries]);
@@ -151,8 +156,50 @@ export default function EditPage() {
     imageInputRef.current?.click();
   }
 
-  function selectPasteTarget(target: ImageTarget) {
+  async function pasteImageFromClipboard(target: ImageTarget) {
     setImageTarget(target);
+
+    const extensionByMimeType: Record<string, string> = {
+      "image/png": "png",
+      "image/jpeg": "jpg",
+      "image/webp": "webp",
+      "image/gif": "gif",
+    };
+
+    if (typeof navigator.clipboard?.read !== "function") {
+      window.alert("Automatic clipboard access is unavailable. Copy the image, then press Ctrl+V while hovering over the target area.");
+      return;
+    }
+
+    try {
+      const clipboardItems = await navigator.clipboard.read();
+      for (const item of clipboardItems) {
+        const imageType = item.types.find((type) => type in extensionByMimeType);
+        if (!imageType) continue;
+
+        const image = await item.getType(imageType);
+        const file = new File([image], "clipboard." + extensionByMimeType[imageType], { type: imageType });
+        await applyImageFile(file, target);
+        return;
+      }
+
+      window.alert("No supported image was found in the clipboard. Copy an image, then press Ctrl+V while hovering over the target area.");
+    } catch {
+      window.alert("The browser blocked clipboard access. Copy the image, then press Ctrl+V while hovering over the target area.");
+    }
+  }
+
+  function imageTargetPointerHandlers(target: ImageTarget) {
+    return {
+      onPointerEnter: () => {
+        hoveredImageTargetRef.current = target;
+      },
+      onPointerLeave: () => {
+        if (sameImageTarget(hoveredImageTargetRef.current, target)) {
+          hoveredImageTargetRef.current = null;
+        }
+      },
+    };
   }
 
   async function applyImageFile(file: File, target: ImageTarget) {
@@ -191,7 +238,7 @@ export default function EditPage() {
   function handlePaste(event: React.ClipboardEvent<HTMLElement>, targetOverride?: ImageTarget) {
     event.stopPropagation();
     const file = Array.from(event.clipboardData.files).find((item) => item.type.startsWith("image/"));
-    const target = targetOverride ?? imageTarget;
+    const target = targetOverride ?? hoveredImageTargetRef.current ?? imageTarget;
     if (!file || !target) return;
     event.preventDefault();
     void applyImageFile(file, target);
@@ -334,23 +381,23 @@ export default function EditPage() {
               </section>
 
               <section className="editor-form-section">
-                <div className="editor-section-heading"><div><span className="editor-eyebrow">02 · QUESTION IMAGE</span><h3>Question image</h3></div><span className="editor-section-note">Optional · PNG/JPG/GIF, max 5MB</span></div>
-                {selectedQuestion.image ? <div className="editor-image-card" onPaste={(event) => handlePaste(event, { kind: "question" })}><img src={selectedQuestion.image} alt={selectedQuestion.imageAlt || "Question image"} /><div className="editor-image-actions"><label className="editor-field"><span>Image alt text</span><input value={selectedQuestion.imageAlt || ""} onChange={(event) => updateQuestion({ imageAlt: event.target.value })} placeholder="Describe the image" /></label><div><button className="editor-secondary-button" type="button" onClick={() => openImagePicker({ kind: "question" })}>Replace image</button><button className="editor-secondary-button" type="button" onClick={() => selectPasteTarget({ kind: "question" })}>Paste image</button><button className="editor-danger-button" type="button" onClick={removeQuestionImage}>Remove image</button></div></div></div> : <button className="editor-upload-zone" type="button" onClick={() => openImagePicker({ kind: "question" })} onPaste={(event) => handlePaste(event, { kind: "question" })}><span>＋</span><strong>Upload question image</strong><small>Choose a file or paste a screenshot here</small></button>}
+                <div className="editor-section-heading"><div><span className="editor-eyebrow">02 · QUESTION IMAGE</span><h3>Question image</h3></div><span className="editor-section-note">Optional · PNG/JPG/GIF, max 5MB · Hover the image area and press Ctrl+V</span></div>
+                {selectedQuestion.image ? <div {...imageTargetPointerHandlers({ kind: "question" })} className="editor-image-card" onPaste={(event) => handlePaste(event, { kind: "question" })}><img src={selectedQuestion.image} alt={selectedQuestion.imageAlt || "Question image"} /><div className="editor-image-actions"><label className="editor-field"><span>Image alt text</span><input value={selectedQuestion.imageAlt || ""} onChange={(event) => updateQuestion({ imageAlt: event.target.value })} placeholder="Describe the image" /></label><div><button className="editor-secondary-button" type="button" onClick={() => openImagePicker({ kind: "question" })}>Replace image</button><button className="editor-secondary-button" type="button" onClick={() => void pasteImageFromClipboard({ kind: "question" })}>Paste image</button><button className="editor-danger-button" type="button" onClick={removeQuestionImage}>Remove image</button></div></div></div> : <button {...imageTargetPointerHandlers({ kind: "question" })} className="editor-upload-zone" type="button" onClick={() => openImagePicker({ kind: "question" })} onPaste={(event) => handlePaste(event, { kind: "question" })}><span>＋</span><strong>Upload question image</strong><small>Hover here and press Ctrl+V, or click to choose a file</small></button>}
               </section>
 
               <section className="editor-form-section">
               <section className="editor-form-section">
-                <div className="editor-section-heading"><div><span className="editor-eyebrow">COMBINED ANSWER IMAGE</span><h3>Answer choices image</h3></div><span className="editor-section-note">Use one image when relative sizes matter</span></div>
-                {selectedQuestion.imageExtra ? <div className="editor-image-card editor-extra-image-card" onPaste={(event) => handlePaste(event, { kind: "extra" })}><img src={selectedQuestion.imageExtra} alt="Answer choices" /><div className="editor-image-actions"><p className="editor-image-help">Keep all visual answer choices in one image to preserve their original scale.</p><div><button className="editor-secondary-button" type="button" onClick={() => openImagePicker({ kind: "extra" })}>Replace image</button><button className="editor-secondary-button" type="button" onClick={() => selectPasteTarget({ kind: "extra" })}>Paste image</button><button className="editor-danger-button" type="button" onClick={removeQuestionExtra}>Remove image</button></div></div></div> : <button className="editor-upload-zone" type="button" onClick={() => openImagePicker({ kind: "extra" })} onPaste={(event) => handlePaste(event, { kind: "extra" })}><span>＋</span><strong>Upload answer choices image</strong><small>Best for choices with different visual sizes</small></button>}
+                <div className="editor-section-heading"><div><span className="editor-eyebrow">COMBINED ANSWER IMAGE</span><h3>Answer choices image</h3></div><span className="editor-section-note">Use one image when relative sizes matter · Hover and press Ctrl+V</span></div>
+                {selectedQuestion.imageExtra ? <div {...imageTargetPointerHandlers({ kind: "extra" })} className="editor-image-card editor-extra-image-card" onPaste={(event) => handlePaste(event, { kind: "extra" })}><img src={selectedQuestion.imageExtra} alt="Answer choices" /><div className="editor-image-actions"><p className="editor-image-help">Keep all visual answer choices in one image to preserve their original scale. Hover over it and press Ctrl+V to replace it.</p><div><button className="editor-secondary-button" type="button" onClick={() => openImagePicker({ kind: "extra" })}>Replace image</button><button className="editor-secondary-button" type="button" onClick={() => void pasteImageFromClipboard({ kind: "extra" })}>Paste image</button><button className="editor-danger-button" type="button" onClick={removeQuestionExtra}>Remove image</button></div></div></div> : <button {...imageTargetPointerHandlers({ kind: "extra" })} className="editor-upload-zone" type="button" onClick={() => openImagePicker({ kind: "extra" })} onPaste={(event) => handlePaste(event, { kind: "extra" })}><span>＋</span><strong>Upload answer choices image</strong><small>Hover here and press Ctrl+V, or click to choose a file</small></button>}
               </section>
 
-                <div className="editor-section-heading"><div><span className="editor-eyebrow">03 · ANSWER OPTIONS</span><h3>Answer options</h3></div><div className="editor-section-actions"><label className="editor-answer-picker"><span>Correct answer</span><select aria-label="Correct answer" value={selectedQuestion.answer} onChange={(event) => setCorrectAnswer(Number(event.target.value))}>{selectedQuestion.options.map((_, index) => <option key={index} value={index}>{optionLetters[index] ?? `Option ${index + 1}`}</option>)}</select></label><button className="editor-add-button" type="button" onClick={addOption}>＋ Add option</button></div></div>
+                <div className="editor-section-heading"><div><span className="editor-eyebrow">03 · ANSWER OPTIONS</span><h3>Answer options</h3></div><div className="editor-section-actions"><span className="editor-section-note">Hover an option image, then press Ctrl+V</span><label className="editor-answer-picker"><span>Correct answer</span><select aria-label="Correct answer" value={selectedQuestion.answer} onChange={(event) => setCorrectAnswer(Number(event.target.value))}>{selectedQuestion.options.map((_, index) => <option key={index} value={index}>{optionLetters[index] ?? `Option ${index + 1}`}</option>)}</select></label><button className="editor-add-button" type="button" onClick={addOption}>＋ Add option</button></div></div>
                 <div className="editor-options-list">
                   {selectedQuestion.options.map((option, index) => (
                     <div className={`editor-option-card ${selectedQuestion.answer === index ? "is-answer" : ""}`} key={option.id}>
                       <div className="editor-option-top"><span className="editor-option-letter">{optionLetters[index] ?? String(index + 1)}</span><select value={option.type} onChange={(event) => changeOptionType(index, event.target.value as QuestionOption["type"])}><option value="text">Text option</option><option value="image">Image option</option></select><div className="editor-option-tools"><button type="button" title="Move up" onClick={() => moveOption(index, -1)} disabled={index === 0}>↑</button><button type="button" title="Move down" onClick={() => moveOption(index, 1)} disabled={index === selectedQuestion.options.length - 1}>↓</button><button className="danger-text" type="button" title="Delete" onClick={() => removeOption(index)} disabled={selectedQuestion.options.length <= 2}>×</button></div></div>
                       {(option.type === "text" || option.type === "mixed") && <input id={`option-${selectedQuestion.number}-${index}`} className="editor-option-text" value={option.text || ""} onChange={(event) => updateOption(index, { text: event.target.value, type: optionType(event.target.value, option.image) })} placeholder={`Enter text for option ${optionLetters[index] ?? index + 1}`} />}
-                      {option.image ? <div className="editor-option-image" onPaste={(event) => handlePaste(event, { kind: "option", optionIndex: index })}><img src={option.image} alt={option.imageAlt || `${optionLetters[index]} option`} /><div><button className="editor-secondary-button" type="button" onClick={() => openImagePicker({ kind: "option", optionIndex: index })}>Replace</button><button className="editor-secondary-button" type="button" onClick={() => selectPasteTarget({ kind: "option", optionIndex: index })}>Paste</button><button className="editor-danger-button" type="button" onClick={() => removeOptionImage(index)}>Remove image</button></div></div> : (option.type === "image" || option.type === "mixed") && <button className="editor-option-upload" type="button" onClick={() => openImagePicker({ kind: "option", optionIndex: index })} onPaste={(event) => handlePaste(event, { kind: "option", optionIndex: index })}>＋ Upload option image or paste</button>}
+                      {option.image ? <div {...imageTargetPointerHandlers({ kind: "option", optionIndex: index })} className="editor-option-image" onPaste={(event) => handlePaste(event, { kind: "option", optionIndex: index })}><img src={option.image} alt={option.imageAlt || `${optionLetters[index]} option`} /><div><button className="editor-secondary-button" type="button" onClick={() => openImagePicker({ kind: "option", optionIndex: index })}>Replace</button><button className="editor-secondary-button" type="button" onClick={() => void pasteImageFromClipboard({ kind: "option", optionIndex: index })}>Paste</button><button className="editor-danger-button" type="button" onClick={() => removeOptionImage(index)}>Remove image</button></div></div> : (option.type === "image" || option.type === "mixed") && <button {...imageTargetPointerHandlers({ kind: "option", optionIndex: index })} className="editor-option-upload" type="button" onClick={() => openImagePicker({ kind: "option", optionIndex: index })} onPaste={(event) => handlePaste(event, { kind: "option", optionIndex: index })}>＋ Hover and press Ctrl+V, or choose an option image</button>}
                       <button className={`editor-answer-button ${selectedQuestion.answer === index ? "selected" : ""}`} type="button" onClick={() => setCorrectAnswer(index)}>{selectedQuestion.answer === index ? "✓ Correct answer" : "Set as correct answer"}</button>
                     </div>
                   ))}
