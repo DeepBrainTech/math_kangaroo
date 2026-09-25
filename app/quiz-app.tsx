@@ -129,7 +129,7 @@ export default function Home() {
       if (remaining <= 0 && !timedOut) {
         setTimedOut(true);
         saveProgress(setId, { answers, checked, current: activeCurrent, started: true, finished: true, deadline, startedAt, timedOut: true });
-        if (routeType !== "results") router.push(resultsPath(setId), { scroll: false });
+        router.push(resultsPath(setId), { scroll: false });
       }
     };
     tick();
