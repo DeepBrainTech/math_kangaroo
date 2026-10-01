@@ -15,7 +15,7 @@ const questions2009Benjamin: Question[] = ([
     answer: 1,
     explanation: "The Benjamin answer key lists choice B.",
     hint: "Check the kangaroo against each boundary in the picture: circle, square, and triangle.",
-    image: "/assets/kangaroo/grades-5-6/benjamin/2009/questions/q-01-visual.png",
+    image: "/assets/kangaroo/grades-5-6/benjamin/2009/questions/q-01-diagram.png",
     imageAlt: "Original 2009 Benjamin question 1 visual",
     imageClass: "source-pdf-visual",
     sourcePage: 1,

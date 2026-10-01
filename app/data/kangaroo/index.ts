@@ -45,6 +45,23 @@ import { edition2022Benjamin } from "./editions/grades-5-6/benjamin/2022";
 import { edition2023Benjamin } from "./editions/grades-5-6/benjamin/2023";
 import { edition2024Benjamin } from "./editions/grades-5-6/benjamin/2024";
 import { edition2025Benjamin } from "./editions/grades-5-6/benjamin/2025";
+import { edition2009Kadett } from "./editions/grades-7-8/kadett/2009";
+import { edition2010Kadett } from "./editions/grades-7-8/kadett/2010";
+import { edition2011Kadett } from "./editions/grades-7-8/kadett/2011";
+import { edition2012Kadett } from "./editions/grades-7-8/kadett/2012";
+import { edition2013Kadett } from "./editions/grades-7-8/kadett/2013";
+import { edition2014Kadett } from "./editions/grades-7-8/kadett/2014";
+import { edition2015Kadett } from "./editions/grades-7-8/kadett/2015";
+import { edition2016Kadett } from "./editions/grades-7-8/kadett/2016";
+import { edition2017Kadett } from "./editions/grades-7-8/kadett/2017";
+import { edition2018Kadett } from "./editions/grades-7-8/kadett/2018";
+import { edition2019Kadett } from "./editions/grades-7-8/kadett/2019";
+import { edition2020Kadett } from "./editions/grades-7-8/kadett/2020";
+import { edition2021Kadett } from "./editions/grades-7-8/kadett/2021";
+import { edition2022Kadett } from "./editions/grades-7-8/kadett/2022";
+import { edition2023Kadett } from "./editions/grades-7-8/kadett/2023";
+import { edition2024Kadett } from "./editions/grades-7-8/kadett/2024";
+import { edition2025Kadett } from "./editions/grades-7-8/kadett/2025";
 
 const rawQuestionSets: Record<string, QuestionSet> = {
   "ecolier-2009": edition2009Ecolier,
@@ -65,6 +82,23 @@ const rawQuestionSets: Record<string, QuestionSet> = {
   "benjamin-2023": edition2023Benjamin,
   "benjamin-2024": edition2024Benjamin,
   "benjamin-2025": edition2025Benjamin,
+  "kadett-2009": edition2009Kadett,
+  "kadett-2010": edition2010Kadett,
+  "kadett-2011": edition2011Kadett,
+  "kadett-2012": edition2012Kadett,
+  "kadett-2013": edition2013Kadett,
+  "kadett-2014": edition2014Kadett,
+  "kadett-2015": edition2015Kadett,
+  "kadett-2016": edition2016Kadett,
+  "kadett-2017": edition2017Kadett,
+  "kadett-2018": edition2018Kadett,
+  "kadett-2019": edition2019Kadett,
+  "kadett-2020": edition2020Kadett,
+  "kadett-2021": edition2021Kadett,
+  "kadett-2022": edition2022Kadett,
+  "kadett-2023": edition2023Kadett,
+  "kadett-2024": edition2024Kadett,
+  "kadett-2025": edition2025Kadett,
   "2010": edition2010,
   "ecolier-2011": edition2011Ecolier,
   "ecolier-2012": edition2012Ecolier,
