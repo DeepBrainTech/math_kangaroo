@@ -62,6 +62,23 @@ import { edition2022Kadett } from "./editions/grades-7-8/kadett/2022";
 import { edition2023Kadett } from "./editions/grades-7-8/kadett/2023";
 import { edition2024Kadett } from "./editions/grades-7-8/kadett/2024";
 import { edition2025Kadett } from "./editions/grades-7-8/kadett/2025";
+import { edition2025Junior } from "./editions/grades-9-10/junior/2025";
+import { edition2024Junior } from "./editions/grades-9-10/junior/2024";
+import { edition2023Junior } from "./editions/grades-9-10/junior/2023";
+import { edition2022Junior } from "./editions/grades-9-10/junior/2022";
+import { edition2021Junior } from "./editions/grades-9-10/junior/2021";
+import { edition2020Junior } from "./editions/grades-9-10/junior/2020";
+import { edition2019Junior } from "./editions/grades-9-10/junior/2019";
+import { edition2018Junior } from "./editions/grades-9-10/junior/2018";
+import { edition2017Junior } from "./editions/grades-9-10/junior/2017";
+import { edition2016Junior } from "./editions/grades-9-10/junior/2016";
+import { edition2015Junior } from "./editions/grades-9-10/junior/2015";
+import { edition2014Junior } from "./editions/grades-9-10/junior/2014";
+import { edition2013Junior } from "./editions/grades-9-10/junior/2013";
+import { edition2012Junior } from "./editions/grades-9-10/junior/2012";
+import { edition2011Junior } from "./editions/grades-9-10/junior/2011";
+import { edition2010Junior } from "./editions/grades-9-10/junior/2010";
+import { edition2009Junior } from "./editions/grades-9-10/junior/2009";
 
 const rawQuestionSets: Record<string, QuestionSet> = {
   "ecolier-2009": edition2009Ecolier,
@@ -99,6 +116,23 @@ const rawQuestionSets: Record<string, QuestionSet> = {
   "kadett-2023": edition2023Kadett,
   "kadett-2024": edition2024Kadett,
   "kadett-2025": edition2025Kadett,
+  "junior-2025": edition2025Junior,
+  "junior-2024": edition2024Junior,
+  "junior-2023": edition2023Junior,
+  "junior-2022": edition2022Junior,
+  "junior-2021": edition2021Junior,
+  "junior-2020": edition2020Junior,
+  "junior-2019": edition2019Junior,
+  "junior-2018": edition2018Junior,
+  "junior-2017": edition2017Junior,
+  "junior-2016": edition2016Junior,
+  "junior-2015": edition2015Junior,
+  "junior-2014": edition2014Junior,
+  "junior-2013": edition2013Junior,
+  "junior-2012": edition2012Junior,
+  "junior-2011": edition2011Junior,
+  "junior-2010": edition2010Junior,
+  "junior-2009": edition2009Junior,
   "2010": edition2010,
   "ecolier-2011": edition2011Ecolier,
   "ecolier-2012": edition2012Ecolier,

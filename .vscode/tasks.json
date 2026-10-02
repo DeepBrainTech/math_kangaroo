@@ -1,0 +1,953 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Prepare cached Junior paper text for review",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"--input-type=module",
+				"-e",
+				"import fs from 'node:fs';import path from 'node:path';const dir=path.join(process.env.TEMP,'junior-kangaroo-pdfs');for(let year=2009;year<=2025;year++){const input=path.join(dir,year+'_Junior.txt');if(!fs.existsSync(input)){console.log(year+': missing text');continue;}const raw=fs.readFileSync(input,'utf8');const pages=raw.split(/\\n\\n(?=PAGE \\d+)/);const out=[];for(const page of pages){const m=page.match(/^PAGE (\\d+)\\n([\\s\\S]*)$/);if(!m)continue;const text=m[2];const chunks=text.split(/ (?=\\d{1,2}\\.\\s)/);for(const chunk of chunks){const q=chunk.match(/^(\\d{1,2})\\.\\s/);out.push(q?'Q'+q[1]+' '+chunk:text);}}const target=path.join(dir,year+'_Junior.review.txt');fs.writeFileSync(target,out.join('\\n'),'utf8');const nums=[...out.join('\\n').matchAll(/(?:^|\\n)Q(\\d{1,2}) /g)].map(x=>Number(x[1]));console.log(year+': '+nums.length+' question starts; '+out.length+' wrapped lines');}"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Prepare cached Junior text for review",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\junior-kangaroo-pdfs\\prepare-review.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Render 2024 Junior source PDFs",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\junior-kangaroo-pdfs\\render-year.mjs",
+				"2024"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Crop 2024 Junior diagrams",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\junior-kangaroo-pdfs\\crop-2024.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Refresh 2024 Junior crops",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\junior-kangaroo-pdfs\\crop-2024.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Finalize 2024 Junior visual crops",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\junior-kangaroo-pdfs\\crop-2024.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Validate Junior edition structure",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\junior-kangaroo-pdfs\\validate-junior.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Recheck Junior edition structure",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\junior-kangaroo-pdfs\\validate-junior.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Inspect 2024 Junior key details",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\junior-kangaroo-pdfs\\crop-key-2024.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Render 2023 Junior source PDFs",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\junior-kangaroo-pdfs\\render-year.mjs",
+				"2023"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Crop 2023 Junior diagrams",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\junior-kangaroo-pdfs\\crop-2023.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Refresh 2023 Junior crops",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\junior-kangaroo-pdfs\\crop-2023.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Finalize 2023 Junior grid crop",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\junior-kangaroo-pdfs\\crop-2023.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Validate 2023-2025 Junior editions",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\junior-kangaroo-pdfs\\validate-junior.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Render 2022 Junior source PDFs",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\junior-kangaroo-pdfs\\render-year.mjs",
+				"2022"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Crop 2022 Junior diagrams",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\junior-kangaroo-pdfs\\crop-2022.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Refresh 2022 grid and circle crops",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\junior-kangaroo-pdfs\\crop-2022.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Finalize 2022 grid crop",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\junior-kangaroo-pdfs\\crop-2022.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Fix 2022 multiplication grid crop",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\junior-kangaroo-pdfs\\crop-2022.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Crop 2022 Q8 reference chart",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\junior-kangaroo-pdfs\\crop-2022.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Validate Junior editions 2022-2025",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\junior-kangaroo-pdfs\\validate-junior.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Recheck Junior editions 2022-2025",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\junior-kangaroo-pdfs\\validate-junior.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Render 2021 Junior source PDFs",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\junior-kangaroo-pdfs\\render-year.mjs",
+				"2021"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Crop 2021 Junior diagrams",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\junior-kangaroo-pdfs\\crop-2021.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Refresh 2021 diagram crops",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\junior-kangaroo-pdfs\\crop-2021.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Finalize 2021 Q9 choices",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\junior-kangaroo-pdfs\\crop-2021.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Validate Junior editions 2021-2025",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\junior-kangaroo-pdfs\\validate-junior.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Render 2020 Junior source PDFs",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\junior-kangaroo-pdfs\\render-year.mjs",
+				"2020"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Crop 2020 Junior diagrams",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\junior-kangaroo-pdfs\\crop-2020.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Finalize 2020 diagram crops",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\junior-kangaroo-pdfs\\crop-2020-final.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Validate Junior editions 2020-2025",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\junior-kangaroo-pdfs\\validate-junior-2020.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Render 2019 Junior source PDFs",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\junior-kangaroo-pdfs\\render-year.mjs",
+				"2019"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Crop 2019 Junior diagrams",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\junior-kangaroo-pdfs\\crop-2019.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Refresh 2019 Junior crops",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\junior-kangaroo-pdfs\\crop-2019.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Finish 2019 Junior crop pass",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\junior-kangaroo-pdfs\\crop-2019.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Finalize 2019 Q16 diagram",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\junior-kangaroo-pdfs\\crop-2019-q16.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Compose 2019 Q16 source visuals",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\junior-kangaroo-pdfs\\compose-2019-q16.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Validate Junior editions 2019-2025",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\junior-kangaroo-pdfs\\validate-junior-2019.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Render 2018 Junior source PDFs",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\junior-kangaroo-pdfs\\render-year.mjs",
+				"2018"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Crop 2018 Junior diagrams",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\junior-kangaroo-pdfs\\crop-2018.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Check rendered PDF dimensions",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\junior-kangaroo-pdfs\\image-size.mjs",
+				"2018_Junior-page-2.png",
+				"2018_Junior-page-3.png"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Inspect 2018 diagram column",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\junior-kangaroo-pdfs\\inspect-2018-column.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Locate 2018 final-page diagrams",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\junior-kangaroo-pdfs\\inspect-2018-final.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Refine 2018 source diagram crops",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\junior-kangaroo-pdfs\\crop-2018-final.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Finalize 2018 visual assets",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\junior-kangaroo-pdfs\\crop-2018-final2.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Validate Junior editions 2018-2025",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\junior-kangaroo-pdfs\\validate-junior-2018.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Render 2017 Junior source PDFs",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\junior-kangaroo-pdfs\\render-year.mjs",
+				"2017"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Crop 2017 Junior diagrams",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\junior-kangaroo-pdfs\\crop-2017.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Refine 2017 visual crops",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\junior-kangaroo-pdfs\\crop-2017-final.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Inspect 2017 visual source regions",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\junior-kangaroo-pdfs\\inspect-2017-zones.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Regenerate 2017 source crops",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\junior-kangaroo-pdfs\\crop-2017-corrected.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Map 2017 page coordinates",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\junior-kangaroo-pdfs\\grid-page.mjs",
+				"2017_Junior-page-3.png"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Regenerate precise 2017 crops",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\junior-kangaroo-pdfs\\crop-2017-precise2.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Validate Junior editions 2017-2025",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\junior-kangaroo-pdfs\\validate-junior-2017.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Map 2017 page-two diagrams",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\junior-kangaroo-pdfs\\grid-page.mjs",
+				"2017_Junior-page-2.png"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Create missing 2017 diagrams",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\junior-kangaroo-pdfs\\crop-2017-missing.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Render 2016 Junior source PDFs",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\junior-kangaroo-pdfs\\render-year.mjs",
+				"2016"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Crop 2016 Junior diagrams",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\junior-kangaroo-pdfs\\crop-2016.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Validate Junior editions 2016-2025",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\junior-kangaroo-pdfs\\validate-junior-2016.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Extract 2016 final question text",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\junior-kangaroo-pdfs\\extract-2016-final.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Extract 2016 Q28-Q30",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\junior-kangaroo-pdfs\\extract-2016-tail.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Render 2015 Junior source PDFs",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\junior-kangaroo-pdfs\\render-year.mjs",
+				"2015"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Crop 2015 Junior diagrams",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\junior-kangaroo-pdfs\\crop-2015.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Map 2015 Junior crop coordinates",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\junior-kangaroo-pdfs\\grid-2015.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Finalize 2015 source crops",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\junior-kangaroo-pdfs\\crop-2015-final.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Validate Junior editions 2015-2025",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\junior-kangaroo-pdfs\\validate-junior-2015.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Render 2014 Junior source PDFs",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\junior-kangaroo-pdfs\\render-year.mjs",
+				"2014"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Crop 2014 Junior diagrams",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\junior-kangaroo-pdfs\\crop-2014.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Render 2013 Junior source PDFs",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\junior-kangaroo-pdfs\\render-year.mjs",
+				"2013"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Crop 2013 Junior diagrams",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\junior-kangaroo-pdfs\\crop-2013.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Validate Junior editions 2013-2025",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\junior-kangaroo-pdfs\\validate-junior-2013.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Render 2012 Junior source PDFs",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\junior-kangaroo-pdfs\\render-year.mjs",
+				"2012"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Validate Junior editions 2012-2025",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\junior-kangaroo-pdfs\\validate-junior-2012.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Map 2012 diagram page coordinates",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\junior-kangaroo-pdfs\\grid-page.mjs",
+				"2012_Junior-page-3.png"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Crop final 2012 diagrams",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\junior-kangaroo-pdfs\\crop-2012-final.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Regenerate 2012 question diagrams",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\junior-kangaroo-pdfs\\crop-2012-final2.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Crop 2012 Q29 number table",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\junior-kangaroo-pdfs\\crop-2012-q29.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Verify 2012 Junior answer row",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\junior-kangaroo-pdfs\\crop-key-row-2012.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Render actual 2012 Junior source PDFs",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\junior-kangaroo-pdfs\\render-year.mjs",
+				"2012"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Extract 2012 question text",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\junior-kangaroo-pdfs\\extract-2012-questions.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Validate Junior editions 2012-2025 final",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\junior-kangaroo-pdfs\\validate-junior-2012-final.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Render 2011 Junior source PDFs",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\junior-kangaroo-pdfs\\render-year.mjs",
+				"2011"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Validate Junior editions 2011-2025",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\junior-kangaroo-pdfs\\validate-junior-2011.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Render 2010 Junior source PDFs",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\junior-kangaroo-pdfs\\render-year.mjs",
+				"2010"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Render 2009 Junior source PDFs",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\junior-kangaroo-pdfs\\render-year.mjs",
+				"2009"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Junior edition validation",
+			"type": "shell",
+			"command": "npm.cmd",
+			"args": [
+				"run",
+				"lint"
+			],
+			"isBackground": false,
+			"problemMatcher": [
+				"$eslint-stylish"
+			]
+		},
+		{
+			"label": "Junior TypeScript validation",
+			"type": "shell",
+			"command": "npx.cmd",
+			"args": [
+				"tsc",
+				"--noEmit"
+			],
+			"isBackground": false,
+			"problemMatcher": [
+				"$tsc"
+			]
+		},
+		{
+			"label": "Junior TypeScript recheck",
+			"type": "shell",
+			"command": "npx.cmd",
+			"args": [
+				"tsc",
+				"--noEmit"
+			],
+			"isBackground": false,
+			"problemMatcher": [
+				"$tsc"
+			]
+		},
+		{
+			"label": "Junior structural audit",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\validate-junior-editions.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Junior ESLint validation",
+			"type": "shell",
+			"command": "npx.cmd",
+			"args": [
+				"eslint",
+				"app/data/kangaroo/editions/grades-9-10/junior",
+				"app/data/kangaroo/index.ts"
+			],
+			"isBackground": false,
+			"problemMatcher": [
+				"$eslint-stylish"
+			]
+		},
+		{
+			"label": "Kangaroo project build",
+			"type": "shell",
+			"command": "npm.cmd",
+			"args": [
+				"run",
+				"build"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		}
+	]
+}
