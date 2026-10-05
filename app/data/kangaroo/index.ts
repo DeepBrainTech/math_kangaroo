@@ -79,6 +79,23 @@ import { edition2012Junior } from "./editions/grades-9-10/junior/2012";
 import { edition2011Junior } from "./editions/grades-9-10/junior/2011";
 import { edition2010Junior } from "./editions/grades-9-10/junior/2010";
 import { edition2009Junior } from "./editions/grades-9-10/junior/2009";
+import { edition2009Student } from "./editions/grades-11-12/student/2009";
+import { edition2010Student } from "./editions/grades-11-12/student/2010";
+import { edition2011Student } from "./editions/grades-11-12/student/2011";
+import { edition2012Student } from "./editions/grades-11-12/student/2012";
+import { edition2013Student } from "./editions/grades-11-12/student/2013";
+import { edition2014Student } from "./editions/grades-11-12/student/2014";
+import { edition2015Student } from "./editions/grades-11-12/student/2015";
+import { edition2016Student } from "./editions/grades-11-12/student/2016";
+import { edition2017Student } from "./editions/grades-11-12/student/2017";
+import { edition2018Student } from "./editions/grades-11-12/student/2018";
+import { edition2019Student } from "./editions/grades-11-12/student/2019";
+import { edition2020Student } from "./editions/grades-11-12/student/2020";
+import { edition2021Student } from "./editions/grades-11-12/student/2021";
+import { edition2022Student } from "./editions/grades-11-12/student/2022";
+import { edition2023Student } from "./editions/grades-11-12/student/2023";
+import { edition2024Student } from "./editions/grades-11-12/student/2024";
+import { edition2025Student } from "./editions/grades-11-12/student/2025";
 
 const rawQuestionSets: Record<string, QuestionSet> = {
   "ecolier-2009": edition2009Ecolier,
@@ -133,6 +150,23 @@ const rawQuestionSets: Record<string, QuestionSet> = {
   "junior-2011": edition2011Junior,
   "junior-2010": edition2010Junior,
   "junior-2009": edition2009Junior,
+  "student-2009": edition2009Student,
+  "student-2010": edition2010Student,
+  "student-2011": edition2011Student,
+  "student-2012": edition2012Student,
+  "student-2013": edition2013Student,
+  "student-2014": edition2014Student,
+  "student-2015": edition2015Student,
+  "student-2016": edition2016Student,
+  "student-2017": edition2017Student,
+  "student-2018": edition2018Student,
+  "student-2019": edition2019Student,
+  "student-2020": edition2020Student,
+  "student-2021": edition2021Student,
+  "student-2022": edition2022Student,
+  "student-2023": edition2023Student,
+  "student-2024": edition2024Student,
+  "student-2025": edition2025Student,
   "2010": edition2010,
   "ecolier-2011": edition2011Ecolier,
   "ecolier-2012": edition2012Ecolier,

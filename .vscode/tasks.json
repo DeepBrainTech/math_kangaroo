@@ -948,6 +948,157 @@
 			],
 			"isBackground": false,
 			"problemMatcher": []
+		},
+		{
+			"label": "Download Student source PDFs",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\download-student-pdfs.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Render and extract Student PDFs",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\process-student-pdfs.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Format 2009 Student text",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\format-student-pdf.mjs",
+				"2009"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Check local OCR availability",
+			"type": "shell",
+			"command": "where.exe",
+			"args": [
+				"tesseract"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Format 2010-2014 Student text",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\format-student-pdf.mjs",
+				"2010",
+				"2014"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Format 2015-2019 Student text",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\format-student-pdf.mjs",
+				"2015",
+				"2019"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Format 2020-2025 Student text",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\format-student-pdf.mjs",
+				"2020",
+				"2025"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Align 2024 Student answer indices",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\fix-student-key-2024.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Student structural audit",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\validate-student-editions.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Compare Student answer keys",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\compare-student-keys.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Verify Student answer mappings",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\compare-student-keys-exact.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Compare exact Student key rows",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\compare-student-keys-exact.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Fix verified Student answer indices",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"C:\\Users\\shahr\\AppData\\Local\\Temp\\fix-student-answer-indices.mjs"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Student edition ESLint",
+			"type": "shell",
+			"command": "npx.cmd",
+			"args": [
+				"eslint",
+				"app/data/kangaroo/editions/grades-11-12/student",
+				"app/data/kangaroo/index.ts"
+			],
+			"isBackground": false,
+			"problemMatcher": [
+				"$eslint-stylish"
+			]
 		}
 	]
 }
