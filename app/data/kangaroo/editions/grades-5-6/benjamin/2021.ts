@@ -107,8 +107,8 @@ const questions2021Benjamin: Question[] = [
     prompt: "Julian cuts 5021972970 twice to make three numbers. What is the smallest sum of the three numbers?",
     options: ["3244", "3444", "5172", "5217", "5444"],
     answer: 1,
-    explanation: "NEEDS_REVIEW: confirm the minimum cut positions by checking the source's intended interpretation of the resulting numbers.",
-    hint: "Try each pair of cut positions and compare the sum of the three resulting integers.",
+    explanation: "The best split is 502 | 1972 | 970, whose sum is 502 + 1972 + 970 = 3444. Checking the other cut positions gives a larger sum; in particular, the nearby split 502 | 197 | 2970 gives 3669.",
+    hint: "Try cut positions that keep the three pieces from being very different in length, then compare the resulting sums.",
     sourcePage: 3
   },
   {
@@ -237,8 +237,8 @@ const questions2021Benjamin: Question[] = [
     prompt: "An apple and orange weigh as much as a pear and peach. An apple and pear weigh less than an orange and peach. A pear and orange weigh less than an apple and peach. Which fruit is heaviest?",
     options: ["Apple", "Orange", "Peach", "Pear", "Impossible to determine"],
     answer: 2,
-    explanation: "The inequalities imply peach > apple, orange > pear, and combining the equal sums shows peach exceeds each of the other three fruits.",
-    hint: "Rewrite each comparison as an inequality and combine them with the equality to compare individual fruit weights.",
+    explanation: "Write the equal sum as apple + orange = pear + peach. Substituting this into the two inequalities shows that pear is lighter than both apple and orange. The same equality then gives peach − apple = orange − pear and peach − orange = apple − pear, so peach is heavier than both apple and orange too.",
+    hint: "Use the equal pair-sums to rewrite the inequalities, then compare the peach with each of the other weights.",
     sourcePage: 5
   },
   {

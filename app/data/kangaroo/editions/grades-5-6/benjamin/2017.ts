@@ -97,7 +97,7 @@ const questions2017Benjamin: Question[] = [
     prompt: "Only four players score in a handball game, and each scores a different number of goals. Michael scores the fewest. If the other three score 20 goals altogether, what is the maximum Michael could have scored?",
     options: ["2", "3", "4", "5", "6"],
     answer: 2,
-    explanation: "To maximize the smallest score, make the other three distinct scores as small as possible above it. The totals 4, 5, 6 sum to 15, so the other three can sum to 20 with Michael scoring 4 (for example 5, 6, 9).",
+    explanation: "If Michael scored 5 or more, the other three different scores would have to be at least 6, 7 and 8, which already total 21. So his score can be at most 4; this is possible, for example with the others scoring 5, 6 and 9.",
     hint: "The other scores must be distinct and larger than Michael's; test the largest possible minimum while keeping their sum 20.",
     sourcePage: 2
   },
@@ -117,8 +117,8 @@ const questions2017Benjamin: Question[] = [
     prompt: "Tom concatenates the numbers 1 through 20 into a 31-digit number, then deletes 24 digits so the remaining number is as large as possible. Which number does he obtain?",
     options: ["9671819", "9567892", "9781920", "9912345", "9818192"],
     answer: 2,
-    explanation: "NEEDS_REVIEW: the maximum seven-digit subsequence should be verified against the full concatenated string; the answer key indicates C.",
-    hint: "Choose seven digits in their original order, preferring the largest possible next digit while leaving enough digits to finish.",
+    explanation: "Choose digits in order from the concatenated string. The first digit can be 9; after it, the largest next digit that still leaves five places is 7 (from 17). Next take 8 (from 18), after which the remaining digits 1, 9, 2, 0 are forced. The largest number is 9781920, choice C.",
+    hint: "At each step, choose the largest available digit that still leaves enough later digits to complete a seven-digit number.",
     sourcePage: 2
   },
   {

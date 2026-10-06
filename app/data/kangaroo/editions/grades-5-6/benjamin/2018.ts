@@ -137,8 +137,8 @@ const questions2018Benjamin: Question[] = [
     prompt: "Eva, Olga, Adam, Isaac and Urban pass a ball. A girl throws to the other girl or to a boy; a boy throws to another boy, but not to the boy who just passed it. Eva makes the first throw to Adam. Who makes the fifth throw?",
     options: ["Adam", "Eva", "Isaac", "Olga", "Urban"],
     answer: 0,
-    explanation: "Eva throws to Adam (1), Adam can throw to Isaac or Urban, then the next boy must pass to the other boy; NEEDS_REVIEW because the described rules do not uniquely determine the fifth throw without the source interpretation.",
-    hint: "Track the ball holder after each throw and apply the restrictions separately for girls and boys.",
+    explanation: "Eva makes the first throw to Adam. Adam must throw to Isaac or Urban; that boy must then throw to the other one. On the next throw, the boy holding the ball must pass to Adam, since he cannot throw it back to the boy who just passed it. So Adam makes the fifth throw.",
+    hint: "Follow the three boys' turns, remembering that each boy must pass to a different boy from the one who just threw to him.",
     sourcePage: 2
   },
   {
@@ -157,7 +157,7 @@ const questions2018Benjamin: Question[] = [
     prompt: "Monika chooses three different numbers from 1 through 7 whose sum is 8. Daniel chooses three different numbers from the same list whose sum is 7. How many numbers did they choose in common?",
     options: ["None", "1", "2", "3", "It cannot be determined"],
     answer: 2,
-    explanation: "The only triple summing to 8 is {1, 2, 5}; the only triple summing to 7 is {1, 2, 4}. They share two numbers.",
+    explanation: "The triples summing to 8 are {1, 2, 5} and {1, 3, 4}; the triple summing to 7 is {1, 2, 4}. It shares 1 and 2 with the first triple, or 1 and 4 with the second, so either way they have two numbers in common.",
     hint: "List the distinct triples from 1 to 7 that sum to 8 and to 7, then compare them.",
     sourcePage: 2
   },

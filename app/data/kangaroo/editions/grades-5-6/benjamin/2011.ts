@@ -75,7 +75,7 @@ const questions2011Benjamin: Question[] = [
     prompt: "The date 01-03-05 (1 March 2005) has three consecutive odd numbers. This is the first day in the 21st century with this property. How many days with this property are there in total in the 21st century?",
     options: ["5", "6", "16", "13", "8"],
     answer: 0,
-    explanation: "NEEDS_REVIEW: confirm the intended date format and count of dates against the source's convention; the answer key indicates A.",
+    explanation: "The day, month, and year must be three consecutive odd numbers. The month can be 3, 5, 7, 9, or 11, giving the dates 01-03-05, 03-05-07, 05-07-09, 07-09-11, and 09-11-13: 5 dates, answer A.",
     hint: "List valid odd day, month, and year endings in chronological order, remembering that the date components must be consecutive odd numbers.",
     sourcePage: 2
   },
@@ -142,7 +142,7 @@ const questions2011Benjamin: Question[] = [
     image: "/assets/kangaroo/grades-5-6/benjamin/2011/questions/q-13-diagram.png",
     imageAlt: "Section of a cube wall surrounding a square area",
     imageClass: "source-pdf-visual",
-    explanation: "NEEDS_REVIEW: the side length of the enclosed square must be read from the wall diagram before confirming C.",
+    explanation: "A one-cube-thick square wall with 36 cubes has 4n − 4 = 36 cubes around its perimeter, so n = 10 cubes along the outside. The unfilled inside is 8 by 8, which takes 8 × 8 = 64 cubes: C.",
     hint: "Use the visible wall section to determine the square's side length, then square that length.",
     sourcePage: 3
   },
@@ -155,7 +155,7 @@ const questions2011Benjamin: Question[] = [
     image: "/assets/kangaroo/grades-5-6/benjamin/2011/questions/q-14-diagram.png",
     imageAlt: "Square tile floors showing the black-tile pattern",
     imageClass: "source-pdf-visual",
-    explanation: "NEEDS_REVIEW: the growth pattern must be confirmed from both source examples before accepting D.",
+    explanation: "The examples show that n² black tiles form a floor of (2n − 1)² tiles, with white tiles between and around them. For 25 black tiles, the floor is 9 × 9, so 81 − 25 = 56 tiles are white: D.",
     hint: "Relate the number of black tiles to the floor's side length, then count the white tiles between and around them.",
     sourcePage: 3
   },
@@ -228,7 +228,7 @@ const questions2011Benjamin: Question[] = [
     prompt: "Seven kittens have the colours white, black, ginger, black-white, ginger-white, ginger-black and ginger-black-white. In how many ways can you choose 4 kittens so that every pair shares a colour?",
     options: ["1", "3", "4", "6", "7"],
     answer: 2,
-    explanation: "NEEDS_REVIEW: the four-kitten selections must be exhaustively checked against the pairwise shared-colour condition.",
+    explanation: "If a chosen group contains a single-colour kitten, all three others must share that colour, giving one group for each of white, black, and ginger. If none is single-colour, the only four that are pairwise compatible are black-white, ginger-white, ginger-black, and ginger-black-white. There are 4 groups in total: C.",
     hint: "Represent each kitten by the set of colours it has, then require every pair of chosen sets to intersect.",
     sourcePage: 4
   },
@@ -271,7 +271,7 @@ const questions2011Benjamin: Question[] = [
     prompt: "Numbers are made from the digits 1, 2, 3, 4 and 5, using each digit once. Each prefix of length 2, 3, 4 and 5 must be divisible by 2, 3, 4 and 5 respectively. How many such numbers are possible?",
     options: ["It is not possible", "1", "2", "5", "10"],
     answer: 0,
-    explanation: "NEEDS_REVIEW: independently enumerate the digit arrangements satisfying all four divisibility conditions before confirming A.",
+    explanation: "The fifth digit must be 5. The last two digits of the first four must form 12, 24, or 32 to be divisible by 4. For 12, the first three digits sum to 8; for 24, the two-digit prefix uses 1 and 3, so it is odd; for 32, the first three digits again sum to 8. Each case breaks a required divisibility rule, so no number works: A.",
     hint: "Use the divisibility rules in order: the second digit must be even, and the final digit must be 5.",
     sourcePage: 4
   }

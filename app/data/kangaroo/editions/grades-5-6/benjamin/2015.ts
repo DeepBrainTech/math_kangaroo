@@ -7,8 +7,8 @@ const questions2015Benjamin: Question[] = [
     prompt: "In which shape is exactly one half coloured grey?",
     options: ["A", "B", "C", "D", "E"],
     answer: 1,
-    explanation: "NEEDS_REVIEW: the five shaded shapes are visual and have not yet been included.",
-    hint: "Compare the grey area with the white area in each shape, using symmetry or equal-sized parts.",
+    explanation: "In shape B, a line from the triangle's vertex to the midpoint of its base divides it into two equal areas. Exactly one of those halves is grey, so B is correct.",
+    hint: "Look for a division into two equal-area parts, and check whether exactly one part is grey.",
     sourcePage: 1
   },
   {
@@ -177,8 +177,8 @@ const questions2015Benjamin: Question[] = [
     prompt: "A sack contains 3 green apples, 5 yellow apples, 7 green pears and 2 yellow pears. Without looking, how many pieces of fruit must Sebastian take to be sure of getting an apple and a pear of the same colour?",
     options: ["9", "10", "11", "12", "13"],
     answer: 4,
-    explanation: "In the worst case he could draw all 12 fruits that are not yellow apples, leaving only yellow apples. The next fruit guarantees a yellow apple and an already drawn yellow pear, or the analogous same-colour pair earlier; the guaranteed number is 13.",
-    hint: "Consider the largest draw that could still avoid having both an apple and a pear of one colour.",
+    explanation: "A draw of 12 can still avoid a same-colour apple-and-pear pair: take all 7 green pears and all 5 yellow apples. The next fruit must be a green apple or a yellow pear, completing a matching-colour pair either way. Therefore 13 fruits are needed.",
+    hint: "For each colour, avoid taking both its apples and its pears; use the largest possible single fruit group of each colour.",
     sourcePage: 3
   },
   {
@@ -217,8 +217,8 @@ const questions2015Benjamin: Question[] = [
     prompt: "A train has 12 carriages with the same number of compartments in each. Mike sits in the 18th compartment behind the engine, in the third carriage. Joanna sits in the 50th compartment, in the seventh carriage. How many compartments are in each carriage?",
     options: ["7", "8", "9", "10", "12"],
     answer: 1,
-    explanation: "The first two carriages contain 18 compartments, so a carriage has 9. The seventh carriage begins after 6 × 9 = 54 compartments, but the stated 50th compartment is in the seventh carriage; NEEDS_REVIEW because these details conflict.",
-    hint: "Use the carriage numbers and compartment positions to infer the number in each carriage, then check both statements.",
+    explanation: "If each carriage has n compartments, the seventh carriage contains compartments 6n + 1 through 7n. Since compartment 50 is in it, 6n < 50 ≤ 7n, which forces n = 8. Then carriage 3 contains compartments 17–24, including compartment 18.",
+    hint: "Use the global compartment numbers that can lie in carriage 7 to narrow the number per carriage, then check carriage 3.",
     sourcePage: 3
   },
   {

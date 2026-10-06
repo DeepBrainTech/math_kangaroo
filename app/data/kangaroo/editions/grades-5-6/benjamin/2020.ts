@@ -247,8 +247,8 @@ const questions2020Benjamin: Question[] = [
     prompt: "Ten people order four vanilla, three chocolate, two lemon and one mango ice cream, with four umbrellas, three cherries, two wafers and one chocolate gum as toppings. No two orders may be identical. Which flavour-and-topping combination is possible?",
     options: ["Chocolate and chocolate gum", "Mango and cherry", "Lemon and wafer", "Mango and wafer", "Lemon and cherry"],
     answer: 4,
-    explanation: "NEEDS_REVIEW: the multiplicities of flavours and toppings need to be matched to the five proposed pairs.",
-    hint: "For each proposed pair, check whether its flavour and topping counts can both be satisfied without duplicate orders.",
+    explanation: "The four vanilla orders must use four different toppings, so they use one of each. The three chocolate orders must then use three different remaining toppings: umbrellas, cherries and wafers. This leaves umbrellas and cherries for the two lemon orders, one each, and an umbrella for the mango order. Thus lemon and cherry is possible (choice E).",
+    hint: "First account for the four vanilla orders: they must use four different toppings. Then track which toppings remain for the other flavours.",
     sourcePage: 5
   },
   {
@@ -257,8 +257,8 @@ const questions2020Benjamin: Question[] = [
     prompt: "A three-digit number is balanced if its middle digit is the arithmetic mean of the first and last digits. How many balanced numbers are divisible by 18?",
     options: ["2", "3", "6", "9", "18"],
     answer: 2,
-    explanation: "NEEDS_REVIEW: enumerate three-digit numbers whose middle digit is the mean of the outer digits and test divisibility by 18 to confirm C.",
-    hint: "Use the mean condition and divisibility by 18, which requires divisibility by both 2 and 9.",
+    explanation: "If the middle digit is b, the first and last digits sum to 2b, so the digit sum is 3b. Divisibility by 9 makes b one of 3, 6 or 9. For b=3, the valid even last digits give 234, 432 and 630; for b=6 they give 468, 666 and 864; b=9 gives no three-digit number with a valid first digit. There are 6 such numbers, choice C.",
+    hint: "Use the mean condition to express the digit sum in terms of the middle digit; then apply the tests for divisibility by 9 and by 2.",
     sourcePage: 5
   },
   {

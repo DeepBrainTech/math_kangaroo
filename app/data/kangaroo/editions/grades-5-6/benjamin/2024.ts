@@ -107,8 +107,8 @@ const questions2024Benjamin: Question[] = [
     prompt: "Hotel rooms are numbered consecutively from 1. Across all room numbers, digit 2 appears 14 times and digit 5 appears 3 times. What is the largest possible room number?",
     options: ["25", "26", "34", "35", "41"],
     answer: 2,
-    explanation: "NEEDS_REVIEW: confirm the digit counts across all room numbers up to the proposed endpoint before accepting 34.",
-    hint: "Count occurrences of 2 and 5 as the room numbers increase, including tens and units positions.",
+    explanation: "From 1 to 34, digit 2 appears ten times in the tens place (20–29) and four times in the units place (2, 12, 22 and 32), for 14 appearances. Digit 5 appears in 5, 15 and 25, for three. Room 35 would be a fourth 5, so 34 is the largest possible last room.",
+    hint: "Count each digit separately in the tens and units places, and check what changes at the next possible room number.",
     sourcePage: 3
   },
   {

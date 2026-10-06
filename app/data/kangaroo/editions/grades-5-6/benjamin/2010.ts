@@ -27,7 +27,7 @@ const questions2010Benjamin: Question[] = [
     ],
     imageAlt: "Two reflections of the number 4 and visual answer choices for the number 5",
     imageClass: "source-pdf-visual",
-    explanation: "NEEDS_REVIEW: confirm that the extracted reflection diagram and option C match the source page.",
+    explanation: "Reflecting first across the vertical line and then across the horizontal line is the same as a half-turn. Option C shows the 5 after that 180° rotation.",
     hint: "Follow each reflection in order; the second reflection starts from the image produced by the first.",
     sourcePage: 1
   },
@@ -60,7 +60,7 @@ const questions2010Benjamin: Question[] = [
     image: "/assets/kangaroo/grades-5-6/benjamin/2010/questions/q-05-diagram.png",
     imageAlt: "Upper and lower points joined by straight lines",
     imageClass: "source-pdf-visual",
-    explanation: "NEEDS_REVIEW: the source diagram must be checked to confirm the line count represented by choice C.",
+    explanation: "Each of the 5 upper points is joined to each of the 6 lower points, so there are 5 × 6 = 30 lines: C.",
     hint: "Count the lines from each upper point separately, then add those counts without counting any line twice.",
     sourcePage: 1
   },
@@ -110,7 +110,7 @@ const questions2010Benjamin: Question[] = [
     image: "/assets/kangaroo/grades-5-6/benjamin/2010/questions/q-09-diagram.png",
     imageAlt: "Right-angled figure with labelled side lengths",
     imageClass: "source-pdf-visual",
-    explanation: "NEEDS_REVIEW: verify the dimensions in the extracted figure before confirming choice E.",
+    explanation: "The total horizontal distance is 5 + 5 + 5 = 15, and the total vertical distance is 2 + 4 + 2 = 8. In a closed right-angled outline, the horizontal and vertical edges each total twice the width or height, so the perimeter is 2(15 + 8) = 46: E.",
     hint: "Add the lengths around the outside boundary; use the right angles to infer any unlabelled lengths.",
     sourcePage: 2
   },
@@ -161,7 +161,7 @@ const questions2010Benjamin: Question[] = [
     ],
     imageAlt: "Figure around point F and five rotated answer choices",
     imageClass: "source-pdf-visual",
-    explanation: "NEEDS_REVIEW: compare the extracted rotation choices with the original figure before confirming C.",
+    explanation: "A half-turn around F sends each square to the opposite side of F without changing its distance or colour. The resulting L-shape has the two coloured squares to the left of F and the third square below them, as in C.",
     hint: "A half-turn sends every point to the opposite side of F at the same distance.",
     sourcePage: 2
   },
@@ -233,7 +233,7 @@ const questions2010Benjamin: Question[] = [
     image: "/assets/kangaroo/grades-5-6/benjamin/2010/questions/q-18-diagram.png",
     imageAlt: "Square partitioned into grey and white regions",
     imageClass: "source-pdf-visual",
-    explanation: "NEEDS_REVIEW: the region areas depend on the source diagram; the answer key indicates A.",
+    explanation: "The square has side 2 + 4 = 6 cm, so its area is 36 cm². The two white triangles each have area (4 × 6)/2 = 12 cm²; the remaining grey area is 36 − 12 − 12 = 12 cm², or 1/3 of the square: A.",
     hint: "Look for a way to split the square into equal-area pieces, then count how many pieces are grey.",
     sourcePage: 3
   },
@@ -289,7 +289,7 @@ const questions2010Benjamin: Question[] = [
     image: "/assets/kangaroo/grades-5-6/benjamin/2010/questions/q-23-diagram.png",
     imageAlt: "Grid containing grey squares",
     imageClass: "source-pdf-visual",
-    explanation: "NEEDS_REVIEW: count the grey squares by row and column in the source grid before confirming the number to recolour.",
+    explanation: "The 5-by-5 grid has 11 grey squares. To leave exactly one in each of 5 rows and 5 columns, keep 5 and turn the other 11 − 5 = 6 white: C.",
     hint: "Each row and column must keep one grey square; identify which rows or columns currently have extras.",
     sourcePage: 3
   },

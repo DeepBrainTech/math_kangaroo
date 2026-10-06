@@ -47,8 +47,8 @@ const questions2022Benjamin: Question[] = [
     prompt: "Marbles are sold in packages of 5, 10 or 25. Tom buys exactly 95 marbles. What is the minimum number of packages?",
     options: ["4", "5", "7", "8", "10"],
     answer: 1,
-    explanation: "Three packages of 25 and two packages of 10 make 95 marbles using five packages; four packages can contain at most 100 but cannot total 95 with the allowed sizes.",
-    hint: "Use as many 25-marble packages as possible, then make up the remainder with 10s and 5s.",
+    explanation: "Three packages of 25 and two packages of 10 make 95 marbles in five packages. Four packages would total 100 if all were 25s; replacing any 25-package with a 10- or 5-package lowers the total by 15 or 20, so four packages cannot total 95.",
+    hint: "Try the largest packages first, and check whether one fewer package could reach 95 exactly.",
     sourcePage: 2
   },
   {
@@ -237,8 +237,8 @@ const questions2022Benjamin: Question[] = [
     prompt: "Kai places 3, 4, 5, 6 and 7 in five circles so the product at each triangle's vertices equals the number inside it. What is the sum of the vertices of the triangle marked 168?",
     options: ["12", "14", "15", "17", "18"],
     answer: 3,
-    explanation: "NEEDS_REVIEW: the five-circle arrangement and triangle labels are shown in the source diagram.",
-    hint: "Factor 168 using three of the numbers 3, 4, 5, 6 and 7, then add those vertices.",
+    explanation: "Among 3, 4, 5, 6 and 7, the only three numbers whose product is 168 are 4, 6 and 7, since 4 × 6 × 7 = 168. Their sum is 17.",
+    hint: "Test triples from the five numbers until their product is 168; then add the three numbers.",
     sourcePage: 5
   }
 ];

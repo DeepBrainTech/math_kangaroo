@@ -57,8 +57,8 @@ const questions2014Benjamin: Question[] = [
     prompt: "A square with perimeter 48 cm is cut into two equal pieces with one cut. The pieces are fitted together to make the rectangle shown. What is the rectangle's perimeter?",
     options: ["24 cm", "30 cm", "48 cm", "60 cm", "72 cm"],
     answer: 3,
-    explanation: "NEEDS_REVIEW: the cut direction and the rectangle's arrangement are shown in the missing diagram.",
-    hint: "Find the square's side length, then use the cut and rearrangement to determine the rectangle's new side lengths.",
+    explanation: "The square's side is 48 ÷ 4 = 12 cm. The cut makes two 12-by-6 cm rectangles; placed end to end, they make a 24-by-6 cm rectangle with perimeter 2 × (24 + 6) = 60 cm.",
+    hint: "Find the square's side length, then read the two side lengths of the rearranged rectangle from the cut pieces.",
     sourcePage: 1
   },
   {
@@ -87,8 +87,8 @@ const questions2014Benjamin: Question[] = [
     prompt: "A witch competes in a five-round broomstick race. The table shows the times when she crossed the starting line. Which round was her fastest?",
     options: ["The first", "The second", "The third", "The fourth", "The fifth"],
     answer: 1,
-    explanation: "NEEDS_REVIEW: the five crossing times are in the source table, which is not yet included.",
-    hint: "Compare the elapsed time between successive crossings; the shortest interval is her fastest round.",
+    explanation: "The round times are 29, 19, 42, 62 and 24 minutes, found by subtracting each crossing time from the previous one. The second round is shortest at 19 minutes, so the answer is B.",
+    hint: "Subtract consecutive crossing times to find the length of each round, then compare those intervals.",
     sourcePage: 2
   },
   {
@@ -197,8 +197,8 @@ const questions2014Benjamin: Question[] = [
     prompt: "Five songs play one after another: A lasts 3 minutes, B 2 minutes 30 seconds, C 2 minutes, D 1 minute 30 seconds and E 4 minutes. Song C is playing when Andy leaves home. Exactly one hour later, which song is playing?",
     options: ["A", "B", "C", "D", "E"],
     answer: 0,
-    explanation: "The playlist lasts 13 minutes. After 60 minutes, 60 mod 13 = 8 minutes have elapsed in the cycle. Starting with C, the first 7.5 minutes finish C, D and E; the next song is A.",
-    hint: "Find the total length of one playlist and reduce 60 minutes modulo that length.",
+    explanation: "The playlist lasts 13 minutes, so 60 minutes is four full playlists plus 8 minutes. From any point in C, the remaining part of C followed by D and E takes between 5.5 and 7.5 minutes. Thus A has started by the 8-minute mark, but has played for less than 3 minutes, so A is still playing.",
+    hint: "Find the playlist length, then track the remaining part of C before D and E; Andy need not leave at the start of a song.",
     sourcePage: 3
   },
   {
@@ -207,8 +207,8 @@ const questions2014Benjamin: Question[] = [
     prompt: "Daniela fills a 3 × 3 table with digits 1 to 9, one per square. The positions of 1, 2, 3 and 4 are shown. Adjacent squares share a side. The sum of the digits adjacent to 5 is 9. What is the sum of the digits adjacent to 6?",
     options: ["14", "15", "17", "28", "29"],
     answer: 4,
-    explanation: "NEEDS_REVIEW: the positions of 1, 2, 3 and 4 in the grid are needed to constrain the neighbours of 5 and 6.",
-    hint: "List the possible neighbouring squares for 5 and 6, then use the sum of 9 to eliminate arrangements.",
+    explanation: "The 5 cannot go at the centre, whose four neighbours would all be larger, or at the top, right or bottom middle: their neighbour sums would force a repeated digit. So 5 is at the middle-left, next to 1, 2 and 6; the sum 1 + 2 + 6 = 9 fixes the centre as 6. Its neighbours are 5, 7, 8 and 9, which sum to 29.",
+    hint: "Use the corner digits to test where 5 can fit; its neighbours must add to 9. Then add the digits around the resulting position of 6.",
     sourcePage: 3
   },
   {

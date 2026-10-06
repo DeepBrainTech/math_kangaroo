@@ -7,8 +7,8 @@ const questions2016Benjamin: Question[] = [
     prompt: "Which of the following road signs has the most axes of symmetry?",
     options: ["A", "B", "C", "D", "E"],
     answer: 2,
-    explanation: "NEEDS_REVIEW: the five road-sign shapes are visual and have not yet been included.",
-    hint: "For each sign, count the lines that divide it into two matching mirror halves.",
+    explanation: "Sign C, the no-entry sign, has both a horizontal and a vertical axis of symmetry. The arrows and other symbols on the remaining signs break any additional symmetry, so C has the most.",
+    hint: "Check the whole sign, including its symbol: a line counts only if both the outline and the picture match across it.",
     sourcePage: 1
   },
   {
@@ -237,8 +237,8 @@ const questions2016Benjamin: Question[] = [
     prompt: "Two three-digit numbers use six different digits. The first digit of the second number is twice the last digit of the first. What is the smallest possible sum?",
     options: ["301", "535", "537", "546", "552"],
     answer: 2,
-    explanation: "NEEDS_REVIEW: enumeration gives 537 (102 + 435), but the final answer-key cell was not legible in the scan.",
-    hint: "Minimise place values from left to right while keeping all six digits different and satisfying the doubled-digit condition.",
+    explanation: "The first number cannot end in 0 (the second number would start with 0) or 5–9 (its doubled digit would be two digits). If it ends in 1, its first digit cannot be 1 or 2, so the smallest pair is 301 and 245, totaling 546. Ending in 2 allows 102 and 435, totaling 537. Ending in 3 or 4 makes the second number start with 6 or 8, so the sum is at least 700. Thus 537 is the minimum, option C.",
+    hint: "Try the smallest possible last digits of the first number; doubling that digit fixes the hundreds digit of the second number. Keep all six digits different.",
     sourcePage: 3
   }
 ];

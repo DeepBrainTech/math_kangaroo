@@ -177,8 +177,8 @@ const questions2025Benjamin: Question[] = [
     prompt: "A witch has 10 apples, 9 bananas and 6 pears. She transforms all fruit into different types and ends with 15 apples, 7 bananas and 3 pears. How many apples did she turn into bananas?",
     options: ["3", "4", "5", "6", "7"],
     answer: 4,
-    explanation: "Let x apples become bananas, y apples become pears, and let z pears become apples. Final apple count gives z - y = 5. Tracking the banana and pear totals then forces x = 7.",
-    hint: "Write balance equations for the change in each fruit type and use the fact that every original fruit changes type.",
+    explanation: "All 15 original bananas and pears must change into apples: there are exactly 15 apples at the end, and no original apple can stay an apple. That leaves the 10 original apples to become the 7 final bananas and 3 final pears. So 7 apples became bananas.",
+    hint: "Track which original fruits can become the apples at the end, then account for what happens to the original apples.",
     sourcePage: 4
   },
   {
@@ -237,8 +237,8 @@ const questions2025Benjamin: Question[] = [
     prompt: "Zita can buy flowers costing €3, €4 or €5 each. How many different bouquets can she buy for exactly €23?",
     options: ["4", "5", "6", "7", "8"],
     answer: 3,
-    explanation: "The nonnegative solutions to 3a + 4b + 5c = 23 number seven: for c = 0 there are two, c = 1 two, c = 2 one, c = 3 one and c = 4 one.",
-    hint: "Count nonnegative integer solutions to 3a + 4b + 5c = 23, grouping by the number of €5 flowers.",
+    explanation: "Count by the number of €5 flowers. With 0 or 1 five-euro flower, there are two ways each to make the remainder using €3 and €4 flowers. With 2, 3 or 4 five-euro flowers, there is one way each. Altogether, 2 + 2 + 1 + 1 + 1 = 7 bouquets.",
+    hint: "Fix how many €5 flowers are in the bouquet (from 0 to 4), then count ways to make the remainder using €3 and €4 flowers.",
     sourcePage: 4
   }
 ];

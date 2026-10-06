@@ -237,8 +237,8 @@ const questions2023Benjamin: Question[] = [
     prompt: "Kai places 3, 4, 5, 6 and 7 in five circles so the product at each triangle's vertices equals the number inside it. What is the sum of the vertices of the triangle marked 168?",
     options: ["12", "14", "15", "17", "18"],
     answer: 3,
-    explanation: "NEEDS_REVIEW: the placement of the five numbers and the triangle labelled 168 are visual.",
-    hint: "Find which three of 3, 4, 5, 6 and 7 multiply to 168, then add them.",
+    explanation: "The only triple from 3, 4, 5, 6 and 7 with product 168 is 4, 6 and 7: 4 × 6 × 7 = 168. These vertices sum to 17.",
+    hint: "Find a triple from the five numbers whose product is 168, and then add the three values.",
     sourcePage: 5
   }
 ];

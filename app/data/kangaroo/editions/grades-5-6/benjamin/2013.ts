@@ -7,8 +7,8 @@ const questions2013Benjamin: Question[] = [
     prompt: "Which answer completes the addition tree?",
     options: ["2", "3", "4", "5", "6"],
     answer: 4,
-    explanation: "NEEDS_REVIEW: the addition tree is not represented in the text source, so the missing value cannot be verified.",
-    hint: "Work from the leaves upward, adding the branches that meet at each node.",
+    explanation: "The lower sums are 2 + 0 = 2 and 1 + 3 = 4. Adding those results gives 2 + 4 = 6, option E.",
+    hint: "Evaluate the two lower additions first, then add those results at the top.",
     sourcePage: 1
   },
   {
