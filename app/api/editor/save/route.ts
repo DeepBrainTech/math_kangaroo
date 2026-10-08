@@ -12,27 +12,28 @@ type SaveBody = {
   removedImages?: string[];
 };
 
+function editionFolderForSet(setId: string) {
+  if (!Object.hasOwn(questionSets, setId)) return null;
+  const quiz = questionSets[setId];
+  const gradeFolder = quiz.grades.toLowerCase().replace(" ", "-");
+  return path.join(gradeFolder, quiz.group.toLowerCase(), String(quiz.year));
+}
+
 function sourceFileForSet(setId: string) {
-  if (setId === "2010") return path.join("app", "data", "kangaroo", "editions", "grades-3-4", "ecolier", "2010.ts");
-  if (/^ecolier-(2009|2011|2012|2013|2014|2015|2016|2017|2018|2019|2020|2021|2022|2023|2024|2025)$/.test(setId)) {
-    return path.join("app", "data", "kangaroo", "editions", "grades-3-4", "ecolier", `${setId.slice("ecolier-".length)}.ts`);
-  }
-  if (/^(2014|2015|2016|2017|2018|2019|2020|2021|2022|2023|2024|2025)$/.test(setId)) {
-    return path.join("app", "data", "kangaroo", "editions", "grades-1-2", "felix", `${setId}.ts`);
-  }
-  return null;
+  const folder = editionFolderForSet(setId);
+  return folder ? path.join("app", "data", "kangaroo", "editions", `${folder}.ts`) : null;
 }
 
 function assetFolderForSet(setId: string) {
-  if (setId === "2010") return path.join("public", "assets", "kangaroo", "grades-3-4", "ecolier", "2010", "questions");
-  if (/^ecolier-\d{4}$/.test(setId)) return path.join("public", "assets", "kangaroo", "grades-3-4", "ecolier", setId.slice("ecolier-".length), "questions");
-  return path.join("public", "assets", "kangaroo", "grades-1-2", "felix", setId, "questions");
+  const folder = editionFolderForSet(setId);
+  if (!folder) throw new Error(`Unknown question set: ${setId}`);
+  return path.join("public", "assets", "kangaroo", folder, "questions");
 }
 
 function assetUrlForSet(setId: string) {
-  if (setId === "2010") return `/assets/kangaroo/grades-3-4/ecolier/2010`;
-  if (/^ecolier-\d{4}$/.test(setId)) return `/assets/kangaroo/grades-3-4/ecolier/${setId.slice("ecolier-".length)}`;
-  return `/assets/kangaroo/grades-1-2/felix/${setId}`;
+  const folder = editionFolderForSet(setId);
+  if (!folder) throw new Error(`Unknown question set: ${setId}`);
+  return `/assets/kangaroo/${folder.replaceAll(path.sep, "/")}`;
 }
 
 function localEditorAssetForUrl(value: string, setId: string) {
@@ -135,10 +136,10 @@ function editableQuestionIsValid(question: EditableQuestion) {
 
 function sourceForQuestionSet(setId: string, questions: Question[]) {
   const quiz = questionSets[setId];
-  const ecolierYear = setId.match(/^ecolier-(\d{4})$/)?.[1];
-  const questionName = ecolierYear ? `questions${ecolierYear}Ecolier` : `questions${setId}`;
-  const sectionsName = ecolierYear ? "sections" : `sections${setId}`;
-  const editionName = ecolierYear ? `edition${ecolierYear}Ecolier` : `edition${setId}`;
+  const editionSuffix = /^\d{4}$/.test(setId) ? setId : `${quiz.year}${quiz.group}`;
+  const questionName = `questions${editionSuffix}`;
+  const sectionsName = `sections${editionSuffix}`;
+  const editionName = `edition${editionSuffix}`;
   const source = [
     'import type { Question, QuestionSet, Section } from "../../../types";',
     "",
@@ -176,8 +177,11 @@ export async function POST(request: Request) {
     const relativeSourceFile = setId ? sourceFileForSet(setId) : null;
     const base = setId ? questionSets[setId] : undefined;
 
-    if (!setId || !relativeSourceFile || !base || !questions || questions.length !== base.questions.length) {
-      return Response.json({ error: "Invalid question set or question data." }, { status: 400 });
+    if (!setId || !relativeSourceFile || !base) {
+      return Response.json({ error: "Unknown question set." }, { status: 400 });
+    }
+    if (!Array.isArray(questions) || questions.length !== base.questions.length) {
+      return Response.json({ error: `Expected ${base.questions.length} questions for ${setId}.` }, { status: 400 });
     }
     if (!questions.every(editableQuestionIsValid)) {
       return Response.json({ error: "Each question must have at least two valid options and one correct answer." }, { status: 400 });
