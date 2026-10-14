@@ -158,7 +158,8 @@ const questions2010Benjamin: Question[] = [
         text: "13",
         imageAlt: "E option"
       }
-    ]
+    ],
+    image: "/assets/kangaroo/grades-5-6/benjamin/2010/questions/editor-q-03.png"
   },
   {
     number: 4,
@@ -319,8 +320,7 @@ const questions2010Benjamin: Question[] = [
       "5"
     ],
     answer: 1,
-    image: "/assets/kangaroo/grades-5-6/benjamin/2010/questions/q-07-diagram.png",
-    imageExtra: "/assets/kangaroo/grades-5-6/benjamin/2010/questions/q-07-extra.png",
+    image: "/assets/kangaroo/grades-5-6/benjamin/2010/questions/editor-q-07.png",
     imageAlt: "The box and its blocks shown in two source views",
     imageClass: "source-pdf-visual",
     explanation: "NEEDS_REVIEW: verify the block layout and the minimum move count against the source diagram.",
@@ -473,10 +473,8 @@ const questions2010Benjamin: Question[] = [
       "E"
     ],
     answer: 3,
-    image: "/assets/kangaroo/grades-5-6/benjamin/2010/questions/q-10-diagram.png",
-    imageExtra: "/assets/kangaroo/grades-5-6/benjamin/2010/questions/q-10-extra.png",
+    imageExtra: "/assets/kangaroo/grades-5-6/benjamin/2010/questions/editor-q-10-extra.png",
     imageChoices: true,
-    imageAlt: "Five elastic-band figures from the source question",
     imageClass: "source-pdf-visual",
     explanation: "NEEDS_REVIEW: follow each band in the source figures to confirm which one is knotted; the answer key indicates D.",
     hint: "Trace each band continuously from one end. A crossing alone is not a knot unless the path is interwoven.",

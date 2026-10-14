@@ -143,7 +143,8 @@ const questions2011Benjamin: Question[] = [
         text: "An equilateral triangle",
         imageAlt: "E option"
       }
-    ]
+    ],
+    image: "/assets/kangaroo/grades-5-6/benjamin/2011/questions/editor-q-03.png"
   },
   {
     number: 4,
@@ -391,7 +392,8 @@ const questions2011Benjamin: Question[] = [
         text: "E",
         imageAlt: "E option"
       }
-    ]
+    ],
+    imageExtra: "/assets/kangaroo/grades-5-6/benjamin/2011/questions/editor-q-08-extra.png"
   },
   {
     number: 9,
@@ -439,7 +441,9 @@ const questions2011Benjamin: Question[] = [
         text: "E",
         imageAlt: "E option"
       }
-    ]
+    ],
+    image: "/assets/kangaroo/grades-5-6/benjamin/2011/questions/editor-q-09.png",
+    imageExtra: "/assets/kangaroo/grades-5-6/benjamin/2011/questions/editor-q-09-extra.png"
   },
   {
     number: 10,
@@ -501,9 +505,7 @@ const questions2011Benjamin: Question[] = [
       "16"
     ],
     answer: 1,
-    image: "/assets/kangaroo/grades-5-6/benjamin/2011/questions/q-11-diagram.png",
-    imageExtra: "/assets/kangaroo/grades-5-6/benjamin/2011/questions/q-11-extra.png",
-    imageAlt: "Hamster maze with pumpkin seeds",
+    image: "/assets/kangaroo/grades-5-6/benjamin/2011/questions/editor-q-11.png",
     imageClass: "source-pdf-visual",
     explanation: "NEEDS_REVIEW: the maximum route must be checked against the maze's junctions and seed locations.",
     hint: "Treat each junction as usable only once and compare routes that leave the fewest seeds unreachable.",
@@ -881,7 +883,8 @@ const questions2011Benjamin: Question[] = [
         text: "5",
         imageAlt: "E option"
       }
-    ]
+    ],
+    image: "/assets/kangaroo/grades-5-6/benjamin/2011/questions/editor-q-18.png"
   },
   {
     number: 19,
@@ -980,7 +983,8 @@ const questions2011Benjamin: Question[] = [
         text: "7",
         imageAlt: "E option"
       }
-    ]
+    ],
+    image: "/assets/kangaroo/grades-5-6/benjamin/2011/questions/editor-q-20.png"
   },
   {
     number: 21,

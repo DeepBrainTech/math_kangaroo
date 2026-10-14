@@ -47,7 +47,8 @@ const questions2013Benjamin: Question[] = [
         text: "6",
         imageAlt: "E option"
       }
-    ]
+    ],
+    image: "/assets/kangaroo/grades-5-6/benjamin/2013/questions/editor-q-01.png"
   },
   {
     number: 2,
@@ -95,7 +96,8 @@ const questions2013Benjamin: Question[] = [
         text: "9",
         imageAlt: "E option"
       }
-    ]
+    ],
+    image: "/assets/kangaroo/grades-5-6/benjamin/2013/questions/editor-q-02.png"
   },
   {
     number: 3,
@@ -143,7 +145,8 @@ const questions2013Benjamin: Question[] = [
         text: "700 m",
         imageAlt: "E option"
       }
-    ]
+    ],
+    image: "/assets/kangaroo/grades-5-6/benjamin/2013/questions/editor-q-03.png"
   },
   {
     number: 4,
@@ -191,7 +194,8 @@ const questions2013Benjamin: Question[] = [
         text: "10",
         imageAlt: "E option"
       }
-    ]
+    ],
+    image: "/assets/kangaroo/grades-5-6/benjamin/2013/questions/editor-q-04.png"
   },
   {
     number: 5,
@@ -479,7 +483,8 @@ const questions2013Benjamin: Question[] = [
         text: "6",
         imageAlt: "E option"
       }
-    ]
+    ],
+    image: "/assets/kangaroo/grades-5-6/benjamin/2013/questions/editor-q-10.png"
   },
   {
     number: 11,
@@ -527,7 +532,9 @@ const questions2013Benjamin: Question[] = [
         text: "E",
         imageAlt: "E option"
       }
-    ]
+    ],
+    image: "/assets/kangaroo/grades-5-6/benjamin/2013/questions/editor-q-11.png",
+    imageExtra: "/assets/kangaroo/grades-5-6/benjamin/2013/questions/editor-q-11-extra.png"
   },
   {
     number: 12,
@@ -575,7 +582,9 @@ const questions2013Benjamin: Question[] = [
         text: "E",
         imageAlt: "E option"
       }
-    ]
+    ],
+    image: "/assets/kangaroo/grades-5-6/benjamin/2013/questions/editor-q-12.png",
+    imageExtra: "/assets/kangaroo/grades-5-6/benjamin/2013/questions/editor-q-12-extra.png"
   },
   {
     number: 13,
@@ -671,7 +680,8 @@ const questions2013Benjamin: Question[] = [
         text: "36",
         imageAlt: "E option"
       }
-    ]
+    ],
+    image: "/assets/kangaroo/grades-5-6/benjamin/2013/questions/editor-q-14.png"
   },
   {
     number: 15,
@@ -815,7 +825,9 @@ const questions2013Benjamin: Question[] = [
         text: "E",
         imageAlt: "E option"
       }
-    ]
+    ],
+    image: "/assets/kangaroo/grades-5-6/benjamin/2013/questions/editor-q-17.png",
+    imageExtra: "/assets/kangaroo/grades-5-6/benjamin/2013/questions/editor-q-17-extra.png"
   },
   {
     number: 18,
@@ -911,7 +923,8 @@ const questions2013Benjamin: Question[] = [
         text: "8",
         imageAlt: "E option"
       }
-    ]
+    ],
+    image: "/assets/kangaroo/grades-5-6/benjamin/2013/questions/editor-q-19.png"
   },
   {
     number: 20,
@@ -959,7 +972,8 @@ const questions2013Benjamin: Question[] = [
         text: "6",
         imageAlt: "E option"
       }
-    ]
+    ],
+    imageExtra: "/assets/kangaroo/grades-5-6/benjamin/2013/questions/editor-q-20-extra.png"
   },
   {
     number: 21,
@@ -1055,7 +1069,8 @@ const questions2013Benjamin: Question[] = [
         text: "16",
         imageAlt: "E option"
       }
-    ]
+    ],
+    image: "/assets/kangaroo/grades-5-6/benjamin/2013/questions/editor-q-22.png"
   },
   {
     number: 23,

@@ -47,7 +47,8 @@ const questions2012Benjamin: Question[] = [
         text: "E",
         imageAlt: "E option"
       }
-    ]
+    ],
+    image: "/assets/kangaroo/grades-5-6/benjamin/2012/questions/editor-q-01.png"
   },
   {
     number: 2,
@@ -191,7 +192,8 @@ const questions2012Benjamin: Question[] = [
         text: "2 m",
         imageAlt: "E option"
       }
-    ]
+    ],
+    image: "/assets/kangaroo/grades-5-6/benjamin/2012/questions/editor-q-04.png"
   },
   {
     number: 5,
@@ -287,7 +289,9 @@ const questions2012Benjamin: Question[] = [
         text: "E",
         imageAlt: "E option"
       }
-    ]
+    ],
+    image: "/assets/kangaroo/grades-5-6/benjamin/2012/questions/editor-q-06.png",
+    imageExtra: "/assets/kangaroo/grades-5-6/benjamin/2012/questions/editor-q-06-extra.png"
   },
   {
     number: 7,
@@ -479,7 +483,8 @@ const questions2012Benjamin: Question[] = [
         text: "20 kg",
         imageAlt: "E option"
       }
-    ]
+    ],
+    image: "/assets/kangaroo/grades-5-6/benjamin/2012/questions/editor-q-10.png"
   },
   {
     number: 11,
@@ -575,7 +580,8 @@ const questions2012Benjamin: Question[] = [
         text: "2, 5, 6",
         imageAlt: "E option"
       }
-    ]
+    ],
+    image: "/assets/kangaroo/grades-5-6/benjamin/2012/questions/editor-q-12.png"
   },
   {
     number: 13,
@@ -623,7 +629,8 @@ const questions2012Benjamin: Question[] = [
         text: "The picture is not possible",
         imageAlt: "E option"
       }
-    ]
+    ],
+    image: "/assets/kangaroo/grades-5-6/benjamin/2012/questions/editor-q-13.png"
   },
   {
     number: 14,
@@ -719,7 +726,8 @@ const questions2012Benjamin: Question[] = [
         text: "128 cm²",
         imageAlt: "E option"
       }
-    ]
+    ],
+    image: "/assets/kangaroo/grades-5-6/benjamin/2012/questions/editor-q-15.png"
   },
   {
     number: 16,
@@ -767,7 +775,9 @@ const questions2012Benjamin: Question[] = [
         text: "It depends on the speed",
         imageAlt: "E option"
       }
-    ]
+    ],
+    image: "/assets/kangaroo/grades-5-6/benjamin/2012/questions/editor-q-16.png",
+    imageExtra: "/assets/kangaroo/grades-5-6/benjamin/2012/questions/editor-q-16-extra.png"
   },
   {
     number: 17,
@@ -815,7 +825,8 @@ const questions2012Benjamin: Question[] = [
         text: "6",
         imageAlt: "E option"
       }
-    ]
+    ],
+    image: "/assets/kangaroo/grades-5-6/benjamin/2012/questions/editor-q-17.png"
   },
   {
     number: 18,
@@ -863,7 +874,8 @@ const questions2012Benjamin: Question[] = [
         text: "9",
         imageAlt: "E option"
       }
-    ]
+    ],
+    image: "/assets/kangaroo/grades-5-6/benjamin/2012/questions/editor-q-18.png"
   },
   {
     number: 19,
@@ -959,7 +971,9 @@ const questions2012Benjamin: Question[] = [
         text: "E",
         imageAlt: "E option"
       }
-    ]
+    ],
+    image: "/assets/kangaroo/grades-5-6/benjamin/2012/questions/editor-q-20.png",
+    imageExtra: "/assets/kangaroo/grades-5-6/benjamin/2012/questions/editor-q-20-extra.png"
   },
   {
     number: 21,
@@ -1007,7 +1021,8 @@ const questions2012Benjamin: Question[] = [
         text: "20 cm",
         imageAlt: "E option"
       }
-    ]
+    ],
+    image: "/assets/kangaroo/grades-5-6/benjamin/2012/questions/editor-q-21.png"
   },
   {
     number: 22,
@@ -1055,7 +1070,8 @@ const questions2012Benjamin: Question[] = [
         text: "E",
         imageAlt: "E option"
       }
-    ]
+    ],
+    imageExtra: "/assets/kangaroo/grades-5-6/benjamin/2012/questions/editor-q-22-extra.png"
   },
   {
     number: 23,
@@ -1103,7 +1119,8 @@ const questions2012Benjamin: Question[] = [
         text: "24 cm²",
         imageAlt: "E option"
       }
-    ]
+    ],
+    image: "/assets/kangaroo/grades-5-6/benjamin/2012/questions/editor-q-23.png"
   },
   {
     number: 24,
