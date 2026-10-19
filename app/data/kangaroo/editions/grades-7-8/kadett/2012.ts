@@ -1,42 +1,1483 @@
 import type { Question, QuestionSet, Section } from "../../../types";
 
 const questions2012Kadett: Question[] = [
-  { number: 1, points: 3, prompt: "Three bars of chocolate cost €6. How much does one bar cost?", options: ["€1", "€2", "€3", "€4", "€5"], answer: 1, explanation: "€6 divided equally among three bars is €2 per bar.", hint: "Divide the total price by the number of bars.", sourcePage: 1 },
-  { number: 2, points: 3, prompt: "What is 11.11 − 1.111?", options: ["9.009", "9.0909", "9.99", "9.999", "10"], answer: 3, explanation: "Align decimal places: 11.110 − 1.111 = 9.999.", hint: "Write both numbers to three decimal places before subtracting.", sourcePage: 1 },
-  { number: 3, points: 3, prompt: "A wristwatch lies face-up. Its minute hand points northeast. How many minutes until it first points northwest?", options: ["45", "40", "30", "20", "15"], answer: 0, explanation: "Clockwise from northeast to northwest is three quarters of a turn, or 45 minutes.", hint: "The minute hand moves clockwise; measure the clockwise angle between the two directions.", sourcePage: 1 },
-  { number: 4, points: 3, prompt: "Eva has scissors and five cardboard letters. She makes one straight cut through each letter. For which letter can she obtain the most pieces?", options: ["A", "B", "C", "D", "E"], answer: 4, explanation: "NEEDS_REVIEW: the five letter outlines determine how many pieces a single straight cut can make.", hint: "A straight cut can create more pieces when it passes through more separate parts of the letter.", sourcePage: 1 },
-  { number: 5, points: 3, prompt: "The digit sum of a six-digit number is 5. What is the product of its digits?", options: ["0", "5", "6", "1 × 2 × 3 × 4 × 5 × 6", "4"], answer: 0, explanation: "A six-digit number with digit sum 5 must contain at least one zero, so the product of its digits is 0.", hint: "If all six digits were positive, their sum would be at least 6.", sourcePage: 1 },
-  { number: 6, points: 3, prompt: "A dragon has five heads. Each time one head is chopped off, five new heads grow back. If six heads are chopped off one after another, how many heads does the dragon end up with?", options: ["25", "28", "29", "30", "31"], answer: 2, explanation: "Each chopping changes the total by +4 heads. After six chops the total is 5 + 6×4 = 29.", hint: "Each action removes one head and adds five, for a net increase of four.", sourcePage: 1 },
-  { number: 7, points: 3, prompt: "Nine paths in a park are each 100 m long. Anna walks from A to B without using a path twice. What is the longest distance she can walk?", options: ["900 m", "800 m", "700 m", "500 m", "400 m"], answer: 2, explanation: "NEEDS_REVIEW: the nine-path network between A and B is visual.", hint: "Find a trail from A to B that uses as many distinct edges as possible.", sourcePage: 1 },
-  { number: 8, points: 3, prompt: "One vertex of each of two triangles is connected by a straight segment that does not cut either triangle into two parts. In how many ways is this possible?", options: ["1", "2", "3", "4", "More than 4"], answer: 3, explanation: "NEEDS_REVIEW: the relative positions of the triangles and their vertices are shown in the source diagram.", hint: "Count vertex pairs whose connecting segment leaves both triangles on the same side of the segment.", sourcePage: 1 },
-  { number: 9, points: 3, prompt: "Werner folds paper as shown and makes two straight cuts. Which of the five shapes cannot result when the paper is unfolded?", options: ["A", "B", "C", "D", "E"], answer: 3, explanation: "NEEDS_REVIEW: the fold, cuts and five unfolded shapes are visual.", hint: "Reflect each cut through both folds and compare the resulting pattern with the options.", sourcePage: 1 },
-  { number: 10, points: 3, prompt: "A cuboid consists of three differently coloured building blocks, each made from four cubes. What does the white block look like?", options: ["A", "B", "C", "D", "E"], answer: 3, explanation: "NEEDS_REVIEW: the cuboid and five candidate block shapes are visual.", hint: "Subtract the visible red and grey blocks from the cuboid's full 3D arrangement.", sourcePage: 1 },
-  { number: 11, points: 4, prompt: "Arrange the digits 1 through 8 into two four-digit numbers, using each once, so their sum is as small as possible. What is the sum?", options: ["2468", "3333", "3825", "4734", "6912"], answer: 2, explanation: "To minimize the sum, put the smallest digit pair in the thousands places (1 and 2), the next pair in the hundreds (3 and 4), then 5 and 6 in the tens and 7 and 8 in the units. The least sum is 1000(1+2)+100(3+4)+10(5+6)+(7+8)=3825.", hint: "Minimize the sum place by place: use the smallest available pair of digits in the thousands positions, then the next-smallest pair in the hundreds.", sourcePage: 2 },
-  { number: 12, points: 4, prompt: "Ms Green changes a rectangular pea bed into a square by increasing one side by 3 m. The strawberry bed becomes 15 m² smaller. What area did the pea bed have before?", options: ["5 m²", "9 m²", "10 m²", "15 m²", "18 m²"], answer: 2, explanation: "NEEDS_REVIEW: the garden layout and which dimensions change are shown in the source diagram.", hint: "Relate the 3 m side increase to the 15 m² area change using the shared garden dimensions.", sourcePage: 2 },
-  { number: 13, points: 4, prompt: "Barbara inserts three numbers into a grid so the first three sum to 100, the middle three to 200 and the last three to 300. What is the middle number?", options: ["50", "60", "70", "75", "100"], answer: 1, explanation: "NEEDS_REVIEW: the locations of 10, 130 and the three blanks in the grid must be read from the diagram.", hint: "Subtract the known values from each overlapping three-number sum and compare the resulting equations.", sourcePage: 2 },
-  { number: 14, points: 4, prompt: "The diagram shows a five-pointed star. How large is angle A?", options: ["35°", "42°", "51°", "65°", "109°"], answer: 2, explanation: "NEEDS_REVIEW: the star's marked angles are shown in the source diagram; the key indicates C.", hint: "Use the angle sums of the triangles formed by the star's intersections.", sourcePage: 2 },
-  { number: 15, points: 4, prompt: "Numbers 2, 5, 7 and 12 are placed on four cards, with the properties 'divisible by 7', 'prime', 'odd' and 'greater than 100' on the backs. Each number fails its own property's test. Which number is on the card marked 'greater than 100'?", options: ["2", "5", "7", "12", "It is impossible to state"], answer: 2, explanation: "The number 7 is divisible by 7, prime and odd, so it fails none of those three tests. It is not greater than 100, so it must be the number on that card.", hint: "Check which of the four properties each number fails. Which number fails only the 'greater than 100' test?", sourcePage: 2 },
-  { number: 16, points: 4, prompt: "How many natural numbers n make both n−24 and n+24 two-digit numbers?", options: ["42", "48", "51", "52", "66"], answer: 0, explanation: "For n−24 to be two-digit, n≥34. For n+24 to be two-digit, n≤75. There are 75−34+1=42 values.", hint: "Write the lower and upper bounds on n from each two-digit condition.", sourcePage: 2 },
-  { number: 17, points: 4, prompt: "In which expression can each 8 be replaced by a different set of equal positive numbers without changing the result?", options: ["(8+8)÷8+8", "8×(8+8)÷8", "8+8−8+8", "(8+8−8)×8", "(8+8−8)÷8"], answer: 4, explanation: "If each 8 is replaced by the same positive number x, choice E becomes (x+x−x)÷x=x÷x=1, whatever x is. Each other expression still depends on x, so its value changes in general.", hint: "Replace every 8 with the same positive variable x, simplify each choice, and look for one that is constant for all x>0.", sourcePage: 2 },
-  { number: 18, points: 4, prompt: "Three equally sized equilateral triangles are cut from the vertices of a large equilateral triangle of side 6 cm. Their combined perimeter equals that of the remaining grey hexagon. What is the side length of one small triangle?", options: ["1 cm", "1.2 cm", "1.25 cm", "1.5 cm", "2 cm"], answer: 3, explanation: "If each small side is x, their total perimeter is 9x. The hexagon perimeter is 18−3x. Setting these equal gives x=1.5 cm.", hint: "Express both the three triangles' total perimeter and the remaining hexagon perimeter in terms of x.", sourcePage: 2 },
-  { number: 19, points: 4, prompt: "Each mouse takes a different number of cheese pieces from 1 to 9. No mouse takes exactly twice as many as another. What is the maximum number of mice?", options: ["4", "9", "6", "7", "8"], answer: 2, explanation: "The forbidden pairs among 1–9 are 1–2, 2–4, 4–8, and 3–6. From the chain 1–2–4–8 we can choose at most two numbers, and from 3–6 at most one; 5, 7 and 9 can all be chosen. Thus at most 2+1+3=6 mice are possible, and {1,4,3,5,7,9} shows that six can be reached.", hint: "Group the numbers into chains of forbidden double-pairs, then choose a largest set with no neighboring pair in each chain.", sourcePage: 2 },
-  { number: 20, points: 4, prompt: "A 500 m moving walkway travels at 4 km/h. Anna walks on it at 6 km/h while Peter stands still. How much head start does Anna have when she leaves the walkway?", options: ["100 m", "160 m", "200 m", "250 m", "300 m"], answer: 4, explanation: "Anna travels at 10 km/h and takes 3 minutes to cover 500 m. Peter travels 200 m in that time, so Anna is 300 m ahead.", hint: "Find how long Anna takes to traverse the walkway, then calculate Peter's distance in the same time.", sourcePage: 2 },
-  { number: 21, points: 5, prompt: "A speaking magic square has side 8 cm. Each true sentence reduces every side by 2 cm; each lie doubles its perimeter. It makes four statements, two true and two false. What is the greatest possible perimeter afterwards?", options: ["28", "80", "88", "112", "120"], answer: 3, explanation: "Apply the two perimeter-doubling lies first: 32→64→128. The two truths then reduce the perimeter by 8 each, giving 112.", hint: "A true statement reduces the perimeter by 8; a lie doubles it. Test the best order of two of each.", sourcePage: 3 },
-  { number: 22, points: 5, prompt: "A die is rolled around its edge through the seven positions shown. Which two positions are occupied by the same face?", options: ["1 and 7", "1 and 6", "1 and 5", "2 and 7", "2 and 6"], answer: 1, explanation: "NEEDS_REVIEW: the die's rolling path and labelled positions are shown in the source diagram.", hint: "Track which face lies along each edge as the die rolls through the numbered positions.", sourcePage: 3 },
-  { number: 23, points: 5, prompt: "Five dice have different sizes. Adjacent dice differ in height by 2 cm, and the largest is as tall as the two smallest stacked together. What is the total height of all five dice?", options: ["6 cm", "14 cm", "22 cm", "44 cm", "50 cm"], answer: 4, explanation: "If the smallest is x, the heights are x, x+2, x+4, x+6, x+8. The largest equals the two smallest stacked: x+8=2x+2, so x=6 and the total is 50 cm.", hint: "Write the five heights as an arithmetic sequence and use the relation between the largest and two smallest.", sourcePage: 3 },
-  { number: 24, points: 5, prompt: "In square ABCD, M is the midpoint of AB and MN is perpendicular to AC. What is the ratio of the grey triangle's area to the square's area?", options: ["1:6", "1:5", "7:36", "3:16", "7:40"], answer: 3, explanation: "NEEDS_REVIEW: locate N and the grey triangle in the source diagram to verify the area ratio.", hint: "Use the midpoint and perpendicular conditions to determine the triangle's base and height within the square.", sourcePage: 3 },
-  { number: 25, points: 5, prompt: "At a tango event with at most 50 people, three quarters of the men are dancing with four fifths of the women. How many people are dancing?", options: ["20", "24", "30", "31", "32"], answer: 1, explanation: "Let the dancing men and women each be d. Then total men=4d/3 and total women=5d/4, so 31d/12≤50. The largest feasible multiple d=12 gives 24 dancers.", hint: "The number of dancing men equals the number of dancing women; express the total attendees in terms of that count.", sourcePage: 3 },
-  { number: 26, points: 5, prompt: "Numbers 1 to 12 are arranged in a circle so adjacent numbers differ by 2 or 3. Which pair must be adjacent?", options: ["4 and 6", "3 and 5", "7 and 9", "6 and 8", "5 and 8"], answer: 3, explanation: "Join numbers whose difference is 2 or 3. The degree-two vertices force 1 to join 3 and 4, 11 to join 8 and 9, and 12 to join 9 and 10. Since 9 is full, following the remaining links without closing a smaller loop forces 10–7–5–2–4 and then 6–8 to complete one cycle. For example, 1–3–6–8–11–9–12–10–7–5–2–4–1 is a valid arrangement, so 6 and 8 are adjacent.", hint: "Draw a link for every pair differing by 2 or 3. Start with numbers that have only two possible neighbours, then trace the connections needed to keep all twelve in one circle.", sourcePage: 3 },
-  { number: 27, points: 5, prompt: "Three-digit numbers become square numbers when the first digit is removed and when the last digit is removed. What is the sum of all such numbers?", options: ["1013", "1117", "1465", "1993", "2016"], answer: 3, explanation: "The two-digit squares are 16, 25, 36, 49, 64 and 81. Matching the tens digit of a square prefix to the tens digit of a square suffix gives 164, 364, 649 and 816. Their sum is 1993.", hint: "List the two-digit squares and match their tens digits: the first two digits and last two digits of each number must both be on the list.", sourcePage: 3 },
-  { number: 28, points: 5, prompt: "A book has 30 chapters of different lengths 1 through 30 pages. The first chapter starts on page 1. What is the greatest possible number of chapters that start on an odd-numbered page?", options: ["15", "18", "20", "21", "23"], answer: 4, explanation: "Each of the 15 odd-length chapters switches the starting-page parity, so in their order exactly 8 can start on odd pages. Each even-length chapter preserves parity, so at most all 15 of those chapters can also start on odd pages. The maximum is therefore 8+15=23. It is achieved by putting all 15 even lengths first, followed by all 15 odd lengths.", hint: "Odd chapter lengths switch the next start's parity; even lengths preserve it. Count separately how many odd-length and even-length chapters can start on odd pages.", sourcePage: 3 },
-  { number: 29, points: 5, prompt: "A string is folded in half three times and cut. Some resulting pieces have lengths 4 m and 9 m. Which total length is impossible?", options: ["52 m", "68 m", "72 m", "88 m", "All are possible"], answer: 2, explanation: "NEEDS_REVIEW: the cut location and fold orientation determine the piece-length pattern; the key indicates C.", hint: "Unfold the cut through each fold and express all piece lengths as multiples of the original folded segment.", sourcePage: 3 },
-  { number: 30, points: 5, prompt: "Three lines dissect a large triangle into four triangles and three quadrilaterals. The quadrilaterals' perimeters total 25 cm, the triangles' perimeters total 20 cm, and the large triangle's perimeter is 19 cm. What is the total length of the three dissecting lines?", options: ["11 cm", "12 cm", "13 cm", "15 cm", "16 cm"], answer: 2, explanation: "The pieces' perimeter sum is 45 cm. The outside boundary contributes 19 once and each internal cut is counted twice, so the cut lengths total (45−19)/2 = 13 cm.", hint: "Subtract the outside perimeter from the sum of all piece perimeters; each internal line is counted twice.", sourcePage: 3 }
+  {
+    number: 1,
+    points: 3,
+    prompt: "Three bars of chocolate cost €6. How much does one bar cost?",
+    options: [
+      "€1",
+      "€2",
+      "€3",
+      "€4",
+      "€5"
+    ],
+    answer: 1,
+    explanation: "€6 divided equally among three bars is €2 per bar.",
+    hint: "Divide the total price by the number of bars.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "1-0",
+        type: "text",
+        text: "€1",
+        imageAlt: "A option"
+      },
+      {
+        id: "1-1",
+        type: "text",
+        text: "€2",
+        imageAlt: "B option"
+      },
+      {
+        id: "1-2",
+        type: "text",
+        text: "€3",
+        imageAlt: "C option"
+      },
+      {
+        id: "1-3",
+        type: "text",
+        text: "€4",
+        imageAlt: "D option"
+      },
+      {
+        id: "1-4",
+        type: "text",
+        text: "€5",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 2,
+    points: 3,
+    prompt: "What is 11.11 − 1.111?",
+    options: [
+      "9.009",
+      "9.0909",
+      "9.99",
+      "9.999",
+      "10"
+    ],
+    answer: 3,
+    explanation: "Align decimal places: 11.110 − 1.111 = 9.999.",
+    hint: "Write both numbers to three decimal places before subtracting.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "2-0",
+        type: "text",
+        text: "9.009",
+        imageAlt: "A option"
+      },
+      {
+        id: "2-1",
+        type: "text",
+        text: "9.0909",
+        imageAlt: "B option"
+      },
+      {
+        id: "2-2",
+        type: "text",
+        text: "9.99",
+        imageAlt: "C option"
+      },
+      {
+        id: "2-3",
+        type: "text",
+        text: "9.999",
+        imageAlt: "D option"
+      },
+      {
+        id: "2-4",
+        type: "text",
+        text: "10",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 3,
+    points: 3,
+    prompt: "A wristwatch lies face-up. Its minute hand points northeast. How many minutes until it first points northwest?",
+    options: [
+      "45",
+      "40",
+      "30",
+      "20",
+      "15"
+    ],
+    answer: 0,
+    explanation: "Clockwise from northeast to northwest is three quarters of a turn, or 45 minutes.",
+    hint: "The minute hand moves clockwise; measure the clockwise angle between the two directions.",
+    sourcePage: 1,
+    image: "/assets/kangaroo/grades-7-8/kadett/2012/questions/editor-q-03.png",
+    optionContent: [
+      {
+        id: "3-0",
+        type: "text",
+        text: "45",
+        imageAlt: "A option"
+      },
+      {
+        id: "3-1",
+        type: "text",
+        text: "40",
+        imageAlt: "B option"
+      },
+      {
+        id: "3-2",
+        type: "text",
+        text: "30",
+        imageAlt: "C option"
+      },
+      {
+        id: "3-3",
+        type: "text",
+        text: "20",
+        imageAlt: "D option"
+      },
+      {
+        id: "3-4",
+        type: "text",
+        text: "15",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 4,
+    points: 3,
+    prompt: "Eva has scissors and five cardboard letters. She makes one straight cut through each letter. For which letter can she obtain the most pieces?",
+    options: [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    answer: 4,
+    explanation: "NEEDS_REVIEW: the five letter outlines determine how many pieces a single straight cut can make.",
+    hint: "A straight cut can create more pieces when it passes through more separate parts of the letter.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "4-0",
+        type: "text",
+        text: "A",
+        imageAlt: "A option"
+      },
+      {
+        id: "4-1",
+        type: "text",
+        text: "B",
+        imageAlt: "B option"
+      },
+      {
+        id: "4-2",
+        type: "text",
+        text: "C",
+        imageAlt: "C option"
+      },
+      {
+        id: "4-3",
+        type: "text",
+        text: "D",
+        imageAlt: "D option"
+      },
+      {
+        id: "4-4",
+        type: "text",
+        text: "E",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-7-8/kadett/2012/questions/editor-q-04.png"
+  },
+  {
+    number: 5,
+    points: 3,
+    prompt: "The digit sum of a six-digit number is 5. What is the product of its digits?",
+    options: [
+      "0",
+      "5",
+      "6",
+      "1 × 2 × 3 × 4 × 5 × 6",
+      "4"
+    ],
+    answer: 0,
+    explanation: "A six-digit number with digit sum 5 must contain at least one zero, so the product of its digits is 0.",
+    hint: "If all six digits were positive, their sum would be at least 6.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "5-0",
+        type: "text",
+        text: "0",
+        imageAlt: "A option"
+      },
+      {
+        id: "5-1",
+        type: "text",
+        text: "5",
+        imageAlt: "B option"
+      },
+      {
+        id: "5-2",
+        type: "text",
+        text: "6",
+        imageAlt: "C option"
+      },
+      {
+        id: "5-3",
+        type: "text",
+        text: "1 × 2 × 3 × 4 × 5 × 6",
+        imageAlt: "D option"
+      },
+      {
+        id: "5-4",
+        type: "text",
+        text: "4",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 6,
+    points: 3,
+    prompt: "A dragon has five heads. Each time one head is chopped off, five new heads grow back. If six heads are chopped off one after another, how many heads does the dragon end up with?",
+    options: [
+      "25",
+      "28",
+      "29",
+      "30",
+      "31"
+    ],
+    answer: 2,
+    explanation: "Each chopping changes the total by +4 heads. After six chops the total is 5 + 6×4 = 29.",
+    hint: "Each action removes one head and adds five, for a net increase of four.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "6-0",
+        type: "text",
+        text: "25",
+        imageAlt: "A option"
+      },
+      {
+        id: "6-1",
+        type: "text",
+        text: "28",
+        imageAlt: "B option"
+      },
+      {
+        id: "6-2",
+        type: "text",
+        text: "29",
+        imageAlt: "C option"
+      },
+      {
+        id: "6-3",
+        type: "text",
+        text: "30",
+        imageAlt: "D option"
+      },
+      {
+        id: "6-4",
+        type: "text",
+        text: "31",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 7,
+    points: 3,
+    prompt: "Nine paths in a park are each 100 m long. Anna walks from A to B without using a path twice. What is the longest distance she can walk?",
+    options: [
+      "900 m",
+      "800 m",
+      "700 m",
+      "500 m",
+      "400 m"
+    ],
+    answer: 2,
+    explanation: "NEEDS_REVIEW: the nine-path network between A and B is visual.",
+    hint: "Find a trail from A to B that uses as many distinct edges as possible.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "7-0",
+        type: "text",
+        text: "900 m",
+        imageAlt: "A option"
+      },
+      {
+        id: "7-1",
+        type: "text",
+        text: "800 m",
+        imageAlt: "B option"
+      },
+      {
+        id: "7-2",
+        type: "text",
+        text: "700 m",
+        imageAlt: "C option"
+      },
+      {
+        id: "7-3",
+        type: "text",
+        text: "500 m",
+        imageAlt: "D option"
+      },
+      {
+        id: "7-4",
+        type: "text",
+        text: "400 m",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-7-8/kadett/2012/questions/editor-q-07.png"
+  },
+  {
+    number: 8,
+    points: 3,
+    prompt: "One vertex of each of two triangles is connected by a straight segment that does not cut either triangle into two parts. In how many ways is this possible?",
+    options: [
+      "1",
+      "2",
+      "3",
+      "4",
+      "More than 4"
+    ],
+    answer: 3,
+    explanation: "NEEDS_REVIEW: the relative positions of the triangles and their vertices are shown in the source diagram.",
+    hint: "Count vertex pairs whose connecting segment leaves both triangles on the same side of the segment.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "8-0",
+        type: "text",
+        text: "1",
+        imageAlt: "A option"
+      },
+      {
+        id: "8-1",
+        type: "text",
+        text: "2",
+        imageAlt: "B option"
+      },
+      {
+        id: "8-2",
+        type: "text",
+        text: "3",
+        imageAlt: "C option"
+      },
+      {
+        id: "8-3",
+        type: "text",
+        text: "4",
+        imageAlt: "D option"
+      },
+      {
+        id: "8-4",
+        type: "text",
+        text: "More than 4",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-7-8/kadett/2012/questions/editor-q-08.png"
+  },
+  {
+    number: 9,
+    points: 3,
+    prompt: "Werner folds paper as shown and makes two straight cuts. Which of the five shapes cannot result when the paper is unfolded?",
+    options: [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    answer: 3,
+    explanation: "NEEDS_REVIEW: the fold, cuts and five unfolded shapes are visual.",
+    hint: "Reflect each cut through both folds and compare the resulting pattern with the options.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "9-0",
+        type: "text",
+        text: "A",
+        imageAlt: "A option"
+      },
+      {
+        id: "9-1",
+        type: "text",
+        text: "B",
+        imageAlt: "B option"
+      },
+      {
+        id: "9-2",
+        type: "text",
+        text: "C",
+        imageAlt: "C option"
+      },
+      {
+        id: "9-3",
+        type: "text",
+        text: "D",
+        imageAlt: "D option"
+      },
+      {
+        id: "9-4",
+        type: "text",
+        text: "E",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-7-8/kadett/2012/questions/editor-q-09.png",
+    imageExtra: "/assets/kangaroo/grades-7-8/kadett/2012/questions/editor-q-09-extra.png"
+  },
+  {
+    number: 10,
+    points: 3,
+    prompt: "A cuboid consists of three differently coloured building blocks, each made from four cubes. What does the white block look like?",
+    options: [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    answer: 3,
+    explanation: "NEEDS_REVIEW: the cuboid and five candidate block shapes are visual.",
+    hint: "Subtract the visible red and grey blocks from the cuboid's full 3D arrangement.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "10-0",
+        type: "text",
+        text: "A",
+        imageAlt: "A option"
+      },
+      {
+        id: "10-1",
+        type: "text",
+        text: "B",
+        imageAlt: "B option"
+      },
+      {
+        id: "10-2",
+        type: "text",
+        text: "C",
+        imageAlt: "C option"
+      },
+      {
+        id: "10-3",
+        type: "text",
+        text: "D",
+        imageAlt: "D option"
+      },
+      {
+        id: "10-4",
+        type: "text",
+        text: "E",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-7-8/kadett/2012/questions/editor-q-10.png",
+    imageExtra: "/assets/kangaroo/grades-7-8/kadett/2012/questions/editor-q-10-extra.png"
+  },
+  {
+    number: 11,
+    points: 4,
+    prompt: "Arrange the digits 1 through 8 into two four-digit numbers, using each once, so their sum is as small as possible. What is the sum?",
+    options: [
+      "2468",
+      "3333",
+      "3825",
+      "4734",
+      "6912"
+    ],
+    answer: 2,
+    explanation: "To minimize the sum, put the smallest digit pair in the thousands places (1 and 2), the next pair in the hundreds (3 and 4), then 5 and 6 in the tens and 7 and 8 in the units. The least sum is 1000(1+2)+100(3+4)+10(5+6)+(7+8)=3825.",
+    hint: "Minimize the sum place by place: use the smallest available pair of digits in the thousands positions, then the next-smallest pair in the hundreds.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "11-0",
+        type: "text",
+        text: "2468",
+        imageAlt: "A option"
+      },
+      {
+        id: "11-1",
+        type: "text",
+        text: "3333",
+        imageAlt: "B option"
+      },
+      {
+        id: "11-2",
+        type: "text",
+        text: "3825",
+        imageAlt: "C option"
+      },
+      {
+        id: "11-3",
+        type: "text",
+        text: "4734",
+        imageAlt: "D option"
+      },
+      {
+        id: "11-4",
+        type: "text",
+        text: "6912",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 12,
+    points: 4,
+    prompt: "Ms Green changes a rectangular pea bed into a square by increasing one side by 3 m. The strawberry bed becomes 15 m² smaller. What area did the pea bed have before?",
+    options: [
+      "5 m²",
+      "9 m²",
+      "10 m²",
+      "15 m²",
+      "18 m²"
+    ],
+    answer: 2,
+    explanation: "NEEDS_REVIEW: the garden layout and which dimensions change are shown in the source diagram.",
+    hint: "Relate the 3 m side increase to the 15 m² area change using the shared garden dimensions.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "12-0",
+        type: "text",
+        text: "5 m²",
+        imageAlt: "A option"
+      },
+      {
+        id: "12-1",
+        type: "text",
+        text: "9 m²",
+        imageAlt: "B option"
+      },
+      {
+        id: "12-2",
+        type: "text",
+        text: "10 m²",
+        imageAlt: "C option"
+      },
+      {
+        id: "12-3",
+        type: "text",
+        text: "15 m²",
+        imageAlt: "D option"
+      },
+      {
+        id: "12-4",
+        type: "text",
+        text: "18 m²",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-7-8/kadett/2012/questions/editor-q-12.png"
+  },
+  {
+    number: 13,
+    points: 4,
+    prompt: "Barbara inserts three numbers into a grid so the first three sum to 100, the middle three to 200 and the last three to 300. What is the middle number?",
+    options: [
+      "50",
+      "60",
+      "70",
+      "75",
+      "100"
+    ],
+    answer: 1,
+    explanation: "NEEDS_REVIEW: the locations of 10, 130 and the three blanks in the grid must be read from the diagram.",
+    hint: "Subtract the known values from each overlapping three-number sum and compare the resulting equations.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "13-0",
+        type: "text",
+        text: "50",
+        imageAlt: "A option"
+      },
+      {
+        id: "13-1",
+        type: "text",
+        text: "60",
+        imageAlt: "B option"
+      },
+      {
+        id: "13-2",
+        type: "text",
+        text: "70",
+        imageAlt: "C option"
+      },
+      {
+        id: "13-3",
+        type: "text",
+        text: "75",
+        imageAlt: "D option"
+      },
+      {
+        id: "13-4",
+        type: "text",
+        text: "100",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-7-8/kadett/2012/questions/editor-q-13.png"
+  },
+  {
+    number: 14,
+    points: 4,
+    prompt: "The diagram shows a five-pointed star. How large is angle A?",
+    options: [
+      "35°",
+      "42°",
+      "51°",
+      "65°",
+      "109°"
+    ],
+    answer: 2,
+    explanation: "NEEDS_REVIEW: the star's marked angles are shown in the source diagram; the key indicates C.",
+    hint: "Use the angle sums of the triangles formed by the star's intersections.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "14-0",
+        type: "text",
+        text: "35°",
+        imageAlt: "A option"
+      },
+      {
+        id: "14-1",
+        type: "text",
+        text: "42°",
+        imageAlt: "B option"
+      },
+      {
+        id: "14-2",
+        type: "text",
+        text: "51°",
+        imageAlt: "C option"
+      },
+      {
+        id: "14-3",
+        type: "text",
+        text: "65°",
+        imageAlt: "D option"
+      },
+      {
+        id: "14-4",
+        type: "text",
+        text: "109°",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-7-8/kadett/2012/questions/editor-q-14.png"
+  },
+  {
+    number: 15,
+    points: 4,
+    prompt: "Numbers 2, 5, 7 and 12 are placed on four cards, with the properties 'divisible by 7', 'prime', 'odd' and 'greater than 100' on the backs. Each number fails its own property's test. Which number is on the card marked 'greater than 100'?",
+    options: [
+      "2",
+      "5",
+      "7",
+      "12",
+      "It is impossible to state"
+    ],
+    answer: 2,
+    explanation: "The number 7 is divisible by 7, prime and odd, so it fails none of those three tests. It is not greater than 100, so it must be the number on that card.",
+    hint: "Check which of the four properties each number fails. Which number fails only the 'greater than 100' test?",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "15-0",
+        type: "text",
+        text: "2",
+        imageAlt: "A option"
+      },
+      {
+        id: "15-1",
+        type: "text",
+        text: "5",
+        imageAlt: "B option"
+      },
+      {
+        id: "15-2",
+        type: "text",
+        text: "7",
+        imageAlt: "C option"
+      },
+      {
+        id: "15-3",
+        type: "text",
+        text: "12",
+        imageAlt: "D option"
+      },
+      {
+        id: "15-4",
+        type: "text",
+        text: "It is impossible to state",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 16,
+    points: 4,
+    prompt: "How many natural numbers n make both n−24 and n+24 two-digit numbers?",
+    options: [
+      "42",
+      "48",
+      "51",
+      "52",
+      "66"
+    ],
+    answer: 0,
+    explanation: "For n−24 to be two-digit, n≥34. For n+24 to be two-digit, n≤75. There are 75−34+1=42 values.",
+    hint: "Write the lower and upper bounds on n from each two-digit condition.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "16-0",
+        type: "text",
+        text: "42",
+        imageAlt: "A option"
+      },
+      {
+        id: "16-1",
+        type: "text",
+        text: "48",
+        imageAlt: "B option"
+      },
+      {
+        id: "16-2",
+        type: "text",
+        text: "51",
+        imageAlt: "C option"
+      },
+      {
+        id: "16-3",
+        type: "text",
+        text: "52",
+        imageAlt: "D option"
+      },
+      {
+        id: "16-4",
+        type: "text",
+        text: "66",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 17,
+    points: 4,
+    prompt: "In which expression can each 8 be replaced by a different set of equal positive numbers without changing the result?",
+    options: [
+      "(8+8)÷8+8",
+      "8×(8+8)÷8",
+      "8+8−8+8",
+      "(8+8−8)×8",
+      "(8+8−8)÷8"
+    ],
+    answer: 4,
+    explanation: "If each 8 is replaced by the same positive number x, choice E becomes (x+x−x)÷x=x÷x=1, whatever x is. Each other expression still depends on x, so its value changes in general.",
+    hint: "Replace every 8 with the same positive variable x, simplify each choice, and look for one that is constant for all x>0.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "17-0",
+        type: "text",
+        text: "(8+8)÷8+8",
+        imageAlt: "A option"
+      },
+      {
+        id: "17-1",
+        type: "text",
+        text: "8×(8+8)÷8",
+        imageAlt: "B option"
+      },
+      {
+        id: "17-2",
+        type: "text",
+        text: "8+8−8+8",
+        imageAlt: "C option"
+      },
+      {
+        id: "17-3",
+        type: "text",
+        text: "(8+8−8)×8",
+        imageAlt: "D option"
+      },
+      {
+        id: "17-4",
+        type: "text",
+        text: "(8+8−8)÷8",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 18,
+    points: 4,
+    prompt: "Three equally sized equilateral triangles are cut from the vertices of a large equilateral triangle of side 6 cm. Their combined perimeter equals that of the remaining grey hexagon. What is the side length of one small triangle?",
+    options: [
+      "1 cm",
+      "1.2 cm",
+      "1.25 cm",
+      "1.5 cm",
+      "2 cm"
+    ],
+    answer: 3,
+    explanation: "If each small side is x, their total perimeter is 9x. The hexagon perimeter is 18−3x. Setting these equal gives x=1.5 cm.",
+    hint: "Express both the three triangles' total perimeter and the remaining hexagon perimeter in terms of x.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "18-0",
+        type: "text",
+        text: "1 cm",
+        imageAlt: "A option"
+      },
+      {
+        id: "18-1",
+        type: "text",
+        text: "1.2 cm",
+        imageAlt: "B option"
+      },
+      {
+        id: "18-2",
+        type: "text",
+        text: "1.25 cm",
+        imageAlt: "C option"
+      },
+      {
+        id: "18-3",
+        type: "text",
+        text: "1.5 cm",
+        imageAlt: "D option"
+      },
+      {
+        id: "18-4",
+        type: "text",
+        text: "2 cm",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-7-8/kadett/2012/questions/editor-q-18.png"
+  },
+  {
+    number: 19,
+    points: 4,
+    prompt: "Each mouse takes a different number of cheese pieces from 1 to 9. No mouse takes exactly twice as many as another. What is the maximum number of mice?",
+    options: [
+      "4",
+      "9",
+      "6",
+      "7",
+      "8"
+    ],
+    answer: 2,
+    explanation: "The forbidden pairs among 1–9 are 1–2, 2–4, 4–8, and 3–6. From the chain 1–2–4–8 we can choose at most two numbers, and from 3–6 at most one; 5, 7 and 9 can all be chosen. Thus at most 2+1+3=6 mice are possible, and {1,4,3,5,7,9} shows that six can be reached.",
+    hint: "Group the numbers into chains of forbidden double-pairs, then choose a largest set with no neighboring pair in each chain.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "19-0",
+        type: "text",
+        text: "4",
+        imageAlt: "A option"
+      },
+      {
+        id: "19-1",
+        type: "text",
+        text: "9",
+        imageAlt: "B option"
+      },
+      {
+        id: "19-2",
+        type: "text",
+        text: "6",
+        imageAlt: "C option"
+      },
+      {
+        id: "19-3",
+        type: "text",
+        text: "7",
+        imageAlt: "D option"
+      },
+      {
+        id: "19-4",
+        type: "text",
+        text: "8",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 20,
+    points: 4,
+    prompt: "A 500 m moving walkway travels at 4 km/h. Anna walks on it at 6 km/h while Peter stands still. How much head start does Anna have when she leaves the walkway?",
+    options: [
+      "100 m",
+      "160 m",
+      "200 m",
+      "250 m",
+      "300 m"
+    ],
+    answer: 4,
+    explanation: "Anna travels at 10 km/h and takes 3 minutes to cover 500 m. Peter travels 200 m in that time, so Anna is 300 m ahead.",
+    hint: "Find how long Anna takes to traverse the walkway, then calculate Peter's distance in the same time.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "20-0",
+        type: "text",
+        text: "100 m",
+        imageAlt: "A option"
+      },
+      {
+        id: "20-1",
+        type: "text",
+        text: "160 m",
+        imageAlt: "B option"
+      },
+      {
+        id: "20-2",
+        type: "text",
+        text: "200 m",
+        imageAlt: "C option"
+      },
+      {
+        id: "20-3",
+        type: "text",
+        text: "250 m",
+        imageAlt: "D option"
+      },
+      {
+        id: "20-4",
+        type: "text",
+        text: "300 m",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 21,
+    points: 5,
+    prompt: "A speaking magic square has side 8 cm. Each true sentence reduces every side by 2 cm; each lie doubles its perimeter. It makes four statements, two true and two false. What is the greatest possible perimeter afterwards?",
+    options: [
+      "28",
+      "80",
+      "88",
+      "112",
+      "120"
+    ],
+    answer: 3,
+    explanation: "Apply the two perimeter-doubling lies first: 32→64→128. The two truths then reduce the perimeter by 8 each, giving 112.",
+    hint: "A true statement reduces the perimeter by 8; a lie doubles it. Test the best order of two of each.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "21-0",
+        type: "text",
+        text: "28",
+        imageAlt: "A option"
+      },
+      {
+        id: "21-1",
+        type: "text",
+        text: "80",
+        imageAlt: "B option"
+      },
+      {
+        id: "21-2",
+        type: "text",
+        text: "88",
+        imageAlt: "C option"
+      },
+      {
+        id: "21-3",
+        type: "text",
+        text: "112",
+        imageAlt: "D option"
+      },
+      {
+        id: "21-4",
+        type: "text",
+        text: "120",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 22,
+    points: 5,
+    prompt: "A die is rolled around its edge through the seven positions shown. Which two positions are occupied by the same face?",
+    options: [
+      "1 and 7",
+      "1 and 6",
+      "1 and 5",
+      "2 and 7",
+      "2 and 6"
+    ],
+    answer: 1,
+    explanation: "NEEDS_REVIEW: the die's rolling path and labelled positions are shown in the source diagram.",
+    hint: "Track which face lies along each edge as the die rolls through the numbered positions.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "22-0",
+        type: "text",
+        text: "1 and 7",
+        imageAlt: "A option"
+      },
+      {
+        id: "22-1",
+        type: "text",
+        text: "1 and 6",
+        imageAlt: "B option"
+      },
+      {
+        id: "22-2",
+        type: "text",
+        text: "1 and 5",
+        imageAlt: "C option"
+      },
+      {
+        id: "22-3",
+        type: "text",
+        text: "2 and 7",
+        imageAlt: "D option"
+      },
+      {
+        id: "22-4",
+        type: "text",
+        text: "2 and 6",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-7-8/kadett/2012/questions/editor-q-22.png"
+  },
+  {
+    number: 23,
+    points: 5,
+    prompt: "Five dice have different sizes. Adjacent dice differ in height by 2 cm, and the largest is as tall as the two smallest stacked together. What is the total height of all five dice?",
+    options: [
+      "6 cm",
+      "14 cm",
+      "22 cm",
+      "44 cm",
+      "50 cm"
+    ],
+    answer: 4,
+    explanation: "If the smallest is x, the heights are x, x+2, x+4, x+6, x+8. The largest equals the two smallest stacked: x+8=2x+2, so x=6 and the total is 50 cm.",
+    hint: "Write the five heights as an arithmetic sequence and use the relation between the largest and two smallest.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "23-0",
+        type: "text",
+        text: "6 cm",
+        imageAlt: "A option"
+      },
+      {
+        id: "23-1",
+        type: "text",
+        text: "14 cm",
+        imageAlt: "B option"
+      },
+      {
+        id: "23-2",
+        type: "text",
+        text: "22 cm",
+        imageAlt: "C option"
+      },
+      {
+        id: "23-3",
+        type: "text",
+        text: "44 cm",
+        imageAlt: "D option"
+      },
+      {
+        id: "23-4",
+        type: "text",
+        text: "50 cm",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 24,
+    points: 5,
+    prompt: "In square ABCD, M is the midpoint of AB and MN is perpendicular to AC. What is the ratio of the grey triangle's area to the square's area?",
+    options: [
+      "1:6",
+      "1:5",
+      "7:36",
+      "3:16",
+      "7:40"
+    ],
+    answer: 3,
+    explanation: "NEEDS_REVIEW: locate N and the grey triangle in the source diagram to verify the area ratio.",
+    hint: "Use the midpoint and perpendicular conditions to determine the triangle's base and height within the square.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "24-0",
+        type: "text",
+        text: "1:6",
+        imageAlt: "A option"
+      },
+      {
+        id: "24-1",
+        type: "text",
+        text: "1:5",
+        imageAlt: "B option"
+      },
+      {
+        id: "24-2",
+        type: "text",
+        text: "7:36",
+        imageAlt: "C option"
+      },
+      {
+        id: "24-3",
+        type: "text",
+        text: "3:16",
+        imageAlt: "D option"
+      },
+      {
+        id: "24-4",
+        type: "text",
+        text: "7:40",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-7-8/kadett/2012/questions/editor-q-24.png"
+  },
+  {
+    number: 25,
+    points: 5,
+    prompt: "At a tango event with at most 50 people, three quarters of the men are dancing with four fifths of the women. How many people are dancing?",
+    options: [
+      "20",
+      "24",
+      "30",
+      "31",
+      "32"
+    ],
+    answer: 1,
+    explanation: "Let the dancing men and women each be d. Then total men=4d/3 and total women=5d/4, so 31d/12≤50. The largest feasible multiple d=12 gives 24 dancers.",
+    hint: "The number of dancing men equals the number of dancing women; express the total attendees in terms of that count.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "25-0",
+        type: "text",
+        text: "20",
+        imageAlt: "A option"
+      },
+      {
+        id: "25-1",
+        type: "text",
+        text: "24",
+        imageAlt: "B option"
+      },
+      {
+        id: "25-2",
+        type: "text",
+        text: "30",
+        imageAlt: "C option"
+      },
+      {
+        id: "25-3",
+        type: "text",
+        text: "31",
+        imageAlt: "D option"
+      },
+      {
+        id: "25-4",
+        type: "text",
+        text: "32",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 26,
+    points: 5,
+    prompt: "Numbers 1 to 12 are arranged in a circle so adjacent numbers differ by 2 or 3. Which pair must be adjacent?",
+    options: [
+      "4 and 6",
+      "3 and 5",
+      "7 and 9",
+      "6 and 8",
+      "5 and 8"
+    ],
+    answer: 3,
+    explanation: "Join numbers whose difference is 2 or 3. The degree-two vertices force 1 to join 3 and 4, 11 to join 8 and 9, and 12 to join 9 and 10. Since 9 is full, following the remaining links without closing a smaller loop forces 10–7–5–2–4 and then 6–8 to complete one cycle. For example, 1–3–6–8–11–9–12–10–7–5–2–4–1 is a valid arrangement, so 6 and 8 are adjacent.",
+    hint: "Draw a link for every pair differing by 2 or 3. Start with numbers that have only two possible neighbours, then trace the connections needed to keep all twelve in one circle.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "26-0",
+        type: "text",
+        text: "4 and 6",
+        imageAlt: "A option"
+      },
+      {
+        id: "26-1",
+        type: "text",
+        text: "3 and 5",
+        imageAlt: "B option"
+      },
+      {
+        id: "26-2",
+        type: "text",
+        text: "7 and 9",
+        imageAlt: "C option"
+      },
+      {
+        id: "26-3",
+        type: "text",
+        text: "6 and 8",
+        imageAlt: "D option"
+      },
+      {
+        id: "26-4",
+        type: "text",
+        text: "5 and 8",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 27,
+    points: 5,
+    prompt: "Three-digit numbers become square numbers when the first digit is removed and when the last digit is removed. What is the sum of all such numbers?",
+    options: [
+      "1013",
+      "1117",
+      "1465",
+      "1993",
+      "2016"
+    ],
+    answer: 3,
+    explanation: "The two-digit squares are 16, 25, 36, 49, 64 and 81. Matching the tens digit of a square prefix to the tens digit of a square suffix gives 164, 364, 649 and 816. Their sum is 1993.",
+    hint: "List the two-digit squares and match their tens digits: the first two digits and last two digits of each number must both be on the list.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "27-0",
+        type: "text",
+        text: "1013",
+        imageAlt: "A option"
+      },
+      {
+        id: "27-1",
+        type: "text",
+        text: "1117",
+        imageAlt: "B option"
+      },
+      {
+        id: "27-2",
+        type: "text",
+        text: "1465",
+        imageAlt: "C option"
+      },
+      {
+        id: "27-3",
+        type: "text",
+        text: "1993",
+        imageAlt: "D option"
+      },
+      {
+        id: "27-4",
+        type: "text",
+        text: "2016",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 28,
+    points: 5,
+    prompt: "A book has 30 chapters of different lengths 1 through 30 pages. The first chapter starts on page 1. What is the greatest possible number of chapters that start on an odd-numbered page?",
+    options: [
+      "15",
+      "18",
+      "20",
+      "21",
+      "23"
+    ],
+    answer: 4,
+    explanation: "Each of the 15 odd-length chapters switches the starting-page parity, so in their order exactly 8 can start on odd pages. Each even-length chapter preserves parity, so at most all 15 of those chapters can also start on odd pages. The maximum is therefore 8+15=23. It is achieved by putting all 15 even lengths first, followed by all 15 odd lengths.",
+    hint: "Odd chapter lengths switch the next start's parity; even lengths preserve it. Count separately how many odd-length and even-length chapters can start on odd pages.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "28-0",
+        type: "text",
+        text: "15",
+        imageAlt: "A option"
+      },
+      {
+        id: "28-1",
+        type: "text",
+        text: "18",
+        imageAlt: "B option"
+      },
+      {
+        id: "28-2",
+        type: "text",
+        text: "20",
+        imageAlt: "C option"
+      },
+      {
+        id: "28-3",
+        type: "text",
+        text: "21",
+        imageAlt: "D option"
+      },
+      {
+        id: "28-4",
+        type: "text",
+        text: "23",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 29,
+    points: 5,
+    prompt: "A string is folded in half three times and cut. Some resulting pieces have lengths 4 m and 9 m. Which total length is impossible?",
+    options: [
+      "52 m",
+      "68 m",
+      "72 m",
+      "88 m",
+      "All are possible"
+    ],
+    answer: 2,
+    explanation: "NEEDS_REVIEW: the cut location and fold orientation determine the piece-length pattern; the key indicates C.",
+    hint: "Unfold the cut through each fold and express all piece lengths as multiples of the original folded segment.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "29-0",
+        type: "text",
+        text: "52 m",
+        imageAlt: "A option"
+      },
+      {
+        id: "29-1",
+        type: "text",
+        text: "68 m",
+        imageAlt: "B option"
+      },
+      {
+        id: "29-2",
+        type: "text",
+        text: "72 m",
+        imageAlt: "C option"
+      },
+      {
+        id: "29-3",
+        type: "text",
+        text: "88 m",
+        imageAlt: "D option"
+      },
+      {
+        id: "29-4",
+        type: "text",
+        text: "All are possible",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-7-8/kadett/2012/questions/editor-q-29.png"
+  },
+  {
+    number: 30,
+    points: 5,
+    prompt: "Three lines dissect a large triangle into four triangles and three quadrilaterals. The quadrilaterals' perimeters total 25 cm, the triangles' perimeters total 20 cm, and the large triangle's perimeter is 19 cm. What is the total length of the three dissecting lines?",
+    options: [
+      "11 cm",
+      "12 cm",
+      "13 cm",
+      "15 cm",
+      "16 cm"
+    ],
+    answer: 2,
+    explanation: "The pieces' perimeter sum is 45 cm. The outside boundary contributes 19 once and each internal cut is counted twice, so the cut lengths total (45−19)/2 = 13 cm.",
+    hint: "Subtract the outside perimeter from the sum of all piece perimeters; each internal line is counted twice.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "30-0",
+        type: "text",
+        text: "11 cm",
+        imageAlt: "A option"
+      },
+      {
+        id: "30-1",
+        type: "text",
+        text: "12 cm",
+        imageAlt: "B option"
+      },
+      {
+        id: "30-2",
+        type: "text",
+        text: "13 cm",
+        imageAlt: "C option"
+      },
+      {
+        id: "30-3",
+        type: "text",
+        text: "15 cm",
+        imageAlt: "D option"
+      },
+      {
+        id: "30-4",
+        type: "text",
+        text: "16 cm",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-7-8/kadett/2012/questions/editor-q-30.png"
+  }
 ];
 
 const sections2012Kadett: Section[] = [
-  { points: 3, label: "Section 1", range: "Questions 1–10", accent: "coral" },
-  { points: 4, label: "Section 2", range: "Questions 11–20", accent: "blue" },
-  { points: 5, label: "Section 3", range: "Questions 21–30", accent: "purple" }
+  {
+    points: 3,
+    label: "Section 1",
+    range: "Questions 1–10",
+    accent: "coral"
+  },
+  {
+    points: 4,
+    label: "Section 2",
+    range: "Questions 11–20",
+    accent: "blue"
+  },
+  {
+    points: 5,
+    label: "Section 3",
+    range: "Questions 21–30",
+    accent: "purple"
+  }
 ];
 
 export const edition2012Kadett: QuestionSet = {
@@ -49,5 +1490,5 @@ export const edition2012Kadett: QuestionSet = {
   timeLimitMinutes: 75,
   sourceUrl: "https://www.matematica.pt/en/docs/kangaroo/enunciados/2012/2012_Kadett.pdf",
   questions: questions2012Kadett,
-  sections: sections2012Kadett
+  sections: sections2012Kadett,
 };

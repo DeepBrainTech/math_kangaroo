@@ -1,42 +1,1480 @@
 import type { Question, QuestionSet, Section } from "../../../types";
 
 const questions2010Kadett: Question[] = [
-  { number: 1, points: 3, prompt: "How much is 12 + 23 + 34 + 45 + 56 + 67 + 78 + 89?", options: ["389", "396", "404", "405", "Another number"], answer: 2, explanation: "Adding the eight terms gives 404.", hint: "Pair the first and last terms, then add the four equal pair sums.", sourcePage: 1 },
-  { number: 2, points: 3, prompt: "How many lines of symmetry does the pictured figure have?", options: ["0", "1", "2", "4", "Infinitely many"], answer: 2, explanation: "NEEDS_REVIEW: the figure is required to count its symmetry axes.", hint: "Imagine folding the figure along each candidate line and check whether both halves match.", sourcePage: 1 },
-  { number: 3, points: 3, prompt: "A fly has 6 legs and a spider 8. Two flies and three spiders have as many legs as 10 birds and how many cats?", options: ["2 cats", "3 cats", "4 cats", "5 cats", "6 cats"], answer: 2, explanation: "The flies and spiders have 2×6 + 3×8 = 36 legs. Ten birds have 20, leaving 16 legs, or four cats.", hint: "Subtract the birds' legs from the flies' and spiders' legs, then divide by four.", sourcePage: 1 },
-  { number: 4, points: 3, prompt: "Small cube-shaped game boxes are packed eight at a time into a larger cube. How many small boxes are on the bottom level?", options: ["1", "2", "3", "4", "5"], answer: 3, explanation: "Eight boxes form a 2×2×2 cube, so the bottom layer has four boxes.", hint: "Arrange the eight boxes as a cube with two boxes along each edge.", sourcePage: 1 },
-  { number: 5, points: 3, prompt: "What is the perimeter of the pictured figure?", options: ["3a + 4b", "3a + 8b", "6a + 4b", "6a + 6b", "6a + 8b"], answer: 4, explanation: "NEEDS_REVIEW: the figure's labelled edge lengths are visual.", hint: "Count how many exposed boundary segments have length a and length b.", sourcePage: 1 },
-  { number: 6, points: 3, prompt: "Martina connects some corner points of a regular hexagon. Which figure cannot be formed?", options: ["Trapezium", "Right-angled triangle", "Square", "Kite", "Obtuse triangle"], answer: 2, explanation: "The six vertices are equally spaced at 60° intervals on a circle. A square inscribed in a circle has its vertices 90° apart, but no two hexagon vertices are 90° apart. So the square cannot be made from the hexagon's corners; the other listed shapes can.", hint: "An inscribed square needs four vertices spaced 90° apart around its circle. Compare that with the 60° spacing of the regular hexagon's vertices.", sourcePage: 1 },
-  { number: 7, points: 3, prompt: "Seven consecutive whole numbers are written down. The smallest three sum to 33. What is the sum of the largest three?", options: ["39", "37", "42", "48", "45"], answer: 4, explanation: "The first three are 10, 11 and 12, so all seven are 10 through 16. The largest three sum to 14 + 15 + 16 = 45.", hint: "Use the sum of the first three consecutive numbers to find the sequence's starting value.", sourcePage: 1 },
-  { number: 8, points: 3, prompt: "Herbert made 53 cuts in some firewood and ended with 72 pieces. How many pieces of wood did he start with?", options: ["17", "18", "19", "20", "21"], answer: 2, explanation: "Each cut increases the number of pieces by one, so the starting number was 72 - 53 = 19.", hint: "A cut increases the total piece count by exactly one.", sourcePage: 1 },
-  { number: 9, points: 3, prompt: "Seven blocks are in a box. They can be slid around to make room for another block. What is the minimum number of blocks that must be moved?", options: ["2", "3", "4", "5", "It is not possible"], answer: 1, explanation: "NEEDS_REVIEW: the initial block arrangement and empty space are shown in the source picture.", hint: "Find a sequence of slides that creates one block-sized opening while moving as few blocks as possible.", sourcePage: 1 },
-  { number: 10, points: 3, prompt: "The sum of the first 100 positive even numbers is reduced by the sum of the first 100 positive odd numbers. What is the result?", options: ["0", "50", "100", "10100", "15150"], answer: 1, explanation: "The even sum is 2(1+…+100)=10100, and the odd sum is 100²=10000. Their difference is 100, so C.", hint: "Compare the sums 2+4+…+200 and 1+3+…+199.", sourcePage: 1 },
-  { number: 11, points: 4, prompt: "Grandma may have 3, 5 or all 6 grandchildren visit. Into how many equal pieces must she cut the cake to be sure each present grandchild gets the same amount?", options: ["12", "15", "18", "24", "30"], answer: 4, explanation: "The number of pieces must be divisible by 3, 5 and 6. Their least common multiple is 30.", hint: "Find the least common multiple of the possible numbers of grandchildren.", sourcePage: 1 },
-  { number: 12, points: 4, prompt: "What is the smallest two-digit number that cannot be made by adding three different one-digit natural numbers?", options: ["10", "15", "23", "25", "28"], answer: 3, explanation: "The largest sum of three different one-digit numbers is 9+8+7=24, and every two-digit total from 10 to 24 can be formed. Thus 25 is the first impossible value.", hint: "Find the largest possible sum using three distinct one-digit numbers.", sourcePage: 1 },
-  { number: 13, points: 4, prompt: "In quadrilateral ABCD, AD=BC, angle DAC=50°, angle DCA=65° and angle ACB=70°. What is angle ABC?", options: ["50°", "55°", "60°", "65°", "It is not clear"], answer: 1, explanation: "In triangle ADC, the third angle is 180°−50°−65°=65°, so AD=AC. Since AD=BC, AC=BC as well. Triangle ABC is isosceles with base angles at A and B equal; with angle C=70°, each is (180°−70°)/2=55°.", hint: "Find the third angle of triangle ADC. Equal opposite angles give an equality of sides that transfers to triangle ABC.", sourcePage: 1 },
-  { number: 14, points: 4, prompt: "Cathy takes 18 minutes to sew three short strips together into one long strip. How long does she need to make a piece consisting of six short strips?", options: ["27 minutes", "30 minutes", "36 minutes", "45 minutes", "60 minutes"], answer: 3, explanation: "Three strips require two seams, so each seam takes 9 minutes. Six strips require five seams: 5×9=45 minutes.", hint: "The number of seams is one less than the number of strips.", sourcePage: 2 },
-  { number: 15, points: 4, prompt: "Andrea wraps a band around a piece of wood, then turns the wood around as shown. What does it look like now?", options: ["A", "B", "C", "D", "E"], answer: 1, explanation: "NEEDS_REVIEW: the band path and rotation are visual.", hint: "Track the band as the wood rotates, preserving which sections pass over and under.", sourcePage: 2 },
-  { number: 16, points: 4, prompt: "A square is split into four smaller squares, each coloured white or black. Patterns equivalent by rotation count as the same. How many colourings are there?", options: ["5", "6", "7", "8", "9"], answer: 1, explanation: "Up to rotation, there are two patterns with all four squares the same colour, two with exactly one square of one colour, and two with two adjacent or two opposite squares of that colour. That makes 2+2+2=6 patterns.", hint: "Classify patterns by how many squares have one colour, and distinguish adjacent pairs from opposite pairs; rotations do not change a pattern's class.", sourcePage: 2 },
-  { number: 17, points: 4, prompt: "A box contains 50 white, blue and red counters. There are eleven times as many white as blue; red is fewer than white but more than blue. By how much do white counters exceed red counters?", options: ["2", "11", "19", "22", "30"], answer: 2, explanation: "Let blue be b and white 11b. The remaining red count is 50-12b. Requiring b < red < 11b gives b=3, so red=14 and white=33; the difference is 19.", hint: "Set the blue count to b, express white and red in terms of b, and use both inequalities.", sourcePage: 2 },
-  { number: 18, points: 4, prompt: "ABCD is a rectangle and PQRS a square. The grey region has half the area of ABCD. How long is PX?", options: ["1", "1.5", "2", "2.5", "4"], answer: 0, explanation: "NEEDS_REVIEW: the rectangle, square and labelled lengths are visual.", hint: "Translate the grey-area condition into an equation using the dimensions in the diagram.", sourcePage: 2 },
-  { number: 19, points: 4, prompt: "What is the smallest number of straight lines that can divide a plane into exactly five regions?", options: ["3", "4", "5", "6", "Another number"], answer: 1, explanation: "Four parallel lines divide the plane into five regions, and fewer lines cannot make five.", hint: "Parallel lines add one new region each.", sourcePage: 2 },
-  { number: 20, points: 4, prompt: "Which of a, b, c, d and e is largest if a−1 = b+2 = c−3 = d+4 = e−4?", options: ["a", "b", "c", "d", "e"], answer: 4, explanation: "If the common value is k, then a=k+1, b=k−2, c=k+3, d=k−4 and e=k+4. Thus e is largest.", hint: "Express each variable in terms of the common value and compare the offsets.", sourcePage: 2 },
-  { number: 21, points: 5, prompt: "Semicircles with radii 2 cm, 4 cm and 8 cm are shown. What fraction of the total area is grey?", options: ["1/3", "1/4", "1/5", "3/4", "2/3"], answer: 1, explanation: "NEEDS_REVIEW: the grey and white semicircle regions are visual.", hint: "Compare areas using the square of each radius; common factors of π cancel.", sourcePage: 2 },
-  { number: 22, points: 5, prompt: "Numbers 1 to 9 are placed in nine regions inside circles so that each circle sums to 11. Which number belongs in the question-mark region?", options: ["5", "6", "7", "8", "9"], answer: 1, explanation: "NEEDS_REVIEW: the circle intersections and question-mark location are visual.", hint: "Add the circle totals and account for numbers counted in multiple circles.", sourcePage: 2 },
-  { number: 23, points: 5, prompt: "A cock is worth four hens; three cocks are worth a goose and two hens; five cocks and two hens are worth five turkeys. What is the minimum number of hens needed to obtain a goose, a turkey and a cock?", options: ["15", "27", "34", "41", "42"], answer: 2, explanation: "NEEDS_REVIEW: verify the minimum exchange sequence, including whether extra exchanged animals may be retained or traded back; the key indicates 34.", hint: "Express each exchange in hens, then search integer combinations that leave one goose, one turkey and one cock.", sourcePage: 3 },
-    { number: 24, points: 5, prompt: "A paper strip is folded three times in the middle, then opened so all seven folds can be seen from the side. Which view is not possible?", options: ["A", "B", "C", "D", "E"], answer: 3, explanation: "NEEDS_REVIEW: the fold sequence and five side views are shown in the source diagrams.", hint: "Unfold the strip one fold at a time and check whether the sequence of mountain and valley folds could occur.", sourcePage: 3 },
-    { number: 25, points: 5, prompt: "Each of 18 cards shows a 4 or a 5. The sum of all numbers is divisible by 17. How many cards show 4?", options: ["4", "5", "6", "7", "9"], answer: 1, explanation: "If x cards show 4, the total is 4x + 5(18-x) = 90 - x. The multiple 85 gives x=5.", hint: "Write the total in terms of the number of 4s and use divisibility by 17.", sourcePage: 3 },
-    { number: 26, points: 5, prompt: "Numbers 1 through 10 are each written ten times. Repeatedly replace two numbers by their sum minus 1 until one number remains. What is the final number?", options: ["Less than 11", "11", "46", "Greater than 46", "It depends"], answer: 2, explanation: "Each replacement reduces the total by 1. The initial sum is 10(1+…+10)=550; after 99 replacements the result is 451, greater than 46.", hint: "Track how the total changes at every operation; 100 numbers require 99 replacements.", sourcePage: 3 },
-    { number: 27, points: 5, prompt: "In Tautostadt nobles always tell the truth and liars always lie. Three people make the statements shown. How many people are in the room and how many are liars?", options: ["3 people, 1 liar", "4 people, 1 liar", "4 people, 2 liars", "5 people, 2 liars", "4 people, 3 liars"], answer: 2, explanation: "NEEDS_REVIEW: evaluate the exact quoted statements together; the Kadett key indicates C.", hint: "Test each proposed room size and liar count against whether every speaker's full statement is true or false.", sourcePage: 3 },
-    { number: 28, points: 5, prompt: "A 3×3×3 cube is made from unit cubes, and any two cubes meeting even at a corner must have different colours. What is the minimum number of colours needed?", options: ["6", "8", "9", "12", "27"], answer: 1, explanation: "The eight cubes in any 2×2×2 block all meet one another at a face, edge or corner, so at least eight colours are needed. Eight suffice: colour a cube by the parities of its three grid coordinates. Whenever two cubes touch, at least one coordinate changes by 1, so its parity changes and the colours differ.", hint: "Use one 2×2×2 block for a lower bound, then try colouring each cube by whether each of its three coordinates is odd or even.", sourcePage: 3 },
-    { number: 29, points: 5, prompt: "A large equilateral triangle contains 36 unit equilateral triangles of area 1 cm². What is the area of triangle ABC?", options: ["11 cm²", "12 cm²", "15 cm²", "9 cm²", "10 cm²"], answer: 0, explanation: "NEEDS_REVIEW: the positions of A, B and C are shown in the source diagram.", hint: "Use the triangular grid to count unit triangles inside ABC.", sourcePage: 3 },
-    { number: 30, points: 5, prompt: "In triangle ABC, angles B=20° and C=40°, and the angle bisector from A has length 2. What is BC−AB?", options: ["1", "1.5", "2", "4", "It cannot be answered"], answer: 3, explanation: "The angle-bisector and sine-rule relations give BC−AB=4.", hint: "Use A=120° and the angle-bisector length formula with the sine rule to compare the two sides.", sourcePage: 3 }
+  {
+    number: 1,
+    points: 3,
+    prompt: "How much is 12 + 23 + 34 + 45 + 56 + 67 + 78 + 89?",
+    options: [
+      "389",
+      "396",
+      "404",
+      "405",
+      "Another number"
+    ],
+    answer: 2,
+    explanation: "Adding the eight terms gives 404.",
+    hint: "Pair the first and last terms, then add the four equal pair sums.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "1-0",
+        type: "text",
+        text: "389",
+        imageAlt: "A option"
+      },
+      {
+        id: "1-1",
+        type: "text",
+        text: "396",
+        imageAlt: "B option"
+      },
+      {
+        id: "1-2",
+        type: "text",
+        text: "404",
+        imageAlt: "C option"
+      },
+      {
+        id: "1-3",
+        type: "text",
+        text: "405",
+        imageAlt: "D option"
+      },
+      {
+        id: "1-4",
+        type: "text",
+        text: "Another number",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 2,
+    points: 3,
+    prompt: "How many lines of symmetry does the pictured figure have?",
+    options: [
+      "0",
+      "1",
+      "2",
+      "4",
+      "Infinitely many"
+    ],
+    answer: 2,
+    explanation: "NEEDS_REVIEW: the figure is required to count its symmetry axes.",
+    hint: "Imagine folding the figure along each candidate line and check whether both halves match.",
+    sourcePage: 1,
+    image: "/assets/kangaroo/grades-7-8/kadett/2010/questions/editor-q-02.png",
+    optionContent: [
+      {
+        id: "2-0",
+        type: "text",
+        text: "0",
+        imageAlt: "A option"
+      },
+      {
+        id: "2-1",
+        type: "text",
+        text: "1",
+        imageAlt: "B option"
+      },
+      {
+        id: "2-2",
+        type: "text",
+        text: "2",
+        imageAlt: "C option"
+      },
+      {
+        id: "2-3",
+        type: "text",
+        text: "4",
+        imageAlt: "D option"
+      },
+      {
+        id: "2-4",
+        type: "text",
+        text: "Infinitely many",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 3,
+    points: 3,
+    prompt: "A fly has 6 legs and a spider 8. Two flies and three spiders have as many legs as 10 birds and how many cats?",
+    options: [
+      "2 cats",
+      "3 cats",
+      "4 cats",
+      "5 cats",
+      "6 cats"
+    ],
+    answer: 2,
+    explanation: "The flies and spiders have 2×6 + 3×8 = 36 legs. Ten birds have 20, leaving 16 legs, or four cats.",
+    hint: "Subtract the birds' legs from the flies' and spiders' legs, then divide by four.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "3-0",
+        type: "text",
+        text: "2 cats",
+        imageAlt: "A option"
+      },
+      {
+        id: "3-1",
+        type: "text",
+        text: "3 cats",
+        imageAlt: "B option"
+      },
+      {
+        id: "3-2",
+        type: "text",
+        text: "4 cats",
+        imageAlt: "C option"
+      },
+      {
+        id: "3-3",
+        type: "text",
+        text: "5 cats",
+        imageAlt: "D option"
+      },
+      {
+        id: "3-4",
+        type: "text",
+        text: "6 cats",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 4,
+    points: 3,
+    prompt: "Small cube-shaped game boxes are packed eight at a time into a larger cube. How many small boxes are on the bottom level?",
+    options: [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    answer: 3,
+    explanation: "Eight boxes form a 2×2×2 cube, so the bottom layer has four boxes.",
+    hint: "Arrange the eight boxes as a cube with two boxes along each edge.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "4-0",
+        type: "text",
+        text: "1",
+        imageAlt: "A option"
+      },
+      {
+        id: "4-1",
+        type: "text",
+        text: "2",
+        imageAlt: "B option"
+      },
+      {
+        id: "4-2",
+        type: "text",
+        text: "3",
+        imageAlt: "C option"
+      },
+      {
+        id: "4-3",
+        type: "text",
+        text: "4",
+        imageAlt: "D option"
+      },
+      {
+        id: "4-4",
+        type: "text",
+        text: "5",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 5,
+    points: 3,
+    prompt: "What is the perimeter of the pictured figure?",
+    options: [
+      "3a + 4b",
+      "3a + 8b",
+      "6a + 4b",
+      "6a + 6b",
+      "6a + 8b"
+    ],
+    answer: 4,
+    explanation: "NEEDS_REVIEW: the figure's labelled edge lengths are visual.",
+    hint: "Count how many exposed boundary segments have length a and length b.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "5-0",
+        type: "text",
+        text: "3a + 4b",
+        imageAlt: "A option"
+      },
+      {
+        id: "5-1",
+        type: "text",
+        text: "3a + 8b",
+        imageAlt: "B option"
+      },
+      {
+        id: "5-2",
+        type: "text",
+        text: "6a + 4b",
+        imageAlt: "C option"
+      },
+      {
+        id: "5-3",
+        type: "text",
+        text: "6a + 6b",
+        imageAlt: "D option"
+      },
+      {
+        id: "5-4",
+        type: "text",
+        text: "6a + 8b",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-7-8/kadett/2010/questions/editor-q-05.png"
+  },
+  {
+    number: 6,
+    points: 3,
+    prompt: "Martina connects some corner points of a regular hexagon. Which figure cannot be formed?",
+    options: [
+      "Trapezium",
+      "Right-angled triangle",
+      "Square",
+      "Kite",
+      "Obtuse triangle"
+    ],
+    answer: 2,
+    explanation: "The six vertices are equally spaced at 60° intervals on a circle. A square inscribed in a circle has its vertices 90° apart, but no two hexagon vertices are 90° apart. So the square cannot be made from the hexagon's corners; the other listed shapes can.",
+    hint: "An inscribed square needs four vertices spaced 90° apart around its circle. Compare that with the 60° spacing of the regular hexagon's vertices.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "6-0",
+        type: "text",
+        text: "Trapezium",
+        imageAlt: "A option"
+      },
+      {
+        id: "6-1",
+        type: "text",
+        text: "Right-angled triangle",
+        imageAlt: "B option"
+      },
+      {
+        id: "6-2",
+        type: "text",
+        text: "Square",
+        imageAlt: "C option"
+      },
+      {
+        id: "6-3",
+        type: "text",
+        text: "Kite",
+        imageAlt: "D option"
+      },
+      {
+        id: "6-4",
+        type: "text",
+        text: "Obtuse triangle",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-7-8/kadett/2010/questions/editor-q-06.png"
+  },
+  {
+    number: 7,
+    points: 3,
+    prompt: "Seven consecutive whole numbers are written down. The smallest three sum to 33. What is the sum of the largest three?",
+    options: [
+      "39",
+      "37",
+      "42",
+      "48",
+      "45"
+    ],
+    answer: 4,
+    explanation: "The first three are 10, 11 and 12, so all seven are 10 through 16. The largest three sum to 14 + 15 + 16 = 45.",
+    hint: "Use the sum of the first three consecutive numbers to find the sequence's starting value.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "7-0",
+        type: "text",
+        text: "39",
+        imageAlt: "A option"
+      },
+      {
+        id: "7-1",
+        type: "text",
+        text: "37",
+        imageAlt: "B option"
+      },
+      {
+        id: "7-2",
+        type: "text",
+        text: "42",
+        imageAlt: "C option"
+      },
+      {
+        id: "7-3",
+        type: "text",
+        text: "48",
+        imageAlt: "D option"
+      },
+      {
+        id: "7-4",
+        type: "text",
+        text: "45",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 8,
+    points: 3,
+    prompt: "Herbert made 53 cuts in some firewood and ended with 72 pieces. How many pieces of wood did he start with?",
+    options: [
+      "17",
+      "18",
+      "19",
+      "20",
+      "21"
+    ],
+    answer: 2,
+    explanation: "Each cut increases the number of pieces by one, so the starting number was 72 - 53 = 19.",
+    hint: "A cut increases the total piece count by exactly one.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "8-0",
+        type: "text",
+        text: "17",
+        imageAlt: "A option"
+      },
+      {
+        id: "8-1",
+        type: "text",
+        text: "18",
+        imageAlt: "B option"
+      },
+      {
+        id: "8-2",
+        type: "text",
+        text: "19",
+        imageAlt: "C option"
+      },
+      {
+        id: "8-3",
+        type: "text",
+        text: "20",
+        imageAlt: "D option"
+      },
+      {
+        id: "8-4",
+        type: "text",
+        text: "21",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 9,
+    points: 3,
+    prompt: "Seven blocks are in a box. They can be slid around to make room for another block. What is the minimum number of blocks that must be moved?",
+    options: [
+      "2",
+      "3",
+      "4",
+      "5",
+      "It is not possible"
+    ],
+    answer: 1,
+    explanation: "NEEDS_REVIEW: the initial block arrangement and empty space are shown in the source picture.",
+    hint: "Find a sequence of slides that creates one block-sized opening while moving as few blocks as possible.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "9-0",
+        type: "text",
+        text: "2",
+        imageAlt: "A option"
+      },
+      {
+        id: "9-1",
+        type: "text",
+        text: "3",
+        imageAlt: "B option"
+      },
+      {
+        id: "9-2",
+        type: "text",
+        text: "4",
+        imageAlt: "C option"
+      },
+      {
+        id: "9-3",
+        type: "text",
+        text: "5",
+        imageAlt: "D option"
+      },
+      {
+        id: "9-4",
+        type: "text",
+        text: "It is not possible",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-7-8/kadett/2010/questions/editor-q-09.png"
+  },
+  {
+    number: 10,
+    points: 3,
+    prompt: "The sum of the first 100 positive even numbers is reduced by the sum of the first 100 positive odd numbers. What is the result?",
+    options: [
+      "0",
+      "50",
+      "100",
+      "10100",
+      "15150"
+    ],
+    answer: 1,
+    explanation: "The even sum is 2(1+…+100)=10100, and the odd sum is 100²=10000. Their difference is 100, so C.",
+    hint: "Compare the sums 2+4+…+200 and 1+3+…+199.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "10-0",
+        type: "text",
+        text: "0",
+        imageAlt: "A option"
+      },
+      {
+        id: "10-1",
+        type: "text",
+        text: "50",
+        imageAlt: "B option"
+      },
+      {
+        id: "10-2",
+        type: "text",
+        text: "100",
+        imageAlt: "C option"
+      },
+      {
+        id: "10-3",
+        type: "text",
+        text: "10100",
+        imageAlt: "D option"
+      },
+      {
+        id: "10-4",
+        type: "text",
+        text: "15150",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 11,
+    points: 4,
+    prompt: "Grandma may have 3, 5 or all 6 grandchildren visit. Into how many equal pieces must she cut the cake to be sure each present grandchild gets the same amount?",
+    options: [
+      "12",
+      "15",
+      "18",
+      "24",
+      "30"
+    ],
+    answer: 4,
+    explanation: "The number of pieces must be divisible by 3, 5 and 6. Their least common multiple is 30.",
+    hint: "Find the least common multiple of the possible numbers of grandchildren.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "11-0",
+        type: "text",
+        text: "12",
+        imageAlt: "A option"
+      },
+      {
+        id: "11-1",
+        type: "text",
+        text: "15",
+        imageAlt: "B option"
+      },
+      {
+        id: "11-2",
+        type: "text",
+        text: "18",
+        imageAlt: "C option"
+      },
+      {
+        id: "11-3",
+        type: "text",
+        text: "24",
+        imageAlt: "D option"
+      },
+      {
+        id: "11-4",
+        type: "text",
+        text: "30",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 12,
+    points: 4,
+    prompt: "What is the smallest two-digit number that cannot be made by adding three different one-digit natural numbers?",
+    options: [
+      "10",
+      "15",
+      "23",
+      "25",
+      "28"
+    ],
+    answer: 3,
+    explanation: "The largest sum of three different one-digit numbers is 9+8+7=24, and every two-digit total from 10 to 24 can be formed. Thus 25 is the first impossible value.",
+    hint: "Find the largest possible sum using three distinct one-digit numbers.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "12-0",
+        type: "text",
+        text: "10",
+        imageAlt: "A option"
+      },
+      {
+        id: "12-1",
+        type: "text",
+        text: "15",
+        imageAlt: "B option"
+      },
+      {
+        id: "12-2",
+        type: "text",
+        text: "23",
+        imageAlt: "C option"
+      },
+      {
+        id: "12-3",
+        type: "text",
+        text: "25",
+        imageAlt: "D option"
+      },
+      {
+        id: "12-4",
+        type: "text",
+        text: "28",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 13,
+    points: 4,
+    prompt: "In quadrilateral ABCD, AD=BC, angle DAC=50°, angle DCA=65° and angle ACB=70°. What is angle ABC?",
+    options: [
+      "50°",
+      "55°",
+      "60°",
+      "65°",
+      "It is not clear"
+    ],
+    answer: 1,
+    explanation: "In triangle ADC, the third angle is 180°−50°−65°=65°, so AD=AC. Since AD=BC, AC=BC as well. Triangle ABC is isosceles with base angles at A and B equal; with angle C=70°, each is (180°−70°)/2=55°.",
+    hint: "Find the third angle of triangle ADC. Equal opposite angles give an equality of sides that transfers to triangle ABC.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "13-0",
+        type: "text",
+        text: "50°",
+        imageAlt: "A option"
+      },
+      {
+        id: "13-1",
+        type: "text",
+        text: "55°",
+        imageAlt: "B option"
+      },
+      {
+        id: "13-2",
+        type: "text",
+        text: "60°",
+        imageAlt: "C option"
+      },
+      {
+        id: "13-3",
+        type: "text",
+        text: "65°",
+        imageAlt: "D option"
+      },
+      {
+        id: "13-4",
+        type: "text",
+        text: "It is not clear",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-7-8/kadett/2010/questions/editor-q-13.png"
+  },
+  {
+    number: 14,
+    points: 4,
+    prompt: "Cathy takes 18 minutes to sew three short strips together into one long strip. How long does she need to make a piece consisting of six short strips?",
+    options: [
+      "27 minutes",
+      "30 minutes",
+      "36 minutes",
+      "45 minutes",
+      "60 minutes"
+    ],
+    answer: 3,
+    explanation: "Three strips require two seams, so each seam takes 9 minutes. Six strips require five seams: 5×9=45 minutes.",
+    hint: "The number of seams is one less than the number of strips.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "14-0",
+        type: "text",
+        text: "27 minutes",
+        imageAlt: "A option"
+      },
+      {
+        id: "14-1",
+        type: "text",
+        text: "30 minutes",
+        imageAlt: "B option"
+      },
+      {
+        id: "14-2",
+        type: "text",
+        text: "36 minutes",
+        imageAlt: "C option"
+      },
+      {
+        id: "14-3",
+        type: "text",
+        text: "45 minutes",
+        imageAlt: "D option"
+      },
+      {
+        id: "14-4",
+        type: "text",
+        text: "60 minutes",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 15,
+    points: 4,
+    prompt: "Andrea wraps a band around a piece of wood, then turns the wood around as shown. What does it look like now?",
+    options: [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    answer: 1,
+    explanation: "NEEDS_REVIEW: the band path and rotation are visual.",
+    hint: "Track the band as the wood rotates, preserving which sections pass over and under.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "15-0",
+        type: "text",
+        text: "A",
+        imageAlt: "A option"
+      },
+      {
+        id: "15-1",
+        type: "text",
+        text: "B",
+        imageAlt: "B option"
+      },
+      {
+        id: "15-2",
+        type: "text",
+        text: "C",
+        imageAlt: "C option"
+      },
+      {
+        id: "15-3",
+        type: "text",
+        text: "D",
+        imageAlt: "D option"
+      },
+      {
+        id: "15-4",
+        type: "text",
+        text: "E",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-7-8/kadett/2010/questions/editor-q-15.png",
+    imageExtra: "/assets/kangaroo/grades-7-8/kadett/2010/questions/editor-q-15-extra.png"
+  },
+  {
+    number: 16,
+    points: 4,
+    prompt: "A square is split into four smaller squares, each coloured white or black. Patterns equivalent by rotation count as the same. How many colourings are there?",
+    options: [
+      "5",
+      "6",
+      "7",
+      "8",
+      "9"
+    ],
+    answer: 1,
+    explanation: "Up to rotation, there are two patterns with all four squares the same colour, two with exactly one square of one colour, and two with two adjacent or two opposite squares of that colour. That makes 2+2+2=6 patterns.",
+    hint: "Classify patterns by how many squares have one colour, and distinguish adjacent pairs from opposite pairs; rotations do not change a pattern's class.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "16-0",
+        type: "text",
+        text: "5",
+        imageAlt: "A option"
+      },
+      {
+        id: "16-1",
+        type: "text",
+        text: "6",
+        imageAlt: "B option"
+      },
+      {
+        id: "16-2",
+        type: "text",
+        text: "7",
+        imageAlt: "C option"
+      },
+      {
+        id: "16-3",
+        type: "text",
+        text: "8",
+        imageAlt: "D option"
+      },
+      {
+        id: "16-4",
+        type: "text",
+        text: "9",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-7-8/kadett/2010/questions/editor-q-16.png"
+  },
+  {
+    number: 17,
+    points: 4,
+    prompt: "A box contains 50 white, blue and red counters. There are eleven times as many white as blue; red is fewer than white but more than blue. By how much do white counters exceed red counters?",
+    options: [
+      "2",
+      "11",
+      "19",
+      "22",
+      "30"
+    ],
+    answer: 2,
+    explanation: "Let blue be b and white 11b. The remaining red count is 50-12b. Requiring b < red < 11b gives b=3, so red=14 and white=33; the difference is 19.",
+    hint: "Set the blue count to b, express white and red in terms of b, and use both inequalities.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "17-0",
+        type: "text",
+        text: "2",
+        imageAlt: "A option"
+      },
+      {
+        id: "17-1",
+        type: "text",
+        text: "11",
+        imageAlt: "B option"
+      },
+      {
+        id: "17-2",
+        type: "text",
+        text: "19",
+        imageAlt: "C option"
+      },
+      {
+        id: "17-3",
+        type: "text",
+        text: "22",
+        imageAlt: "D option"
+      },
+      {
+        id: "17-4",
+        type: "text",
+        text: "30",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 18,
+    points: 4,
+    prompt: "ABCD is a rectangle and PQRS a square. The grey region has half the area of ABCD. How long is PX?",
+    options: [
+      "1",
+      "1.5",
+      "2",
+      "2.5",
+      "4"
+    ],
+    answer: 0,
+    explanation: "NEEDS_REVIEW: the rectangle, square and labelled lengths are visual.",
+    hint: "Translate the grey-area condition into an equation using the dimensions in the diagram.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "18-0",
+        type: "text",
+        text: "1",
+        imageAlt: "A option"
+      },
+      {
+        id: "18-1",
+        type: "text",
+        text: "1.5",
+        imageAlt: "B option"
+      },
+      {
+        id: "18-2",
+        type: "text",
+        text: "2",
+        imageAlt: "C option"
+      },
+      {
+        id: "18-3",
+        type: "text",
+        text: "2.5",
+        imageAlt: "D option"
+      },
+      {
+        id: "18-4",
+        type: "text",
+        text: "4",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-7-8/kadett/2010/questions/editor-q-18.png"
+  },
+  {
+    number: 19,
+    points: 4,
+    prompt: "What is the smallest number of straight lines that can divide a plane into exactly five regions?",
+    options: [
+      "3",
+      "4",
+      "5",
+      "6",
+      "Another number"
+    ],
+    answer: 1,
+    explanation: "Four parallel lines divide the plane into five regions, and fewer lines cannot make five.",
+    hint: "Parallel lines add one new region each.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "19-0",
+        type: "text",
+        text: "3",
+        imageAlt: "A option"
+      },
+      {
+        id: "19-1",
+        type: "text",
+        text: "4",
+        imageAlt: "B option"
+      },
+      {
+        id: "19-2",
+        type: "text",
+        text: "5",
+        imageAlt: "C option"
+      },
+      {
+        id: "19-3",
+        type: "text",
+        text: "6",
+        imageAlt: "D option"
+      },
+      {
+        id: "19-4",
+        type: "text",
+        text: "Another number",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 20,
+    points: 4,
+    prompt: "Which of a, b, c, d and e is largest if a−1 = b+2 = c−3 = d+4 = e−4?",
+    options: [
+      "a",
+      "b",
+      "c",
+      "d",
+      "e"
+    ],
+    answer: 4,
+    explanation: "If the common value is k, then a=k+1, b=k−2, c=k+3, d=k−4 and e=k+4. Thus e is largest.",
+    hint: "Express each variable in terms of the common value and compare the offsets.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "20-0",
+        type: "text",
+        text: "a",
+        imageAlt: "A option"
+      },
+      {
+        id: "20-1",
+        type: "text",
+        text: "b",
+        imageAlt: "B option"
+      },
+      {
+        id: "20-2",
+        type: "text",
+        text: "c",
+        imageAlt: "C option"
+      },
+      {
+        id: "20-3",
+        type: "text",
+        text: "d",
+        imageAlt: "D option"
+      },
+      {
+        id: "20-4",
+        type: "text",
+        text: "e",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 21,
+    points: 5,
+    prompt: "Semicircles with radii 2 cm, 4 cm and 8 cm are shown. What fraction of the total area is grey?",
+    options: [
+      "1/3",
+      "1/4",
+      "1/5",
+      "3/4",
+      "2/3"
+    ],
+    answer: 1,
+    explanation: "NEEDS_REVIEW: the grey and white semicircle regions are visual.",
+    hint: "Compare areas using the square of each radius; common factors of π cancel.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "21-0",
+        type: "text",
+        text: "1/3",
+        imageAlt: "A option"
+      },
+      {
+        id: "21-1",
+        type: "text",
+        text: "1/4",
+        imageAlt: "B option"
+      },
+      {
+        id: "21-2",
+        type: "text",
+        text: "1/5",
+        imageAlt: "C option"
+      },
+      {
+        id: "21-3",
+        type: "text",
+        text: "3/4",
+        imageAlt: "D option"
+      },
+      {
+        id: "21-4",
+        type: "text",
+        text: "2/3",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-7-8/kadett/2010/questions/editor-q-21.png"
+  },
+  {
+    number: 22,
+    points: 5,
+    prompt: "Numbers 1 to 9 are placed in nine regions inside circles so that each circle sums to 11. Which number belongs in the question-mark region?",
+    options: [
+      "5",
+      "6",
+      "7",
+      "8",
+      "9"
+    ],
+    answer: 1,
+    explanation: "NEEDS_REVIEW: the circle intersections and question-mark location are visual.",
+    hint: "Add the circle totals and account for numbers counted in multiple circles.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "22-0",
+        type: "text",
+        text: "5",
+        imageAlt: "A option"
+      },
+      {
+        id: "22-1",
+        type: "text",
+        text: "6",
+        imageAlt: "B option"
+      },
+      {
+        id: "22-2",
+        type: "text",
+        text: "7",
+        imageAlt: "C option"
+      },
+      {
+        id: "22-3",
+        type: "text",
+        text: "8",
+        imageAlt: "D option"
+      },
+      {
+        id: "22-4",
+        type: "text",
+        text: "9",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-7-8/kadett/2010/questions/editor-q-22.png"
+  },
+  {
+    number: 23,
+    points: 5,
+    prompt: "A cock is worth four hens; three cocks are worth a goose and two hens; five cocks and two hens are worth five turkeys. What is the minimum number of hens needed to obtain a goose, a turkey and a cock?",
+    options: [
+      "15",
+      "27",
+      "34",
+      "41",
+      "42"
+    ],
+    answer: 2,
+    explanation: "NEEDS_REVIEW: verify the minimum exchange sequence, including whether extra exchanged animals may be retained or traded back; the key indicates 34.",
+    hint: "Express each exchange in hens, then search integer combinations that leave one goose, one turkey and one cock.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "23-0",
+        type: "text",
+        text: "15",
+        imageAlt: "A option"
+      },
+      {
+        id: "23-1",
+        type: "text",
+        text: "27",
+        imageAlt: "B option"
+      },
+      {
+        id: "23-2",
+        type: "text",
+        text: "34",
+        imageAlt: "C option"
+      },
+      {
+        id: "23-3",
+        type: "text",
+        text: "41",
+        imageAlt: "D option"
+      },
+      {
+        id: "23-4",
+        type: "text",
+        text: "42",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 24,
+    points: 5,
+    prompt: "A paper strip is folded three times in the middle, then opened so all seven folds can be seen from the side. Which view is not possible?",
+    options: [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    answer: 3,
+    explanation: "NEEDS_REVIEW: the fold sequence and five side views are shown in the source diagrams.",
+    hint: "Unfold the strip one fold at a time and check whether the sequence of mountain and valley folds could occur.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "24-0",
+        type: "text",
+        text: "A",
+        imageAlt: "A option"
+      },
+      {
+        id: "24-1",
+        type: "text",
+        text: "B",
+        imageAlt: "B option"
+      },
+      {
+        id: "24-2",
+        type: "text",
+        text: "C",
+        imageAlt: "C option"
+      },
+      {
+        id: "24-3",
+        type: "text",
+        text: "D",
+        imageAlt: "D option"
+      },
+      {
+        id: "24-4",
+        type: "text",
+        text: "E",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 25,
+    points: 5,
+    prompt: "Each of 18 cards shows a 4 or a 5. The sum of all numbers is divisible by 17. How many cards show 4?",
+    options: [
+      "4",
+      "5",
+      "6",
+      "7",
+      "9"
+    ],
+    answer: 1,
+    explanation: "If x cards show 4, the total is 4x + 5(18-x) = 90 - x. The multiple 85 gives x=5.",
+    hint: "Write the total in terms of the number of 4s and use divisibility by 17.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "25-0",
+        type: "text",
+        text: "4",
+        imageAlt: "A option"
+      },
+      {
+        id: "25-1",
+        type: "text",
+        text: "5",
+        imageAlt: "B option"
+      },
+      {
+        id: "25-2",
+        type: "text",
+        text: "6",
+        imageAlt: "C option"
+      },
+      {
+        id: "25-3",
+        type: "text",
+        text: "7",
+        imageAlt: "D option"
+      },
+      {
+        id: "25-4",
+        type: "text",
+        text: "9",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 26,
+    points: 5,
+    prompt: "Numbers 1 through 10 are each written ten times. Repeatedly replace two numbers by their sum minus 1 until one number remains. What is the final number?",
+    options: [
+      "Less than 11",
+      "11",
+      "46",
+      "Greater than 46",
+      "It depends"
+    ],
+    answer: 2,
+    explanation: "Each replacement reduces the total by 1. The initial sum is 10(1+…+10)=550; after 99 replacements the result is 451, greater than 46.",
+    hint: "Track how the total changes at every operation; 100 numbers require 99 replacements.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "26-0",
+        type: "text",
+        text: "Less than 11",
+        imageAlt: "A option"
+      },
+      {
+        id: "26-1",
+        type: "text",
+        text: "11",
+        imageAlt: "B option"
+      },
+      {
+        id: "26-2",
+        type: "text",
+        text: "46",
+        imageAlt: "C option"
+      },
+      {
+        id: "26-3",
+        type: "text",
+        text: "Greater than 46",
+        imageAlt: "D option"
+      },
+      {
+        id: "26-4",
+        type: "text",
+        text: "It depends",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 27,
+    points: 5,
+    prompt: "In Tautostadt nobles always tell the truth and liars always lie. Three people make the statements shown. How many people are in the room and how many are liars?",
+    options: [
+      "3 people, 1 liar",
+      "4 people, 1 liar",
+      "4 people, 2 liars",
+      "5 people, 2 liars",
+      "4 people, 3 liars"
+    ],
+    answer: 2,
+    explanation: "NEEDS_REVIEW: evaluate the exact quoted statements together; the Kadett key indicates C.",
+    hint: "Test each proposed room size and liar count against whether every speaker's full statement is true or false.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "27-0",
+        type: "text",
+        text: "3 people, 1 liar",
+        imageAlt: "A option"
+      },
+      {
+        id: "27-1",
+        type: "text",
+        text: "4 people, 1 liar",
+        imageAlt: "B option"
+      },
+      {
+        id: "27-2",
+        type: "text",
+        text: "4 people, 2 liars",
+        imageAlt: "C option"
+      },
+      {
+        id: "27-3",
+        type: "text",
+        text: "5 people, 2 liars",
+        imageAlt: "D option"
+      },
+      {
+        id: "27-4",
+        type: "text",
+        text: "4 people, 3 liars",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 28,
+    points: 5,
+    prompt: "A 3×3×3 cube is made from unit cubes, and any two cubes meeting even at a corner must have different colours. What is the minimum number of colours needed?",
+    options: [
+      "6",
+      "8",
+      "9",
+      "12",
+      "27"
+    ],
+    answer: 1,
+    explanation: "The eight cubes in any 2×2×2 block all meet one another at a face, edge or corner, so at least eight colours are needed. Eight suffice: colour a cube by the parities of its three grid coordinates. Whenever two cubes touch, at least one coordinate changes by 1, so its parity changes and the colours differ.",
+    hint: "Use one 2×2×2 block for a lower bound, then try colouring each cube by whether each of its three coordinates is odd or even.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "28-0",
+        type: "text",
+        text: "6",
+        imageAlt: "A option"
+      },
+      {
+        id: "28-1",
+        type: "text",
+        text: "8",
+        imageAlt: "B option"
+      },
+      {
+        id: "28-2",
+        type: "text",
+        text: "9",
+        imageAlt: "C option"
+      },
+      {
+        id: "28-3",
+        type: "text",
+        text: "12",
+        imageAlt: "D option"
+      },
+      {
+        id: "28-4",
+        type: "text",
+        text: "27",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 29,
+    points: 5,
+    prompt: "A large equilateral triangle contains 36 unit equilateral triangles of area 1 cm². What is the area of triangle ABC?",
+    options: [
+      "11 cm²",
+      "12 cm²",
+      "15 cm²",
+      "9 cm²",
+      "10 cm²"
+    ],
+    answer: 0,
+    explanation: "NEEDS_REVIEW: the positions of A, B and C are shown in the source diagram.",
+    hint: "Use the triangular grid to count unit triangles inside ABC.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "29-0",
+        type: "text",
+        text: "11 cm²",
+        imageAlt: "A option"
+      },
+      {
+        id: "29-1",
+        type: "text",
+        text: "12 cm²",
+        imageAlt: "B option"
+      },
+      {
+        id: "29-2",
+        type: "text",
+        text: "15 cm²",
+        imageAlt: "C option"
+      },
+      {
+        id: "29-3",
+        type: "text",
+        text: "9 cm²",
+        imageAlt: "D option"
+      },
+      {
+        id: "29-4",
+        type: "text",
+        text: "10 cm²",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-7-8/kadett/2010/questions/editor-q-29.png"
+  },
+  {
+    number: 30,
+    points: 5,
+    prompt: "In triangle ABC, angles B=20° and C=40°, and the angle bisector from A has length 2. What is BC−AB?",
+    options: [
+      "1",
+      "1.5",
+      "2",
+      "4",
+      "It cannot be answered"
+    ],
+    answer: 3,
+    explanation: "The angle-bisector and sine-rule relations give BC−AB=4.",
+    hint: "Use A=120° and the angle-bisector length formula with the sine rule to compare the two sides.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "30-0",
+        type: "text",
+        text: "1",
+        imageAlt: "A option"
+      },
+      {
+        id: "30-1",
+        type: "text",
+        text: "1.5",
+        imageAlt: "B option"
+      },
+      {
+        id: "30-2",
+        type: "text",
+        text: "2",
+        imageAlt: "C option"
+      },
+      {
+        id: "30-3",
+        type: "text",
+        text: "4",
+        imageAlt: "D option"
+      },
+      {
+        id: "30-4",
+        type: "text",
+        text: "It cannot be answered",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-7-8/kadett/2010/questions/editor-q-30.png"
+  }
 ];
 
 const sections2010Kadett: Section[] = [
-  { points: 3, label: "Section 1", range: "Questions 1–10", accent: "coral" },
-  { points: 4, label: "Section 2", range: "Questions 11–20", accent: "blue" },
-  { points: 5, label: "Section 3", range: "Questions 21–30", accent: "purple" }
+  {
+    points: 3,
+    label: "Section 1",
+    range: "Questions 1–10",
+    accent: "coral"
+  },
+  {
+    points: 4,
+    label: "Section 2",
+    range: "Questions 11–20",
+    accent: "blue"
+  },
+  {
+    points: 5,
+    label: "Section 3",
+    range: "Questions 21–30",
+    accent: "purple"
+  }
 ];
 
 export const edition2010Kadett: QuestionSet = {
@@ -49,5 +1487,5 @@ export const edition2010Kadett: QuestionSet = {
   timeLimitMinutes: 75,
   sourceUrl: "https://www.matematica.pt/en/docs/kangaroo/enunciados/2010/2010_Kadett.pdf",
   questions: questions2010Kadett,
-  sections: sections2010Kadett
+  sections: sections2010Kadett,
 };

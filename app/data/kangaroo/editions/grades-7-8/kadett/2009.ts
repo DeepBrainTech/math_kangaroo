@@ -240,7 +240,8 @@ const questions2009Kadett: Question[] = [
         text: "1/1000",
         imageAlt: "E option"
       }
-    ]
+    ],
+    image: "/assets/kangaroo/grades-7-8/kadett/2009/questions/editor-q-05.png"
   },
   {
     number: 6,
@@ -293,7 +294,7 @@ const questions2009Kadett: Question[] = [
   {
     number: 7,
     points: 3,
-    prompt: "In a park there are cats and dogs. The number of cats' feet is double the number of dogs' noses. What fraction of the number of dogs is the number of cats?",
+    prompt: "7) In a park there are some cats and dogs. The number of cats feet is double the size of the number of dogs noses. The number of cats is how much of the number of dogs.",
     options: [
       "Double",
       "Half",
@@ -384,7 +385,8 @@ const questions2009Kadett: Question[] = [
         text: "84°",
         imageAlt: "E option"
       }
-    ]
+    ],
+    image: "/assets/kangaroo/grades-7-8/kadett/2009/questions/editor-q-08.png"
   },
   {
     number: 9,
@@ -480,7 +482,8 @@ const questions2009Kadett: Question[] = [
         text: "None",
         imageAlt: "E option"
       }
-    ]
+    ],
+    image: "/assets/kangaroo/grades-7-8/kadett/2009/questions/editor-q-10.png"
   },
   {
     number: 11,
@@ -576,7 +579,8 @@ const questions2009Kadett: Question[] = [
         text: "7",
         imageAlt: "E option"
       }
-    ]
+    ],
+    image: "/assets/kangaroo/grades-7-8/kadett/2009/questions/editor-q-12.png"
   },
   {
     number: 13,
@@ -672,7 +676,8 @@ const questions2009Kadett: Question[] = [
         text: "1/3",
         imageAlt: "E option"
       }
-    ]
+    ],
+    image: "/assets/kangaroo/grades-7-8/kadett/2009/questions/editor-q-14.png"
   },
   {
     number: 15,
@@ -768,12 +773,13 @@ const questions2009Kadett: Question[] = [
         text: "24",
         imageAlt: "E option"
       }
-    ]
+    ],
+    image: "/assets/kangaroo/grades-7-8/kadett/2009/questions/editor-q-16.png"
   },
   {
     number: 17,
     points: 5,
-    prompt: "In the equation EIGHT / FOUR = TWO, each letter represents a digit and equal letters represent equal digits. How many different values can T × H × R × E × E have?",
+    prompt: "In the equation E x I x G x H x T / F x O x U x R = T x W x O, each letter represents a digit and equal letters represent equal digits. How many different values can T × H × R × E × E have?",
     options: [
       "1",
       "2",
@@ -864,7 +870,8 @@ const questions2009Kadett: Question[] = [
         text: "Impossible",
         imageAlt: "E option"
       }
-    ]
+    ],
+    image: "/assets/kangaroo/grades-7-8/kadett/2009/questions/editor-q-18.png"
   },
   {
     number: 19,
@@ -912,7 +919,8 @@ const questions2009Kadett: Question[] = [
         text: "60°",
         imageAlt: "E option"
       }
-    ]
+    ],
+    image: "/assets/kangaroo/grades-7-8/kadett/2009/questions/editor-q-19.png"
   },
   {
     number: 20,
@@ -960,7 +968,8 @@ const questions2009Kadett: Question[] = [
         text: "100",
         imageAlt: "E option"
       }
-    ]
+    ],
+    image: "/assets/kangaroo/grades-7-8/kadett/2009/questions/editor-q-20.png"
   },
   {
     number: 21,
@@ -1008,7 +1017,8 @@ const questions2009Kadett: Question[] = [
         text: "12",
         imageAlt: "E option"
       }
-    ]
+    ],
+    image: "/assets/kangaroo/grades-7-8/kadett/2009/questions/editor-q-21.png"
   },
   {
     number: 22,
@@ -1104,7 +1114,8 @@ const questions2009Kadett: Question[] = [
         text: "e",
         imageAlt: "E option"
       }
-    ]
+    ],
+    image: "/assets/kangaroo/grades-7-8/kadett/2009/questions/editor-q-23.png"
   },
   {
     number: 24,
@@ -1152,7 +1163,8 @@ const questions2009Kadett: Question[] = [
         text: "4:1",
         imageAlt: "E option"
       }
-    ]
+    ],
+    image: "/assets/kangaroo/grades-7-8/kadett/2009/questions/editor-q-24.png"
   },
   {
     number: 25,
