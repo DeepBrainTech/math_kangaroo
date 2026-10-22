@@ -1,42 +1,1493 @@
 import type { Question, QuestionSet, Section } from "../../../types";
 
 const questions2023Kadett: Question[] = [
-  { number: 1, points: 3, prompt: "The diagram shows a grid made of vertical and horizontal lines. Which part was cut from the grid?", options: ["A", "B", "C", "D", "E"], answer: 4, explanation: "NEEDS_REVIEW: the grid and five candidate pieces are visual in the source.", hint: "Compare the cut-out's pattern of line segments with the missing region of the grid.", sourcePage: 2 },
-  { number: 2, points: 3, prompt: "Which of the following shapes cannot be cut into two trapeziums with one single straight line?", options: ["Triangle", "Rectangle", "Trapezium", "Regular hexagon", "Square"], answer: 0, explanation: "A straight cut through a triangle either makes two triangles or separates a triangle from a quadrilateral. It cannot leave two trapeziums, so the triangle is the shape that cannot be cut as required.", hint: "Consider the number of sides the two pieces can have when a single line cuts across a triangle.", sourcePage: 2 },
-  { number: 3, points: 3, prompt: "A dark disc with two holes is placed over a watch dial as shown. The disc is rotated until the number 8 can be seen through one hole. Which numbers could be seen through the other hole?", options: ["4 and 12", "1 and 5", "1 and 4", "7 and 11", "5 and 12"], answer: 0, explanation: "NEEDS_REVIEW: the positions of the two holes on the disc and their relation to the watch dial are visual.", hint: "Track both holes through the same rotation that brings 8 into view.", sourcePage: 2 },
-  { number: 4, points: 3, prompt: "John throws 150 coins onto a table. Sixty show heads and the others show tails. He wants the same number of heads and tails. How many heads does he have to turn over?", options: ["10", "15", "20", "25", "30"], answer: 1, explanation: "There are 60 heads and 90 tails, a difference of 30. Each head turned over reduces the difference by 2, so 15 must be turned.", hint: "Each coin turned changes the head-tail difference by two.", sourcePage: 2 },
-  { number: 5, points: 3, prompt: "Kristina has a piece of see-through foil with some points and lines drawn on it. She folds the foil along the dotted line. What can she see now?", options: ["A", "B", "C", "D", "E"], answer: 2, explanation: "NEEDS_REVIEW: the point-and-line arrangement and the five folded results are visual.", hint: "Reflect the points and line segments across the dotted fold line.", sourcePage: 2 },
-  { number: 6, points: 3, prompt: "A grid should be cut along the black lines into several identical shapes, with no piece left over. Into which of the following shapes is it not possible to cut the grid this way?", options: ["A", "B", "C", "D", "E"], answer: 3, explanation: "NEEDS_REVIEW: the grid and candidate tile shapes are visual.", hint: "Compare the grid's area and boundary with the number and orientation of each candidate piece.", sourcePage: 2 },
-  { number: 7, points: 3, prompt: "The diagram shows the starting position, direction and distance covered within 5 seconds by four bumper cars. Which two cars will first crash into each other?", options: ["A and B", "A and C", "A and D", "B and C", "C and D"], answer: 1, explanation: "NEEDS_REVIEW: the four starting positions, travel directions and distances are visual.", hint: "Extend each car's path by its stated distance and find the first intersecting pair.", sourcePage: 2 },
-  { number: 8, points: 3, prompt: "Werner labels each side and each corner of the shown rhombus with one number. The number on each side must equal the sum of the numbers at its two endpoints. Which number belongs in the place of the question mark?", options: ["11", "12", "13", "14", "15"], answer: 1, explanation: "NEEDS_REVIEW: the known vertex and side labels on the rhombus are visual.", hint: "Write an addition equation for each side using the two adjacent vertex values.", sourcePage: 2 },
-  { number: 9, points: 3, prompt: "Anna has five circular discs, all of different sizes. She wants to build a tower using three discs so that each smaller disc lies on top of a bigger disc. How many towers can she build?", options: ["5", "6", "8", "10", "15"], answer: 3, explanation: "Choose any three of the five distinct discs; their order in the tower is forced by their sizes. There are 5 choose 3 = 10 towers.", hint: "Each selected set of three discs has exactly one valid size order.", sourcePage: 2 },
-  { number: 10, points: 3, prompt: "Evita writes the numbers 1 to 8, one in each field. The sums in both rows must be equal, and the sums in all four columns must also be equal. The numbers 3, 4 and 8 are already shown. Which number belongs in the dark field?", options: ["1", "2", "5", "6", "7"], answer: 4, explanation: "NEEDS_REVIEW: the positions of 3, 4 and 8 and the dark field are shown in the source diagram.", hint: "Use the total 1+2+...+8 and the equal row and column sums to constrain the missing cells.", sourcePage: 2 },
-  { number: 11, points: 4, prompt: "Dorli writes three consecutive natural numbers in increasing order and replaces the digits by symbols, obtaining: square-diamond-diamond, heart-triangle-triangle, heart-triangle-square. What is the next bigger number in this notation?", options: ["Heart-heart-diamond", "Square-heart-square", "Heart-triangle-diamond", "Heart-diamond-square", "Heart-triangle-heart"], answer: 4, explanation: "The last two numbers keep the hundreds and tens digits and increase the units digit by one. For the first number to lead into them, its repeated final digit must roll over from 9 to 0, so the three numbers are 199, 200 and 201. The next is 202, or heart-triangle-heart.", hint: "Look for the carry needed when the first number's repeated final digits become the two zeroes in the next number.", sourcePage: 3 },
-  { number: 12, points: 4, prompt: "The diagram shows five equally large semicircles and five distances. What is the radius of one semicircle?", options: ["12", "16", "18", "22", "36"], answer: 2, explanation: "NEEDS_REVIEW: the five measured distances and semicircle layout are visual.", hint: "Express each marked distance as a sum or difference of semicircle radii.", sourcePage: 3 },
-  { number: 13, points: 4, prompt: "Some edges of a cube are coloured red so that every face has at least one red edge. What is the minimum number of red edges?", options: ["2", "3", "4", "5", "6"], answer: 1, explanation: "Each red edge borders two faces, so at least three are needed to cover all six faces. Three edges can be chosen so that every face is incident to one of them.", hint: "Count how many faces one edge can cover, then check whether three suitably chosen edges cover all six.", sourcePage: 3 },
-  { number: 14, points: 4, prompt: "The digits 0 to 9 can be formed using matchsticks as shown. How many different positive whole numbers can be formed with exactly 6 matchsticks?", options: ["2", "4", "6", "8", "9"], answer: 2, explanation: "NEEDS_REVIEW: the matchstick patterns used for each digit are shown in the source diagram.", hint: "Use the matchstick cost of each digit and count positive numbers whose total cost is six.", sourcePage: 3 },
-  { number: 15, points: 4, prompt: "A square has side length 1 cm. How many points in the plane are exactly 1 cm from two of its corner points?", options: ["4", "5", "6", "10", "12"], answer: 4, explanation: "For each diagonal pair of corners, the two unit circles meet at the other two square corners, giving four points altogether. For each adjacent pair, the circles meet at two points outside the square; the four sides give eight more. In total there are 12 points.", hint: "Pair the corners in two ways: diagonal pairs give square corners, while adjacent pairs give two intersections outside the square.", sourcePage: 3 },
-  { number: 16, points: 4, prompt: "Some kangaroos and three beavers stand in a circle. No two beavers are adjacent. Exactly three kangaroos stand next to another kangaroo. What is the greatest possible number of kangaroos?", options: ["4", "5", "6", "7", "8"], answer: 1, explanation: "The three beavers create three runs of kangaroos. A run of length one contributes no kangaroo with a kangaroo neighbour; a longer run contributes its full length. To have exactly three such kangaroos, one run can have length three and the other two length one, giving five kangaroos total.", hint: "Split the circle into the three kangaroo runs between beavers and count how many members of each run have a kangaroo neighbour.", sourcePage: 3 },
-  { number: 17, points: 4, prompt: "Tom, John and Lily each shoot six arrows at a target with three scoring sections. Tom scores 46 and John scores 34. How many points does Lily score?", options: ["37", "38", "39", "40", "41"], answer: 3, explanation: "NEEDS_REVIEW: the three section scores and the arrow counts in each section are shown in the target diagram.", hint: "Use the six-shot total together with the score of each target section.", sourcePage: 3 },
-  { number: 18, points: 4, prompt: "Max and two friends are in a line whose length is a multiple of 3. The same number of people are in front of Max as behind him. Both friends are behind him, in positions 19 and 28. In which position is Max?", options: ["14", "15", "16", "17", "18"], answer: 3, explanation: "Max is in the middle, so if his position is m, the line has 2m-1 people. This is a multiple of 3, so m is 2 modulo 3. Since Max is before position 19, m=17.", hint: "The line has an odd number of people and Max occupies its middle position; apply the divisibility condition.", sourcePage: 3 },
-  { number: 19, points: 4, prompt: "Two rays from S form a right angle. More rays are drawn inside it so that each angle 10, 20, 30, 40, 50, 60, 70 and 80 degrees is enclosed by two rays. What is the minimum number of additional rays needed?", options: ["2", "3", "4", "5", "6"], answer: 1, explanation: "With four rays there are only six pairs, too few to make all eight required angles, so at least five rays in total are needed. Rays at 0°, 10°, 40°, 70° and 90° make every difference from 10° through 80°, using three additional rays.", hint: "Each pair of rays gives at most one angle size. Find a small set of directions whose pairwise differences include all eight multiples of 10°.", sourcePage: 3 },
-  { number: 20, points: 4, prompt: "The sum of 2023 consecutive integers is 2023. What is the digit sum of the largest of these integers?", options: ["4", "5", "6", "7", "8"], answer: 0, explanation: "The average is 1, so the 2023 integers are centred at 1. The largest is 1+1011=1012, whose digit sum is 4.", hint: "The mean of consecutive integers is their middle term; use it to find the largest term.", sourcePage: 3 },
-  { number: 21, points: 5, prompt: "A grey rectangle lies inside a larger rectangle and touches its sides. Two corners of the grey rectangle are the midpoints of the shorter sides of the larger rectangle. The grey rectangle is made of three squares, each of area 25 cm^2. What is the area of the larger rectangle?", options: ["125", "136", "149", "150", "172"], answer: 3, explanation: "NEEDS_REVIEW: the orientation and dimensions of the three-square rectangle relative to the larger rectangle are shown in the source diagram.", hint: "Use the square side length and midpoint constraints to relate the two rectangle dimensions.", sourcePage: 3 },
-  { number: 22, points: 5, prompt: "In a chess tournament, each of seven dwarfs plays every other dwarf exactly once. On Monday Grumpy plays 1 game, Sneezy 2, Sleepy 3, Bashful 4, Happy 5 and Doc 6 games. How many games does Dopey play on Monday?", options: ["1", "2", "3", "4", "5"], answer: 2, explanation: "Doc's six games include every dwarf, so Grumpy's one game is only against Doc. Removing those games leaves Sneezy, Sleepy, Bashful, Happy and Dopey with 1, 2, 3, 4 and d−1 games among themselves. The degree sum must be even, so d is odd. A value of 1 would leave a degree-4 player and a degree-0 player, impossible; 5 gives degrees 4, 4, 3, 2, 1, also impossible. The sequence 4, 3, 2, 2, 1 is possible, so d = 3.", hint: "Use Doc's six games and Grumpy's one game first, then check which odd value for Dopey's remaining degree can form a game schedule.", sourcePage: 4 },
-  { number: 23, points: 5, prompt: "Triangle ABC is isosceles with angle ABC = 40 degrees. The indicated angles EAB and DCA are equal. What is angle CFE?", options: ["55 degrees", "60 degrees", "65 degrees", "70 degrees", "75 degrees"], answer: 3, explanation: "NEEDS_REVIEW: the isosceles triangle's equal sides and the positions of D, E and F are shown in the source diagram.", hint: "Use the equal base angles and the given equality, then track the angles in the intersecting lines.", sourcePage: 4 },
-  { number: 24, points: 5, prompt: "An ant walks once around an equilateral triangle. Its speeds along the first, second and third sides are 5, 15 and 20 cm/min. What is its average speed for the complete trip?", options: ["10", "80/11", "180/19", "15", "40/3"], answer: 2, explanation: "The three sides have equal length L. The travel time is L/5 + L/15 + L/20 = 19L/60 minutes, so the average speed is 3L/(19L/60) = 180/19 cm/min.", hint: "For equal distances, add the three travel times and divide the total distance by that time.", sourcePage: 4 },
-  { number: 25, points: 5, prompt: "Elisabeth writes the numbers 1 to 9 in the fields of the shown diagram so that the product of numbers in any two edge-adjacent fields is at most 15. How many arrangements are possible?", options: ["8", "12", "16", "24", "32"], answer: 2, explanation: "NEEDS_REVIEW: the field layout in the source diagram determines which placements are adjacent.", hint: "Use the products greater than 15 to rule out neighbouring pairs, then count the valid placements in the shown layout.", sourcePage: 4 },
-  { number: 26, points: 5, prompt: "Several mice live in three houses. Each mouse leaves its house and moves directly to one of the other two houses. The diagram shows the numbers of mice in each house yesterday and today. How many mice used the path indicated by an arrow?", options: ["9", "11", "12", "16", "19"], answer: 1, explanation: "NEEDS_REVIEW: the two counts for each house and the indicated arrow are visual in the source diagram.", hint: "Use conservation of mice and the three house totals to solve for the flow along each path.", sourcePage: 4 },
-  { number: 27, points: 5, prompt: "Bart writes 1015 as a sum of numbers made only of the digit 7, using 10 sevens in total. He wants to write 2023 in the same way, using 19 sevens in total. How many times must he use the number 77?", options: ["2", "3", "4", "5", "6"], answer: 4, explanation: "Let a, b and c count the summands 7, 77 and 777; longer summands exceed 2023. The digit total gives a + 2b + 3c = 19, and the value gives 7a + 77b + 777c = 2023. Subtracting seven times the first equation from the second gives b + 12c = 30. Together with a = 21c − 41 ≥ 0, this forces c = 2 and b = 6, so 77 is used six times.", hint: "Let a, b and c count the one-, two- and three-digit summands; use both the total value and the total number of sevens.", sourcePage: 4 },
-  { number: 28, points: 5, prompt: "A regular hexagon is divided into four quadrilaterals and a smaller regular hexagon. The ratio of the area of the dark sections to the area of the small hexagon is 4/3. What is the ratio of the area of the small hexagon to the area of the large hexagon?", options: ["3/11", "1/3", "2/3", "3/4", "3/5"], answer: 0, explanation: "NEEDS_REVIEW: the dark and light regions in the hexagon diagram are required to relate the given area ratio to the full large hexagon.", hint: "Express the total area as the small hexagon plus all four surrounding quadrilaterals, distinguishing dark from light regions.", sourcePage: 4 },
-  { number: 29, points: 5, prompt: "Jakob writes six consecutive numbers on six pieces of paper, one per piece, and sticks them on the front and back of three coins. After the first throw, 6, 7 and 8 are on top and are coloured red. On the second throw the top numbers sum to 23, and on the third they sum to 17. What is the sum of the numbers on the three white pieces of paper?", options: ["18", "19", "23", "24", "30"], answer: 0, explanation: "NEEDS_REVIEW: the coin-face arrangement and the information shown after each throw are visual; the answer key indicates A.", hint: "Use the three top-number sums to determine which number is on each opposite side of the coins.", sourcePage: 4 },
-  { number: 30, points: 5, prompt: "A rugby team scored 24, 17 and 25 points in its 7th, 8th and 9th games last season. Its average after 9 games was higher than after the first 6, and its average after 10 games was more than 22. What is the minimum score in the 10th game?", options: ["22", "23", "24", "25", "26"], answer: 2, explanation: "Let S be the first-six total. The higher average after nine games gives (S+66)/9 > S/6, hence S < 132 and S is at most 131. For a 10-game average above 22, the tenth score x must satisfy S+66+x > 220. With S=131 the minimum integer x is 24.", hint: "Use the average comparison to bound the first-six total, then apply the 10-game average condition.", sourcePage: 4 }
+  {
+    number: 1,
+    points: 3,
+    prompt: "The diagram shows a grid made of vertical and horizontal lines. Which part was cut from the grid?",
+    options: [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    answer: 4,
+    explanation: "NEEDS_REVIEW: the grid and five candidate pieces are visual in the source.",
+    hint: "Compare the cut-out's pattern of line segments with the missing region of the grid.",
+    sourcePage: 2,
+    image: "/assets/kangaroo/grades-7-8/kadett/2023/questions/editor-q-01.png",
+    imageExtra: "/assets/kangaroo/grades-7-8/kadett/2023/questions/editor-q-01-extra.png",
+    optionContent: [
+      {
+        id: "1-0",
+        type: "text",
+        text: "A",
+        imageAlt: "A option"
+      },
+      {
+        id: "1-1",
+        type: "text",
+        text: "B",
+        imageAlt: "B option"
+      },
+      {
+        id: "1-2",
+        type: "text",
+        text: "C",
+        imageAlt: "C option"
+      },
+      {
+        id: "1-3",
+        type: "text",
+        text: "D",
+        imageAlt: "D option"
+      },
+      {
+        id: "1-4",
+        type: "text",
+        text: "E",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 2,
+    points: 3,
+    prompt: "Which of the following shapes cannot be cut into two trapeziums with one single straight line?",
+    options: [
+      "Triangle",
+      "Rectangle",
+      "Trapezium",
+      "Regular hexagon",
+      "Square"
+    ],
+    answer: 0,
+    explanation: "A straight cut through a triangle either makes two triangles or separates a triangle from a quadrilateral. It cannot leave two trapeziums, so the triangle is the shape that cannot be cut as required.",
+    hint: "Consider the number of sides the two pieces can have when a single line cuts across a triangle.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "2-0",
+        type: "text",
+        text: "Triangle",
+        imageAlt: "A option"
+      },
+      {
+        id: "2-1",
+        type: "text",
+        text: "Rectangle",
+        imageAlt: "B option"
+      },
+      {
+        id: "2-2",
+        type: "text",
+        text: "Trapezium",
+        imageAlt: "C option"
+      },
+      {
+        id: "2-3",
+        type: "text",
+        text: "Regular hexagon",
+        imageAlt: "D option"
+      },
+      {
+        id: "2-4",
+        type: "text",
+        text: "Square",
+        imageAlt: "E option"
+      }
+    ],
+    imageExtra: "/assets/kangaroo/grades-7-8/kadett/2023/questions/editor-q-02-extra.png"
+  },
+  {
+    number: 3,
+    points: 3,
+    prompt: "A dark disc with two holes is placed over a watch dial as shown. The disc is rotated until the number 8 can be seen through one hole. Which numbers could be seen through the other hole?",
+    options: [
+      "4 and 12",
+      "1 and 5",
+      "1 and 4",
+      "7 and 11",
+      "5 and 12"
+    ],
+    answer: 0,
+    explanation: "NEEDS_REVIEW: the positions of the two holes on the disc and their relation to the watch dial are visual.",
+    hint: "Track both holes through the same rotation that brings 8 into view.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "3-0",
+        type: "text",
+        text: "4 and 12",
+        imageAlt: "A option"
+      },
+      {
+        id: "3-1",
+        type: "text",
+        text: "1 and 5",
+        imageAlt: "B option"
+      },
+      {
+        id: "3-2",
+        type: "text",
+        text: "1 and 4",
+        imageAlt: "C option"
+      },
+      {
+        id: "3-3",
+        type: "text",
+        text: "7 and 11",
+        imageAlt: "D option"
+      },
+      {
+        id: "3-4",
+        type: "text",
+        text: "5 and 12",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-7-8/kadett/2023/questions/editor-q-03.png"
+  },
+  {
+    number: 4,
+    points: 3,
+    prompt: "John throws 150 coins onto a table. Sixty show heads and the others show tails. He wants the same number of heads and tails. How many heads does he have to turn over?",
+    options: [
+      "10",
+      "15",
+      "20",
+      "25",
+      "30"
+    ],
+    answer: 1,
+    explanation: "There are 60 heads and 90 tails, a difference of 30. Each head turned over reduces the difference by 2, so 15 must be turned.",
+    hint: "Each coin turned changes the head-tail difference by two.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "4-0",
+        type: "text",
+        text: "10",
+        imageAlt: "A option"
+      },
+      {
+        id: "4-1",
+        type: "text",
+        text: "15",
+        imageAlt: "B option"
+      },
+      {
+        id: "4-2",
+        type: "text",
+        text: "20",
+        imageAlt: "C option"
+      },
+      {
+        id: "4-3",
+        type: "text",
+        text: "25",
+        imageAlt: "D option"
+      },
+      {
+        id: "4-4",
+        type: "text",
+        text: "30",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 5,
+    points: 3,
+    prompt: "Kristina has a piece of see-through foil with some points and lines drawn on it. She folds the foil along the dotted line. What can she see now?",
+    options: [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    answer: 2,
+    explanation: "NEEDS_REVIEW: the point-and-line arrangement and the five folded results are visual.",
+    hint: "Reflect the points and line segments across the dotted fold line.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "5-0",
+        type: "text",
+        text: "A",
+        imageAlt: "A option"
+      },
+      {
+        id: "5-1",
+        type: "text",
+        text: "B",
+        imageAlt: "B option"
+      },
+      {
+        id: "5-2",
+        type: "text",
+        text: "C",
+        imageAlt: "C option"
+      },
+      {
+        id: "5-3",
+        type: "text",
+        text: "D",
+        imageAlt: "D option"
+      },
+      {
+        id: "5-4",
+        type: "text",
+        text: "E",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-7-8/kadett/2023/questions/editor-q-05.png",
+    imageExtra: "/assets/kangaroo/grades-7-8/kadett/2023/questions/editor-q-05-extra.png"
+  },
+  {
+    number: 6,
+    points: 3,
+    prompt: "A grid should be cut along the black lines into several identical shapes, with no piece left over. Into which of the following shapes is it not possible to cut the grid this way?",
+    options: [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    answer: 3,
+    explanation: "NEEDS_REVIEW: the grid and candidate tile shapes are visual.",
+    hint: "Compare the grid's area and boundary with the number and orientation of each candidate piece.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "6-0",
+        type: "text",
+        text: "A",
+        imageAlt: "A option"
+      },
+      {
+        id: "6-1",
+        type: "text",
+        text: "B",
+        imageAlt: "B option"
+      },
+      {
+        id: "6-2",
+        type: "text",
+        text: "C",
+        imageAlt: "C option"
+      },
+      {
+        id: "6-3",
+        type: "text",
+        text: "D",
+        imageAlt: "D option"
+      },
+      {
+        id: "6-4",
+        type: "text",
+        text: "E",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-7-8/kadett/2023/questions/editor-q-06.png",
+    imageExtra: "/assets/kangaroo/grades-7-8/kadett/2023/questions/editor-q-06-extra.png"
+  },
+  {
+    number: 7,
+    points: 3,
+    prompt: "The diagram shows the starting position, direction and distance covered within 5 seconds by four bumper cars. Which two cars will first crash into each other?",
+    options: [
+      "A and B",
+      "A and C",
+      "A and D",
+      "B and C",
+      "C and D"
+    ],
+    answer: 1,
+    explanation: "NEEDS_REVIEW: the four starting positions, travel directions and distances are visual.",
+    hint: "Extend each car's path by its stated distance and find the first intersecting pair.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "7-0",
+        type: "text",
+        text: "A and B",
+        imageAlt: "A option"
+      },
+      {
+        id: "7-1",
+        type: "text",
+        text: "A and C",
+        imageAlt: "B option"
+      },
+      {
+        id: "7-2",
+        type: "text",
+        text: "A and D",
+        imageAlt: "C option"
+      },
+      {
+        id: "7-3",
+        type: "text",
+        text: "B and C",
+        imageAlt: "D option"
+      },
+      {
+        id: "7-4",
+        type: "text",
+        text: "C and D",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-7-8/kadett/2023/questions/editor-q-07.png"
+  },
+  {
+    number: 8,
+    points: 3,
+    prompt: "Werner labels each side and each corner of the shown rhombus with one number. The number on each side must equal the sum of the numbers at its two endpoints. Which number belongs in the place of the question mark?",
+    options: [
+      "11",
+      "12",
+      "13",
+      "14",
+      "15"
+    ],
+    answer: 1,
+    explanation: "NEEDS_REVIEW: the known vertex and side labels on the rhombus are visual.",
+    hint: "Write an addition equation for each side using the two adjacent vertex values.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "8-0",
+        type: "text",
+        text: "11",
+        imageAlt: "A option"
+      },
+      {
+        id: "8-1",
+        type: "text",
+        text: "12",
+        imageAlt: "B option"
+      },
+      {
+        id: "8-2",
+        type: "text",
+        text: "13",
+        imageAlt: "C option"
+      },
+      {
+        id: "8-3",
+        type: "text",
+        text: "14",
+        imageAlt: "D option"
+      },
+      {
+        id: "8-4",
+        type: "text",
+        text: "15",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-7-8/kadett/2023/questions/editor-q-08.png"
+  },
+  {
+    number: 9,
+    points: 3,
+    prompt: "Anna has five circular discs, all of different sizes. She wants to build a tower using three discs so that each smaller disc lies on top of a bigger disc. How many towers can she build?",
+    options: [
+      "5",
+      "6",
+      "8",
+      "10",
+      "15"
+    ],
+    answer: 3,
+    explanation: "Choose any three of the five distinct discs; their order in the tower is forced by their sizes. There are 5 choose 3 = 10 towers.",
+    hint: "Each selected set of three discs has exactly one valid size order.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "9-0",
+        type: "text",
+        text: "5",
+        imageAlt: "A option"
+      },
+      {
+        id: "9-1",
+        type: "text",
+        text: "6",
+        imageAlt: "B option"
+      },
+      {
+        id: "9-2",
+        type: "text",
+        text: "8",
+        imageAlt: "C option"
+      },
+      {
+        id: "9-3",
+        type: "text",
+        text: "10",
+        imageAlt: "D option"
+      },
+      {
+        id: "9-4",
+        type: "text",
+        text: "15",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-7-8/kadett/2023/questions/editor-q-09.png"
+  },
+  {
+    number: 10,
+    points: 3,
+    prompt: "Evita writes the numbers 1 to 8, one in each field. The sums in both rows must be equal, and the sums in all four columns must also be equal. The numbers 3, 4 and 8 are already shown. Which number belongs in the dark field?",
+    options: [
+      "1",
+      "2",
+      "5",
+      "6",
+      "7"
+    ],
+    answer: 4,
+    explanation: "NEEDS_REVIEW: the positions of 3, 4 and 8 and the dark field are shown in the source diagram.",
+    hint: "Use the total 1+2+...+8 and the equal row and column sums to constrain the missing cells.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "10-0",
+        type: "text",
+        text: "1",
+        imageAlt: "A option"
+      },
+      {
+        id: "10-1",
+        type: "text",
+        text: "2",
+        imageAlt: "B option"
+      },
+      {
+        id: "10-2",
+        type: "text",
+        text: "5",
+        imageAlt: "C option"
+      },
+      {
+        id: "10-3",
+        type: "text",
+        text: "6",
+        imageAlt: "D option"
+      },
+      {
+        id: "10-4",
+        type: "text",
+        text: "7",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-7-8/kadett/2023/questions/editor-q-10.png"
+  },
+  {
+    number: 11,
+    points: 4,
+    prompt: "Dorli writes three consecutive natural numbers in increasing order and replaces the digits by symbols, obtaining: square-diamond-diamond, heart-triangle-triangle, heart-triangle-square. What is the next bigger number in this notation?",
+    options: [
+      "Heart-heart-diamond",
+      "Square-heart-square",
+      "Heart-triangle-diamond",
+      "Heart-diamond-square",
+      "Heart-triangle-heart"
+    ],
+    answer: 4,
+    explanation: "The last two numbers keep the hundreds and tens digits and increase the units digit by one. For the first number to lead into them, its repeated final digit must roll over from 9 to 0, so the three numbers are 199, 200 and 201. The next is 202, or heart-triangle-heart.",
+    hint: "Look for the carry needed when the first number's repeated final digits become the two zeroes in the next number.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "11-0",
+        type: "text",
+        text: "Heart-heart-diamond",
+        imageAlt: "A option"
+      },
+      {
+        id: "11-1",
+        type: "text",
+        text: "Square-heart-square",
+        imageAlt: "B option"
+      },
+      {
+        id: "11-2",
+        type: "text",
+        text: "Heart-triangle-diamond",
+        imageAlt: "C option"
+      },
+      {
+        id: "11-3",
+        type: "text",
+        text: "Heart-diamond-square",
+        imageAlt: "D option"
+      },
+      {
+        id: "11-4",
+        type: "text",
+        text: "Heart-triangle-heart",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-7-8/kadett/2023/questions/editor-q-11.png"
+  },
+  {
+    number: 12,
+    points: 4,
+    prompt: "The diagram shows five equally large semicircles and five distances. What is the radius of one semicircle?",
+    options: [
+      "12",
+      "16",
+      "18",
+      "22",
+      "36"
+    ],
+    answer: 2,
+    explanation: "NEEDS_REVIEW: the five measured distances and semicircle layout are visual.",
+    hint: "Express each marked distance as a sum or difference of semicircle radii.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "12-0",
+        type: "text",
+        text: "12",
+        imageAlt: "A option"
+      },
+      {
+        id: "12-1",
+        type: "text",
+        text: "16",
+        imageAlt: "B option"
+      },
+      {
+        id: "12-2",
+        type: "text",
+        text: "18",
+        imageAlt: "C option"
+      },
+      {
+        id: "12-3",
+        type: "text",
+        text: "22",
+        imageAlt: "D option"
+      },
+      {
+        id: "12-4",
+        type: "text",
+        text: "36",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-7-8/kadett/2023/questions/editor-q-12.png"
+  },
+  {
+    number: 13,
+    points: 4,
+    prompt: "Some edges of a cube are coloured red so that every face has at least one red edge. What is the minimum number of red edges?",
+    options: [
+      "2",
+      "3",
+      "4",
+      "5",
+      "6"
+    ],
+    answer: 1,
+    explanation: "Each red edge borders two faces, so at least three are needed to cover all six faces. Three edges can be chosen so that every face is incident to one of them.",
+    hint: "Count how many faces one edge can cover, then check whether three suitably chosen edges cover all six.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "13-0",
+        type: "text",
+        text: "2",
+        imageAlt: "A option"
+      },
+      {
+        id: "13-1",
+        type: "text",
+        text: "3",
+        imageAlt: "B option"
+      },
+      {
+        id: "13-2",
+        type: "text",
+        text: "4",
+        imageAlt: "C option"
+      },
+      {
+        id: "13-3",
+        type: "text",
+        text: "5",
+        imageAlt: "D option"
+      },
+      {
+        id: "13-4",
+        type: "text",
+        text: "6",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-7-8/kadett/2023/questions/editor-q-13.png"
+  },
+  {
+    number: 14,
+    points: 4,
+    prompt: "The digits 0 to 9 can be formed using matchsticks as shown. How many different positive whole numbers can be formed with exactly 6 matchsticks?",
+    options: [
+      "2",
+      "4",
+      "6",
+      "8",
+      "9"
+    ],
+    answer: 2,
+    explanation: "NEEDS_REVIEW: the matchstick patterns used for each digit are shown in the source diagram.",
+    hint: "Use the matchstick cost of each digit and count positive numbers whose total cost is six.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "14-0",
+        type: "text",
+        text: "2",
+        imageAlt: "A option"
+      },
+      {
+        id: "14-1",
+        type: "text",
+        text: "4",
+        imageAlt: "B option"
+      },
+      {
+        id: "14-2",
+        type: "text",
+        text: "6",
+        imageAlt: "C option"
+      },
+      {
+        id: "14-3",
+        type: "text",
+        text: "8",
+        imageAlt: "D option"
+      },
+      {
+        id: "14-4",
+        type: "text",
+        text: "9",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-7-8/kadett/2023/questions/editor-q-14.png"
+  },
+  {
+    number: 15,
+    points: 4,
+    prompt: "A square has side length 1 cm. How many points in the plane are exactly 1 cm from two of its corner points?",
+    options: [
+      "4",
+      "5",
+      "6",
+      "10",
+      "12"
+    ],
+    answer: 4,
+    explanation: "For each diagonal pair of corners, the two unit circles meet at the other two square corners, giving four points altogether. For each adjacent pair, the circles meet at two points outside the square; the four sides give eight more. In total there are 12 points.",
+    hint: "Pair the corners in two ways: diagonal pairs give square corners, while adjacent pairs give two intersections outside the square.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "15-0",
+        type: "text",
+        text: "4",
+        imageAlt: "A option"
+      },
+      {
+        id: "15-1",
+        type: "text",
+        text: "5",
+        imageAlt: "B option"
+      },
+      {
+        id: "15-2",
+        type: "text",
+        text: "6",
+        imageAlt: "C option"
+      },
+      {
+        id: "15-3",
+        type: "text",
+        text: "10",
+        imageAlt: "D option"
+      },
+      {
+        id: "15-4",
+        type: "text",
+        text: "12",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 16,
+    points: 4,
+    prompt: "Some kangaroos and three beavers stand in a circle. No two beavers are adjacent. Exactly three kangaroos stand next to another kangaroo. What is the greatest possible number of kangaroos?",
+    options: [
+      "4",
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    answer: 1,
+    explanation: "The three beavers create three runs of kangaroos. A run of length one contributes no kangaroo with a kangaroo neighbour; a longer run contributes its full length. To have exactly three such kangaroos, one run can have length three and the other two length one, giving five kangaroos total.",
+    hint: "Split the circle into the three kangaroo runs between beavers and count how many members of each run have a kangaroo neighbour.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "16-0",
+        type: "text",
+        text: "4",
+        imageAlt: "A option"
+      },
+      {
+        id: "16-1",
+        type: "text",
+        text: "5",
+        imageAlt: "B option"
+      },
+      {
+        id: "16-2",
+        type: "text",
+        text: "6",
+        imageAlt: "C option"
+      },
+      {
+        id: "16-3",
+        type: "text",
+        text: "7",
+        imageAlt: "D option"
+      },
+      {
+        id: "16-4",
+        type: "text",
+        text: "8",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 17,
+    points: 4,
+    prompt: "Tom, John and Lily each shoot six arrows at a target with three scoring sections. Tom scores 46 and John scores 34. How many points does Lily score?",
+    options: [
+      "37",
+      "38",
+      "39",
+      "40",
+      "41"
+    ],
+    answer: 3,
+    explanation: "NEEDS_REVIEW: the three section scores and the arrow counts in each section are shown in the target diagram.",
+    hint: "Use the six-shot total together with the score of each target section.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "17-0",
+        type: "text",
+        text: "37",
+        imageAlt: "A option"
+      },
+      {
+        id: "17-1",
+        type: "text",
+        text: "38",
+        imageAlt: "B option"
+      },
+      {
+        id: "17-2",
+        type: "text",
+        text: "39",
+        imageAlt: "C option"
+      },
+      {
+        id: "17-3",
+        type: "text",
+        text: "40",
+        imageAlt: "D option"
+      },
+      {
+        id: "17-4",
+        type: "text",
+        text: "41",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-7-8/kadett/2023/questions/editor-q-17.png"
+  },
+  {
+    number: 18,
+    points: 4,
+    prompt: "Max and two friends are in a line whose length is a multiple of 3. The same number of people are in front of Max as behind him. Both friends are behind him, in positions 19 and 28. In which position is Max?",
+    options: [
+      "14",
+      "15",
+      "16",
+      "17",
+      "18"
+    ],
+    answer: 3,
+    explanation: "Max is in the middle, so if his position is m, the line has 2m-1 people. This is a multiple of 3, so m is 2 modulo 3. Since Max is before position 19, m=17.",
+    hint: "The line has an odd number of people and Max occupies its middle position; apply the divisibility condition.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "18-0",
+        type: "text",
+        text: "14",
+        imageAlt: "A option"
+      },
+      {
+        id: "18-1",
+        type: "text",
+        text: "15",
+        imageAlt: "B option"
+      },
+      {
+        id: "18-2",
+        type: "text",
+        text: "16",
+        imageAlt: "C option"
+      },
+      {
+        id: "18-3",
+        type: "text",
+        text: "17",
+        imageAlt: "D option"
+      },
+      {
+        id: "18-4",
+        type: "text",
+        text: "18",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 19,
+    points: 4,
+    prompt: "Two rays from S form a right angle. More rays are drawn inside it so that each angle 10, 20, 30, 40, 50, 60, 70 and 80 degrees is enclosed by two rays. What is the minimum number of additional rays needed?",
+    options: [
+      "2",
+      "3",
+      "4",
+      "5",
+      "6"
+    ],
+    answer: 1,
+    explanation: "With four rays there are only six pairs, too few to make all eight required angles, so at least five rays in total are needed. Rays at 0°, 10°, 40°, 70° and 90° make every difference from 10° through 80°, using three additional rays.",
+    hint: "Each pair of rays gives at most one angle size. Find a small set of directions whose pairwise differences include all eight multiples of 10°.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "19-0",
+        type: "text",
+        text: "2",
+        imageAlt: "A option"
+      },
+      {
+        id: "19-1",
+        type: "text",
+        text: "3",
+        imageAlt: "B option"
+      },
+      {
+        id: "19-2",
+        type: "text",
+        text: "4",
+        imageAlt: "C option"
+      },
+      {
+        id: "19-3",
+        type: "text",
+        text: "5",
+        imageAlt: "D option"
+      },
+      {
+        id: "19-4",
+        type: "text",
+        text: "6",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-7-8/kadett/2023/questions/editor-q-19.png"
+  },
+  {
+    number: 20,
+    points: 4,
+    prompt: "The sum of 2023 consecutive integers is 2023. What is the digit sum of the largest of these integers?",
+    options: [
+      "4",
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    answer: 0,
+    explanation: "The average is 1, so the 2023 integers are centred at 1. The largest is 1+1011=1012, whose digit sum is 4.",
+    hint: "The mean of consecutive integers is their middle term; use it to find the largest term.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "20-0",
+        type: "text",
+        text: "4",
+        imageAlt: "A option"
+      },
+      {
+        id: "20-1",
+        type: "text",
+        text: "5",
+        imageAlt: "B option"
+      },
+      {
+        id: "20-2",
+        type: "text",
+        text: "6",
+        imageAlt: "C option"
+      },
+      {
+        id: "20-3",
+        type: "text",
+        text: "7",
+        imageAlt: "D option"
+      },
+      {
+        id: "20-4",
+        type: "text",
+        text: "8",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 21,
+    points: 5,
+    prompt: "A grey rectangle lies inside a larger rectangle and touches its sides. Two corners of the grey rectangle are the midpoints of the shorter sides of the larger rectangle. The grey rectangle is made of three squares, each of area 25 cm^2. What is the area of the larger rectangle?",
+    options: [
+      "125",
+      "136",
+      "149",
+      "150",
+      "172"
+    ],
+    answer: 3,
+    explanation: "NEEDS_REVIEW: the orientation and dimensions of the three-square rectangle relative to the larger rectangle are shown in the source diagram.",
+    hint: "Use the square side length and midpoint constraints to relate the two rectangle dimensions.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "21-0",
+        type: "text",
+        text: "125",
+        imageAlt: "A option"
+      },
+      {
+        id: "21-1",
+        type: "text",
+        text: "136",
+        imageAlt: "B option"
+      },
+      {
+        id: "21-2",
+        type: "text",
+        text: "149",
+        imageAlt: "C option"
+      },
+      {
+        id: "21-3",
+        type: "text",
+        text: "150",
+        imageAlt: "D option"
+      },
+      {
+        id: "21-4",
+        type: "text",
+        text: "172",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-7-8/kadett/2023/questions/editor-q-21.png"
+  },
+  {
+    number: 22,
+    points: 5,
+    prompt: "In a chess tournament, each of seven dwarfs plays every other dwarf exactly once. On Monday Grumpy plays 1 game, Sneezy 2, Sleepy 3, Bashful 4, Happy 5 and Doc 6 games. How many games does Dopey play on Monday?",
+    options: [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    answer: 2,
+    explanation: "Doc's six games include every dwarf, so Grumpy's one game is only against Doc. Removing those games leaves Sneezy, Sleepy, Bashful, Happy and Dopey with 1, 2, 3, 4 and d−1 games among themselves. The degree sum must be even, so d is odd. A value of 1 would leave a degree-4 player and a degree-0 player, impossible; 5 gives degrees 4, 4, 3, 2, 1, also impossible. The sequence 4, 3, 2, 2, 1 is possible, so d = 3.",
+    hint: "Use Doc's six games and Grumpy's one game first, then check which odd value for Dopey's remaining degree can form a game schedule.",
+    sourcePage: 4,
+    optionContent: [
+      {
+        id: "22-0",
+        type: "text",
+        text: "1",
+        imageAlt: "A option"
+      },
+      {
+        id: "22-1",
+        type: "text",
+        text: "2",
+        imageAlt: "B option"
+      },
+      {
+        id: "22-2",
+        type: "text",
+        text: "3",
+        imageAlt: "C option"
+      },
+      {
+        id: "22-3",
+        type: "text",
+        text: "4",
+        imageAlt: "D option"
+      },
+      {
+        id: "22-4",
+        type: "text",
+        text: "5",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 23,
+    points: 5,
+    prompt: "Triangle ABC is isosceles with angle ABC = 40 degrees. The indicated angles EAB and DCA are equal. What is angle CFE?",
+    options: [
+      "55 degrees",
+      "60 degrees",
+      "65 degrees",
+      "70 degrees",
+      "75 degrees"
+    ],
+    answer: 3,
+    explanation: "NEEDS_REVIEW: the isosceles triangle's equal sides and the positions of D, E and F are shown in the source diagram.",
+    hint: "Use the equal base angles and the given equality, then track the angles in the intersecting lines.",
+    sourcePage: 4,
+    optionContent: [
+      {
+        id: "23-0",
+        type: "text",
+        text: "55 degrees",
+        imageAlt: "A option"
+      },
+      {
+        id: "23-1",
+        type: "text",
+        text: "60 degrees",
+        imageAlt: "B option"
+      },
+      {
+        id: "23-2",
+        type: "text",
+        text: "65 degrees",
+        imageAlt: "C option"
+      },
+      {
+        id: "23-3",
+        type: "text",
+        text: "70 degrees",
+        imageAlt: "D option"
+      },
+      {
+        id: "23-4",
+        type: "text",
+        text: "75 degrees",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-7-8/kadett/2023/questions/editor-q-23.png"
+  },
+  {
+    number: 24,
+    points: 5,
+    prompt: "An ant walks once around an equilateral triangle. Its speeds along the first, second and third sides are 5, 15 and 20 cm/min. What is its average speed for the complete trip?",
+    options: [
+      "10",
+      "80/11",
+      "180/19",
+      "15",
+      "40/3"
+    ],
+    answer: 2,
+    explanation: "The three sides have equal length L. The travel time is L/5 + L/15 + L/20 = 19L/60 minutes, so the average speed is 3L/(19L/60) = 180/19 cm/min.",
+    hint: "For equal distances, add the three travel times and divide the total distance by that time.",
+    sourcePage: 4,
+    optionContent: [
+      {
+        id: "24-0",
+        type: "text",
+        text: "10",
+        imageAlt: "A option"
+      },
+      {
+        id: "24-1",
+        type: "text",
+        text: "80/11",
+        imageAlt: "B option"
+      },
+      {
+        id: "24-2",
+        type: "text",
+        text: "180/19",
+        imageAlt: "C option"
+      },
+      {
+        id: "24-3",
+        type: "text",
+        text: "15",
+        imageAlt: "D option"
+      },
+      {
+        id: "24-4",
+        type: "text",
+        text: "40/3",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-7-8/kadett/2023/questions/editor-q-24.png"
+  },
+  {
+    number: 25,
+    points: 5,
+    prompt: "Elisabeth writes the numbers 1 to 9 in the fields of the shown diagram so that the product of numbers in any two edge-adjacent fields is at most 15. How many arrangements are possible?",
+    options: [
+      "8",
+      "12",
+      "16",
+      "24",
+      "32"
+    ],
+    answer: 2,
+    explanation: "NEEDS_REVIEW: the field layout in the source diagram determines which placements are adjacent.",
+    hint: "Use the products greater than 15 to rule out neighbouring pairs, then count the valid placements in the shown layout.",
+    sourcePage: 4,
+    optionContent: [
+      {
+        id: "25-0",
+        type: "text",
+        text: "8",
+        imageAlt: "A option"
+      },
+      {
+        id: "25-1",
+        type: "text",
+        text: "12",
+        imageAlt: "B option"
+      },
+      {
+        id: "25-2",
+        type: "text",
+        text: "16",
+        imageAlt: "C option"
+      },
+      {
+        id: "25-3",
+        type: "text",
+        text: "24",
+        imageAlt: "D option"
+      },
+      {
+        id: "25-4",
+        type: "text",
+        text: "32",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-7-8/kadett/2023/questions/editor-q-25.png"
+  },
+  {
+    number: 26,
+    points: 5,
+    prompt: "Several mice live in three houses. Each mouse leaves its house and moves directly to one of the other two houses. The diagram shows the numbers of mice in each house yesterday and today. How many mice used the path indicated by an arrow?",
+    options: [
+      "9",
+      "11",
+      "12",
+      "16",
+      "19"
+    ],
+    answer: 1,
+    explanation: "NEEDS_REVIEW: the two counts for each house and the indicated arrow are visual in the source diagram.",
+    hint: "Use conservation of mice and the three house totals to solve for the flow along each path.",
+    sourcePage: 4,
+    optionContent: [
+      {
+        id: "26-0",
+        type: "text",
+        text: "9",
+        imageAlt: "A option"
+      },
+      {
+        id: "26-1",
+        type: "text",
+        text: "11",
+        imageAlt: "B option"
+      },
+      {
+        id: "26-2",
+        type: "text",
+        text: "12",
+        imageAlt: "C option"
+      },
+      {
+        id: "26-3",
+        type: "text",
+        text: "16",
+        imageAlt: "D option"
+      },
+      {
+        id: "26-4",
+        type: "text",
+        text: "19",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-7-8/kadett/2023/questions/editor-q-26.png"
+  },
+  {
+    number: 27,
+    points: 5,
+    prompt: "Bart writes 1015 as a sum of numbers made only of the digit 7, using 10 sevens in total. He wants to write 2023 in the same way, using 19 sevens in total. How many times must he use the number 77?",
+    options: [
+      "2",
+      "3",
+      "4",
+      "5",
+      "6"
+    ],
+    answer: 4,
+    explanation: "Let a, b and c count the summands 7, 77 and 777; longer summands exceed 2023. The digit total gives a + 2b + 3c = 19, and the value gives 7a + 77b + 777c = 2023. Subtracting seven times the first equation from the second gives b + 12c = 30. Together with a = 21c − 41 ≥ 0, this forces c = 2 and b = 6, so 77 is used six times.",
+    hint: "Let a, b and c count the one-, two- and three-digit summands; use both the total value and the total number of sevens.",
+    sourcePage: 4,
+    optionContent: [
+      {
+        id: "27-0",
+        type: "text",
+        text: "2",
+        imageAlt: "A option"
+      },
+      {
+        id: "27-1",
+        type: "text",
+        text: "3",
+        imageAlt: "B option"
+      },
+      {
+        id: "27-2",
+        type: "text",
+        text: "4",
+        imageAlt: "C option"
+      },
+      {
+        id: "27-3",
+        type: "text",
+        text: "5",
+        imageAlt: "D option"
+      },
+      {
+        id: "27-4",
+        type: "text",
+        text: "6",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-7-8/kadett/2023/questions/editor-q-27.png"
+  },
+  {
+    number: 28,
+    points: 5,
+    prompt: "A regular hexagon is divided into four quadrilaterals and a smaller regular hexagon. The ratio of the area of the dark sections to the area of the small hexagon is 4/3. What is the ratio of the area of the small hexagon to the area of the large hexagon?",
+    options: [
+      "3/11",
+      "1/3",
+      "2/3",
+      "3/4",
+      "3/5"
+    ],
+    answer: 0,
+    explanation: "NEEDS_REVIEW: the dark and light regions in the hexagon diagram are required to relate the given area ratio to the full large hexagon.",
+    hint: "Express the total area as the small hexagon plus all four surrounding quadrilaterals, distinguishing dark from light regions.",
+    sourcePage: 4,
+    optionContent: [
+      {
+        id: "28-0",
+        type: "text",
+        text: "3/11",
+        imageAlt: "A option"
+      },
+      {
+        id: "28-1",
+        type: "text",
+        text: "1/3",
+        imageAlt: "B option"
+      },
+      {
+        id: "28-2",
+        type: "text",
+        text: "2/3",
+        imageAlt: "C option"
+      },
+      {
+        id: "28-3",
+        type: "text",
+        text: "3/4",
+        imageAlt: "D option"
+      },
+      {
+        id: "28-4",
+        type: "text",
+        text: "3/5",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-7-8/kadett/2023/questions/editor-q-28.png"
+  },
+  {
+    number: 29,
+    points: 5,
+    prompt: "Jakob writes six consecutive numbers on six pieces of paper, one per piece, and sticks them on the front and back of three coins. After the first throw, 6, 7 and 8 are on top and are coloured red. On the second throw the top numbers sum to 23, and on the third they sum to 17. What is the sum of the numbers on the three white pieces of paper?",
+    options: [
+      "18",
+      "19",
+      "23",
+      "24",
+      "30"
+    ],
+    answer: 0,
+    explanation: "NEEDS_REVIEW: the coin-face arrangement and the information shown after each throw are visual; the answer key indicates A.",
+    hint: "Use the three top-number sums to determine which number is on each opposite side of the coins.",
+    sourcePage: 4,
+    optionContent: [
+      {
+        id: "29-0",
+        type: "text",
+        text: "18",
+        imageAlt: "A option"
+      },
+      {
+        id: "29-1",
+        type: "text",
+        text: "19",
+        imageAlt: "B option"
+      },
+      {
+        id: "29-2",
+        type: "text",
+        text: "23",
+        imageAlt: "C option"
+      },
+      {
+        id: "29-3",
+        type: "text",
+        text: "24",
+        imageAlt: "D option"
+      },
+      {
+        id: "29-4",
+        type: "text",
+        text: "30",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-7-8/kadett/2023/questions/editor-q-29.png"
+  },
+  {
+    number: 30,
+    points: 5,
+    prompt: "A rugby team scored 24, 17 and 25 points in its 7th, 8th and 9th games last season. Its average after 9 games was higher than after the first 6, and its average after 10 games was more than 22. What is the minimum score in the 10th game?",
+    options: [
+      "22",
+      "23",
+      "24",
+      "25",
+      "26"
+    ],
+    answer: 2,
+    explanation: "Let S be the first-six total. The higher average after nine games gives (S+66)/9 > S/6, hence S < 132 and S is at most 131. For a 10-game average above 22, the tenth score x must satisfy S+66+x > 220. With S=131 the minimum integer x is 24.",
+    hint: "Use the average comparison to bound the first-six total, then apply the 10-game average condition.",
+    sourcePage: 4,
+    optionContent: [
+      {
+        id: "30-0",
+        type: "text",
+        text: "22",
+        imageAlt: "A option"
+      },
+      {
+        id: "30-1",
+        type: "text",
+        text: "23",
+        imageAlt: "B option"
+      },
+      {
+        id: "30-2",
+        type: "text",
+        text: "24",
+        imageAlt: "C option"
+      },
+      {
+        id: "30-3",
+        type: "text",
+        text: "25",
+        imageAlt: "D option"
+      },
+      {
+        id: "30-4",
+        type: "text",
+        text: "26",
+        imageAlt: "E option"
+      }
+    ]
+  }
 ];
 
 const sections2023Kadett: Section[] = [
-  { points: 3, label: "Section 1", range: "Questions 1-10", accent: "coral" },
-  { points: 4, label: "Section 2", range: "Questions 11-20", accent: "blue" },
-  { points: 5, label: "Section 3", range: "Questions 21-30", accent: "purple" }
+  {
+    points: 3,
+    label: "Section 1",
+    range: "Questions 1-10",
+    accent: "coral"
+  },
+  {
+    points: 4,
+    label: "Section 2",
+    range: "Questions 11-20",
+    accent: "blue"
+  },
+  {
+    points: 5,
+    label: "Section 3",
+    range: "Questions 21-30",
+    accent: "purple"
+  }
 ];
 
 export const edition2023Kadett: QuestionSet = {
@@ -49,5 +1500,5 @@ export const edition2023Kadett: QuestionSet = {
   timeLimitMinutes: 75,
   sourceUrl: "https://www.matematica.pt/en/docs/kangaroo/enunciados/2023/2023_Kadett.pdf",
   questions: questions2023Kadett,
-  sections: sections2023Kadett
+  sections: sections2023Kadett,
 };

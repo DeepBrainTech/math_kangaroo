@@ -1,42 +1,1485 @@
 import type { Question, QuestionSet, Section } from "../../../types";
 
 const questions2019Kadett: Question[] = [
-  { number: 1, points: 3, prompt: "Which cloud contains only even numbers?", options: ["A", "B", "C", "D", "E"], answer: 4, explanation: "NEEDS_REVIEW: the number clouds are visual.", hint: "Check every number in each cloud for divisibility by two.", sourcePage: 1 },
-  { number: 2, points: 3, prompt: "Ten quarters of an hour are how many hours?", options: ["40", "5½", "4", "3", "2½"], answer: 4, explanation: "Ten quarter-hours equal 10×15=150 minutes, or 2½ hours.", hint: "Convert each quarter-hour to minutes, then convert to hours.", sourcePage: 1 },
-  { number: 3, points: 3, prompt: "A 3×3×3 cube has three central lines of cubes removed: front-to-back, top-to-bottom and right-to-left. How many unit cubes remain?", options: ["15", "18", "20", "21", "22"], answer: 2, explanation: "Each of the three lines contains 3 cubes, and all three meet at the same central cube. Thus they remove 3+3+3−1−1−1+1=7 cubes, leaving 27−7=20.", hint: "Count the three length-3 lines, correcting for their shared central cube so it is removed only once.", sourcePage: 1 },
-  { number: 4, points: 3, prompt: "Three rings are connected as shown. Which picture shows the same connection?", options: ["A", "B", "C", "D", "E"], answer: 3, explanation: "NEEDS_REVIEW: the linked-ring arrangement and candidate pictures are visual.", hint: "Compare which ring passes through which opening; crossings alone do not determine linkage.", sourcePage: 1 },
-  { number: 5, points: 3, prompt: "Four of the five diagrams can be drawn without lifting the pencil or tracing a line twice. Which one cannot?", options: ["A", "B", "C", "D", "E"], answer: 3, explanation: "NEEDS_REVIEW: the five line graphs are visual.", hint: "A one-stroke drawing is possible only when the graph has zero or two vertices of odd degree.", sourcePage: 1 },
-  { number: 6, points: 3, prompt: "Five friends each give one gingerbread to every other person, then eat all they received. After this, the total number of gingerbreads is half the starting amount. How many did they start with?", options: ["20", "24", "30", "40", "60"], answer: 3, explanation: "If each starts with g, the group starts with 5g and eats 5×4=20. Remaining 5g−20 equals half of 5g, so g=8 and the initial total is 40.", hint: "Each person gives away four gingerbreads; compare the remaining total with half the original.", sourcePage: 1 },
-  { number: 7, points: 3, prompt: "Lothar finishes before Manfred. Victor finishes after Jan, Manfred before Jan, and Eddy before Victor. Who finishes last?", options: ["Victor", "Manfred", "Lothar", "Jan", "Eddy"], answer: 0, explanation: "Victor is after Jan, who is after Manfred, who is after Lothar; Eddy is also before Victor. Thus Victor is last.", hint: "Turn each statement into an ordering relation and find who must be after everyone else.", sourcePage: 1 },
-  { number: 8, points: 3, prompt: "In Julia's numbered book, digit 0 appears five times and digit 8 appears six times. What is the last page number?", options: ["48", "58", "60", "68", "88"], answer: 1, explanation: "From pages 1 to 58, zero appears on 10, 20, 30, 40 and 50: five times. The digit 8 appears on 8, 18, 28, 38, 48 and 58: six times. Therefore the last page is 58, choice B.", hint: "Count the zeroes and eights page by page through the possible endpoints, checking both the units and tens places.", sourcePage: 1 },
-  { number: 9, points: 3, prompt: "A large square is divided into smaller squares of different sizes, some shaded grey. What fraction of the large square is grey?", options: ["2/3", "3/5", "4/7", "4/9", "5/12"], answer: 3, explanation: "NEEDS_REVIEW: the square partition and shaded cells are visual.", hint: "Use the side-length ratios of the smaller squares to compare their areas.", sourcePage: 1 },
-  { number: 10, points: 3, prompt: "Andreas shares some apples equally into six baskets. Boris shares the same number equally into five baskets and gets two more apples per basket. How many apples did Andreas share?", options: ["60", "65", "72", "75", "90"], answer: 0, explanation: "Let N be the apples. N/5−N/6=2, so N/30=2 and N=60.", hint: "Set the difference between the basket amounts equal to two.", sourcePage: 1 },
-  { number: 11, points: 4, prompt: "Three four-digit numbers sum to 10126; three digits are hidden in the picture. Which are they?", options: ["5, 6 and 7", "4, 5 and 7", "4, 6 and 7", "4, 5 and 6", "3, 5 and 6"], answer: 0, explanation: "NEEDS_REVIEW: the three numbers with hidden digits are visual.", hint: "Add the visible columns with carrying to determine the three missing digits.", sourcePage: 2 },
-  { number: 12, points: 4, prompt: "In triangle PSQ, angle QPS=20° and PQ=PR=QS as shown. How large is angle RQS?", options: ["50°", "60°", "65°", "70°", "75°"], answer: 1, explanation: "NEEDS_REVIEW: the placement of R and the equal-length segments are visual.", hint: "Use the isosceles triangles created by PQ=PR=QS and the 20° angle.", sourcePage: 2 },
-  { number: 13, points: 4, prompt: "A trapezium has perimeter 5 and whole-number side lengths. What are its smallest angles?", options: ["30° and 30°", "60° and 60°", "45° and 45°", "30° and 60°", "45° and 90°"], answer: 4, explanation: "NEEDS_REVIEW: verify which integer-sided trapezia are allowed; the key indicates E.", hint: "List side-length combinations summing to five and use the parallel-side angle relationships.", sourcePage: 2 },
-  { number: 14, points: 4, prompt: "Four of the five pictured shapes can fold into a cube. Which shape cannot?", options: ["Shape 1", "Shape 2", "Shape 3", "Shape 4", "Shape 5"], answer: 1, explanation: "NEEDS_REVIEW: the five candidate nets are visual.", hint: "Fold each net and check for overlap or repeated faces.", sourcePage: 2 },
-  { number: 15, points: 4, prompt: "Willi writes several consecutive whole numbers. Which percentage of them being odd cannot occur?", options: ["40%", "45%", "48%", "50%", "60%"], answer: 2, explanation: "NEEDS_REVIEW: determine the possible odd proportions for consecutive integer runs; key indicates C.", hint: "Odd and even numbers alternate, so in a run their counts differ by at most one.", sourcePage: 2 },
-  { number: 16, points: 4, prompt: "Aron, Ben and Carl always lie. Aron says his stone matches Ben's; Ben says his matches Carl's; Carl says exactly two stones are red. Which statement is correct?", options: ["Aron's stone is green", "Ben's stone is green", "Carl's stone is red", "Aron and Carl differ", "None is correct"], answer: 0, explanation: "All three statements are false: Aron and Ben differ, Ben and Carl differ, so Aron and Carl match; Carl's claim rules out both being red, leaving them green and Ben red.", hint: "Negate each statement and test the two possible colours for Ben.", sourcePage: 2 },
-  { number: 17, points: 4, prompt: "Four-digit numbers made from 2, 0, 1 and 3 are listed in ascending order. What is the largest difference between consecutive numbers?", options: ["702", "703", "693", "793", "198"], answer: 0, explanation: "The largest gap is between 2310 and 3012, the consecutive valid numbers on either side of the jump from a leading 2 to a leading 3. Their difference is 3012−2310=702, choice A.", hint: "Order all valid permutations, remembering that a four-digit number cannot start with 0; pay particular attention where the leading digit changes.", sourcePage: 2 },
-  { number: 18, points: 4, prompt: "In an 8×6 grid, 24 squares are not crossed by either diagonal. How many squares in a 10×6 grid are not crossed by either diagonal?", options: ["28", "29", "30", "31", "32"], answer: 1, explanation: "NEEDS_REVIEW: determine the diagonal paths and any shared crossings from the source diagram; key indicates B.", hint: "Count the unit squares crossed by each diagonal and account for any overlap.", sourcePage: 2 },
-  { number: 19, points: 4, prompt: "Five children have birthdays on 20 Feb, 12 Mar, 20 Mar, 12 Apr and 23 Apr 2000. Andi and Edi share a month; Berti and Christa share a month; Andi and Christa share a day number in different months; Doris and Edi also share a day number in different months. Who is youngest?", options: ["Andi", "Berti", "Christa", "Doris", "Edi"], answer: 1, explanation: "Andi and Edi must take the two March dates or the two April dates. Doris's February 20 birthday forces Edi to have day 20 in another month, so Edi is 20 March and Andi is 12 March. Christa must then be 12 April, leaving Berti with 23 April. That is the latest birthday, so Berti is youngest.", hint: "Doris has a February 20 birthday. Use the shared-day clue with Edi first, then apply the month and day clues to assign the remaining dates.", sourcePage: 2 },
-  { number: 20, points: 4, prompt: "Johann stacks cubes on a 4×4 grid. The diagram gives each stack height. What will the tower look like from behind?", options: ["A", "B", "C", "D", "E"], answer: 1, explanation: "NEEDS_REVIEW: the stack-height grid and candidate views are visual; key indicates B.", hint: "Reverse the left-to-right order when viewing from behind.", sourcePage: 2 },
-  { number: 21, points: 5, prompt: "What is the smallest positive integer whose digit product is 24, and what is its digit sum?", options: ["6", "8", "9", "10", "11"], answer: 4, explanation: "The smallest number with digit product 24 is 38, whose digit sum is 11.", hint: "Find the smallest two-digit factor pair of 24.", sourcePage: 3 },
-  { number: 22, points: 5, prompt: "A rectangle lies below the x-axis and right of the y-axis. At each vertex calculate y/x. Which point gives the smallest value?", options: ["A", "B", "C", "D", "It depends"], answer: 0, explanation: "NEEDS_REVIEW: vertex labels and coordinates are shown in the source diagram.", hint: "All ratios are negative; compare their magnitudes using each vertex's x- and y-coordinates.", sourcePage: 3 },
-  { number: 23, points: 5, prompt: "A grid has 2 cm squares. What is the area of the grey quadrilateral ABCD?", options: ["96 cm²", "84 cm²", "76 cm²", "88 cm²", "104 cm²"], answer: 1, explanation: "NEEDS_REVIEW: the vertices and grid shape are visual; key indicates B.", hint: "Count full and partial 2×2 cm squares inside the quadrilateral.", sourcePage: 3 },
-  { number: 24, points: 5, prompt: "Robert removes one digit from a five-digit number, leaving a four-digit number. Their sum is 52713. What is the digit sum of the original number?", options: ["26", "20", "23", "19", "17"], answer: 2, explanation: "The shortened number has the same units digit as the original, so their sum is even unless the removed digit was the units digit. Write the original as 10m+d and the shortened number as m. Then 11m+d=52713; since 52713 leaves remainder 1 on division by 11 and d is a digit, d=1. This gives m=4792 and original number 47921, whose digit sum is 23.", hint: "Use parity to determine where the removed digit must be. Then express the original and shortened numbers in terms of the shortened number and removed digit.", sourcePage: 3 },
-  { number: 25, points: 5, prompt: "A gardener plants 20 linden and oak trees. There must never be exactly three trees between any two oak trees. What is the maximum number of oak trees?", options: ["8", "10", "12", "14", "16"], answer: 3, explanation: "NEEDS_REVIEW: confirm the forbidden spacing condition and maximum arrangement; the key indicates D.", hint: "Model the row as 20 positions and forbid oak pairs separated by exactly four positions.", sourcePage: 3 },
-  { number: 26, points: 5, prompt: "There are twice as many runners behind Alex as before Daniel, and 1.5 times as many behind Daniel as before Alex. Alex finishes 21st. How many runners are there?", options: ["31", "41", "51", "61", "81"], answer: 1, explanation: "Let N be the field size. Runners before Alex=20; behind Daniel=30, so Daniel is N−30. Then before Daniel=N−31 and behind Alex=N−21. N−21=2(N−31), hence N=41.", hint: "Translate the before/behind counts into equations involving the total number of runners.", sourcePage: 3 },
-  { number: 27, points: 5, prompt: "The sequence begins 1, −1, −1, 1, −1; each next term is the product of the two preceding terms. What is the sum of the first 2013 terms?", options: ["−1006", "−671", "0", "671", "1007"], answer: 1, explanation: "The six-term cycle is 1, −1, −1, 1, −1, −1, with sum −2. Since 2013=335×6+3, the first 2013 terms have sum 335(−2)+(1−1−1)=−671, choice B.", hint: "Find the repeating six-term cycle, add its complete cycles, and then include the three remaining terms.", sourcePage: 3 },
-  { number: 28, points: 5, prompt: "Six pancakes are made in order. The children sometimes eat the hottest available pancakes. Which eating order is impossible?", options: ["123456", "125436", "325461", "456231", "654321"], answer: 2, explanation: "NEEDS_REVIEW: the heat order and serving constraints determine which permutation is impossible.", hint: "At each step only a currently hottest pancake can be eaten; simulate the stack order.", sourcePage: 3 },
-  { number: 29, points: 5, prompt: "The vertices and edges of a tetrahedron are labelled with 1,2,3,4,5,6,7,8,9,11 once each. Each edge label is the sum of its endpoint vertex labels. AB is 9. What is the label on CD?", options: ["4", "5", "6", "8", "11"], answer: 1, explanation: "NEEDS_REVIEW: the tetrahedron's vertex/edge layout and assignment are required to determine CD.", hint: "Use the six edge-sum equations and the fact that each listed value is used exactly once.", sourcePage: 3 },
-  { number: 30, points: 5, prompt: "Four cars enter a roundabout from different directions. None drives all the way around, and no two leave at the same exit. How many exit assignments are possible?", options: ["9", "12", "15", "24", "81"], answer: 0, explanation: "There are !4=9 derangements of four exits, since no car may leave at its entry point.", hint: "Count permutations of the exits with no fixed point.", sourcePage: 3 }
+  {
+    number: 1,
+    points: 3,
+    prompt: "Which cloud contains only even numbers?",
+    options: [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    answer: 4,
+    explanation: "NEEDS_REVIEW: the number clouds are visual.",
+    hint: "Check every number in each cloud for divisibility by two.",
+    sourcePage: 1,
+    imageExtra: "/assets/kangaroo/grades-7-8/kadett/2019/questions/editor-q-01-extra.png",
+    optionContent: [
+      {
+        id: "1-0",
+        type: "text",
+        text: "A",
+        imageAlt: "A option"
+      },
+      {
+        id: "1-1",
+        type: "text",
+        text: "B",
+        imageAlt: "B option"
+      },
+      {
+        id: "1-2",
+        type: "text",
+        text: "C",
+        imageAlt: "C option"
+      },
+      {
+        id: "1-3",
+        type: "text",
+        text: "D",
+        imageAlt: "D option"
+      },
+      {
+        id: "1-4",
+        type: "text",
+        text: "E",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 2,
+    points: 3,
+    prompt: "Ten quarters of an hour are how many hours?",
+    options: [
+      "40",
+      "5½",
+      "4",
+      "3",
+      "2½"
+    ],
+    answer: 4,
+    explanation: "Ten quarter-hours equal 10×15=150 minutes, or 2½ hours.",
+    hint: "Convert each quarter-hour to minutes, then convert to hours.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "2-0",
+        type: "text",
+        text: "40",
+        imageAlt: "A option"
+      },
+      {
+        id: "2-1",
+        type: "text",
+        text: "5½",
+        imageAlt: "B option"
+      },
+      {
+        id: "2-2",
+        type: "text",
+        text: "4",
+        imageAlt: "C option"
+      },
+      {
+        id: "2-3",
+        type: "text",
+        text: "3",
+        imageAlt: "D option"
+      },
+      {
+        id: "2-4",
+        type: "text",
+        text: "2½",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 3,
+    points: 3,
+    prompt: "A 3×3×3 cube has three central lines of cubes removed: front-to-back, top-to-bottom and right-to-left. How many unit cubes remain?",
+    options: [
+      "15",
+      "18",
+      "20",
+      "21",
+      "22"
+    ],
+    answer: 2,
+    explanation: "Each of the three lines contains 3 cubes, and all three meet at the same central cube. Thus they remove 3+3+3−1−1−1+1=7 cubes, leaving 27−7=20.",
+    hint: "Count the three length-3 lines, correcting for their shared central cube so it is removed only once.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "3-0",
+        type: "text",
+        text: "15",
+        imageAlt: "A option"
+      },
+      {
+        id: "3-1",
+        type: "text",
+        text: "18",
+        imageAlt: "B option"
+      },
+      {
+        id: "3-2",
+        type: "text",
+        text: "20",
+        imageAlt: "C option"
+      },
+      {
+        id: "3-3",
+        type: "text",
+        text: "21",
+        imageAlt: "D option"
+      },
+      {
+        id: "3-4",
+        type: "text",
+        text: "22",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-7-8/kadett/2019/questions/editor-q-03.png"
+  },
+  {
+    number: 4,
+    points: 3,
+    prompt: "Three rings are connected as shown. Which picture shows the same connection?",
+    options: [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    answer: 3,
+    explanation: "NEEDS_REVIEW: the linked-ring arrangement and candidate pictures are visual.",
+    hint: "Compare which ring passes through which opening; crossings alone do not determine linkage.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "4-0",
+        type: "text",
+        text: "A",
+        imageAlt: "A option"
+      },
+      {
+        id: "4-1",
+        type: "text",
+        text: "B",
+        imageAlt: "B option"
+      },
+      {
+        id: "4-2",
+        type: "text",
+        text: "C",
+        imageAlt: "C option"
+      },
+      {
+        id: "4-3",
+        type: "text",
+        text: "D",
+        imageAlt: "D option"
+      },
+      {
+        id: "4-4",
+        type: "text",
+        text: "E",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-7-8/kadett/2019/questions/editor-q-04.png",
+    imageExtra: "/assets/kangaroo/grades-7-8/kadett/2019/questions/editor-q-04-extra.png"
+  },
+  {
+    number: 5,
+    points: 3,
+    prompt: "Four of the five diagrams can be drawn without lifting the pencil or tracing a line twice. Which one cannot?",
+    options: [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    answer: 3,
+    explanation: "NEEDS_REVIEW: the five line graphs are visual.",
+    hint: "A one-stroke drawing is possible only when the graph has zero or two vertices of odd degree.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "5-0",
+        type: "text",
+        text: "A",
+        imageAlt: "A option"
+      },
+      {
+        id: "5-1",
+        type: "text",
+        text: "B",
+        imageAlt: "B option"
+      },
+      {
+        id: "5-2",
+        type: "text",
+        text: "C",
+        imageAlt: "C option"
+      },
+      {
+        id: "5-3",
+        type: "text",
+        text: "D",
+        imageAlt: "D option"
+      },
+      {
+        id: "5-4",
+        type: "text",
+        text: "E",
+        imageAlt: "E option"
+      }
+    ],
+    imageExtra: "/assets/kangaroo/grades-7-8/kadett/2019/questions/editor-q-05-extra.png"
+  },
+  {
+    number: 6,
+    points: 3,
+    prompt: "Five friends each give one gingerbread to every other person, then eat all they received. After this, the total number of gingerbreads is half the starting amount. How many did they start with?",
+    options: [
+      "20",
+      "24",
+      "30",
+      "40",
+      "60"
+    ],
+    answer: 3,
+    explanation: "If each starts with g, the group starts with 5g and eats 5×4=20. Remaining 5g−20 equals half of 5g, so g=8 and the initial total is 40.",
+    hint: "Each person gives away four gingerbreads; compare the remaining total with half the original.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "6-0",
+        type: "text",
+        text: "20",
+        imageAlt: "A option"
+      },
+      {
+        id: "6-1",
+        type: "text",
+        text: "24",
+        imageAlt: "B option"
+      },
+      {
+        id: "6-2",
+        type: "text",
+        text: "30",
+        imageAlt: "C option"
+      },
+      {
+        id: "6-3",
+        type: "text",
+        text: "40",
+        imageAlt: "D option"
+      },
+      {
+        id: "6-4",
+        type: "text",
+        text: "60",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 7,
+    points: 3,
+    prompt: "Lothar finishes before Manfred. Victor finishes after Jan, Manfred before Jan, and Eddy before Victor. Who finishes last?",
+    options: [
+      "Victor",
+      "Manfred",
+      "Lothar",
+      "Jan",
+      "Eddy"
+    ],
+    answer: 0,
+    explanation: "Victor is after Jan, who is after Manfred, who is after Lothar; Eddy is also before Victor. Thus Victor is last.",
+    hint: "Turn each statement into an ordering relation and find who must be after everyone else.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "7-0",
+        type: "text",
+        text: "Victor",
+        imageAlt: "A option"
+      },
+      {
+        id: "7-1",
+        type: "text",
+        text: "Manfred",
+        imageAlt: "B option"
+      },
+      {
+        id: "7-2",
+        type: "text",
+        text: "Lothar",
+        imageAlt: "C option"
+      },
+      {
+        id: "7-3",
+        type: "text",
+        text: "Jan",
+        imageAlt: "D option"
+      },
+      {
+        id: "7-4",
+        type: "text",
+        text: "Eddy",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 8,
+    points: 3,
+    prompt: "In Julia's numbered book, digit 0 appears five times and digit 8 appears six times. What is the last page number?",
+    options: [
+      "48",
+      "58",
+      "60",
+      "68",
+      "88"
+    ],
+    answer: 1,
+    explanation: "From pages 1 to 58, zero appears on 10, 20, 30, 40 and 50: five times. The digit 8 appears on 8, 18, 28, 38, 48 and 58: six times. Therefore the last page is 58, choice B.",
+    hint: "Count the zeroes and eights page by page through the possible endpoints, checking both the units and tens places.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "8-0",
+        type: "text",
+        text: "48",
+        imageAlt: "A option"
+      },
+      {
+        id: "8-1",
+        type: "text",
+        text: "58",
+        imageAlt: "B option"
+      },
+      {
+        id: "8-2",
+        type: "text",
+        text: "60",
+        imageAlt: "C option"
+      },
+      {
+        id: "8-3",
+        type: "text",
+        text: "68",
+        imageAlt: "D option"
+      },
+      {
+        id: "8-4",
+        type: "text",
+        text: "88",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 9,
+    points: 3,
+    prompt: "A large square is divided into smaller squares of different sizes, some shaded grey. What fraction of the large square is grey?",
+    options: [
+      "2/3",
+      "3/5",
+      "4/7",
+      "4/9",
+      "5/12"
+    ],
+    answer: 3,
+    explanation: "NEEDS_REVIEW: the square partition and shaded cells are visual.",
+    hint: "Use the side-length ratios of the smaller squares to compare their areas.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "9-0",
+        type: "text",
+        text: "2/3",
+        imageAlt: "A option"
+      },
+      {
+        id: "9-1",
+        type: "text",
+        text: "3/5",
+        imageAlt: "B option"
+      },
+      {
+        id: "9-2",
+        type: "text",
+        text: "4/7",
+        imageAlt: "C option"
+      },
+      {
+        id: "9-3",
+        type: "text",
+        text: "4/9",
+        imageAlt: "D option"
+      },
+      {
+        id: "9-4",
+        type: "text",
+        text: "5/12",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-7-8/kadett/2019/questions/editor-q-09.png"
+  },
+  {
+    number: 10,
+    points: 3,
+    prompt: "Andreas shares some apples equally into six baskets. Boris shares the same number equally into five baskets and gets two more apples per basket. How many apples did Andreas share?",
+    options: [
+      "60",
+      "65",
+      "72",
+      "75",
+      "90"
+    ],
+    answer: 0,
+    explanation: "Let N be the apples. N/5−N/6=2, so N/30=2 and N=60.",
+    hint: "Set the difference between the basket amounts equal to two.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "10-0",
+        type: "text",
+        text: "60",
+        imageAlt: "A option"
+      },
+      {
+        id: "10-1",
+        type: "text",
+        text: "65",
+        imageAlt: "B option"
+      },
+      {
+        id: "10-2",
+        type: "text",
+        text: "72",
+        imageAlt: "C option"
+      },
+      {
+        id: "10-3",
+        type: "text",
+        text: "75",
+        imageAlt: "D option"
+      },
+      {
+        id: "10-4",
+        type: "text",
+        text: "90",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 11,
+    points: 4,
+    prompt: "Three four-digit numbers sum to 10126; three digits are hidden in the picture. Which are they?",
+    options: [
+      "5, 6 and 7",
+      "4, 5 and 7",
+      "4, 6 and 7",
+      "4, 5 and 6",
+      "3, 5 and 6"
+    ],
+    answer: 0,
+    explanation: "NEEDS_REVIEW: the three numbers with hidden digits are visual.",
+    hint: "Add the visible columns with carrying to determine the three missing digits.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "11-0",
+        type: "text",
+        text: "5, 6 and 7",
+        imageAlt: "A option"
+      },
+      {
+        id: "11-1",
+        type: "text",
+        text: "4, 5 and 7",
+        imageAlt: "B option"
+      },
+      {
+        id: "11-2",
+        type: "text",
+        text: "4, 6 and 7",
+        imageAlt: "C option"
+      },
+      {
+        id: "11-3",
+        type: "text",
+        text: "4, 5 and 6",
+        imageAlt: "D option"
+      },
+      {
+        id: "11-4",
+        type: "text",
+        text: "3, 5 and 6",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-7-8/kadett/2019/questions/editor-q-11.png"
+  },
+  {
+    number: 12,
+    points: 4,
+    prompt: "In triangle PSQ, angle QPS=20° and PQ=PR=QS as shown. How large is angle RQS?",
+    options: [
+      "50°",
+      "60°",
+      "65°",
+      "70°",
+      "75°"
+    ],
+    answer: 1,
+    explanation: "NEEDS_REVIEW: the placement of R and the equal-length segments are visual.",
+    hint: "Use the isosceles triangles created by PQ=PR=QS and the 20° angle.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "12-0",
+        type: "text",
+        text: "50°",
+        imageAlt: "A option"
+      },
+      {
+        id: "12-1",
+        type: "text",
+        text: "60°",
+        imageAlt: "B option"
+      },
+      {
+        id: "12-2",
+        type: "text",
+        text: "65°",
+        imageAlt: "C option"
+      },
+      {
+        id: "12-3",
+        type: "text",
+        text: "70°",
+        imageAlt: "D option"
+      },
+      {
+        id: "12-4",
+        type: "text",
+        text: "75°",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-7-8/kadett/2019/questions/editor-q-12.png"
+  },
+  {
+    number: 13,
+    points: 4,
+    prompt: "A trapezium has perimeter 5 and whole-number side lengths. What are its smallest angles?",
+    options: [
+      "30° and 30°",
+      "60° and 60°",
+      "45° and 45°",
+      "30° and 60°",
+      "45° and 90°"
+    ],
+    answer: 4,
+    explanation: "NEEDS_REVIEW: verify which integer-sided trapezia are allowed; the key indicates E.",
+    hint: "List side-length combinations summing to five and use the parallel-side angle relationships.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "13-0",
+        type: "text",
+        text: "30° and 30°",
+        imageAlt: "A option"
+      },
+      {
+        id: "13-1",
+        type: "text",
+        text: "60° and 60°",
+        imageAlt: "B option"
+      },
+      {
+        id: "13-2",
+        type: "text",
+        text: "45° and 45°",
+        imageAlt: "C option"
+      },
+      {
+        id: "13-3",
+        type: "text",
+        text: "30° and 60°",
+        imageAlt: "D option"
+      },
+      {
+        id: "13-4",
+        type: "text",
+        text: "45° and 90°",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-7-8/kadett/2019/questions/editor-q-13.png",
+    imageExtra: "/assets/kangaroo/grades-7-8/kadett/2019/questions/editor-q-13-extra.png"
+  },
+  {
+    number: 14,
+    points: 4,
+    prompt: "Four of the five pictured shapes can fold into a cube. Which shape cannot?",
+    options: [
+      "Shape 1",
+      "Shape 2",
+      "Shape 3",
+      "Shape 4",
+      "Shape 5"
+    ],
+    answer: 1,
+    explanation: "NEEDS_REVIEW: the five candidate nets are visual.",
+    hint: "Fold each net and check for overlap or repeated faces.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "14-0",
+        type: "text",
+        text: "Shape 1",
+        imageAlt: "A option"
+      },
+      {
+        id: "14-1",
+        type: "text",
+        text: "Shape 2",
+        imageAlt: "B option"
+      },
+      {
+        id: "14-2",
+        type: "text",
+        text: "Shape 3",
+        imageAlt: "C option"
+      },
+      {
+        id: "14-3",
+        type: "text",
+        text: "Shape 4",
+        imageAlt: "D option"
+      },
+      {
+        id: "14-4",
+        type: "text",
+        text: "Shape 5",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 15,
+    points: 4,
+    prompt: "Willi writes several consecutive whole numbers. Which percentage of them being odd cannot occur?",
+    options: [
+      "40%",
+      "45%",
+      "48%",
+      "50%",
+      "60%"
+    ],
+    answer: 2,
+    explanation: "NEEDS_REVIEW: determine the possible odd proportions for consecutive integer runs; key indicates C.",
+    hint: "Odd and even numbers alternate, so in a run their counts differ by at most one.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "15-0",
+        type: "text",
+        text: "40%",
+        imageAlt: "A option"
+      },
+      {
+        id: "15-1",
+        type: "text",
+        text: "45%",
+        imageAlt: "B option"
+      },
+      {
+        id: "15-2",
+        type: "text",
+        text: "48%",
+        imageAlt: "C option"
+      },
+      {
+        id: "15-3",
+        type: "text",
+        text: "50%",
+        imageAlt: "D option"
+      },
+      {
+        id: "15-4",
+        type: "text",
+        text: "60%",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 16,
+    points: 4,
+    prompt: "Aron, Ben and Carl always lie. Aron says his stone matches Ben's; Ben says his matches Carl's; Carl says exactly two stones are red. Which statement is correct?",
+    options: [
+      "Aron's stone is green",
+      "Ben's stone is green",
+      "Carl's stone is red",
+      "Aron and Carl differ",
+      "None is correct"
+    ],
+    answer: 0,
+    explanation: "All three statements are false: Aron and Ben differ, Ben and Carl differ, so Aron and Carl match; Carl's claim rules out both being red, leaving them green and Ben red.",
+    hint: "Negate each statement and test the two possible colours for Ben.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "16-0",
+        type: "text",
+        text: "Aron's stone is green",
+        imageAlt: "A option"
+      },
+      {
+        id: "16-1",
+        type: "text",
+        text: "Ben's stone is green",
+        imageAlt: "B option"
+      },
+      {
+        id: "16-2",
+        type: "text",
+        text: "Carl's stone is red",
+        imageAlt: "C option"
+      },
+      {
+        id: "16-3",
+        type: "text",
+        text: "Aron and Carl differ",
+        imageAlt: "D option"
+      },
+      {
+        id: "16-4",
+        type: "text",
+        text: "None is correct",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-7-8/kadett/2019/questions/editor-q-16.png"
+  },
+  {
+    number: 17,
+    points: 4,
+    prompt: "Four-digit numbers made from 2, 0, 1 and 3 are listed in ascending order. What is the largest difference between consecutive numbers?",
+    options: [
+      "702",
+      "703",
+      "693",
+      "793",
+      "198"
+    ],
+    answer: 0,
+    explanation: "The largest gap is between 2310 and 3012, the consecutive valid numbers on either side of the jump from a leading 2 to a leading 3. Their difference is 3012−2310=702, choice A.",
+    hint: "Order all valid permutations, remembering that a four-digit number cannot start with 0; pay particular attention where the leading digit changes.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "17-0",
+        type: "text",
+        text: "702",
+        imageAlt: "A option"
+      },
+      {
+        id: "17-1",
+        type: "text",
+        text: "703",
+        imageAlt: "B option"
+      },
+      {
+        id: "17-2",
+        type: "text",
+        text: "693",
+        imageAlt: "C option"
+      },
+      {
+        id: "17-3",
+        type: "text",
+        text: "793",
+        imageAlt: "D option"
+      },
+      {
+        id: "17-4",
+        type: "text",
+        text: "198",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 18,
+    points: 4,
+    prompt: "In an 8×6 grid, 24 squares are not crossed by either diagonal. How many squares in a 10×6 grid are not crossed by either diagonal?",
+    options: [
+      "28",
+      "29",
+      "30",
+      "31",
+      "32"
+    ],
+    answer: 1,
+    explanation: "NEEDS_REVIEW: determine the diagonal paths and any shared crossings from the source diagram; key indicates B.",
+    hint: "Count the unit squares crossed by each diagonal and account for any overlap.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "18-0",
+        type: "text",
+        text: "28",
+        imageAlt: "A option"
+      },
+      {
+        id: "18-1",
+        type: "text",
+        text: "29",
+        imageAlt: "B option"
+      },
+      {
+        id: "18-2",
+        type: "text",
+        text: "30",
+        imageAlt: "C option"
+      },
+      {
+        id: "18-3",
+        type: "text",
+        text: "31",
+        imageAlt: "D option"
+      },
+      {
+        id: "18-4",
+        type: "text",
+        text: "32",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-7-8/kadett/2019/questions/editor-q-18.png"
+  },
+  {
+    number: 19,
+    points: 4,
+    prompt: "Five children have birthdays on 20 Feb, 12 Mar, 20 Mar, 12 Apr and 23 Apr 2000. Andi and Edi share a month; Berti and Christa share a month; Andi and Christa share a day number in different months; Doris and Edi also share a day number in different months. Who is youngest?",
+    options: [
+      "Andi",
+      "Berti",
+      "Christa",
+      "Doris",
+      "Edi"
+    ],
+    answer: 1,
+    explanation: "Andi and Edi must take the two March dates or the two April dates. Doris's February 20 birthday forces Edi to have day 20 in another month, so Edi is 20 March and Andi is 12 March. Christa must then be 12 April, leaving Berti with 23 April. That is the latest birthday, so Berti is youngest.",
+    hint: "Doris has a February 20 birthday. Use the shared-day clue with Edi first, then apply the month and day clues to assign the remaining dates.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "19-0",
+        type: "text",
+        text: "Andi",
+        imageAlt: "A option"
+      },
+      {
+        id: "19-1",
+        type: "text",
+        text: "Berti",
+        imageAlt: "B option"
+      },
+      {
+        id: "19-2",
+        type: "text",
+        text: "Christa",
+        imageAlt: "C option"
+      },
+      {
+        id: "19-3",
+        type: "text",
+        text: "Doris",
+        imageAlt: "D option"
+      },
+      {
+        id: "19-4",
+        type: "text",
+        text: "Edi",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 20,
+    points: 4,
+    prompt: "Johann stacks cubes on a 4×4 grid. The diagram gives each stack height. What will the tower look like from behind?",
+    options: [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    answer: 1,
+    explanation: "NEEDS_REVIEW: the stack-height grid and candidate views are visual; key indicates B.",
+    hint: "Reverse the left-to-right order when viewing from behind.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "20-0",
+        type: "text",
+        text: "A",
+        imageAlt: "A option"
+      },
+      {
+        id: "20-1",
+        type: "text",
+        text: "B",
+        imageAlt: "B option"
+      },
+      {
+        id: "20-2",
+        type: "text",
+        text: "C",
+        imageAlt: "C option"
+      },
+      {
+        id: "20-3",
+        type: "text",
+        text: "D",
+        imageAlt: "D option"
+      },
+      {
+        id: "20-4",
+        type: "text",
+        text: "E",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-7-8/kadett/2019/questions/editor-q-20.png"
+  },
+  {
+    number: 21,
+    points: 5,
+    prompt: "What is the smallest positive integer whose digit product is 24, and what is its digit sum?",
+    options: [
+      "6",
+      "8",
+      "9",
+      "10",
+      "11"
+    ],
+    answer: 4,
+    explanation: "The smallest number with digit product 24 is 38, whose digit sum is 11.",
+    hint: "Find the smallest two-digit factor pair of 24.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "21-0",
+        type: "text",
+        text: "6",
+        imageAlt: "A option"
+      },
+      {
+        id: "21-1",
+        type: "text",
+        text: "8",
+        imageAlt: "B option"
+      },
+      {
+        id: "21-2",
+        type: "text",
+        text: "9",
+        imageAlt: "C option"
+      },
+      {
+        id: "21-3",
+        type: "text",
+        text: "10",
+        imageAlt: "D option"
+      },
+      {
+        id: "21-4",
+        type: "text",
+        text: "11",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-7-8/kadett/2019/questions/editor-q-21.png"
+  },
+  {
+    number: 22,
+    points: 5,
+    prompt: "A rectangle lies below the x-axis and right of the y-axis. At each vertex calculate y/x. Which point gives the smallest value?",
+    options: [
+      "A",
+      "B",
+      "C",
+      "D",
+      "It depends"
+    ],
+    answer: 0,
+    explanation: "NEEDS_REVIEW: vertex labels and coordinates are shown in the source diagram.",
+    hint: "All ratios are negative; compare their magnitudes using each vertex's x- and y-coordinates.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "22-0",
+        type: "text",
+        text: "A",
+        imageAlt: "A option"
+      },
+      {
+        id: "22-1",
+        type: "text",
+        text: "B",
+        imageAlt: "B option"
+      },
+      {
+        id: "22-2",
+        type: "text",
+        text: "C",
+        imageAlt: "C option"
+      },
+      {
+        id: "22-3",
+        type: "text",
+        text: "D",
+        imageAlt: "D option"
+      },
+      {
+        id: "22-4",
+        type: "text",
+        text: "It depends",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 23,
+    points: 5,
+    prompt: "A grid has 2 cm squares. What is the area of the grey quadrilateral ABCD?",
+    options: [
+      "96 cm²",
+      "84 cm²",
+      "76 cm²",
+      "88 cm²",
+      "104 cm²"
+    ],
+    answer: 1,
+    explanation: "NEEDS_REVIEW: the vertices and grid shape are visual; key indicates B.",
+    hint: "Count full and partial 2×2 cm squares inside the quadrilateral.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "23-0",
+        type: "text",
+        text: "96 cm²",
+        imageAlt: "A option"
+      },
+      {
+        id: "23-1",
+        type: "text",
+        text: "84 cm²",
+        imageAlt: "B option"
+      },
+      {
+        id: "23-2",
+        type: "text",
+        text: "76 cm²",
+        imageAlt: "C option"
+      },
+      {
+        id: "23-3",
+        type: "text",
+        text: "88 cm²",
+        imageAlt: "D option"
+      },
+      {
+        id: "23-4",
+        type: "text",
+        text: "104 cm²",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-7-8/kadett/2019/questions/editor-q-23.png"
+  },
+  {
+    number: 24,
+    points: 5,
+    prompt: "Robert removes one digit from a five-digit number, leaving a four-digit number. Their sum is 52713. What is the digit sum of the original number?",
+    options: [
+      "26",
+      "20",
+      "23",
+      "19",
+      "17"
+    ],
+    answer: 2,
+    explanation: "The shortened number has the same units digit as the original, so their sum is even unless the removed digit was the units digit. Write the original as 10m+d and the shortened number as m. Then 11m+d=52713; since 52713 leaves remainder 1 on division by 11 and d is a digit, d=1. This gives m=4792 and original number 47921, whose digit sum is 23.",
+    hint: "Use parity to determine where the removed digit must be. Then express the original and shortened numbers in terms of the shortened number and removed digit.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "24-0",
+        type: "text",
+        text: "26",
+        imageAlt: "A option"
+      },
+      {
+        id: "24-1",
+        type: "text",
+        text: "20",
+        imageAlt: "B option"
+      },
+      {
+        id: "24-2",
+        type: "text",
+        text: "23",
+        imageAlt: "C option"
+      },
+      {
+        id: "24-3",
+        type: "text",
+        text: "19",
+        imageAlt: "D option"
+      },
+      {
+        id: "24-4",
+        type: "text",
+        text: "17",
+        imageAlt: "E option"
+      }
+    ],
+    imageExtra: "/assets/kangaroo/grades-7-8/kadett/2019/questions/editor-q-24-extra.png"
+  },
+  {
+    number: 25,
+    points: 5,
+    prompt: "A gardener plants 20 linden and oak trees. There must never be exactly three trees between any two oak trees. What is the maximum number of oak trees?",
+    options: [
+      "8",
+      "10",
+      "12",
+      "14",
+      "16"
+    ],
+    answer: 3,
+    explanation: "NEEDS_REVIEW: confirm the forbidden spacing condition and maximum arrangement; the key indicates D.",
+    hint: "Model the row as 20 positions and forbid oak pairs separated by exactly four positions.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "25-0",
+        type: "text",
+        text: "8",
+        imageAlt: "A option"
+      },
+      {
+        id: "25-1",
+        type: "text",
+        text: "10",
+        imageAlt: "B option"
+      },
+      {
+        id: "25-2",
+        type: "text",
+        text: "12",
+        imageAlt: "C option"
+      },
+      {
+        id: "25-3",
+        type: "text",
+        text: "14",
+        imageAlt: "D option"
+      },
+      {
+        id: "25-4",
+        type: "text",
+        text: "16",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 26,
+    points: 5,
+    prompt: "There are twice as many runners behind Alex as before Daniel, and 1.5 times as many behind Daniel as before Alex. Alex finishes 21st. How many runners are there?",
+    options: [
+      "31",
+      "41",
+      "51",
+      "61",
+      "81"
+    ],
+    answer: 1,
+    explanation: "Let N be the field size. Runners before Alex=20; behind Daniel=30, so Daniel is N−30. Then before Daniel=N−31 and behind Alex=N−21. N−21=2(N−31), hence N=41.",
+    hint: "Translate the before/behind counts into equations involving the total number of runners.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "26-0",
+        type: "text",
+        text: "31",
+        imageAlt: "A option"
+      },
+      {
+        id: "26-1",
+        type: "text",
+        text: "41",
+        imageAlt: "B option"
+      },
+      {
+        id: "26-2",
+        type: "text",
+        text: "51",
+        imageAlt: "C option"
+      },
+      {
+        id: "26-3",
+        type: "text",
+        text: "61",
+        imageAlt: "D option"
+      },
+      {
+        id: "26-4",
+        type: "text",
+        text: "81",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-7-8/kadett/2019/questions/editor-q-26.png"
+  },
+  {
+    number: 27,
+    points: 5,
+    prompt: "The sequence begins 1, −1, −1, 1, −1; each next term is the product of the two preceding terms. What is the sum of the first 2013 terms?",
+    options: [
+      "−1006",
+      "−671",
+      "0",
+      "671",
+      "1007"
+    ],
+    answer: 1,
+    explanation: "The six-term cycle is 1, −1, −1, 1, −1, −1, with sum −2. Since 2013=335×6+3, the first 2013 terms have sum 335(−2)+(1−1−1)=−671, choice B.",
+    hint: "Find the repeating six-term cycle, add its complete cycles, and then include the three remaining terms.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "27-0",
+        type: "text",
+        text: "−1006",
+        imageAlt: "A option"
+      },
+      {
+        id: "27-1",
+        type: "text",
+        text: "−671",
+        imageAlt: "B option"
+      },
+      {
+        id: "27-2",
+        type: "text",
+        text: "0",
+        imageAlt: "C option"
+      },
+      {
+        id: "27-3",
+        type: "text",
+        text: "671",
+        imageAlt: "D option"
+      },
+      {
+        id: "27-4",
+        type: "text",
+        text: "1007",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 28,
+    points: 5,
+    prompt: "Six pancakes are made in order. The children sometimes eat the hottest available pancakes. Which eating order is impossible?",
+    options: [
+      "123456",
+      "125436",
+      "325461",
+      "456231",
+      "654321"
+    ],
+    answer: 2,
+    explanation: "NEEDS_REVIEW: the heat order and serving constraints determine which permutation is impossible.",
+    hint: "At each step only a currently hottest pancake can be eaten; simulate the stack order.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "28-0",
+        type: "text",
+        text: "123456",
+        imageAlt: "A option"
+      },
+      {
+        id: "28-1",
+        type: "text",
+        text: "125436",
+        imageAlt: "B option"
+      },
+      {
+        id: "28-2",
+        type: "text",
+        text: "325461",
+        imageAlt: "C option"
+      },
+      {
+        id: "28-3",
+        type: "text",
+        text: "456231",
+        imageAlt: "D option"
+      },
+      {
+        id: "28-4",
+        type: "text",
+        text: "654321",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 29,
+    points: 5,
+    prompt: "The vertices and edges of a tetrahedron are labelled with 1,2,3,4,5,6,7,8,9,11 once each. Each edge label is the sum of its endpoint vertex labels. AB is 9. What is the label on CD?",
+    options: [
+      "4",
+      "5",
+      "6",
+      "8",
+      "11"
+    ],
+    answer: 1,
+    explanation: "NEEDS_REVIEW: the tetrahedron's vertex/edge layout and assignment are required to determine CD.",
+    hint: "Use the six edge-sum equations and the fact that each listed value is used exactly once.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "29-0",
+        type: "text",
+        text: "4",
+        imageAlt: "A option"
+      },
+      {
+        id: "29-1",
+        type: "text",
+        text: "5",
+        imageAlt: "B option"
+      },
+      {
+        id: "29-2",
+        type: "text",
+        text: "6",
+        imageAlt: "C option"
+      },
+      {
+        id: "29-3",
+        type: "text",
+        text: "8",
+        imageAlt: "D option"
+      },
+      {
+        id: "29-4",
+        type: "text",
+        text: "11",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-7-8/kadett/2019/questions/editor-q-29.png"
+  },
+  {
+    number: 30,
+    points: 5,
+    prompt: "Four cars enter a roundabout from different directions. None drives all the way around, and no two leave at the same exit. How many exit assignments are possible?",
+    options: [
+      "9",
+      "12",
+      "15",
+      "24",
+      "81"
+    ],
+    answer: 0,
+    explanation: "There are !4=9 derangements of four exits, since no car may leave at its entry point.",
+    hint: "Count permutations of the exits with no fixed point.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "30-0",
+        type: "text",
+        text: "9",
+        imageAlt: "A option"
+      },
+      {
+        id: "30-1",
+        type: "text",
+        text: "12",
+        imageAlt: "B option"
+      },
+      {
+        id: "30-2",
+        type: "text",
+        text: "15",
+        imageAlt: "C option"
+      },
+      {
+        id: "30-3",
+        type: "text",
+        text: "24",
+        imageAlt: "D option"
+      },
+      {
+        id: "30-4",
+        type: "text",
+        text: "81",
+        imageAlt: "E option"
+      }
+    ]
+  }
 ];
 
 const sections2019Kadett: Section[] = [
-  { points: 3, label: "Section 1", range: "Questions 1–10", accent: "coral" },
-  { points: 4, label: "Section 2", range: "Questions 11–20", accent: "blue" },
-  { points: 5, label: "Section 3", range: "Questions 21–30", accent: "purple" }
+  {
+    points: 3,
+    label: "Section 1",
+    range: "Questions 1–10",
+    accent: "coral"
+  },
+  {
+    points: 4,
+    label: "Section 2",
+    range: "Questions 11–20",
+    accent: "blue"
+  },
+  {
+    points: 5,
+    label: "Section 3",
+    range: "Questions 21–30",
+    accent: "purple"
+  }
 ];
 
 export const edition2019Kadett: QuestionSet = {
@@ -49,5 +1492,5 @@ export const edition2019Kadett: QuestionSet = {
   timeLimitMinutes: 75,
   sourceUrl: "https://www.matematica.pt/en/docs/kangaroo/enunciados/2019/2019_Kadett.pdf",
   questions: questions2019Kadett,
-  sections: sections2019Kadett
+  sections: sections2019Kadett,
 };

@@ -1,42 +1,1488 @@
 import type { Question, QuestionSet, Section } from "../../../types";
 
 const questions2021Kadett: Question[] = [
-  { number: 1, points: 3, prompt: "Which zodiac sign symbol has an axis of symmetry?", options: ["Sagittarius", "Scorpio", "Leo", "Cancer", "Capricorn"], answer: 0, explanation: "NEEDS_REVIEW: the printed zodiac symbols determine which has a mirror axis.", hint: "Check each symbol for a line that divides it into two reflected halves.", sourcePage: 1 },
-  { number: 2, points: 3, prompt: "Three concentric circles are crossed by four lines through their common centre. What percentage of the figure is shaded?", options: ["30%", "35%", "40%", "45%", "50%"], answer: 4, explanation: "NEEDS_REVIEW: the shaded sectors and circle divisions are visual.", hint: "Count shaded equal sectors across all three rings and compare with the total.", sourcePage: 1 },
-  { number: 3, points: 3, prompt: "What is 20×21 divided by 2+0+2+1?", options: ["42", "64", "80", "84", "105"], answer: 3, explanation: "20×21=420 and 2+0+2+1=5, so 420÷5=84.", hint: "Evaluate the numerator and digit-sum denominator separately.", sourcePage: 1 },
-  { number: 4, points: 3, prompt: "How many four-digit numbers have consecutive digits in ascending order from left to right?", options: ["5", "6", "7", "8", "9"], answer: 1, explanation: "The possible numbers are 1234, 2345, 3456, 4567, 5678 and 6789: six numbers.", hint: "The first digit can range from 1 through 6 so that the fourth digit remains at most 9.", sourcePage: 1 },
-  { number: 5, points: 3, prompt: "Five pieces fit together to form a rectangle with a calculation written on it. What is the answer?", options: ["−100", "−8", "−1", "199", "208"], answer: 0, explanation: "NEEDS_REVIEW: the assembled calculation is visual.", hint: "Fit the pieces together to read the full calculation, then evaluate it.", sourcePage: 1 },
-  { number: 6, points: 3, prompt: "Five vases have the same height and each holds one litre. Half a litre is poured into each. In which vase is the water level highest?", options: ["A", "B", "C", "D", "E"], answer: 0, explanation: "NEEDS_REVIEW: the shapes and cross-sections of the five vases are visual.", hint: "For the same volume, a narrower cross-section produces a higher water level.", sourcePage: 1 },
-  { number: 7, points: 3, prompt: "A student correctly adds two two-digit numbers to get 137. What answer results when he adds the corresponding two four-digit numbers shown?", options: ["13,737", "13,837", "14,747", "23,737", "137,137"], answer: 1, explanation: "NEEDS_REVIEW: the two displayed number patterns are missing from the extracted text.", hint: "Use the first addition to infer the digit pattern, then align the four-digit addends by place value.", sourcePage: 1 },
-  { number: 8, points: 3, prompt: "A 3×3×3 cube is made from white, grey and black unit cubes. The first diagram shows the cube and the next two show its white and black parts. Which diagram shows the grey part?", options: ["A", "B", "C", "D", "E"], answer: 4, explanation: "NEEDS_REVIEW: the cube views and candidate grey arrangements are visual.", hint: "Subtract the white and black unit-cube positions from the complete 3×3×3 arrangement.", sourcePage: 2 },
-  { number: 9, points: 3, prompt: "A four-wheel bike lock is rotated 180° on every wheel from the shown display to get the correct code. What is the code?", options: ["A", "B", "C", "D", "E"], answer: 1, explanation: "NEEDS_REVIEW: the displayed digits and wheel positions are visual.", hint: "A half-turn maps each wheel digit to the digit opposite it on that wheel.", sourcePage: 2 },
-  { number: 10, points: 3, prompt: "Byron is 5 cm taller than Aaron and 10 cm shorter than Caron. Darren is 10 cm taller than Caron and 5 cm shorter than Erin. Which statement is true?", options: ["Aaron and Erin are equal", "Aaron is 10 cm taller than Erin", "Aaron is 10 cm shorter than Erin", "Aaron is 30 cm taller than Erin", "Aaron is 30 cm shorter than Erin"], answer: 4, explanation: "Relative to Aaron, Byron is +5, Caron +15, Darren +25 and Erin +30 cm. Aaron is 30 cm shorter than Erin.", hint: "Set Aaron's height to zero and add each stated difference in order.", sourcePage: 2 },
-  { number: 11, points: 4, prompt: "A rectangular chocolate bar is made of equal squares. Neil breaks off two complete strips and eats 12 squares. Jack breaks off one complete strip from the same bar and eats 9 squares. How many squares remain?", options: ["72", "63", "54", "45", "36"], answer: 3, explanation: "NEEDS_REVIEW: the bar's row and column counts are in the source diagram; the key indicates D.", hint: "Use the two strip sizes to infer the bar's dimensions, then subtract the removed squares.", sourcePage: 2 },
-  { number: 12, points: 4, prompt: "A jar one fifth full weighs 560 g; four fifths full it weighs 740 g. What does the empty jar weigh?", options: ["60 g", "112 g", "180 g", "300 g", "500 g"], answer: 4, explanation: "The three-fifths increase weighs 180 g, so one fifth of the water weighs 60 g. The empty jar weighs 560−60=500 g.", hint: "The difference between the measurements is three fifths of the full water weight.", sourcePage: 2 },
-  { number: 13, points: 4, prompt: "A 4×4 square has area 16 cm² and each small square has area 1 cm². What is the total area of the central flower?", options: ["3 cm²", "7/2 cm²", "4 cm²", "9/2 cm²", "6 cm²"], answer: 2, explanation: "NEEDS_REVIEW: the flower's outline is visual.", hint: "Split the flower into whole unit squares and matching fractional pieces.", sourcePage: 2 },
-  { number: 14, points: 4, prompt: "Costa builds a fence from 25 planks, each 30 cm long, with equal overlaps. The total fence length is 6.9 m. How long is each overlap?", options: ["2.4 cm", "2.5 cm", "3 cm", "4.8 cm", "5 cm"], answer: 1, explanation: "The planks total 25×30=750 cm. The fence is 690 cm, so the 24 overlaps total 60 cm and each is 2.5 cm.", hint: "Subtract the fence length from the sum of plank lengths and divide by the 24 joins.", sourcePage: 3 },
-  { number: 15, points: 4, prompt: "Five identical right triangles form a star when their larger acute angles meet. How many are needed for a second star when their smaller acute angles meet?", options: ["10", "12", "18", "20", "24"], answer: 3, explanation: "NEEDS_REVIEW: the acute angles and star arrangement are visual; answer key D.", hint: "Find the smaller acute angle from the five-triangle star, then determine how many meet around a point.", sourcePage: 3 },
-  { number: 16, points: 4, prompt: "Five squares are positioned as shown. The small square has area 1. What is h?", options: ["3 m", "3.5 m", "4 m", "4.2 m", "4.5 m"], answer: 2, explanation: "NEEDS_REVIEW: the arrangement of the five squares and segment h is visual; key indicates C.", hint: "Use the shared side lengths and the unit area of the small square to determine the scale.", sourcePage: 3 },
-  { number: 17, points: 4, prompt: "A 20-question quiz gives 7 points for a correct answer, −4 for a wrong answer and 0 for blank. Eric scores 100. How many did he leave blank?", options: ["0", "1", "2", "3", "4"], answer: 1, explanation: "If all 20 answers were correct, Eric would score 140. Changing a correct answer to a wrong one lowers the score by 11, while leaving it blank lowers it by 7. The 40-point drop satisfies 11w + 7b = 40 only with w = 3 and b = 1, so he left one blank.", hint: "Start from 20 correct answers and express the 40-point drop using the score lost for each wrong or blank answer.", sourcePage: 3 },
-  { number: 18, points: 4, prompt: "A 4×13 cm paper strip is folded as shown, forming rectangles of areas P and Q with P=2Q. What is x?", options: ["5 cm", "5.5 cm", "6 cm", "6.5 cm", "4√2 cm"], answer: 2, explanation: "NEEDS_REVIEW: the fold location and labelled regions are visual; the answer key indicates C.", hint: "Express P and Q using the 4 cm strip width and the fold position x.", sourcePage: 3 },
-  { number: 19, points: 4, prompt: "A fruit box has twice as many apples as pears. Christy and Lily divide all fruit so Christy gets twice as many pieces as Lily. Which statement is always true?", options: ["Christy gets at least one pear", "Christy gets twice as many apples as pears", "Christy gets twice as many apples as Lily", "Christy's apples equal Lily's pears", "Christy's pears equal Lily's apples"], answer: 4, explanation: "If there are p pears, there are 2p apples, so Christy gets 2p pieces and Lily gets p. If Christy gets x pears, she gets 2p − x apples; Lily then gets x apples. Thus Christy's pears always equal Lily's apples.", hint: "Let the number of pears Christy receives be x, then use the total number of apples and the fact that Christy gets two thirds of all fruit.", sourcePage: 3 },
-  { number: 20, points: 4, prompt: "Three villages are connected by paths. The detour via the third village exceeds each direct path by the amounts shown. What is the shortest direct path?", options: ["1 km", "2 km", "3 km", "4 km", "5 km"], answer: 2, explanation: "NEEDS_REVIEW: the three detour equations and map are visual; key indicates C.", hint: "Let the three direct distances be x, y and z and translate each detour statement into an equation.", sourcePage: 4 },
-  { number: 21, points: 5, prompt: "Five friends collect planet, moon and star pins. Each makes a statement about their collection. Which set of pins belongs to Yvonne?", options: ["A", "B", "C", "D", "E"], answer: 4, explanation: "NEEDS_REVIEW: the five collections and all statements are visual.", hint: "Test each set against the parity and relative-count statements, using the key's E.", sourcePage: 4 },
-  { number: 22, points: 5, prompt: "A positive fraction's numerator is increased by 40%. By what percentage must its denominator decrease for the new fraction to be twice the original?", options: ["10%", "20%", "30%", "40%", "50%"], answer: 2, explanation: "The numerator factor is 1.4. To double the ratio, the denominator factor must be 1.4/2=0.7, a 30% decrease.", hint: "Set the new numerator factor divided by the new denominator factor equal to 2.", sourcePage: 4 },
-  { number: 23, points: 5, prompt: "A triangular pyramid has 20 cannonballs, four labelled each A–E. Three faces are shown. What label is on the hidden ball in the middle of the fourth face?", options: ["A", "B", "C", "D", "E"], answer: 3, explanation: "NEEDS_REVIEW: the three face views are visual; key indicates D.", hint: "Match the repeated labels across shared edges of the pyramid's faces.", sourcePage: 4 },
-  { number: 24, points: 5, prompt: "The six-digit number 2ABCDE multiplied by 3 equals ABCDE2. What is the sum of its digits?", options: ["24", "27", "30", "33", "36"], answer: 1, explanation: "Multiplying from right to left forces E = 4, D = 1, C = 7, B = 5 and A = 8 (including the carries). Thus the number is 285714 and its digit sum is 2 + 8 + 5 + 7 + 1 + 4 = 27.", hint: "Follow the carries from the units column leftward; each product digit becomes the next digit in the shifted number.", sourcePage: 4 },
-  { number: 25, points: 5, prompt: "A box has green, red, blue and yellow counters. Any 27 include green, any 25 include red, any 22 include blue and any 17 include yellow. What is the maximum number of counters?", options: ["27", "29", "51", "87", "91"], answer: 1, explanation: "If there are T counters, at most 26 can be non-green, 24 non-red, 21 non-blue and 16 non-yellow. Adding these four limits counts every counter three times, so 3T ≤ 26 + 24 + 21 + 16 = 87 and T ≤ 29. Counts of 3 green, 5 red, 8 blue and 13 yellow meet every limit, so 29 is attainable.", hint: "Turn each guarantee into an upper bound on counters of the other three colours, then add the four bounds.", sourcePage: 5 },
-  { number: 26, points: 5, prompt: "In a row of 2021 kangaroos coloured red, grey or blue, every three consecutive kangaroos have all three colours. Only one of five guesses about positions 2, 20, 202, 1002 and 2021 is wrong. Which guess?", options: ["2", "20", "202", "1002", "2021"], answer: 1, explanation: "NEEDS_REVIEW: use the period-3 colour pattern and all five stated guesses to identify the unique mismatch; key indicates B.", hint: "Every next colour is forced by the previous two, so the sequence repeats every three positions.", sourcePage: 5 },
-  { number: 27, points: 5, prompt: "A termite follows the space diagonal of a 3×4×5 cuboid of unit cubes without intersecting internal edges. How many cubes does it pass through?", options: ["8", "9", "10", "11", "12"], answer: 2, explanation: "A generic space diagonal crosses m+n+p−gcd(m,n)−gcd(m,p)−gcd(n,p)+gcd(m,n,p)=3+4+5−1−1−1+1=10 cubes.", hint: "Count one cube per crossed layer in each dimension, correcting for simultaneous grid-plane crossings.", sourcePage: 5 },
-  { number: 28, points: 5, prompt: "There are 21 truthful knights and 2000 lying knaves. A wizard pairs 2020 people; each describes the other as a knight or knave. 2000 are called knights and 20 knaves. How many pairs contain two knaves?", options: ["980", "985", "990", "995", "1000"], answer: 3, explanation: "NEEDS_REVIEW: account for the statements made by each type within mixed and same-type pairs to derive the number; key indicates D.", hint: "Tabulate how many people each pair type calls knights and knaves, then use the totals.", sourcePage: 5 },
-  { number: 29, points: 5, prompt: "Six teams each play every other team once, with three matches per round. The schedule shows the TV match for each round. In which round do D and F play?", options: ["1", "2", "3", "4", "5"], answer: 0, explanation: "NEEDS_REVIEW: the tournament schedule diagram is visual.", hint: "Find the round in which the pairing D–F appears in the schedule.", sourcePage: 5 },
-  { number: 30, points: 5, prompt: "A quadrilateral is divided into four smaller quadrilaterals meeting at K. The other marked points trisect the outer sides, and the numbers give the four areas. What is the shaded area?", options: ["4", "5", "6", "6.5", "7"], answer: 2, explanation: "NEEDS_REVIEW: the side trisection layout and three given areas are visual; key indicates C.", hint: "Use the common vertex and one-third side divisions to relate the four subareas.", sourcePage: 5 }
+  {
+    number: 1,
+    points: 3,
+    prompt: "Which zodiac sign symbol has an axis of symmetry?",
+    options: [
+      "Sagittarius",
+      "Scorpio",
+      "Leo",
+      "Cancer",
+      "Capricorn"
+    ],
+    answer: 0,
+    explanation: "NEEDS_REVIEW: the printed zodiac symbols determine which has a mirror axis.",
+    hint: "Check each symbol for a line that divides it into two reflected halves.",
+    sourcePage: 1,
+    imageExtra: "/assets/kangaroo/grades-7-8/kadett/2021/questions/editor-q-01-extra.png",
+    optionContent: [
+      {
+        id: "1-0",
+        type: "text",
+        text: "Sagittarius",
+        imageAlt: "A option"
+      },
+      {
+        id: "1-1",
+        type: "text",
+        text: "Scorpio",
+        imageAlt: "B option"
+      },
+      {
+        id: "1-2",
+        type: "text",
+        text: "Leo",
+        imageAlt: "C option"
+      },
+      {
+        id: "1-3",
+        type: "text",
+        text: "Cancer",
+        imageAlt: "D option"
+      },
+      {
+        id: "1-4",
+        type: "text",
+        text: "Capricorn",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 2,
+    points: 3,
+    prompt: "Three concentric circles are crossed by four lines through their common centre. What percentage of the figure is shaded?",
+    options: [
+      "30%",
+      "35%",
+      "40%",
+      "45%",
+      "50%"
+    ],
+    answer: 4,
+    explanation: "NEEDS_REVIEW: the shaded sectors and circle divisions are visual.",
+    hint: "Count shaded equal sectors across all three rings and compare with the total.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "2-0",
+        type: "text",
+        text: "30%",
+        imageAlt: "A option"
+      },
+      {
+        id: "2-1",
+        type: "text",
+        text: "35%",
+        imageAlt: "B option"
+      },
+      {
+        id: "2-2",
+        type: "text",
+        text: "40%",
+        imageAlt: "C option"
+      },
+      {
+        id: "2-3",
+        type: "text",
+        text: "45%",
+        imageAlt: "D option"
+      },
+      {
+        id: "2-4",
+        type: "text",
+        text: "50%",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-7-8/kadett/2021/questions/editor-q-02.png"
+  },
+  {
+    number: 3,
+    points: 3,
+    prompt: "What is 20×21 divided by 2+0+2+1?",
+    options: [
+      "42",
+      "64",
+      "80",
+      "84",
+      "105"
+    ],
+    answer: 3,
+    explanation: "20×21=420 and 2+0+2+1=5, so 420÷5=84.",
+    hint: "Evaluate the numerator and digit-sum denominator separately.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "3-0",
+        type: "text",
+        text: "42",
+        imageAlt: "A option"
+      },
+      {
+        id: "3-1",
+        type: "text",
+        text: "64",
+        imageAlt: "B option"
+      },
+      {
+        id: "3-2",
+        type: "text",
+        text: "80",
+        imageAlt: "C option"
+      },
+      {
+        id: "3-3",
+        type: "text",
+        text: "84",
+        imageAlt: "D option"
+      },
+      {
+        id: "3-4",
+        type: "text",
+        text: "105",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 4,
+    points: 3,
+    prompt: "How many four-digit numbers have consecutive digits in ascending order from left to right?",
+    options: [
+      "5",
+      "6",
+      "7",
+      "8",
+      "9"
+    ],
+    answer: 1,
+    explanation: "The possible numbers are 1234, 2345, 3456, 4567, 5678 and 6789: six numbers.",
+    hint: "The first digit can range from 1 through 6 so that the fourth digit remains at most 9.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "4-0",
+        type: "text",
+        text: "5",
+        imageAlt: "A option"
+      },
+      {
+        id: "4-1",
+        type: "text",
+        text: "6",
+        imageAlt: "B option"
+      },
+      {
+        id: "4-2",
+        type: "text",
+        text: "7",
+        imageAlt: "C option"
+      },
+      {
+        id: "4-3",
+        type: "text",
+        text: "8",
+        imageAlt: "D option"
+      },
+      {
+        id: "4-4",
+        type: "text",
+        text: "9",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 5,
+    points: 3,
+    prompt: "Five pieces fit together to form a rectangle with a calculation written on it. What is the answer?",
+    options: [
+      "−100",
+      "−8",
+      "−1",
+      "199",
+      "208"
+    ],
+    answer: 0,
+    explanation: "NEEDS_REVIEW: the assembled calculation is visual.",
+    hint: "Fit the pieces together to read the full calculation, then evaluate it.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "5-0",
+        type: "text",
+        text: "−100",
+        imageAlt: "A option"
+      },
+      {
+        id: "5-1",
+        type: "text",
+        text: "−8",
+        imageAlt: "B option"
+      },
+      {
+        id: "5-2",
+        type: "text",
+        text: "−1",
+        imageAlt: "C option"
+      },
+      {
+        id: "5-3",
+        type: "text",
+        text: "199",
+        imageAlt: "D option"
+      },
+      {
+        id: "5-4",
+        type: "text",
+        text: "208",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-7-8/kadett/2021/questions/editor-q-05.png"
+  },
+  {
+    number: 6,
+    points: 3,
+    prompt: "Five vases have the same height and each holds one litre. Half a litre is poured into each. In which vase is the water level highest?",
+    options: [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    answer: 0,
+    explanation: "NEEDS_REVIEW: the shapes and cross-sections of the five vases are visual.",
+    hint: "For the same volume, a narrower cross-section produces a higher water level.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "6-0",
+        type: "text",
+        text: "A",
+        imageAlt: "A option"
+      },
+      {
+        id: "6-1",
+        type: "text",
+        text: "B",
+        imageAlt: "B option"
+      },
+      {
+        id: "6-2",
+        type: "text",
+        text: "C",
+        imageAlt: "C option"
+      },
+      {
+        id: "6-3",
+        type: "text",
+        text: "D",
+        imageAlt: "D option"
+      },
+      {
+        id: "6-4",
+        type: "text",
+        text: "E",
+        imageAlt: "E option"
+      }
+    ],
+    imageExtra: "/assets/kangaroo/grades-7-8/kadett/2021/questions/editor-q-06-extra.png"
+  },
+  {
+    number: 7,
+    points: 3,
+    prompt: "A student correctly adds two two-digit numbers to get 137. What answer results when he adds the corresponding two four-digit numbers shown?",
+    options: [
+      "13,737",
+      "13,837",
+      "14,747",
+      "23,737",
+      "137,137"
+    ],
+    answer: 1,
+    explanation: "NEEDS_REVIEW: the two displayed number patterns are missing from the extracted text.",
+    hint: "Use the first addition to infer the digit pattern, then align the four-digit addends by place value.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "7-0",
+        type: "text",
+        text: "13,737",
+        imageAlt: "A option"
+      },
+      {
+        id: "7-1",
+        type: "text",
+        text: "13,837",
+        imageAlt: "B option"
+      },
+      {
+        id: "7-2",
+        type: "text",
+        text: "14,747",
+        imageAlt: "C option"
+      },
+      {
+        id: "7-3",
+        type: "text",
+        text: "23,737",
+        imageAlt: "D option"
+      },
+      {
+        id: "7-4",
+        type: "text",
+        text: "137,137",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-7-8/kadett/2021/questions/editor-q-07.png"
+  },
+  {
+    number: 8,
+    points: 3,
+    prompt: "A 3×3×3 cube is made from white, grey and black unit cubes. The first diagram shows the cube and the next two show its white and black parts. Which diagram shows the grey part?",
+    options: [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    answer: 4,
+    explanation: "NEEDS_REVIEW: the cube views and candidate grey arrangements are visual.",
+    hint: "Subtract the white and black unit-cube positions from the complete 3×3×3 arrangement.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "8-0",
+        type: "text",
+        text: "A",
+        imageAlt: "A option"
+      },
+      {
+        id: "8-1",
+        type: "text",
+        text: "B",
+        imageAlt: "B option"
+      },
+      {
+        id: "8-2",
+        type: "text",
+        text: "C",
+        imageAlt: "C option"
+      },
+      {
+        id: "8-3",
+        type: "text",
+        text: "D",
+        imageAlt: "D option"
+      },
+      {
+        id: "8-4",
+        type: "text",
+        text: "E",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-7-8/kadett/2021/questions/editor-q-08.png",
+    imageExtra: "/assets/kangaroo/grades-7-8/kadett/2021/questions/editor-q-08-extra.png"
+  },
+  {
+    number: 9,
+    points: 3,
+    prompt: "A four-wheel bike lock is rotated 180° on every wheel from the shown display to get the correct code. What is the code?",
+    options: [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    answer: 1,
+    explanation: "NEEDS_REVIEW: the displayed digits and wheel positions are visual.",
+    hint: "A half-turn maps each wheel digit to the digit opposite it on that wheel.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "9-0",
+        type: "text",
+        text: "A",
+        imageAlt: "A option"
+      },
+      {
+        id: "9-1",
+        type: "text",
+        text: "B",
+        imageAlt: "B option"
+      },
+      {
+        id: "9-2",
+        type: "text",
+        text: "C",
+        imageAlt: "C option"
+      },
+      {
+        id: "9-3",
+        type: "text",
+        text: "D",
+        imageAlt: "D option"
+      },
+      {
+        id: "9-4",
+        type: "text",
+        text: "E",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-7-8/kadett/2021/questions/editor-q-09.png",
+    imageExtra: "/assets/kangaroo/grades-7-8/kadett/2021/questions/editor-q-09-extra.png"
+  },
+  {
+    number: 10,
+    points: 3,
+    prompt: "Byron is 5 cm taller than Aaron and 10 cm shorter than Caron. Darren is 10 cm taller than Caron and 5 cm shorter than Erin. Which statement is true?",
+    options: [
+      "Aaron and Erin are equal",
+      "Aaron is 10 cm taller than Erin",
+      "Aaron is 10 cm shorter than Erin",
+      "Aaron is 30 cm taller than Erin",
+      "Aaron is 30 cm shorter than Erin"
+    ],
+    answer: 4,
+    explanation: "Relative to Aaron, Byron is +5, Caron +15, Darren +25 and Erin +30 cm. Aaron is 30 cm shorter than Erin.",
+    hint: "Set Aaron's height to zero and add each stated difference in order.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "10-0",
+        type: "text",
+        text: "Aaron and Erin are equal",
+        imageAlt: "A option"
+      },
+      {
+        id: "10-1",
+        type: "text",
+        text: "Aaron is 10 cm taller than Erin",
+        imageAlt: "B option"
+      },
+      {
+        id: "10-2",
+        type: "text",
+        text: "Aaron is 10 cm shorter than Erin",
+        imageAlt: "C option"
+      },
+      {
+        id: "10-3",
+        type: "text",
+        text: "Aaron is 30 cm taller than Erin",
+        imageAlt: "D option"
+      },
+      {
+        id: "10-4",
+        type: "text",
+        text: "Aaron is 30 cm shorter than Erin",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 11,
+    points: 4,
+    prompt: "A rectangular chocolate bar is made of equal squares. Neil breaks off two complete strips and eats 12 squares. Jack breaks off one complete strip from the same bar and eats 9 squares. How many squares remain?",
+    options: [
+      "72",
+      "63",
+      "54",
+      "45",
+      "36"
+    ],
+    answer: 3,
+    explanation: "NEEDS_REVIEW: the bar's row and column counts are in the source diagram; the key indicates D.",
+    hint: "Use the two strip sizes to infer the bar's dimensions, then subtract the removed squares.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "11-0",
+        type: "text",
+        text: "72",
+        imageAlt: "A option"
+      },
+      {
+        id: "11-1",
+        type: "text",
+        text: "63",
+        imageAlt: "B option"
+      },
+      {
+        id: "11-2",
+        type: "text",
+        text: "54",
+        imageAlt: "C option"
+      },
+      {
+        id: "11-3",
+        type: "text",
+        text: "45",
+        imageAlt: "D option"
+      },
+      {
+        id: "11-4",
+        type: "text",
+        text: "36",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 12,
+    points: 4,
+    prompt: "A jar one fifth full weighs 560 g; four fifths full it weighs 740 g. What does the empty jar weigh?",
+    options: [
+      "60 g",
+      "112 g",
+      "180 g",
+      "300 g",
+      "500 g"
+    ],
+    answer: 4,
+    explanation: "The three-fifths increase weighs 180 g, so one fifth of the water weighs 60 g. The empty jar weighs 560−60=500 g.",
+    hint: "The difference between the measurements is three fifths of the full water weight.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "12-0",
+        type: "text",
+        text: "60 g",
+        imageAlt: "A option"
+      },
+      {
+        id: "12-1",
+        type: "text",
+        text: "112 g",
+        imageAlt: "B option"
+      },
+      {
+        id: "12-2",
+        type: "text",
+        text: "180 g",
+        imageAlt: "C option"
+      },
+      {
+        id: "12-3",
+        type: "text",
+        text: "300 g",
+        imageAlt: "D option"
+      },
+      {
+        id: "12-4",
+        type: "text",
+        text: "500 g",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 13,
+    points: 4,
+    prompt: "A 4×4 square has area 16 cm² and each small square has area 1 cm². What is the total area of the central flower?",
+    options: [
+      "3 cm²",
+      "7/2 cm²",
+      "4 cm²",
+      "9/2 cm²",
+      "6 cm²"
+    ],
+    answer: 2,
+    explanation: "NEEDS_REVIEW: the flower's outline is visual.",
+    hint: "Split the flower into whole unit squares and matching fractional pieces.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "13-0",
+        type: "text",
+        text: "3 cm²",
+        imageAlt: "A option"
+      },
+      {
+        id: "13-1",
+        type: "text",
+        text: "7/2 cm²",
+        imageAlt: "B option"
+      },
+      {
+        id: "13-2",
+        type: "text",
+        text: "4 cm²",
+        imageAlt: "C option"
+      },
+      {
+        id: "13-3",
+        type: "text",
+        text: "9/2 cm²",
+        imageAlt: "D option"
+      },
+      {
+        id: "13-4",
+        type: "text",
+        text: "6 cm²",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-7-8/kadett/2021/questions/editor-q-13.png"
+  },
+  {
+    number: 14,
+    points: 4,
+    prompt: "Costa builds a fence from 25 planks, each 30 cm long, with equal overlaps. The total fence length is 6.9 m. How long is each overlap?",
+    options: [
+      "2.4 cm",
+      "2.5 cm",
+      "3 cm",
+      "4.8 cm",
+      "5 cm"
+    ],
+    answer: 1,
+    explanation: "The planks total 25×30=750 cm. The fence is 690 cm, so the 24 overlaps total 60 cm and each is 2.5 cm.",
+    hint: "Subtract the fence length from the sum of plank lengths and divide by the 24 joins.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "14-0",
+        type: "text",
+        text: "2.4 cm",
+        imageAlt: "A option"
+      },
+      {
+        id: "14-1",
+        type: "text",
+        text: "2.5 cm",
+        imageAlt: "B option"
+      },
+      {
+        id: "14-2",
+        type: "text",
+        text: "3 cm",
+        imageAlt: "C option"
+      },
+      {
+        id: "14-3",
+        type: "text",
+        text: "4.8 cm",
+        imageAlt: "D option"
+      },
+      {
+        id: "14-4",
+        type: "text",
+        text: "5 cm",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-7-8/kadett/2021/questions/editor-q-14.png"
+  },
+  {
+    number: 15,
+    points: 4,
+    prompt: "Five identical right triangles form a star when their larger acute angles meet. How many are needed for a second star when their smaller acute angles meet?",
+    options: [
+      "10",
+      "12",
+      "18",
+      "20",
+      "24"
+    ],
+    answer: 3,
+    explanation: "NEEDS_REVIEW: the acute angles and star arrangement are visual; answer key D.",
+    hint: "Find the smaller acute angle from the five-triangle star, then determine how many meet around a point.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "15-0",
+        type: "text",
+        text: "10",
+        imageAlt: "A option"
+      },
+      {
+        id: "15-1",
+        type: "text",
+        text: "12",
+        imageAlt: "B option"
+      },
+      {
+        id: "15-2",
+        type: "text",
+        text: "18",
+        imageAlt: "C option"
+      },
+      {
+        id: "15-3",
+        type: "text",
+        text: "20",
+        imageAlt: "D option"
+      },
+      {
+        id: "15-4",
+        type: "text",
+        text: "24",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-7-8/kadett/2021/questions/editor-q-15.png"
+  },
+  {
+    number: 16,
+    points: 4,
+    prompt: "Five squares are positioned as shown. The small square has area 1. What is h?",
+    options: [
+      "3 m",
+      "3.5 m",
+      "4 m",
+      "4.2 m",
+      "4.5 m"
+    ],
+    answer: 2,
+    explanation: "NEEDS_REVIEW: the arrangement of the five squares and segment h is visual; key indicates C.",
+    hint: "Use the shared side lengths and the unit area of the small square to determine the scale.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "16-0",
+        type: "text",
+        text: "3 m",
+        imageAlt: "A option"
+      },
+      {
+        id: "16-1",
+        type: "text",
+        text: "3.5 m",
+        imageAlt: "B option"
+      },
+      {
+        id: "16-2",
+        type: "text",
+        text: "4 m",
+        imageAlt: "C option"
+      },
+      {
+        id: "16-3",
+        type: "text",
+        text: "4.2 m",
+        imageAlt: "D option"
+      },
+      {
+        id: "16-4",
+        type: "text",
+        text: "4.5 m",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-7-8/kadett/2021/questions/editor-q-16.png"
+  },
+  {
+    number: 17,
+    points: 4,
+    prompt: "A 20-question quiz gives 7 points for a correct answer, −4 for a wrong answer and 0 for blank. Eric scores 100. How many did he leave blank?",
+    options: [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    answer: 1,
+    explanation: "If all 20 answers were correct, Eric would score 140. Changing a correct answer to a wrong one lowers the score by 11, while leaving it blank lowers it by 7. The 40-point drop satisfies 11w + 7b = 40 only with w = 3 and b = 1, so he left one blank.",
+    hint: "Start from 20 correct answers and express the 40-point drop using the score lost for each wrong or blank answer.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "17-0",
+        type: "text",
+        text: "0",
+        imageAlt: "A option"
+      },
+      {
+        id: "17-1",
+        type: "text",
+        text: "1",
+        imageAlt: "B option"
+      },
+      {
+        id: "17-2",
+        type: "text",
+        text: "2",
+        imageAlt: "C option"
+      },
+      {
+        id: "17-3",
+        type: "text",
+        text: "3",
+        imageAlt: "D option"
+      },
+      {
+        id: "17-4",
+        type: "text",
+        text: "4",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 18,
+    points: 4,
+    prompt: "A 4×13 cm paper strip is folded as shown, forming rectangles of areas P and Q with P=2Q. What is x?",
+    options: [
+      "5 cm",
+      "5.5 cm",
+      "6 cm",
+      "6.5 cm",
+      "4√2 cm"
+    ],
+    answer: 2,
+    explanation: "NEEDS_REVIEW: the fold location and labelled regions are visual; the answer key indicates C.",
+    hint: "Express P and Q using the 4 cm strip width and the fold position x.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "18-0",
+        type: "text",
+        text: "5 cm",
+        imageAlt: "A option"
+      },
+      {
+        id: "18-1",
+        type: "text",
+        text: "5.5 cm",
+        imageAlt: "B option"
+      },
+      {
+        id: "18-2",
+        type: "text",
+        text: "6 cm",
+        imageAlt: "C option"
+      },
+      {
+        id: "18-3",
+        type: "text",
+        text: "6.5 cm",
+        imageAlt: "D option"
+      },
+      {
+        id: "18-4",
+        type: "text",
+        text: "4√2 cm",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-7-8/kadett/2021/questions/editor-q-18.png"
+  },
+  {
+    number: 19,
+    points: 4,
+    prompt: "A fruit box has twice as many apples as pears. Christy and Lily divide all fruit so Christy gets twice as many pieces as Lily. Which statement is always true?",
+    options: [
+      "Christy gets at least one pear",
+      "Christy gets twice as many apples as pears",
+      "Christy gets twice as many apples as Lily",
+      "Christy's apples equal Lily's pears",
+      "Christy's pears equal Lily's apples"
+    ],
+    answer: 4,
+    explanation: "If there are p pears, there are 2p apples, so Christy gets 2p pieces and Lily gets p. If Christy gets x pears, she gets 2p − x apples; Lily then gets x apples. Thus Christy's pears always equal Lily's apples.",
+    hint: "Let the number of pears Christy receives be x, then use the total number of apples and the fact that Christy gets two thirds of all fruit.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "19-0",
+        type: "text",
+        text: "Christy gets at least one pear",
+        imageAlt: "A option"
+      },
+      {
+        id: "19-1",
+        type: "text",
+        text: "Christy gets twice as many apples as pears",
+        imageAlt: "B option"
+      },
+      {
+        id: "19-2",
+        type: "text",
+        text: "Christy gets twice as many apples as Lily",
+        imageAlt: "C option"
+      },
+      {
+        id: "19-3",
+        type: "text",
+        text: "Christy's apples equal Lily's pears",
+        imageAlt: "D option"
+      },
+      {
+        id: "19-4",
+        type: "text",
+        text: "Christy's pears equal Lily's apples",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 20,
+    points: 4,
+    prompt: "Three villages are connected by paths. The detour via the third village exceeds each direct path by the amounts shown. What is the shortest direct path?",
+    options: [
+      "1 km",
+      "2 km",
+      "3 km",
+      "4 km",
+      "5 km"
+    ],
+    answer: 2,
+    explanation: "NEEDS_REVIEW: the three detour equations and map are visual; key indicates C.",
+    hint: "Let the three direct distances be x, y and z and translate each detour statement into an equation.",
+    sourcePage: 4,
+    optionContent: [
+      {
+        id: "20-0",
+        type: "text",
+        text: "1 km",
+        imageAlt: "A option"
+      },
+      {
+        id: "20-1",
+        type: "text",
+        text: "2 km",
+        imageAlt: "B option"
+      },
+      {
+        id: "20-2",
+        type: "text",
+        text: "3 km",
+        imageAlt: "C option"
+      },
+      {
+        id: "20-3",
+        type: "text",
+        text: "4 km",
+        imageAlt: "D option"
+      },
+      {
+        id: "20-4",
+        type: "text",
+        text: "5 km",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-7-8/kadett/2021/questions/editor-q-20.png"
+  },
+  {
+    number: 21,
+    points: 5,
+    prompt: "Five friends collect planet, moon and star pins. Each makes a statement about their collection. Which set of pins belongs to Yvonne?",
+    options: [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    answer: 4,
+    explanation: "NEEDS_REVIEW: the five collections and all statements are visual.",
+    hint: "Test each set against the parity and relative-count statements, using the key's E.",
+    sourcePage: 4,
+    optionContent: [
+      {
+        id: "21-0",
+        type: "text",
+        text: "A",
+        imageAlt: "A option"
+      },
+      {
+        id: "21-1",
+        type: "text",
+        text: "B",
+        imageAlt: "B option"
+      },
+      {
+        id: "21-2",
+        type: "text",
+        text: "C",
+        imageAlt: "C option"
+      },
+      {
+        id: "21-3",
+        type: "text",
+        text: "D",
+        imageAlt: "D option"
+      },
+      {
+        id: "21-4",
+        type: "text",
+        text: "E",
+        imageAlt: "E option"
+      }
+    ],
+    imageExtra: "/assets/kangaroo/grades-7-8/kadett/2021/questions/editor-q-21-extra.png"
+  },
+  {
+    number: 22,
+    points: 5,
+    prompt: "A positive fraction's numerator is increased by 40%. By what percentage must its denominator decrease for the new fraction to be twice the original?",
+    options: [
+      "10%",
+      "20%",
+      "30%",
+      "40%",
+      "50%"
+    ],
+    answer: 2,
+    explanation: "The numerator factor is 1.4. To double the ratio, the denominator factor must be 1.4/2=0.7, a 30% decrease.",
+    hint: "Set the new numerator factor divided by the new denominator factor equal to 2.",
+    sourcePage: 4,
+    optionContent: [
+      {
+        id: "22-0",
+        type: "text",
+        text: "10%",
+        imageAlt: "A option"
+      },
+      {
+        id: "22-1",
+        type: "text",
+        text: "20%",
+        imageAlt: "B option"
+      },
+      {
+        id: "22-2",
+        type: "text",
+        text: "30%",
+        imageAlt: "C option"
+      },
+      {
+        id: "22-3",
+        type: "text",
+        text: "40%",
+        imageAlt: "D option"
+      },
+      {
+        id: "22-4",
+        type: "text",
+        text: "50%",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 23,
+    points: 5,
+    prompt: "A triangular pyramid has 20 cannonballs, four labelled each A–E. Three faces are shown. What label is on the hidden ball in the middle of the fourth face?",
+    options: [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    answer: 3,
+    explanation: "NEEDS_REVIEW: the three face views are visual; key indicates D.",
+    hint: "Match the repeated labels across shared edges of the pyramid's faces.",
+    sourcePage: 4,
+    optionContent: [
+      {
+        id: "23-0",
+        type: "text",
+        text: "A",
+        imageAlt: "A option"
+      },
+      {
+        id: "23-1",
+        type: "text",
+        text: "B",
+        imageAlt: "B option"
+      },
+      {
+        id: "23-2",
+        type: "text",
+        text: "C",
+        imageAlt: "C option"
+      },
+      {
+        id: "23-3",
+        type: "text",
+        text: "D",
+        imageAlt: "D option"
+      },
+      {
+        id: "23-4",
+        type: "text",
+        text: "E",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-7-8/kadett/2021/questions/editor-q-23.png",
+    imageExtra: "/assets/kangaroo/grades-7-8/kadett/2021/questions/editor-q-23-extra.png"
+  },
+  {
+    number: 24,
+    points: 5,
+    prompt: "The six-digit number 2ABCDE multiplied by 3 equals ABCDE2. What is the sum of its digits?",
+    options: [
+      "24",
+      "27",
+      "30",
+      "33",
+      "36"
+    ],
+    answer: 1,
+    explanation: "Multiplying from right to left forces E = 4, D = 1, C = 7, B = 5 and A = 8 (including the carries). Thus the number is 285714 and its digit sum is 2 + 8 + 5 + 7 + 1 + 4 = 27.",
+    hint: "Follow the carries from the units column leftward; each product digit becomes the next digit in the shifted number.",
+    sourcePage: 4,
+    optionContent: [
+      {
+        id: "24-0",
+        type: "text",
+        text: "24",
+        imageAlt: "A option"
+      },
+      {
+        id: "24-1",
+        type: "text",
+        text: "27",
+        imageAlt: "B option"
+      },
+      {
+        id: "24-2",
+        type: "text",
+        text: "30",
+        imageAlt: "C option"
+      },
+      {
+        id: "24-3",
+        type: "text",
+        text: "33",
+        imageAlt: "D option"
+      },
+      {
+        id: "24-4",
+        type: "text",
+        text: "36",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 25,
+    points: 5,
+    prompt: "A box has green, red, blue and yellow counters. Any 27 include green, any 25 include red, any 22 include blue and any 17 include yellow. What is the maximum number of counters?",
+    options: [
+      "27",
+      "29",
+      "51",
+      "87",
+      "91"
+    ],
+    answer: 1,
+    explanation: "If there are T counters, at most 26 can be non-green, 24 non-red, 21 non-blue and 16 non-yellow. Adding these four limits counts every counter three times, so 3T ≤ 26 + 24 + 21 + 16 = 87 and T ≤ 29. Counts of 3 green, 5 red, 8 blue and 13 yellow meet every limit, so 29 is attainable.",
+    hint: "Turn each guarantee into an upper bound on counters of the other three colours, then add the four bounds.",
+    sourcePage: 5,
+    optionContent: [
+      {
+        id: "25-0",
+        type: "text",
+        text: "27",
+        imageAlt: "A option"
+      },
+      {
+        id: "25-1",
+        type: "text",
+        text: "29",
+        imageAlt: "B option"
+      },
+      {
+        id: "25-2",
+        type: "text",
+        text: "51",
+        imageAlt: "C option"
+      },
+      {
+        id: "25-3",
+        type: "text",
+        text: "87",
+        imageAlt: "D option"
+      },
+      {
+        id: "25-4",
+        type: "text",
+        text: "91",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 26,
+    points: 5,
+    prompt: "In a row of 2021 kangaroos coloured red, grey or blue, every three consecutive kangaroos have all three colours. Only one of five guesses about positions 2, 20, 202, 1002 and 2021 is wrong. Which guess?",
+    options: [
+      "2",
+      "20",
+      "202",
+      "1002",
+      "2021"
+    ],
+    answer: 1,
+    explanation: "NEEDS_REVIEW: use the period-3 colour pattern and all five stated guesses to identify the unique mismatch; key indicates B.",
+    hint: "Every next colour is forced by the previous two, so the sequence repeats every three positions.",
+    sourcePage: 5,
+    optionContent: [
+      {
+        id: "26-0",
+        type: "text",
+        text: "2",
+        imageAlt: "A option"
+      },
+      {
+        id: "26-1",
+        type: "text",
+        text: "20",
+        imageAlt: "B option"
+      },
+      {
+        id: "26-2",
+        type: "text",
+        text: "202",
+        imageAlt: "C option"
+      },
+      {
+        id: "26-3",
+        type: "text",
+        text: "1002",
+        imageAlt: "D option"
+      },
+      {
+        id: "26-4",
+        type: "text",
+        text: "2021",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 27,
+    points: 5,
+    prompt: "A termite follows the space diagonal of a 3×4×5 cuboid of unit cubes without intersecting internal edges. How many cubes does it pass through?",
+    options: [
+      "8",
+      "9",
+      "10",
+      "11",
+      "12"
+    ],
+    answer: 2,
+    explanation: "A generic space diagonal crosses m+n+p−gcd(m,n)−gcd(m,p)−gcd(n,p)+gcd(m,n,p)=3+4+5−1−1−1+1=10 cubes.",
+    hint: "Count one cube per crossed layer in each dimension, correcting for simultaneous grid-plane crossings.",
+    sourcePage: 5,
+    optionContent: [
+      {
+        id: "27-0",
+        type: "text",
+        text: "8",
+        imageAlt: "A option"
+      },
+      {
+        id: "27-1",
+        type: "text",
+        text: "9",
+        imageAlt: "B option"
+      },
+      {
+        id: "27-2",
+        type: "text",
+        text: "10",
+        imageAlt: "C option"
+      },
+      {
+        id: "27-3",
+        type: "text",
+        text: "11",
+        imageAlt: "D option"
+      },
+      {
+        id: "27-4",
+        type: "text",
+        text: "12",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-7-8/kadett/2021/questions/editor-q-27.png"
+  },
+  {
+    number: 28,
+    points: 5,
+    prompt: "There are 21 truthful knights and 2000 lying knaves. A wizard pairs 2020 people; each describes the other as a knight or knave. 2000 are called knights and 20 knaves. How many pairs contain two knaves?",
+    options: [
+      "980",
+      "985",
+      "990",
+      "995",
+      "1000"
+    ],
+    answer: 3,
+    explanation: "NEEDS_REVIEW: account for the statements made by each type within mixed and same-type pairs to derive the number; key indicates D.",
+    hint: "Tabulate how many people each pair type calls knights and knaves, then use the totals.",
+    sourcePage: 5,
+    optionContent: [
+      {
+        id: "28-0",
+        type: "text",
+        text: "980",
+        imageAlt: "A option"
+      },
+      {
+        id: "28-1",
+        type: "text",
+        text: "985",
+        imageAlt: "B option"
+      },
+      {
+        id: "28-2",
+        type: "text",
+        text: "990",
+        imageAlt: "C option"
+      },
+      {
+        id: "28-3",
+        type: "text",
+        text: "995",
+        imageAlt: "D option"
+      },
+      {
+        id: "28-4",
+        type: "text",
+        text: "1000",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 29,
+    points: 5,
+    prompt: "Six teams each play every other team once, with three matches per round. The schedule shows the TV match for each round. In which round do D and F play?",
+    options: [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    answer: 0,
+    explanation: "NEEDS_REVIEW: the tournament schedule diagram is visual.",
+    hint: "Find the round in which the pairing D–F appears in the schedule.",
+    sourcePage: 5,
+    optionContent: [
+      {
+        id: "29-0",
+        type: "text",
+        text: "1",
+        imageAlt: "A option"
+      },
+      {
+        id: "29-1",
+        type: "text",
+        text: "2",
+        imageAlt: "B option"
+      },
+      {
+        id: "29-2",
+        type: "text",
+        text: "3",
+        imageAlt: "C option"
+      },
+      {
+        id: "29-3",
+        type: "text",
+        text: "4",
+        imageAlt: "D option"
+      },
+      {
+        id: "29-4",
+        type: "text",
+        text: "5",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-7-8/kadett/2021/questions/editor-q-29.png"
+  },
+  {
+    number: 30,
+    points: 5,
+    prompt: "A quadrilateral is divided into four smaller quadrilaterals meeting at K. The other marked points trisect the outer sides, and the numbers give the four areas. What is the shaded area?",
+    options: [
+      "4",
+      "5",
+      "6",
+      "6.5",
+      "7"
+    ],
+    answer: 2,
+    explanation: "NEEDS_REVIEW: the side trisection layout and three given areas are visual; key indicates C.",
+    hint: "Use the common vertex and one-third side divisions to relate the four subareas.",
+    sourcePage: 5,
+    optionContent: [
+      {
+        id: "30-0",
+        type: "text",
+        text: "4",
+        imageAlt: "A option"
+      },
+      {
+        id: "30-1",
+        type: "text",
+        text: "5",
+        imageAlt: "B option"
+      },
+      {
+        id: "30-2",
+        type: "text",
+        text: "6",
+        imageAlt: "C option"
+      },
+      {
+        id: "30-3",
+        type: "text",
+        text: "6.5",
+        imageAlt: "D option"
+      },
+      {
+        id: "30-4",
+        type: "text",
+        text: "7",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-7-8/kadett/2021/questions/editor-q-30.png"
+  }
 ];
 
 const sections2021Kadett: Section[] = [
-  { points: 3, label: "Section 1", range: "Questions 1–10", accent: "coral" },
-  { points: 4, label: "Section 2", range: "Questions 11–20", accent: "blue" },
-  { points: 5, label: "Section 3", range: "Questions 21–30", accent: "purple" }
+  {
+    points: 3,
+    label: "Section 1",
+    range: "Questions 1–10",
+    accent: "coral"
+  },
+  {
+    points: 4,
+    label: "Section 2",
+    range: "Questions 11–20",
+    accent: "blue"
+  },
+  {
+    points: 5,
+    label: "Section 3",
+    range: "Questions 21–30",
+    accent: "purple"
+  }
 ];
 
 export const edition2021Kadett: QuestionSet = {
@@ -49,5 +1495,5 @@ export const edition2021Kadett: QuestionSet = {
   timeLimitMinutes: 75,
   sourceUrl: "https://www.matematica.pt/en/docs/kangaroo/enunciados/2021/2021_Kadett.pdf",
   questions: questions2021Kadett,
-  sections: sections2021Kadett
+  sections: sections2021Kadett,
 };
