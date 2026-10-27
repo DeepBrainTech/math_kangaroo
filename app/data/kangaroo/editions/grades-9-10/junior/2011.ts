@@ -1,42 +1,1481 @@
 import type { Question, QuestionSet, Section } from "../../../types";
 
 const questions2011Junior: Question[] = [
-  { number: 1, points: 3, prompt: "A zebra crossing has alternating white and black stripes, each 50 cm wide. The first and last stripes are white. There are 8 white stripes. How wide is the road?", options: ["7 m", "7.5 m", "8 m", "8.5 m", "9 m"], answer: 1, explanation: "With a white stripe at both ends, there is one fewer black stripe: 7. In all there are 8+7=15 stripes, each 0.5 m wide, so the road is 7.5 m wide.", hint: "Count the black stripes between eight white stripes, then multiply the total stripe count by 50 cm.", sourcePage: 1 },
-  { number: 2, points: 3, prompt: "The grey rectangle shown has area 13 cm^2. X and Y are midpoints of the sides of the trapezium. What is the area of the trapezium?", options: ["24 cm^2", "25 cm^2", "26 cm^2", "27 cm^2", "28 cm^2"], answer: 0, explanation: "NEEDS_REVIEW: independent midpoint geometry suggests 26 cm^2, while the key marks A (24 cm^2); verify the source diagram/key.", hint: "Use the midpoint theorem to compare the rectangle's height and width with the trapezium.", sourcePage: 1 },
-  { number: 3, points: 3, prompt: "Given S1=2x3+3x4+4x5, S2=2^2+3^2+4^2, and S3=1x2+2x3+3x4, which statement is true?", options: ["S2<S1<S3", "S1<S2=S3", "S1<S2<S3", "S3<S2<S1", "S1=S2<S3"], answer: 3, explanation: "S1=6+12+20=38, S2=4+9+16=29, and S3=2+6+12=20. Therefore S3<S2<S1.", hint: "Calculate each sum on its own before comparing the results.", sourcePage: 1 },
-  { number: 4, points: 3, prompt: "Numbers are written at the vertices of a hexagon so the sums at the two corners of every side are equal. Two values are 4 and 1 as shown. What belongs at x?", options: ["1", "3", "4", "5", "24"], answer: 0, explanation: "NEEDS_REVIEW: verify vertex labels and the two given values against the diagram.", hint: "Write the six equal side-sums and compare neighbouring equations.", sourcePage: 1 },
-  { number: 5, points: 3, prompt: "When 2011 is divided by a positive whole number, the remainder is 1011. Which number was it divided by?", options: ["100", "500", "1000", "Another number", "There is no such number"], answer: 4, explanation: "The divisor d must divide 2011−1011=1000 and be greater than the remainder 1011. But every positive divisor of 1000 is at most 1000, so this is impossible.", hint: "The divisor must be larger than 1011 and must divide 2011−1011.", sourcePage: 1 },
-  { number: 6, points: 3, prompt: "A rectangle with area 360 cm^2 is tiled with square tiles. It is 24 cm long and 5 tiles wide. What is the area of one tile?", options: ["1 cm^2", "4 cm^2", "9 cm^2", "16 cm^2", "25 cm^2"], answer: 2, explanation: "The rectangle's other side is 360÷24=15 cm. Five square tiles span that width, so each tile has side 15÷5=3 cm and area 3²=9 cm².", hint: "Find the rectangle's width from its area and length, then divide by five to get one tile's side.", sourcePage: 1 },
-  { number: 7, points: 3, prompt: "All four-digit numbers whose digit sum is 4 are written in decreasing order, starting with the largest. In which position is 2011?", options: ["6", "7", "8", "9", "10"], answer: 3, explanation: "The eight larger numbers are 4000, 3100, 3010, 3001, 2200, 2020, 2110, and 2101. So 2011 comes next, in ninth place.", hint: "Count the digit-sum-4 numbers larger than 2011, grouping them by their first digit.", sourcePage: 1 },
-  { number: 8, points: 3, prompt: "Unusual dice have faces -1, 2, -3, 4, -5, and 6. Which sum cannot be obtained by rolling two such dice?", options: ["3", "4", "5", "7", "8"], answer: 2, explanation: "NEEDS_REVIEW: the key marks C (5), but -1+6=5 is attainable under the transcribed face labels; check the source wording/key.", hint: "List all pairwise sums from {-1,-3,-5,2,4,6}.", sourcePage: 1 },
-  { number: 9, points: 3, prompt: "Step by step, VELO is changed into LOVE by swapping adjacent letters. What is the minimum number of steps?", options: ["3", "4", "5", "6", "7"], answer: 2, explanation: "NEEDS_REVIEW: the minimum inversion count for VELO to LOVE is four swaps, while the key row appears to mark C (five). Recheck the key alignment.", hint: "Count the adjacent swaps needed to place each letter in its target position.", sourcePage: 1 },
-  { number: 10, points: 3, prompt: "A convex pentagon has all internal angles less than 180 degrees. Which list gives all possible numbers of right angles?", options: ["1,2,3", "0,1,2,3,4", "0,1,2,3", "0,1,2", "1,2"], answer: 2, explanation: "A pentagon's interior angles sum to 540°. Four right angles would leave 180° for the last angle, which is not allowed. Zero, one, two, or three right angles can occur, so choice C lists all possibilities.", hint: "Use the 540° total to rule out four right angles, then check that 0 through 3 are possible.", sourcePage: 1 },
-  { number: 11, points: 4, prompt: "Four calculations contain the number 8. In which calculation can 8 be swapped with another positive number without changing the answer?", options: ["A", "B", "C", "D", "E"], answer: 1, explanation: "The second expression has two interchangeable occurrences of 8, so the value is unchanged when one is swapped with another positive number.", hint: "Compare the roles of the repeated 8s in each expression.", sourcePage: 1 },
-  { number: 12, points: 4, prompt: "Three racers, Michael, Fernando, and Sebastian, start in that order. During the race Michael and Fernando overtake each other 9 times, Fernando and Sebastian 10 times, and Michael and Sebastian 11 times. In what order do they finish?", options: ["Michael, Fernando, Sebastian", "Fernando, Sebastian, Michael", "Sebastian, Michael, Fernando", "Sebastian, Fernando, Michael", "Fernando, Michael, Sebastian"], answer: 1, explanation: "An odd number of overtakes reverses a pair's starting order; an even number preserves it. Fernando ends ahead of Michael (9), Fernando stays ahead of Sebastian (10), and Sebastian ends ahead of Michael (11). So the order is Fernando, Sebastian, Michael.", hint: "For each pair, preserve their starting order after an even number of overtakes and reverse it after an odd number.", sourcePage: 2 },
-  { number: 13, points: 4, prompt: "How big is n if 9^n+9^n+9^n=3^2011?", options: ["1005", "1006", "2010", "2011", "Another value"], answer: 0, explanation: "The left side is 3·9ⁿ=3·3²ⁿ=3²ⁿ⁺¹. Equating exponents gives 2n+1=2011, so n=1005.", hint: "Factor out the three equal terms, then write 9 as a power of 3.", sourcePage: 2 },
-  { number: 14, points: 4, prompt: "A large cuboid of side length a dm and a smaller cube of side length a+1 dm are shown. The large one is full of water and the little one is empty. After pouring as much water as possible into the little one, 217 litres remain in the big one. How many litres of water are now in the little one?", options: ["243", "512", "125", "1331", "729"], answer: 0, explanation: "The volumes differ by a^3-(a+1)^3 in the configuration; using the remaining 217 litres gives 243 litres transferred.", hint: "Set up the two cube volumes and use the remaining volume to solve for the side length.", sourcePage: 2 },
-  { number: 15, points: 4, prompt: "A marble of radius 15 is rolled into a cone-shaped hole and fits perfectly. The side view of the cone is an equilateral triangle. How deep is the hole?", options: ["30sqrt(2)", "25sqrt(3)", "45", "60", "60(sqrt(3)-1)"], answer: 2, explanation: "The marble's cross-section is the incircle of the equilateral side-view triangle. In an equilateral triangle, the inradius is one third of the altitude, so the cone's depth is 3×15=45.", hint: "Relate the incircle radius of the equilateral cross-section to the triangle's altitude.", sourcePage: 2 },
-  { number: 16, points: 4, prompt: "In a 4x4 table, the numbers beside rows and beneath columns state how many cells in each must be black. How many colourings are possible?", options: ["0", "1", "3", "5", "9"], answer: 3, explanation: "NEEDS_REVIEW: the row and column totals must be visually verified from the source grid.", hint: "List row patterns with the prescribed totals, then enforce the column totals.", sourcePage: 2 },
-  { number: 17, points: 4, prompt: "What is the greatest number of consecutive three-digit integers that each contain at least one odd digit?", options: ["1", "10", "110", "111", "221"], answer: 3, explanation: "Every number from 889 through 999 has an odd hundreds digit, giving a run of 111. It cannot be extended earlier because 888 has no odd digit, or later because 999 ends the three-digit range.", hint: "Look at the final three-digit numbers: from 889 to 999, each has 9 in the hundreds place.", sourcePage: 2 },
-  { number: 18, points: 4, prompt: "A 3x3 table is filled with whole numbers so each 2x2 subtable sums to 10. Five numbers are given. What is the sum of the four remaining numbers?", options: ["0", "10", "11", "12", "13"], answer: 3, explanation: "NEEDS_REVIEW: the answer key marks D (12); verify the five printed entries and target blanks in the diagram.", hint: "Add all four overlapping 2x2 sums and track how often each cell appears.", sourcePage: 2 },
-  { number: 19, points: 4, prompt: "A road map shows house positions and crossings correctly, but one of four roads is not straight. Who lives on the crooked road?", options: ["Amy", "Ben", "Carol", "David", "It cannot be determined"], answer: 2, explanation: "NEEDS_REVIEW: this answer depends on the map diagram and needs a clean crop.", hint: "Trace each labelled road through the crossings and compare it with a straight line.", sourcePage: 2 },
-  { number: 20, points: 4, prompt: "In triangle WXY, Z lies on XY and T lies on WZ. Connecting T to X creates nine interior angles. What is the smallest number that could occur exactly once among those angles?", options: ["2", "3", "4", "5", "6"], answer: 3, explanation: "NEEDS_REVIEW: verify the answer from the original labelled-angle diagram.", hint: "Write linear-pair and triangle angle-sum equations for the nine labelled angles.", sourcePage: 2 },
-  { number: 21, points: 5, prompt: "Simon has a glass cube of side 1 dm and sticks equal black squares on it so all faces look the same. How many square centimetres are covered?", options: ["37.5", "150", "225", "300", "375"], answer: 2, explanation: "NEEDS_REVIEW: check the cube's patterned face area in the source image.", hint: "Count the black area on one face and multiply by six.", sourcePage: 3 },
-  { number: 22, points: 5, prompt: "A five-digit number abcde is interesting if all digits differ and a=b+c+d+e. How many interesting numbers are there?", options: ["72", "144", "168", "216", "288"], answer: 0, explanation: "Counting distinct digits 0-9 with the first digit equal to the sum of the other four gives 72 numbers.", hint: "Choose four distinct digits whose sum is a single digit not among them, then order the final four positions.", sourcePage: 3 },
-  { number: 23, points: 5, prompt: "x and y are both greater than 1. Which is largest: x/(y+1), x/(y-1), 2x/(2y+1), 2x/(2y-1), or 3x/(3y+1)?", options: ["x/(y+1)", "x/(y-1)", "2x/(2y+1)", "2x/(2y-1)", "3x/(3y+1)"], answer: 1, explanation: "For y>1, x/(y-1) has a smaller positive denominator than the other expressions and is the largest.", hint: "Compare each denominator relative to its numerator scale, using x>0 and y>1.", sourcePage: 3 },
-  { number: 24, points: 5, prompt: "For K=2^99 x 3^4 x 5^53, what is the last nonzero digit?", options: ["1", "2", "4", "6", "9"], answer: 2, explanation: "After pairing powers of 2 and 5, the remaining factor's last nonzero digit is 4.", hint: "Cancel 10s first, then compute the remaining units digit.", sourcePage: 3 },
-  { number: 25, points: 5, prompt: "A 16 cm by 4 cm rectangle is folded so corner C meets A. What is the area of pentagon ABNMD?", options: ["17 cm^2", "27 cm^2", "37 cm^2", "47 cm^2", "57 cm^2"], answer: 2, explanation: "NEEDS_REVIEW: verify the fold construction and area against the source diagram.", hint: "Use the fold as a reflection and subtract the folded-away triangular area.", sourcePage: 3 },
-  { number: 26, points: 5, prompt: "Train G takes 8 seconds to pass a milestone. Later it meets train H, and they take 9 seconds to pass each other. H then takes 12 seconds to pass the milestone. What can be deduced about their lengths?", options: ["G is twice as long as H", "They are the same length", "H is 50% longer than G", "H is twice as long as G", "Nothing can be deduced"], answer: 0, explanation: "If their speeds are vG and vH, their lengths are 8vG and 12vH. Passing each other takes (8vG+12vH)/(vG+vH)=9, so vG=3vH. Their length ratio is 8vG:12vH=24:12=2:1.", hint: "Write each train's length as speed times its milestone-passing time, then use the 9-second passing time.", sourcePage: 3 },
-  { number: 27, points: 5, prompt: "The pictured shape is made from squares of side 4 cm and 5 cm, a triangle of area 8 cm^2, and a grey parallelogram. What is the parallelogram's area?", options: ["15 cm^2", "16 cm^2", "18 cm^2", "20 cm^2", "21 cm^2"], answer: 1, explanation: "NEEDS_REVIEW: visually verify the piece layout before finalizing the derivation.", hint: "Use the shared side lengths and the area of the connecting triangle.", sourcePage: 3 },
-  { number: 28, points: 5, prompt: "Five lamps are switched ten times. Each operation changes one chosen lamp and one other lamp. Starting with all off, what can be said afterward?", options: ["Not all off", "Definitely all on", "Not all on", "Definitely all off", "None of A-D"], answer: 2, explanation: "Each operation flips two lamps, so the parity of the number that are on stays even. Five lamps on would be odd; therefore they cannot all be on, which guarantees choice C.", hint: "Track whether the number of lit lamps is even or odd after each operation.", sourcePage: 3 },
-  { number: 29, points: 5, prompt: "The numbers 1 through 120 are placed in 15 columns as shown. Which column has the largest sum?", options: ["1", "5", "7", "10", "13"], answer: 1, explanation: "NEEDS_REVIEW: confirm the row order and column sums against the source table.", hint: "Use the repeated column pattern to compare the arithmetic sequences.", sourcePage: 3 },
-  { number: 30, points: 5, prompt: "Positive numbers in a 3x3 grid have product 1 in every row and column. The product in each interior 2x2 square is 2. What is the centre number?", options: ["16", "8", "4", "1/4", "1/8"], answer: 0, explanation: "Multiplying the four 2×2 products counts corners once, edge cells twice, and the centre four times. Using the fact that the product of all cells, the middle row, and the middle column each equals 1, this product simplifies to the centre entry. Hence the centre is 2⁴=16.", hint: "Multiply the four small-square products, then use the whole-grid, middle-row, and middle-column products to cancel the other entries.", sourcePage: 3 }
+  {
+    number: 1,
+    points: 3,
+    prompt: "A zebra crossing has alternating white and black stripes, each 50 cm wide. The first and last stripes are white. There are 8 white stripes. How wide is the road?",
+    options: [
+      "7 m",
+      "7.5 m",
+      "8 m",
+      "8.5 m",
+      "9 m"
+    ],
+    answer: 1,
+    explanation: "With a white stripe at both ends, there is one fewer black stripe: 7. In all there are 8+7=15 stripes, each 0.5 m wide, so the road is 7.5 m wide.",
+    hint: "Count the black stripes between eight white stripes, then multiply the total stripe count by 50 cm.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "1-0",
+        type: "text",
+        text: "7 m",
+        imageAlt: "A option"
+      },
+      {
+        id: "1-1",
+        type: "text",
+        text: "7.5 m",
+        imageAlt: "B option"
+      },
+      {
+        id: "1-2",
+        type: "text",
+        text: "8 m",
+        imageAlt: "C option"
+      },
+      {
+        id: "1-3",
+        type: "text",
+        text: "8.5 m",
+        imageAlt: "D option"
+      },
+      {
+        id: "1-4",
+        type: "text",
+        text: "9 m",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 2,
+    points: 3,
+    prompt: "The grey rectangle shown has area 13 cm^2. X and Y are midpoints of the sides of the trapezium. What is the area of the trapezium?",
+    options: [
+      "24 cm^2",
+      "25 cm^2",
+      "26 cm^2",
+      "27 cm^2",
+      "28 cm^2"
+    ],
+    answer: 0,
+    explanation: "NEEDS_REVIEW: independent midpoint geometry suggests 26 cm^2, while the key marks A (24 cm^2); verify the source diagram/key.",
+    hint: "Use the midpoint theorem to compare the rectangle's height and width with the trapezium.",
+    sourcePage: 1,
+    image: "/assets/kangaroo/grades-9-10/junior/2011/questions/editor-q-02.png",
+    optionContent: [
+      {
+        id: "2-0",
+        type: "text",
+        text: "24 cm^2",
+        imageAlt: "A option"
+      },
+      {
+        id: "2-1",
+        type: "text",
+        text: "25 cm^2",
+        imageAlt: "B option"
+      },
+      {
+        id: "2-2",
+        type: "text",
+        text: "26 cm^2",
+        imageAlt: "C option"
+      },
+      {
+        id: "2-3",
+        type: "text",
+        text: "27 cm^2",
+        imageAlt: "D option"
+      },
+      {
+        id: "2-4",
+        type: "text",
+        text: "28 cm^2",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 3,
+    points: 3,
+    prompt: "Given S1=2x3+3x4+4x5, S2=2^2+3^2+4^2, and S3=1x2+2x3+3x4, which statement is true?",
+    options: [
+      "S2<S1<S3",
+      "S1<S2=S3",
+      "S1<S2<S3",
+      "S3<S2<S1",
+      "S1=S2<S3"
+    ],
+    answer: 3,
+    explanation: "S1=6+12+20=38, S2=4+9+16=29, and S3=2+6+12=20. Therefore S3<S2<S1.",
+    hint: "Calculate each sum on its own before comparing the results.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "3-0",
+        type: "text",
+        text: "S2<S1<S3",
+        imageAlt: "A option"
+      },
+      {
+        id: "3-1",
+        type: "text",
+        text: "S1<S2=S3",
+        imageAlt: "B option"
+      },
+      {
+        id: "3-2",
+        type: "text",
+        text: "S1<S2<S3",
+        imageAlt: "C option"
+      },
+      {
+        id: "3-3",
+        type: "text",
+        text: "S3<S2<S1",
+        imageAlt: "D option"
+      },
+      {
+        id: "3-4",
+        type: "text",
+        text: "S1=S2<S3",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 4,
+    points: 3,
+    prompt: "Numbers are written at the vertices of a hexagon so the sums at the two corners of every side are equal. Two values are 4 and 1 as shown. What belongs at x?",
+    options: [
+      "1",
+      "3",
+      "4",
+      "5",
+      "24"
+    ],
+    answer: 0,
+    explanation: "NEEDS_REVIEW: verify vertex labels and the two given values against the diagram.",
+    hint: "Write the six equal side-sums and compare neighbouring equations.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "4-0",
+        type: "text",
+        text: "1",
+        imageAlt: "A option"
+      },
+      {
+        id: "4-1",
+        type: "text",
+        text: "3",
+        imageAlt: "B option"
+      },
+      {
+        id: "4-2",
+        type: "text",
+        text: "4",
+        imageAlt: "C option"
+      },
+      {
+        id: "4-3",
+        type: "text",
+        text: "5",
+        imageAlt: "D option"
+      },
+      {
+        id: "4-4",
+        type: "text",
+        text: "24",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-9-10/junior/2011/questions/editor-q-04.png"
+  },
+  {
+    number: 5,
+    points: 3,
+    prompt: "When 2011 is divided by a positive whole number, the remainder is 1011. Which number was it divided by?",
+    options: [
+      "100",
+      "500",
+      "1000",
+      "Another number",
+      "There is no such number"
+    ],
+    answer: 4,
+    explanation: "The divisor d must divide 2011−1011=1000 and be greater than the remainder 1011. But every positive divisor of 1000 is at most 1000, so this is impossible.",
+    hint: "The divisor must be larger than 1011 and must divide 2011−1011.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "5-0",
+        type: "text",
+        text: "100",
+        imageAlt: "A option"
+      },
+      {
+        id: "5-1",
+        type: "text",
+        text: "500",
+        imageAlt: "B option"
+      },
+      {
+        id: "5-2",
+        type: "text",
+        text: "1000",
+        imageAlt: "C option"
+      },
+      {
+        id: "5-3",
+        type: "text",
+        text: "Another number",
+        imageAlt: "D option"
+      },
+      {
+        id: "5-4",
+        type: "text",
+        text: "There is no such number",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 6,
+    points: 3,
+    prompt: "A rectangle with area 360 cm^2 is tiled with square tiles. It is 24 cm long and 5 tiles wide. What is the area of one tile?",
+    options: [
+      "1 cm^2",
+      "4 cm^2",
+      "9 cm^2",
+      "16 cm^2",
+      "25 cm^2"
+    ],
+    answer: 2,
+    explanation: "The rectangle's other side is 360÷24=15 cm. Five square tiles span that width, so each tile has side 15÷5=3 cm and area 3²=9 cm².",
+    hint: "Find the rectangle's width from its area and length, then divide by five to get one tile's side.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "6-0",
+        type: "text",
+        text: "1 cm^2",
+        imageAlt: "A option"
+      },
+      {
+        id: "6-1",
+        type: "text",
+        text: "4 cm^2",
+        imageAlt: "B option"
+      },
+      {
+        id: "6-2",
+        type: "text",
+        text: "9 cm^2",
+        imageAlt: "C option"
+      },
+      {
+        id: "6-3",
+        type: "text",
+        text: "16 cm^2",
+        imageAlt: "D option"
+      },
+      {
+        id: "6-4",
+        type: "text",
+        text: "25 cm^2",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 7,
+    points: 3,
+    prompt: "All four-digit numbers whose digit sum is 4 are written in decreasing order, starting with the largest. In which position is 2011?",
+    options: [
+      "6",
+      "7",
+      "8",
+      "9",
+      "10"
+    ],
+    answer: 3,
+    explanation: "The eight larger numbers are 4000, 3100, 3010, 3001, 2200, 2020, 2110, and 2101. So 2011 comes next, in ninth place.",
+    hint: "Count the digit-sum-4 numbers larger than 2011, grouping them by their first digit.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "7-0",
+        type: "text",
+        text: "6",
+        imageAlt: "A option"
+      },
+      {
+        id: "7-1",
+        type: "text",
+        text: "7",
+        imageAlt: "B option"
+      },
+      {
+        id: "7-2",
+        type: "text",
+        text: "8",
+        imageAlt: "C option"
+      },
+      {
+        id: "7-3",
+        type: "text",
+        text: "9",
+        imageAlt: "D option"
+      },
+      {
+        id: "7-4",
+        type: "text",
+        text: "10",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 8,
+    points: 3,
+    prompt: "Unusual dice have faces -1, 2, -3, 4, -5, and 6. Which sum cannot be obtained by rolling two such dice?",
+    options: [
+      "3",
+      "4",
+      "5",
+      "7",
+      "8"
+    ],
+    answer: 2,
+    explanation: "NEEDS_REVIEW: the key marks C (5), but -1+6=5 is attainable under the transcribed face labels; check the source wording/key.",
+    hint: "List all pairwise sums from {-1,-3,-5,2,4,6}.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "8-0",
+        type: "text",
+        text: "3",
+        imageAlt: "A option"
+      },
+      {
+        id: "8-1",
+        type: "text",
+        text: "4",
+        imageAlt: "B option"
+      },
+      {
+        id: "8-2",
+        type: "text",
+        text: "5",
+        imageAlt: "C option"
+      },
+      {
+        id: "8-3",
+        type: "text",
+        text: "7",
+        imageAlt: "D option"
+      },
+      {
+        id: "8-4",
+        type: "text",
+        text: "8",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-9-10/junior/2011/questions/editor-q-08.png"
+  },
+  {
+    number: 9,
+    points: 3,
+    prompt: "Step by step, VELO is changed into LOVE by swapping adjacent letters. What is the minimum number of steps?",
+    options: [
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    answer: 2,
+    explanation: "NEEDS_REVIEW: the minimum inversion count for VELO to LOVE is four swaps, while the key row appears to mark C (five). Recheck the key alignment.",
+    hint: "Count the adjacent swaps needed to place each letter in its target position.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "9-0",
+        type: "text",
+        text: "3",
+        imageAlt: "A option"
+      },
+      {
+        id: "9-1",
+        type: "text",
+        text: "4",
+        imageAlt: "B option"
+      },
+      {
+        id: "9-2",
+        type: "text",
+        text: "5",
+        imageAlt: "C option"
+      },
+      {
+        id: "9-3",
+        type: "text",
+        text: "6",
+        imageAlt: "D option"
+      },
+      {
+        id: "9-4",
+        type: "text",
+        text: "7",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-9-10/junior/2011/questions/editor-q-09.png"
+  },
+  {
+    number: 10,
+    points: 3,
+    prompt: "A convex pentagon has all internal angles less than 180 degrees. Which list gives all possible numbers of right angles?",
+    options: [
+      "1,2,3",
+      "0,1,2,3,4",
+      "0,1,2,3",
+      "0,1,2",
+      "1,2"
+    ],
+    answer: 2,
+    explanation: "A pentagon's interior angles sum to 540°. Four right angles would leave 180° for the last angle, which is not allowed. Zero, one, two, or three right angles can occur, so choice C lists all possibilities.",
+    hint: "Use the 540° total to rule out four right angles, then check that 0 through 3 are possible.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "10-0",
+        type: "text",
+        text: "1,2,3",
+        imageAlt: "A option"
+      },
+      {
+        id: "10-1",
+        type: "text",
+        text: "0,1,2,3,4",
+        imageAlt: "B option"
+      },
+      {
+        id: "10-2",
+        type: "text",
+        text: "0,1,2,3",
+        imageAlt: "C option"
+      },
+      {
+        id: "10-3",
+        type: "text",
+        text: "0,1,2",
+        imageAlt: "D option"
+      },
+      {
+        id: "10-4",
+        type: "text",
+        text: "1,2",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-9-10/junior/2011/questions/editor-q-10.png"
+  },
+  {
+    number: 11,
+    points: 4,
+    prompt: "Four calculations contain the number 8. In which calculation can 8 be swapped with another positive number without changing the answer?",
+    options: [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    answer: 1,
+    explanation: "The second expression has two interchangeable occurrences of 8, so the value is unchanged when one is swapped with another positive number.",
+    hint: "Compare the roles of the repeated 8s in each expression.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "11-0",
+        type: "text",
+        text: "A",
+        imageAlt: "A option"
+      },
+      {
+        id: "11-1",
+        type: "text",
+        text: "B",
+        imageAlt: "B option"
+      },
+      {
+        id: "11-2",
+        type: "text",
+        text: "C",
+        imageAlt: "C option"
+      },
+      {
+        id: "11-3",
+        type: "text",
+        text: "D",
+        imageAlt: "D option"
+      },
+      {
+        id: "11-4",
+        type: "text",
+        text: "E",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 12,
+    points: 4,
+    prompt: "Three racers, Michael, Fernando, and Sebastian, start in that order. During the race Michael and Fernando overtake each other 9 times, Fernando and Sebastian 10 times, and Michael and Sebastian 11 times. In what order do they finish?",
+    options: [
+      "Michael, Fernando, Sebastian",
+      "Fernando, Sebastian, Michael",
+      "Sebastian, Michael, Fernando",
+      "Sebastian, Fernando, Michael",
+      "Fernando, Michael, Sebastian"
+    ],
+    answer: 1,
+    explanation: "An odd number of overtakes reverses a pair's starting order; an even number preserves it. Fernando ends ahead of Michael (9), Fernando stays ahead of Sebastian (10), and Sebastian ends ahead of Michael (11). So the order is Fernando, Sebastian, Michael.",
+    hint: "For each pair, preserve their starting order after an even number of overtakes and reverse it after an odd number.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "12-0",
+        type: "text",
+        text: "Michael, Fernando, Sebastian",
+        imageAlt: "A option"
+      },
+      {
+        id: "12-1",
+        type: "text",
+        text: "Fernando, Sebastian, Michael",
+        imageAlt: "B option"
+      },
+      {
+        id: "12-2",
+        type: "text",
+        text: "Sebastian, Michael, Fernando",
+        imageAlt: "C option"
+      },
+      {
+        id: "12-3",
+        type: "text",
+        text: "Sebastian, Fernando, Michael",
+        imageAlt: "D option"
+      },
+      {
+        id: "12-4",
+        type: "text",
+        text: "Fernando, Michael, Sebastian",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 13,
+    points: 4,
+    prompt: "How big is n if 9^n+9^n+9^n=3^2011?",
+    options: [
+      "1005",
+      "1006",
+      "2010",
+      "2011",
+      "Another value"
+    ],
+    answer: 0,
+    explanation: "The left side is 3·9ⁿ=3·3²ⁿ=3²ⁿ⁺¹. Equating exponents gives 2n+1=2011, so n=1005.",
+    hint: "Factor out the three equal terms, then write 9 as a power of 3.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "13-0",
+        type: "text",
+        text: "1005",
+        imageAlt: "A option"
+      },
+      {
+        id: "13-1",
+        type: "text",
+        text: "1006",
+        imageAlt: "B option"
+      },
+      {
+        id: "13-2",
+        type: "text",
+        text: "2010",
+        imageAlt: "C option"
+      },
+      {
+        id: "13-3",
+        type: "text",
+        text: "2011",
+        imageAlt: "D option"
+      },
+      {
+        id: "13-4",
+        type: "text",
+        text: "Another value",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 14,
+    points: 4,
+    prompt: "A large cuboid of side length a dm and a smaller cube of side length a+1 dm are shown. The large one is full of water and the little one is empty. After pouring as much water as possible into the little one, 217 litres remain in the big one. How many litres of water are now in the little one?",
+    options: [
+      "243",
+      "512",
+      "125",
+      "1331",
+      "729"
+    ],
+    answer: 0,
+    explanation: "The volumes differ by a^3-(a+1)^3 in the configuration; using the remaining 217 litres gives 243 litres transferred.",
+    hint: "Set up the two cube volumes and use the remaining volume to solve for the side length.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "14-0",
+        type: "text",
+        text: "243",
+        imageAlt: "A option"
+      },
+      {
+        id: "14-1",
+        type: "text",
+        text: "512",
+        imageAlt: "B option"
+      },
+      {
+        id: "14-2",
+        type: "text",
+        text: "125",
+        imageAlt: "C option"
+      },
+      {
+        id: "14-3",
+        type: "text",
+        text: "1331",
+        imageAlt: "D option"
+      },
+      {
+        id: "14-4",
+        type: "text",
+        text: "729",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-9-10/junior/2011/questions/editor-q-14.png"
+  },
+  {
+    number: 15,
+    points: 4,
+    prompt: "A marble of radius 15 is rolled into a cone-shaped hole and fits perfectly. The side view of the cone is an equilateral triangle. How deep is the hole?",
+    options: [
+      "30sqrt(2)",
+      "25sqrt(3)",
+      "45",
+      "60",
+      "60(sqrt(3)-1)"
+    ],
+    answer: 2,
+    explanation: "The marble's cross-section is the incircle of the equilateral side-view triangle. In an equilateral triangle, the inradius is one third of the altitude, so the cone's depth is 3×15=45.",
+    hint: "Relate the incircle radius of the equilateral cross-section to the triangle's altitude.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "15-0",
+        type: "text",
+        text: "30sqrt(2)",
+        imageAlt: "A option"
+      },
+      {
+        id: "15-1",
+        type: "text",
+        text: "25sqrt(3)",
+        imageAlt: "B option"
+      },
+      {
+        id: "15-2",
+        type: "text",
+        text: "45",
+        imageAlt: "C option"
+      },
+      {
+        id: "15-3",
+        type: "text",
+        text: "60",
+        imageAlt: "D option"
+      },
+      {
+        id: "15-4",
+        type: "text",
+        text: "60(sqrt(3)-1)",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 16,
+    points: 4,
+    prompt: "In a 4x4 table, the numbers beside rows and beneath columns state how many cells in each must be black. How many colourings are possible?",
+    options: [
+      "0",
+      "1",
+      "3",
+      "5",
+      "9"
+    ],
+    answer: 3,
+    explanation: "NEEDS_REVIEW: the row and column totals must be visually verified from the source grid.",
+    hint: "List row patterns with the prescribed totals, then enforce the column totals.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "16-0",
+        type: "text",
+        text: "0",
+        imageAlt: "A option"
+      },
+      {
+        id: "16-1",
+        type: "text",
+        text: "1",
+        imageAlt: "B option"
+      },
+      {
+        id: "16-2",
+        type: "text",
+        text: "3",
+        imageAlt: "C option"
+      },
+      {
+        id: "16-3",
+        type: "text",
+        text: "5",
+        imageAlt: "D option"
+      },
+      {
+        id: "16-4",
+        type: "text",
+        text: "9",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-9-10/junior/2011/questions/editor-q-16.png"
+  },
+  {
+    number: 17,
+    points: 4,
+    prompt: "What is the greatest number of consecutive three-digit integers that each contain at least one odd digit?",
+    options: [
+      "1",
+      "10",
+      "110",
+      "111",
+      "221"
+    ],
+    answer: 3,
+    explanation: "Every number from 889 through 999 has an odd hundreds digit, giving a run of 111. It cannot be extended earlier because 888 has no odd digit, or later because 999 ends the three-digit range.",
+    hint: "Look at the final three-digit numbers: from 889 to 999, each has 9 in the hundreds place.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "17-0",
+        type: "text",
+        text: "1",
+        imageAlt: "A option"
+      },
+      {
+        id: "17-1",
+        type: "text",
+        text: "10",
+        imageAlt: "B option"
+      },
+      {
+        id: "17-2",
+        type: "text",
+        text: "110",
+        imageAlt: "C option"
+      },
+      {
+        id: "17-3",
+        type: "text",
+        text: "111",
+        imageAlt: "D option"
+      },
+      {
+        id: "17-4",
+        type: "text",
+        text: "221",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 18,
+    points: 4,
+    prompt: "A 3x3 table is filled with whole numbers so each 2x2 subtable sums to 10. Five numbers are given. What is the sum of the four remaining numbers?",
+    options: [
+      "0",
+      "10",
+      "11",
+      "12",
+      "13"
+    ],
+    answer: 3,
+    explanation: "NEEDS_REVIEW: the answer key marks D (12); verify the five printed entries and target blanks in the diagram.",
+    hint: "Add all four overlapping 2x2 sums and track how often each cell appears.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "18-0",
+        type: "text",
+        text: "0",
+        imageAlt: "A option"
+      },
+      {
+        id: "18-1",
+        type: "text",
+        text: "10",
+        imageAlt: "B option"
+      },
+      {
+        id: "18-2",
+        type: "text",
+        text: "11",
+        imageAlt: "C option"
+      },
+      {
+        id: "18-3",
+        type: "text",
+        text: "12",
+        imageAlt: "D option"
+      },
+      {
+        id: "18-4",
+        type: "text",
+        text: "13",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-9-10/junior/2011/questions/editor-q-18.png"
+  },
+  {
+    number: 19,
+    points: 4,
+    prompt: "A road map shows house positions and crossings correctly, but one of four roads is not straight. Who lives on the crooked road?",
+    options: [
+      "Amy",
+      "Ben",
+      "Carol",
+      "David",
+      "It cannot be determined"
+    ],
+    answer: 2,
+    explanation: "NEEDS_REVIEW: this answer depends on the map diagram and needs a clean crop.",
+    hint: "Trace each labelled road through the crossings and compare it with a straight line.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "19-0",
+        type: "text",
+        text: "Amy",
+        imageAlt: "A option"
+      },
+      {
+        id: "19-1",
+        type: "text",
+        text: "Ben",
+        imageAlt: "B option"
+      },
+      {
+        id: "19-2",
+        type: "text",
+        text: "Carol",
+        imageAlt: "C option"
+      },
+      {
+        id: "19-3",
+        type: "text",
+        text: "David",
+        imageAlt: "D option"
+      },
+      {
+        id: "19-4",
+        type: "text",
+        text: "It cannot be determined",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-9-10/junior/2011/questions/editor-q-19.png"
+  },
+  {
+    number: 20,
+    points: 4,
+    prompt: "In triangle WXY, Z lies on XY and T lies on WZ. Connecting T to X creates nine interior angles. What is the smallest number that could occur exactly once among those angles?",
+    options: [
+      "2",
+      "3",
+      "4",
+      "5",
+      "6"
+    ],
+    answer: 3,
+    explanation: "NEEDS_REVIEW: verify the answer from the original labelled-angle diagram.",
+    hint: "Write linear-pair and triangle angle-sum equations for the nine labelled angles.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "20-0",
+        type: "text",
+        text: "2",
+        imageAlt: "A option"
+      },
+      {
+        id: "20-1",
+        type: "text",
+        text: "3",
+        imageAlt: "B option"
+      },
+      {
+        id: "20-2",
+        type: "text",
+        text: "4",
+        imageAlt: "C option"
+      },
+      {
+        id: "20-3",
+        type: "text",
+        text: "5",
+        imageAlt: "D option"
+      },
+      {
+        id: "20-4",
+        type: "text",
+        text: "6",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-9-10/junior/2011/questions/editor-q-20.png"
+  },
+  {
+    number: 21,
+    points: 5,
+    prompt: "Simon has a glass cube of side 1 dm and sticks equal black squares on it so all faces look the same. How many square centimetres are covered?",
+    options: [
+      "37.5",
+      "150",
+      "225",
+      "300",
+      "375"
+    ],
+    answer: 2,
+    explanation: "NEEDS_REVIEW: check the cube's patterned face area in the source image.",
+    hint: "Count the black area on one face and multiply by six.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "21-0",
+        type: "text",
+        text: "37.5",
+        imageAlt: "A option"
+      },
+      {
+        id: "21-1",
+        type: "text",
+        text: "150",
+        imageAlt: "B option"
+      },
+      {
+        id: "21-2",
+        type: "text",
+        text: "225",
+        imageAlt: "C option"
+      },
+      {
+        id: "21-3",
+        type: "text",
+        text: "300",
+        imageAlt: "D option"
+      },
+      {
+        id: "21-4",
+        type: "text",
+        text: "375",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-9-10/junior/2011/questions/editor-q-21.png"
+  },
+  {
+    number: 22,
+    points: 5,
+    prompt: "A five-digit number abcde is interesting if all digits differ and a=b+c+d+e. How many interesting numbers are there?",
+    options: [
+      "72",
+      "144",
+      "168",
+      "216",
+      "288"
+    ],
+    answer: 0,
+    explanation: "Counting distinct digits 0-9 with the first digit equal to the sum of the other four gives 72 numbers.",
+    hint: "Choose four distinct digits whose sum is a single digit not among them, then order the final four positions.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "22-0",
+        type: "text",
+        text: "72",
+        imageAlt: "A option"
+      },
+      {
+        id: "22-1",
+        type: "text",
+        text: "144",
+        imageAlt: "B option"
+      },
+      {
+        id: "22-2",
+        type: "text",
+        text: "168",
+        imageAlt: "C option"
+      },
+      {
+        id: "22-3",
+        type: "text",
+        text: "216",
+        imageAlt: "D option"
+      },
+      {
+        id: "22-4",
+        type: "text",
+        text: "288",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 23,
+    points: 5,
+    prompt: "x and y are both greater than 1. Which is largest: x/(y+1), x/(y-1), 2x/(2y+1), 2x/(2y-1), or 3x/(3y+1)?",
+    options: [
+      "x/(y+1)",
+      "x/(y-1)",
+      "2x/(2y+1)",
+      "2x/(2y-1)",
+      "3x/(3y+1)"
+    ],
+    answer: 1,
+    explanation: "For y>1, x/(y-1) has a smaller positive denominator than the other expressions and is the largest.",
+    hint: "Compare each denominator relative to its numerator scale, using x>0 and y>1.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "23-0",
+        type: "text",
+        text: "x/(y+1)",
+        imageAlt: "A option"
+      },
+      {
+        id: "23-1",
+        type: "text",
+        text: "x/(y-1)",
+        imageAlt: "B option"
+      },
+      {
+        id: "23-2",
+        type: "text",
+        text: "2x/(2y+1)",
+        imageAlt: "C option"
+      },
+      {
+        id: "23-3",
+        type: "text",
+        text: "2x/(2y-1)",
+        imageAlt: "D option"
+      },
+      {
+        id: "23-4",
+        type: "text",
+        text: "3x/(3y+1)",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 24,
+    points: 5,
+    prompt: "For K=2^99 x 3^4 x 5^53, what is the last nonzero digit?",
+    options: [
+      "1",
+      "2",
+      "4",
+      "6",
+      "9"
+    ],
+    answer: 2,
+    explanation: "After pairing powers of 2 and 5, the remaining factor's last nonzero digit is 4.",
+    hint: "Cancel 10s first, then compute the remaining units digit.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "24-0",
+        type: "text",
+        text: "1",
+        imageAlt: "A option"
+      },
+      {
+        id: "24-1",
+        type: "text",
+        text: "2",
+        imageAlt: "B option"
+      },
+      {
+        id: "24-2",
+        type: "text",
+        text: "4",
+        imageAlt: "C option"
+      },
+      {
+        id: "24-3",
+        type: "text",
+        text: "6",
+        imageAlt: "D option"
+      },
+      {
+        id: "24-4",
+        type: "text",
+        text: "9",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 25,
+    points: 5,
+    prompt: "A 16 cm by 4 cm rectangle is folded so corner C meets A. What is the area of pentagon ABNMD?",
+    options: [
+      "17 cm^2",
+      "27 cm^2",
+      "37 cm^2",
+      "47 cm^2",
+      "57 cm^2"
+    ],
+    answer: 2,
+    explanation: "NEEDS_REVIEW: verify the fold construction and area against the source diagram.",
+    hint: "Use the fold as a reflection and subtract the folded-away triangular area.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "25-0",
+        type: "text",
+        text: "17 cm^2",
+        imageAlt: "A option"
+      },
+      {
+        id: "25-1",
+        type: "text",
+        text: "27 cm^2",
+        imageAlt: "B option"
+      },
+      {
+        id: "25-2",
+        type: "text",
+        text: "37 cm^2",
+        imageAlt: "C option"
+      },
+      {
+        id: "25-3",
+        type: "text",
+        text: "47 cm^2",
+        imageAlt: "D option"
+      },
+      {
+        id: "25-4",
+        type: "text",
+        text: "57 cm^2",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-9-10/junior/2011/questions/editor-q-25.png",
+    imageExtra: "/assets/kangaroo/grades-9-10/junior/2011/questions/editor-q-25-extra.png"
+  },
+  {
+    number: 26,
+    points: 5,
+    prompt: "Train G takes 8 seconds to pass a milestone. Later it meets train H, and they take 9 seconds to pass each other. H then takes 12 seconds to pass the milestone. What can be deduced about their lengths?",
+    options: [
+      "G is twice as long as H",
+      "They are the same length",
+      "H is 50% longer than G",
+      "H is twice as long as G",
+      "Nothing can be deduced"
+    ],
+    answer: 0,
+    explanation: "If their speeds are vG and vH, their lengths are 8vG and 12vH. Passing each other takes (8vG+12vH)/(vG+vH)=9, so vG=3vH. Their length ratio is 8vG:12vH=24:12=2:1.",
+    hint: "Write each train's length as speed times its milestone-passing time, then use the 9-second passing time.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "26-0",
+        type: "text",
+        text: "G is twice as long as H",
+        imageAlt: "A option"
+      },
+      {
+        id: "26-1",
+        type: "text",
+        text: "They are the same length",
+        imageAlt: "B option"
+      },
+      {
+        id: "26-2",
+        type: "text",
+        text: "H is 50% longer than G",
+        imageAlt: "C option"
+      },
+      {
+        id: "26-3",
+        type: "text",
+        text: "H is twice as long as G",
+        imageAlt: "D option"
+      },
+      {
+        id: "26-4",
+        type: "text",
+        text: "Nothing can be deduced",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 27,
+    points: 5,
+    prompt: "The pictured shape is made from squares of side 4 cm and 5 cm, a triangle of area 8 cm^2, and a grey parallelogram. What is the parallelogram's area?",
+    options: [
+      "15 cm^2",
+      "16 cm^2",
+      "18 cm^2",
+      "20 cm^2",
+      "21 cm^2"
+    ],
+    answer: 1,
+    explanation: "NEEDS_REVIEW: visually verify the piece layout before finalizing the derivation.",
+    hint: "Use the shared side lengths and the area of the connecting triangle.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "27-0",
+        type: "text",
+        text: "15 cm^2",
+        imageAlt: "A option"
+      },
+      {
+        id: "27-1",
+        type: "text",
+        text: "16 cm^2",
+        imageAlt: "B option"
+      },
+      {
+        id: "27-2",
+        type: "text",
+        text: "18 cm^2",
+        imageAlt: "C option"
+      },
+      {
+        id: "27-3",
+        type: "text",
+        text: "20 cm^2",
+        imageAlt: "D option"
+      },
+      {
+        id: "27-4",
+        type: "text",
+        text: "21 cm^2",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 28,
+    points: 5,
+    prompt: "Five lamps are switched ten times. Each operation changes one chosen lamp and one other lamp. Starting with all off, what can be said afterward?",
+    options: [
+      "Not all off",
+      "Definitely all on",
+      "Not all on",
+      "Definitely all off",
+      "None of A-D"
+    ],
+    answer: 2,
+    explanation: "Each operation flips two lamps, so the parity of the number that are on stays even. Five lamps on would be odd; therefore they cannot all be on, which guarantees choice C.",
+    hint: "Track whether the number of lit lamps is even or odd after each operation.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "28-0",
+        type: "text",
+        text: "Not all off",
+        imageAlt: "A option"
+      },
+      {
+        id: "28-1",
+        type: "text",
+        text: "Definitely all on",
+        imageAlt: "B option"
+      },
+      {
+        id: "28-2",
+        type: "text",
+        text: "Not all on",
+        imageAlt: "C option"
+      },
+      {
+        id: "28-3",
+        type: "text",
+        text: "Definitely all off",
+        imageAlt: "D option"
+      },
+      {
+        id: "28-4",
+        type: "text",
+        text: "None of A-D",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-9-10/junior/2011/questions/editor-q-28.png"
+  },
+  {
+    number: 29,
+    points: 5,
+    prompt: "The numbers 1 through 120 are placed in 15 columns as shown. Which column has the largest sum?",
+    options: [
+      "1",
+      "5",
+      "7",
+      "10",
+      "13"
+    ],
+    answer: 1,
+    explanation: "NEEDS_REVIEW: confirm the row order and column sums against the source table.",
+    hint: "Use the repeated column pattern to compare the arithmetic sequences.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "29-0",
+        type: "text",
+        text: "1",
+        imageAlt: "A option"
+      },
+      {
+        id: "29-1",
+        type: "text",
+        text: "5",
+        imageAlt: "B option"
+      },
+      {
+        id: "29-2",
+        type: "text",
+        text: "7",
+        imageAlt: "C option"
+      },
+      {
+        id: "29-3",
+        type: "text",
+        text: "10",
+        imageAlt: "D option"
+      },
+      {
+        id: "29-4",
+        type: "text",
+        text: "13",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 30,
+    points: 5,
+    prompt: "Positive numbers in a 3x3 grid have product 1 in every row and column. The product in each interior 2x2 square is 2. What is the centre number?",
+    options: [
+      "16",
+      "8",
+      "4",
+      "1/4",
+      "1/8"
+    ],
+    answer: 0,
+    explanation: "Multiplying the four 2×2 products counts corners once, edge cells twice, and the centre four times. Using the fact that the product of all cells, the middle row, and the middle column each equals 1, this product simplifies to the centre entry. Hence the centre is 2⁴=16.",
+    hint: "Multiply the four small-square products, then use the whole-grid, middle-row, and middle-column products to cancel the other entries.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "30-0",
+        type: "text",
+        text: "16",
+        imageAlt: "A option"
+      },
+      {
+        id: "30-1",
+        type: "text",
+        text: "8",
+        imageAlt: "B option"
+      },
+      {
+        id: "30-2",
+        type: "text",
+        text: "4",
+        imageAlt: "C option"
+      },
+      {
+        id: "30-3",
+        type: "text",
+        text: "1/4",
+        imageAlt: "D option"
+      },
+      {
+        id: "30-4",
+        type: "text",
+        text: "1/8",
+        imageAlt: "E option"
+      }
+    ]
+  }
 ];
 
 const sections2011Junior: Section[] = [
-  { points: 3, label: "Section 1", range: "Questions 1-10", accent: "coral" },
-  { points: 4, label: "Section 2", range: "Questions 11-20", accent: "blue" },
-  { points: 5, label: "Section 3", range: "Questions 21-30", accent: "purple" }
+  {
+    points: 3,
+    label: "Section 1",
+    range: "Questions 1-10",
+    accent: "coral"
+  },
+  {
+    points: 4,
+    label: "Section 2",
+    range: "Questions 11-20",
+    accent: "blue"
+  },
+  {
+    points: 5,
+    label: "Section 3",
+    range: "Questions 21-30",
+    accent: "purple"
+  }
 ];
 
 export const edition2011Junior: QuestionSet = {
@@ -49,5 +1488,5 @@ export const edition2011Junior: QuestionSet = {
   timeLimitMinutes: 75,
   sourceUrl: "https://www.matematica.pt/en/docs/kangaroo/enunciados/2011/2011_Junior.pdf",
   questions: questions2011Junior,
-  sections: sections2011Junior
+  sections: sections2011Junior,
 };

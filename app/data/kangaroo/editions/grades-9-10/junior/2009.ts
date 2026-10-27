@@ -1,42 +1,1475 @@
 import type { Question, QuestionSet, Section } from "../../../types";
 
 const questions2009Junior: Question[] = [
-  { number: 1, points: 3, prompt: "Which of the following numbers is divisible by 3?", options: ["2009", "2+0+0+9", "200-9", "2^9", "(2+0)x(0+9)"], answer: 4, explanation: "The last expression is (2+0)(0+9)=2×9=18, which is divisible by 3. The other values are 2009, 11, 191, and 512, none of which is divisible by 3.", hint: "Evaluate the expressions first; for a whole number, check whether its digit sum is a multiple of 3.", sourcePage: 1 },
-  { number: 2, points: 3, prompt: "What is the minimum number of points to remove from the shown diagram so that no three remaining points lie on one line?", options: ["1", "2", "3", "4", "7"], answer: 2, explanation: "NEEDS_REVIEW: verify the minimal removal set against the source dot diagram.", hint: "List the horizontal, vertical, and diagonal triples in the 3-by-3 array.", sourcePage: 1 },
-  { number: 3, points: 3, prompt: "2009 people take part in a public fun run. Hans beats three times as many people as have finished before him. In which place does Hans finish?", options: ["503", "501", "500", "1503", "1507"], answer: 0, explanation: "If Hans finishes in place p, then p−1 people are ahead and 2009−p are behind. Thus 2009−p=3(p−1), so 4p=2012 and p=503.", hint: "If Hans is in place p, how many runners are ahead of him, and how many are behind?", sourcePage: 1 },
-  { number: 4, points: 3, prompt: "Harry delivers a newspaper to each odd-numbered house on Long Street. The first is 15 and the last is 53. How many houses does he visit?", options: ["19", "20", "27", "38", "53"], answer: 1, explanation: "From 15 to 53 there are (53−15)/2=19 jumps of 2, so there are 19+1=20 houses, including both ends.", hint: "Count the jumps of 2 from 15 to 53, then remember to include the starting house.", sourcePage: 1 },
-  { number: 5, points: 3, prompt: "The product of four different natural numbers is 100. What is their sum?", options: ["10", "12", "15", "18", "20"], answer: 3, explanation: "The four distinct factors must use 2²×5². The only possible set is 1, 2, 5, and 10; their sum is 18.", hint: "Use the prime factors of 100 and remember that none of the four factors may repeat.", sourcePage: 1 },
-  { number: 6, points: 3, prompt: "What is the value of (1/2)x(2/3)x(3/4)x...x(9/10)x1000?", options: ["250", "200", "100", "50", "A different number"], answer: 2, explanation: "Each numerator from 2 through 9 cancels the same factor in the previous denominator, leaving 1/10. Then (1/10)×1000=100.", hint: "Write the first and last fractions clearly, and cancel each factor that appears once above and once below.", sourcePage: 1 },
-  { number: 7, points: 3, prompt: "The number 2009 is written 2009 times in a row. What is the sum of all odd digits that are immediately to the left of an even digit?", options: ["2", "9", "4018", "18072", "18081"], answer: 3, explanation: "Within each block, the only odd digit is 9; it is followed by the next block's 2 except in the final block. Thus 9 is counted 2008 times, giving 2008×9=18072.", hint: "The only odd digit in each block is 9. Check the digit immediately after it, including at block boundaries.", sourcePage: 1 },
-  { number: 8, points: 3, prompt: "The shown solid is made of six triangles. Each vertex has a number, two of which are indicated. The sum at the vertices of every triangle is the same. What is the sum of all five numbers?", options: ["9", "12", "17", "18", "24"], answer: 2, explanation: "NEEDS_REVIEW: the solid's vertex labels are essential and need a clean source crop.", hint: "Write one equal-sum equation for each triangular face.", sourcePage: 1 },
-  { number: 9, points: 3, prompt: "For how many positive whole numbers a do a^2 and a^3 have the same number of digits?", options: ["0", "3", "4", "9", "Infinitely many"], answer: 1, explanation: "For a=1, 2, and 4, the pairs (a²,a³) are (1,1), (4,8), and (16,64), so their digit counts match. For a≥5, a³ is already at least 125 while a² is at most two digits until a=9; for a≥10, a³ has more digits than a². Thus there are 3 values.", hint: "Check the small values first; for larger a, compare how quickly a² and a³ pass powers of 10.", sourcePage: 1 },
-  { number: 10, points: 3, prompt: "A triangle has area 80 m^2. Three circles of radius 2 m have centres at its vertices. What is the grey shaded area?", options: ["76", "80-2pi", "40-4pi", "80-pi", "78pi-4"], answer: 1, explanation: "The three sectors inside the triangle have angles summing to 180 degrees, so their total area is half the area of a radius-2 circle, or 2pi.", hint: "The three vertex angles sum to 180 degrees, so their circular sectors combine to a semicircle.", sourcePage: 1 },
-  { number: 11, points: 4, prompt: "Starting with the third term, each term of a sequence is the sum of the previous two. The fourth term is 6 and the sixth is 15. What is the seventh term?", options: ["9", "16", "21", "22", "24"], answer: 4, explanation: "The sixth term is the fourth plus the fifth, so the fifth is 15−6=9. The seventh is the fifth plus the sixth: 9+15=24.", hint: "Use the rule at the sixth term to recover the fifth, then use it once more.", sourcePage: 2 },
-  { number: 12, points: 4, prompt: "One angle of a triangle is 68 degrees, and all three angle bisectors are shown. What is the marked angle between two bisectors?", options: ["120 degrees", "124 degrees", "128 degrees", "132 degrees", "136 degrees"], answer: 1, explanation: "NEEDS_REVIEW: confirm which pair of bisectors and the marked angle orientation in the source image.", hint: "Use the incenter angle formula: 90 degrees plus half the third angle.", sourcePage: 2 },
-  { number: 13, points: 4, prompt: "Maria scores 0, 1, 2, 3, 4, or 5 on each test. After four tests her mean is exactly 4. Which statement cannot be true?", options: ["She scored 4 each time", "She scored 3 exactly twice", "She scored 4 exactly twice", "She scored 1 exactly once", "She scored 3 exactly three times"], answer: 4, explanation: "A mean of 4 over four tests requires a total of 16. Three scores of 3 add to 9; even a 5 on the remaining test gives only 14, so that statement cannot be true.", hint: "Find the total required by the mean, then test whether each proposed set can reach it.", sourcePage: 2 },
-  { number: 14, points: 4, prompt: "Which diagram shows the Borromean rings, where no two rings are linked but all three together are connected?", options: ["A", "B", "C", "D", "E"], answer: 1, explanation: "NEEDS_REVIEW: the visual answer choices need source-specific cropping.", hint: "Check pairwise linking separately from the three-ring link as a whole.", sourcePage: 2 },
-  { number: 15, points: 4, prompt: "Twenty-five people stand in a queue of nobles and liars. The first says everyone behind him is a liar; each other person says the person in front is a liar. How many liars are in the queue?", options: ["0", "12", "13", "24", "It cannot be determined"], answer: 2, explanation: "The first person cannot be truthful: then everyone behind is a liar, but the third person's claim about the second would be true. So the first is a liar. Each later person is truthful exactly when the person directly ahead is a liar, so the roles alternate. The 13 odd-numbered places are liars.", hint: "Test whether the first person can be truthful, then use each statement about the person immediately ahead.", sourcePage: 2 },
-  { number: 16, points: 4, prompt: "Define a ◇ b=ab+a+b. If 3◇5=2◇x, what is x?", options: ["3", "6", "7", "10", "12"], answer: 2, explanation: "By the definition, 3◇5=3·5+3+5=23 and 2◇x=2x+2+x=3x+2. Solving 3x+2=23 gives x=7.", hint: "Substitute each pair into the rule, then solve the resulting linear equation.", sourcePage: 2 },
-  { number: 17, points: 4, prompt: "Four circles are centred at the corners of a square. The two large circles touch each other and the two small circles. By what factor must a small-circle radius be multiplied to obtain a large-circle radius?", options: ["9/2", "sqrt(5)", "0.8pi", "2.5", "1+sqrt(2)"], answer: 4, explanation: "NEEDS_REVIEW: the circle sizes and tangencies must be checked against the diagram.", hint: "Use the square's diagonal and the equations for distances between tangent-circle centres.", sourcePage: 2 },
-  { number: 18, points: 4, prompt: "The difference between sqrt(n) and 10 is less than 1. How many whole numbers n satisfy this?", options: ["19", "20", "39", "40", "41"], answer: 2, explanation: "|√n−10|<1 means 9<√n<11. Squaring gives 81<n<121, so n is any integer from 82 through 120: 120−82+1=39.", hint: "Rewrite the absolute difference as lower and upper bounds for √n, then square both bounds.", sourcePage: 2 },
-  { number: 19, points: 4, prompt: "Different positive integers less than 11 are written in a row so each adjacent pair is divisible one way or the other. What is the maximum number of numbers?", options: ["6", "7", "8", "9", "10"], answer: 3, explanation: "A row of nine works: 8, 4, 2, 6, 3, 9, 1, 5, 10. In any row of ten, 7 must be an endpoint beside 1. If 1's other neighbor is 5, the end must continue 5–10–2, after which 4 and 8 cannot both join the remaining chain. Otherwise 5 must be the other endpoint beside 10; then 9 must lie between 1 and 3, forcing 7–1–9–3–6–2–10–5 and leaving 4 and 8 disconnected. Thus ten are impossible and nine is the maximum.", hint: "Build a long chain first. To test whether all ten fit, use the limited neighbors of 7, 9, and 5.", sourcePage: 2 },
-  { number: 20, points: 4, prompt: "A bug moves along three mutually perpendicular great circles on a sphere, turning alternately right and left at crossings. How many quarter-circles does it crawl before returning to S?", options: ["6", "9", "12", "15", "18"], answer: 0, explanation: "Tracing the alternating turns through the cube-like great-circle network returns to S after six quarter-circle arcs.", hint: "Track the bug's position and direction after each crossing.", sourcePage: 2 },
-  { number: 21, points: 5, prompt: "How many zeroes replace * in the decimal number 1.*1 so it is smaller than 2009/2008 but greater than 20009/20008?", options: ["1", "2", "3", "4", "5"], answer: 2, explanation: "The fractions are 1+1/2008 and 1+1/20008. With three zeroes, 1.*1 is 1.0001=1+1/10000, and 1/20008<1/10000<1/2008, so it lies between them.", hint: "Write each fraction as 1 plus a small fraction, then compare that fraction with the decimal part of 1.*1.", sourcePage: 3 },
-  { number: 22, points: 5, prompt: "How many 10-digit numbers made from 1, 2, and 3 have adjacent digits differing by exactly 1?", options: ["16", "32", "64", "80", "100"], answer: 2, explanation: "The allowed transitions form a three-state recurrence; counting length-10 walks gives 64 numbers.", hint: "Count strings by their last digit and iterate the allowed adjacent transitions.", sourcePage: 3 },
-  { number: 23, points: 5, prompt: "If a=2^25, b=8^8, and c=3^11, which ordering is correct?", options: ["a<b<c", "b<a<c", "b<c<a", "c<a<b", "c<b<a"], answer: 4, explanation: "Since b=(2³)^8=2²⁴, we have b<a=2²⁵. Also c=3¹¹=177147, far less than 2²⁴. Therefore c<b<a.", hint: "Rewrite b as a power of 2, then compare c with even the smaller power of 2.", sourcePage: 3 },
-  { number: 24, points: 5, prompt: "All factors of N except 1 and N are listed. The largest is 45 times the smallest. For how many numbers N is this true?", options: ["0", "1", "2", "More than 2", "It cannot be determined"], answer: 2, explanation: "If p is the smallest prime factor of N, the smallest and largest proper factors are p and N/p. Thus N=45p². Since 45 contains a factor 3, p can only be 2 or 3; both produce valid N (180 and 405). Exactly two numbers work.", hint: "Let p be the smallest prime factor. Relate the smallest proper factor p to the largest N/p, then check which p are possible.", sourcePage: 3 },
-  { number: 25, points: 5, prompt: "Kangoo has 2009 unit dice and 2009 unit-square stickers. He builds a cuboid and covers its surface, with some stickers left over. How many remain?", options: ["More than 1000", "763", "476", "49", "It is not achievable"], answer: 1, explanation: "Since 2009=7²×41, the possible side triples are (1,1,2009), (1,7,287), (1,41,49), and (7,7,41). The last has surface area 2(7·7+7·41+7·41)=1246 unit squares, leaving 2009−1246=763 stickers; each other shape needs more than 2009.", hint: "Factor 2009 to list all possible integer side triples, then compare their surface areas with 2009.", sourcePage: 3 },
-  { number: 26, points: 5, prompt: "On a 4x4 board, stones are placed so the numbers in each row and column are all different. What is the minimum number of stones needed?", options: ["14", "16", "20", "24", "25"], answer: 0, explanation: "NEEDS_REVIEW: verify the minimum construction against the source key and 4x4 diagram.", hint: "Each row and column count is between 0 and 4; use the requirement that all eight counts differ.", sourcePage: 3 },
-  { number: 27, points: 5, prompt: "A number of oranges, peaches, apples, and bananas are arranged in a row. What is the minimum number needed so every pair of fruit types occurs adjacent at least once?", options: ["4", "5", "8", "11", "It is not achievable"], answer: 2, explanation: "There are six different adjacent pairs to show. A seven-step walk can cover them all by repeating one pair; for example O–P–A–B–O–A–P–B uses 8 fruits and includes every pair. At least 6 steps are needed for 6 pairs, and 6 steps would require a trail using every edge once, which is impossible because all four fruit types would have odd degree. So 7 steps, or 8 fruits, is the minimum.", hint: "List the six possible neighboring pairs. Then see whether you can join them into one walk, repeating as few pairs as possible.", sourcePage: 3 },
-  { number: 28, points: 5, prompt: "What is the smallest whole number n for which (2^2-1)(3^2-1)(4^2-1)...(n^2-1) is a square?", options: ["6", "8", "16", "27", "A different number"], answer: 1, explanation: "Factoring each term gives ∏(k−1)(k+1)=(n−1)!(n+1)!/2. At n=8, the prime exponents in this product are all even, so it is a square. Checking n=2 through 7 leaves at least one odd exponent in each case; hence 8 is the first.", hint: "Factor k²−1 as (k−1)(k+1), simplify the product, and track whether each prime exponent is even.", sourcePage: 3 },
-  { number: 29, points: 5, prompt: "A kangaroo starts at the origin and makes 10 unit jumps horizontally or vertically. How many points can it reach after exactly 10 jumps?", options: ["121", "100", "400", "441", "A different number"], answer: 0, explanation: "A point (x,y) is reachable exactly when |x|+|y|≤10 and this distance is even: extra steps can be spent walking back and forth in pairs. At distances 0,2,4,6,8,10 the counts are 1,8,16,24,32,40, totaling 121.", hint: "Group points by Manhattan distance from the origin; only even distances up to 10 can occur.", sourcePage: 3 },
-  { number: 30, points: 5, prompt: "A single-digit prime is called strange. A multi-digit prime is strange if deleting its first and last digits gives strange primes again. How many strange primes are there?", options: ["6", "7", "8", "9", "11"], answer: 3, explanation: "NEEDS_REVIEW: enumerate strange primes using the exact recursive condition to confirm the keyed count of nine.", hint: "Build the numbers outward from the single-digit prime seeds and test primality at each stage.", sourcePage: 3 }
+  {
+    number: 1,
+    points: 3,
+    prompt: "Which of the following numbers is divisible by 3?",
+    options: [
+      "2009",
+      "2+0+0+9",
+      "200-9",
+      "2^9",
+      "(2+0)x(0+9)"
+    ],
+    answer: 4,
+    explanation: "The last expression is (2+0)(0+9)=2×9=18, which is divisible by 3. The other values are 2009, 11, 191, and 512, none of which is divisible by 3.",
+    hint: "Evaluate the expressions first; for a whole number, check whether its digit sum is a multiple of 3.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "1-0",
+        type: "text",
+        text: "2009",
+        imageAlt: "A option"
+      },
+      {
+        id: "1-1",
+        type: "text",
+        text: "2+0+0+9",
+        imageAlt: "B option"
+      },
+      {
+        id: "1-2",
+        type: "text",
+        text: "200-9",
+        imageAlt: "C option"
+      },
+      {
+        id: "1-3",
+        type: "text",
+        text: "2^9",
+        imageAlt: "D option"
+      },
+      {
+        id: "1-4",
+        type: "text",
+        text: "(2+0)x(0+9)",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 2,
+    points: 3,
+    prompt: "What is the minimum number of points to remove from the shown diagram so that no three remaining points lie on one line?",
+    options: [
+      "1",
+      "2",
+      "3",
+      "4",
+      "7"
+    ],
+    answer: 2,
+    explanation: "NEEDS_REVIEW: verify the minimal removal set against the source dot diagram.",
+    hint: "List the horizontal, vertical, and diagonal triples in the 3-by-3 array.",
+    sourcePage: 1,
+    image: "/assets/kangaroo/grades-9-10/junior/2009/questions/editor-q-02.png",
+    optionContent: [
+      {
+        id: "2-0",
+        type: "text",
+        text: "1",
+        imageAlt: "A option"
+      },
+      {
+        id: "2-1",
+        type: "text",
+        text: "2",
+        imageAlt: "B option"
+      },
+      {
+        id: "2-2",
+        type: "text",
+        text: "3",
+        imageAlt: "C option"
+      },
+      {
+        id: "2-3",
+        type: "text",
+        text: "4",
+        imageAlt: "D option"
+      },
+      {
+        id: "2-4",
+        type: "text",
+        text: "7",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 3,
+    points: 3,
+    prompt: "2009 people take part in a public fun run. Hans beats three times as many people as have finished before him. In which place does Hans finish?",
+    options: [
+      "503",
+      "501",
+      "500",
+      "1503",
+      "1507"
+    ],
+    answer: 0,
+    explanation: "If Hans finishes in place p, then p−1 people are ahead and 2009−p are behind. Thus 2009−p=3(p−1), so 4p=2012 and p=503.",
+    hint: "If Hans is in place p, how many runners are ahead of him, and how many are behind?",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "3-0",
+        type: "text",
+        text: "503",
+        imageAlt: "A option"
+      },
+      {
+        id: "3-1",
+        type: "text",
+        text: "501",
+        imageAlt: "B option"
+      },
+      {
+        id: "3-2",
+        type: "text",
+        text: "500",
+        imageAlt: "C option"
+      },
+      {
+        id: "3-3",
+        type: "text",
+        text: "1503",
+        imageAlt: "D option"
+      },
+      {
+        id: "3-4",
+        type: "text",
+        text: "1507",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 4,
+    points: 3,
+    prompt: "Harry delivers a newspaper to each odd-numbered house on Long Street. The first is 15 and the last is 53. How many houses does he visit?",
+    options: [
+      "19",
+      "20",
+      "27",
+      "38",
+      "53"
+    ],
+    answer: 1,
+    explanation: "From 15 to 53 there are (53−15)/2=19 jumps of 2, so there are 19+1=20 houses, including both ends.",
+    hint: "Count the jumps of 2 from 15 to 53, then remember to include the starting house.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "4-0",
+        type: "text",
+        text: "19",
+        imageAlt: "A option"
+      },
+      {
+        id: "4-1",
+        type: "text",
+        text: "20",
+        imageAlt: "B option"
+      },
+      {
+        id: "4-2",
+        type: "text",
+        text: "27",
+        imageAlt: "C option"
+      },
+      {
+        id: "4-3",
+        type: "text",
+        text: "38",
+        imageAlt: "D option"
+      },
+      {
+        id: "4-4",
+        type: "text",
+        text: "53",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 5,
+    points: 3,
+    prompt: "The product of four different natural numbers is 100. What is their sum?",
+    options: [
+      "10",
+      "12",
+      "15",
+      "18",
+      "20"
+    ],
+    answer: 3,
+    explanation: "The four distinct factors must use 2²×5². The only possible set is 1, 2, 5, and 10; their sum is 18.",
+    hint: "Use the prime factors of 100 and remember that none of the four factors may repeat.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "5-0",
+        type: "text",
+        text: "10",
+        imageAlt: "A option"
+      },
+      {
+        id: "5-1",
+        type: "text",
+        text: "12",
+        imageAlt: "B option"
+      },
+      {
+        id: "5-2",
+        type: "text",
+        text: "15",
+        imageAlt: "C option"
+      },
+      {
+        id: "5-3",
+        type: "text",
+        text: "18",
+        imageAlt: "D option"
+      },
+      {
+        id: "5-4",
+        type: "text",
+        text: "20",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 6,
+    points: 3,
+    prompt: "What is the value of (1/2)x(2/3)x(3/4)x(4/5)x(5/6)x(6/7)x(7/8)x(8x9)x(9/10)x1000?",
+    options: [
+      "250",
+      "200",
+      "100",
+      "50",
+      "A different number"
+    ],
+    answer: 2,
+    explanation: "Each numerator from 2 through 9 cancels the same factor in the previous denominator, leaving 1/10. Then (1/10)×1000=100.",
+    hint: "Write the first and last fractions clearly, and cancel each factor that appears once above and once below.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "6-0",
+        type: "text",
+        text: "250",
+        imageAlt: "A option"
+      },
+      {
+        id: "6-1",
+        type: "text",
+        text: "200",
+        imageAlt: "B option"
+      },
+      {
+        id: "6-2",
+        type: "text",
+        text: "100",
+        imageAlt: "C option"
+      },
+      {
+        id: "6-3",
+        type: "text",
+        text: "50",
+        imageAlt: "D option"
+      },
+      {
+        id: "6-4",
+        type: "text",
+        text: "A different number",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 7,
+    points: 3,
+    prompt: "The number 2009 is written 2009 times in a row. What is the sum of all odd digits that are immediately to the left of an even digit?",
+    options: [
+      "2",
+      "9",
+      "4018",
+      "18072",
+      "18081"
+    ],
+    answer: 3,
+    explanation: "Within each block, the only odd digit is 9; it is followed by the next block's 2 except in the final block. Thus 9 is counted 2008 times, giving 2008×9=18072.",
+    hint: "The only odd digit in each block is 9. Check the digit immediately after it, including at block boundaries.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "7-0",
+        type: "text",
+        text: "2",
+        imageAlt: "A option"
+      },
+      {
+        id: "7-1",
+        type: "text",
+        text: "9",
+        imageAlt: "B option"
+      },
+      {
+        id: "7-2",
+        type: "text",
+        text: "4018",
+        imageAlt: "C option"
+      },
+      {
+        id: "7-3",
+        type: "text",
+        text: "18072",
+        imageAlt: "D option"
+      },
+      {
+        id: "7-4",
+        type: "text",
+        text: "18081",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 8,
+    points: 3,
+    prompt: "The shown solid is made of six triangles. Each vertex has a number, two of which are indicated. The sum at the vertices of every triangle is the same. What is the sum of all five numbers?",
+    options: [
+      "9",
+      "12",
+      "17",
+      "18",
+      "24"
+    ],
+    answer: 2,
+    explanation: "NEEDS_REVIEW: the solid's vertex labels are essential and need a clean source crop.",
+    hint: "Write one equal-sum equation for each triangular face.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "8-0",
+        type: "text",
+        text: "9",
+        imageAlt: "A option"
+      },
+      {
+        id: "8-1",
+        type: "text",
+        text: "12",
+        imageAlt: "B option"
+      },
+      {
+        id: "8-2",
+        type: "text",
+        text: "17",
+        imageAlt: "C option"
+      },
+      {
+        id: "8-3",
+        type: "text",
+        text: "18",
+        imageAlt: "D option"
+      },
+      {
+        id: "8-4",
+        type: "text",
+        text: "24",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-9-10/junior/2009/questions/editor-q-08.png"
+  },
+  {
+    number: 9,
+    points: 3,
+    prompt: "For how many positive whole numbers a do a^2 and a^3 have the same number of digits?",
+    options: [
+      "0",
+      "3",
+      "4",
+      "9",
+      "Infinitely many"
+    ],
+    answer: 1,
+    explanation: "For a=1, 2, and 4, the pairs (a²,a³) are (1,1), (4,8), and (16,64), so their digit counts match. For a≥5, a³ is already at least 125 while a² is at most two digits until a=9; for a≥10, a³ has more digits than a². Thus there are 3 values.",
+    hint: "Check the small values first; for larger a, compare how quickly a² and a³ pass powers of 10.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "9-0",
+        type: "text",
+        text: "0",
+        imageAlt: "A option"
+      },
+      {
+        id: "9-1",
+        type: "text",
+        text: "3",
+        imageAlt: "B option"
+      },
+      {
+        id: "9-2",
+        type: "text",
+        text: "4",
+        imageAlt: "C option"
+      },
+      {
+        id: "9-3",
+        type: "text",
+        text: "9",
+        imageAlt: "D option"
+      },
+      {
+        id: "9-4",
+        type: "text",
+        text: "Infinitely many",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 10,
+    points: 3,
+    prompt: "A triangle has area 80 m^2. Three circles of radius 2 m have centres at its vertices. What is the grey shaded area?",
+    options: [
+      "76",
+      "80-2pi",
+      "40-4pi",
+      "80-pi",
+      "78pi-4"
+    ],
+    answer: 1,
+    explanation: "The three sectors inside the triangle have angles summing to 180 degrees, so their total area is half the area of a radius-2 circle, or 2pi.",
+    hint: "The three vertex angles sum to 180 degrees, so their circular sectors combine to a semicircle.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "10-0",
+        type: "text",
+        text: "76",
+        imageAlt: "A option"
+      },
+      {
+        id: "10-1",
+        type: "text",
+        text: "80-2pi",
+        imageAlt: "B option"
+      },
+      {
+        id: "10-2",
+        type: "text",
+        text: "40-4pi",
+        imageAlt: "C option"
+      },
+      {
+        id: "10-3",
+        type: "text",
+        text: "80-pi",
+        imageAlt: "D option"
+      },
+      {
+        id: "10-4",
+        type: "text",
+        text: "78pi-4",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-9-10/junior/2009/questions/editor-q-10.png"
+  },
+  {
+    number: 11,
+    points: 4,
+    prompt: "Starting with the third term, each term of a sequence is the sum of the previous two. The fourth term is 6 and the sixth is 15. What is the seventh term?",
+    options: [
+      "9",
+      "16",
+      "21",
+      "22",
+      "24"
+    ],
+    answer: 4,
+    explanation: "The sixth term is the fourth plus the fifth, so the fifth is 15−6=9. The seventh is the fifth plus the sixth: 9+15=24.",
+    hint: "Use the rule at the sixth term to recover the fifth, then use it once more.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "11-0",
+        type: "text",
+        text: "9",
+        imageAlt: "A option"
+      },
+      {
+        id: "11-1",
+        type: "text",
+        text: "16",
+        imageAlt: "B option"
+      },
+      {
+        id: "11-2",
+        type: "text",
+        text: "21",
+        imageAlt: "C option"
+      },
+      {
+        id: "11-3",
+        type: "text",
+        text: "22",
+        imageAlt: "D option"
+      },
+      {
+        id: "11-4",
+        type: "text",
+        text: "24",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 12,
+    points: 4,
+    prompt: "One angle of a triangle is 68 degrees, and all three angle bisectors are shown. What is the marked angle between two bisectors?",
+    options: [
+      "120 degrees",
+      "124 degrees",
+      "128 degrees",
+      "132 degrees",
+      "136 degrees"
+    ],
+    answer: 1,
+    explanation: "NEEDS_REVIEW: confirm which pair of bisectors and the marked angle orientation in the source image.",
+    hint: "Use the incenter angle formula: 90 degrees plus half the third angle.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "12-0",
+        type: "text",
+        text: "120 degrees",
+        imageAlt: "A option"
+      },
+      {
+        id: "12-1",
+        type: "text",
+        text: "124 degrees",
+        imageAlt: "B option"
+      },
+      {
+        id: "12-2",
+        type: "text",
+        text: "128 degrees",
+        imageAlt: "C option"
+      },
+      {
+        id: "12-3",
+        type: "text",
+        text: "132 degrees",
+        imageAlt: "D option"
+      },
+      {
+        id: "12-4",
+        type: "text",
+        text: "136 degrees",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-9-10/junior/2009/questions/editor-q-12.png"
+  },
+  {
+    number: 13,
+    points: 4,
+    prompt: "Maria scores 0, 1, 2, 3, 4, or 5 on each test. After four tests her mean is exactly 4. Which statement cannot be true?",
+    options: [
+      "She scored 4 each time",
+      "She scored 3 exactly twice",
+      "She scored 4 exactly twice",
+      "She scored 1 exactly once",
+      "She scored 3 exactly three times"
+    ],
+    answer: 4,
+    explanation: "A mean of 4 over four tests requires a total of 16. Three scores of 3 add to 9; even a 5 on the remaining test gives only 14, so that statement cannot be true.",
+    hint: "Find the total required by the mean, then test whether each proposed set can reach it.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "13-0",
+        type: "text",
+        text: "She scored 4 each time",
+        imageAlt: "A option"
+      },
+      {
+        id: "13-1",
+        type: "text",
+        text: "She scored 3 exactly twice",
+        imageAlt: "B option"
+      },
+      {
+        id: "13-2",
+        type: "text",
+        text: "She scored 4 exactly twice",
+        imageAlt: "C option"
+      },
+      {
+        id: "13-3",
+        type: "text",
+        text: "She scored 1 exactly once",
+        imageAlt: "D option"
+      },
+      {
+        id: "13-4",
+        type: "text",
+        text: "She scored 3 exactly three times",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 14,
+    points: 4,
+    prompt: "Which diagram shows the Borromean rings, where no two rings are linked but all three together are connected?",
+    options: [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    answer: 1,
+    explanation: "NEEDS_REVIEW: the visual answer choices need source-specific cropping.",
+    hint: "Check pairwise linking separately from the three-ring link as a whole.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "14-0",
+        type: "text",
+        text: "A",
+        imageAlt: "A option"
+      },
+      {
+        id: "14-1",
+        type: "text",
+        text: "B",
+        imageAlt: "B option"
+      },
+      {
+        id: "14-2",
+        type: "text",
+        text: "C",
+        imageAlt: "C option"
+      },
+      {
+        id: "14-3",
+        type: "text",
+        text: "D",
+        imageAlt: "D option"
+      },
+      {
+        id: "14-4",
+        type: "text",
+        text: "E",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-9-10/junior/2009/questions/editor-q-14.png"
+  },
+  {
+    number: 15,
+    points: 4,
+    prompt: "Twenty-five people stand in a queue of nobles and liars. The first says everyone behind him is a liar; each other person says the person in front is a liar. How many liars are in the queue?",
+    options: [
+      "0",
+      "12",
+      "13",
+      "24",
+      "It cannot be determined"
+    ],
+    answer: 2,
+    explanation: "The first person cannot be truthful: then everyone behind is a liar, but the third person's claim about the second would be true. So the first is a liar. Each later person is truthful exactly when the person directly ahead is a liar, so the roles alternate. The 13 odd-numbered places are liars.",
+    hint: "Test whether the first person can be truthful, then use each statement about the person immediately ahead.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "15-0",
+        type: "text",
+        text: "0",
+        imageAlt: "A option"
+      },
+      {
+        id: "15-1",
+        type: "text",
+        text: "12",
+        imageAlt: "B option"
+      },
+      {
+        id: "15-2",
+        type: "text",
+        text: "13",
+        imageAlt: "C option"
+      },
+      {
+        id: "15-3",
+        type: "text",
+        text: "24",
+        imageAlt: "D option"
+      },
+      {
+        id: "15-4",
+        type: "text",
+        text: "It cannot be determined",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 16,
+    points: 4,
+    prompt: "Define a ◇ b=ab+a+b. If 3◇5=2◇x, what is x?",
+    options: [
+      "3",
+      "6",
+      "7",
+      "10",
+      "12"
+    ],
+    answer: 2,
+    explanation: "By the definition, 3◇5=3·5+3+5=23 and 2◇x=2x+2+x=3x+2. Solving 3x+2=23 gives x=7.",
+    hint: "Substitute each pair into the rule, then solve the resulting linear equation.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "16-0",
+        type: "text",
+        text: "3",
+        imageAlt: "A option"
+      },
+      {
+        id: "16-1",
+        type: "text",
+        text: "6",
+        imageAlt: "B option"
+      },
+      {
+        id: "16-2",
+        type: "text",
+        text: "7",
+        imageAlt: "C option"
+      },
+      {
+        id: "16-3",
+        type: "text",
+        text: "10",
+        imageAlt: "D option"
+      },
+      {
+        id: "16-4",
+        type: "text",
+        text: "12",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 17,
+    points: 4,
+    prompt: "Four circles are centred at the corners of a square. The two large circles touch each other and the two small circles. By what factor must a small-circle radius be multiplied to obtain a large-circle radius?",
+    options: [
+      "9/2",
+      "sqrt(5)",
+      "0.8pi",
+      "2.5",
+      "1+sqrt(2)"
+    ],
+    answer: 4,
+    explanation: "NEEDS_REVIEW: the circle sizes and tangencies must be checked against the diagram.",
+    hint: "Use the square's diagonal and the equations for distances between tangent-circle centres.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "17-0",
+        type: "text",
+        text: "9/2",
+        imageAlt: "A option"
+      },
+      {
+        id: "17-1",
+        type: "text",
+        text: "sqrt(5)",
+        imageAlt: "B option"
+      },
+      {
+        id: "17-2",
+        type: "text",
+        text: "0.8pi",
+        imageAlt: "C option"
+      },
+      {
+        id: "17-3",
+        type: "text",
+        text: "2.5",
+        imageAlt: "D option"
+      },
+      {
+        id: "17-4",
+        type: "text",
+        text: "1+sqrt(2)",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-9-10/junior/2009/questions/editor-q-17.png"
+  },
+  {
+    number: 18,
+    points: 4,
+    prompt: "The difference between sqrt(n) and 10 is less than 1. How many whole numbers n satisfy this?",
+    options: [
+      "19",
+      "20",
+      "39",
+      "40",
+      "41"
+    ],
+    answer: 2,
+    explanation: "|√n−10|<1 means 9<√n<11. Squaring gives 81<n<121, so n is any integer from 82 through 120: 120−82+1=39.",
+    hint: "Rewrite the absolute difference as lower and upper bounds for √n, then square both bounds.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "18-0",
+        type: "text",
+        text: "19",
+        imageAlt: "A option"
+      },
+      {
+        id: "18-1",
+        type: "text",
+        text: "20",
+        imageAlt: "B option"
+      },
+      {
+        id: "18-2",
+        type: "text",
+        text: "39",
+        imageAlt: "C option"
+      },
+      {
+        id: "18-3",
+        type: "text",
+        text: "40",
+        imageAlt: "D option"
+      },
+      {
+        id: "18-4",
+        type: "text",
+        text: "41",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 19,
+    points: 4,
+    prompt: "Different positive integers less than 11 are written in a row so each adjacent pair is divisible one way or the other. What is the maximum number of numbers?",
+    options: [
+      "6",
+      "7",
+      "8",
+      "9",
+      "10"
+    ],
+    answer: 3,
+    explanation: "A row of nine works: 8, 4, 2, 6, 3, 9, 1, 5, 10. In any row of ten, 7 must be an endpoint beside 1. If 1's other neighbor is 5, the end must continue 5–10–2, after which 4 and 8 cannot both join the remaining chain. Otherwise 5 must be the other endpoint beside 10; then 9 must lie between 1 and 3, forcing 7–1–9–3–6–2–10–5 and leaving 4 and 8 disconnected. Thus ten are impossible and nine is the maximum.",
+    hint: "Build a long chain first. To test whether all ten fit, use the limited neighbors of 7, 9, and 5.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "19-0",
+        type: "text",
+        text: "6",
+        imageAlt: "A option"
+      },
+      {
+        id: "19-1",
+        type: "text",
+        text: "7",
+        imageAlt: "B option"
+      },
+      {
+        id: "19-2",
+        type: "text",
+        text: "8",
+        imageAlt: "C option"
+      },
+      {
+        id: "19-3",
+        type: "text",
+        text: "9",
+        imageAlt: "D option"
+      },
+      {
+        id: "19-4",
+        type: "text",
+        text: "10",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 20,
+    points: 4,
+    prompt: "A bug moves along three mutually perpendicular great circles on a sphere, turning alternately right and left at crossings. How many quarter-circles does it crawl before returning to S?",
+    options: [
+      "6",
+      "9",
+      "12",
+      "15",
+      "18"
+    ],
+    answer: 0,
+    explanation: "Tracing the alternating turns through the cube-like great-circle network returns to S after six quarter-circle arcs.",
+    hint: "Track the bug's position and direction after each crossing.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "20-0",
+        type: "text",
+        text: "6",
+        imageAlt: "A option"
+      },
+      {
+        id: "20-1",
+        type: "text",
+        text: "9",
+        imageAlt: "B option"
+      },
+      {
+        id: "20-2",
+        type: "text",
+        text: "12",
+        imageAlt: "C option"
+      },
+      {
+        id: "20-3",
+        type: "text",
+        text: "15",
+        imageAlt: "D option"
+      },
+      {
+        id: "20-4",
+        type: "text",
+        text: "18",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-9-10/junior/2009/questions/editor-q-20.png"
+  },
+  {
+    number: 21,
+    points: 5,
+    prompt: "How many zeroes replace * in the decimal number 1.*1 so it is smaller than 2009/2008 but greater than 20009/20008?",
+    options: [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    answer: 2,
+    explanation: "The fractions are 1+1/2008 and 1+1/20008. With three zeroes, 1.*1 is 1.0001=1+1/10000, and 1/20008<1/10000<1/2008, so it lies between them.",
+    hint: "Write each fraction as 1 plus a small fraction, then compare that fraction with the decimal part of 1.*1.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "21-0",
+        type: "text",
+        text: "1",
+        imageAlt: "A option"
+      },
+      {
+        id: "21-1",
+        type: "text",
+        text: "2",
+        imageAlt: "B option"
+      },
+      {
+        id: "21-2",
+        type: "text",
+        text: "3",
+        imageAlt: "C option"
+      },
+      {
+        id: "21-3",
+        type: "text",
+        text: "4",
+        imageAlt: "D option"
+      },
+      {
+        id: "21-4",
+        type: "text",
+        text: "5",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 22,
+    points: 5,
+    prompt: "How many 10-digit numbers made from 1, 2, and 3 have adjacent digits differing by exactly 1?",
+    options: [
+      "16",
+      "32",
+      "64",
+      "80",
+      "100"
+    ],
+    answer: 2,
+    explanation: "The allowed transitions form a three-state recurrence; counting length-10 walks gives 64 numbers.",
+    hint: "Count strings by their last digit and iterate the allowed adjacent transitions.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "22-0",
+        type: "text",
+        text: "16",
+        imageAlt: "A option"
+      },
+      {
+        id: "22-1",
+        type: "text",
+        text: "32",
+        imageAlt: "B option"
+      },
+      {
+        id: "22-2",
+        type: "text",
+        text: "64",
+        imageAlt: "C option"
+      },
+      {
+        id: "22-3",
+        type: "text",
+        text: "80",
+        imageAlt: "D option"
+      },
+      {
+        id: "22-4",
+        type: "text",
+        text: "100",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 23,
+    points: 5,
+    prompt: "If a=2^25, b=8^8, and c=3^11, which ordering is correct?",
+    options: [
+      "a<b<c",
+      "b<a<c",
+      "b<c<a",
+      "c<a<b",
+      "c<b<a"
+    ],
+    answer: 4,
+    explanation: "Since b=(2³)^8=2²⁴, we have b<a=2²⁵. Also c=3¹¹=177147, far less than 2²⁴. Therefore c<b<a.",
+    hint: "Rewrite b as a power of 2, then compare c with even the smaller power of 2.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "23-0",
+        type: "text",
+        text: "a<b<c",
+        imageAlt: "A option"
+      },
+      {
+        id: "23-1",
+        type: "text",
+        text: "b<a<c",
+        imageAlt: "B option"
+      },
+      {
+        id: "23-2",
+        type: "text",
+        text: "b<c<a",
+        imageAlt: "C option"
+      },
+      {
+        id: "23-3",
+        type: "text",
+        text: "c<a<b",
+        imageAlt: "D option"
+      },
+      {
+        id: "23-4",
+        type: "text",
+        text: "c<b<a",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 24,
+    points: 5,
+    prompt: "All factors of N except 1 and N are listed. The largest is 45 times the smallest. For how many numbers N is this true?",
+    options: [
+      "0",
+      "1",
+      "2",
+      "More than 2",
+      "It cannot be determined"
+    ],
+    answer: 2,
+    explanation: "If p is the smallest prime factor of N, the smallest and largest proper factors are p and N/p. Thus N=45p². Since 45 contains a factor 3, p can only be 2 or 3; both produce valid N (180 and 405). Exactly two numbers work.",
+    hint: "Let p be the smallest prime factor. Relate the smallest proper factor p to the largest N/p, then check which p are possible.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "24-0",
+        type: "text",
+        text: "0",
+        imageAlt: "A option"
+      },
+      {
+        id: "24-1",
+        type: "text",
+        text: "1",
+        imageAlt: "B option"
+      },
+      {
+        id: "24-2",
+        type: "text",
+        text: "2",
+        imageAlt: "C option"
+      },
+      {
+        id: "24-3",
+        type: "text",
+        text: "More than 2",
+        imageAlt: "D option"
+      },
+      {
+        id: "24-4",
+        type: "text",
+        text: "It cannot be determined",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 25,
+    points: 5,
+    prompt: "Kangoo has 2009 unit dice and 2009 unit-square stickers. He builds a cuboid and covers its surface, with some stickers left over. How many remain?",
+    options: [
+      "More than 1000",
+      "763",
+      "476",
+      "49",
+      "It is not achievable"
+    ],
+    answer: 1,
+    explanation: "Since 2009=7²×41, the possible side triples are (1,1,2009), (1,7,287), (1,41,49), and (7,7,41). The last has surface area 2(7·7+7·41+7·41)=1246 unit squares, leaving 2009−1246=763 stickers; each other shape needs more than 2009.",
+    hint: "Factor 2009 to list all possible integer side triples, then compare their surface areas with 2009.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "25-0",
+        type: "text",
+        text: "More than 1000",
+        imageAlt: "A option"
+      },
+      {
+        id: "25-1",
+        type: "text",
+        text: "763",
+        imageAlt: "B option"
+      },
+      {
+        id: "25-2",
+        type: "text",
+        text: "476",
+        imageAlt: "C option"
+      },
+      {
+        id: "25-3",
+        type: "text",
+        text: "49",
+        imageAlt: "D option"
+      },
+      {
+        id: "25-4",
+        type: "text",
+        text: "It is not achievable",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 26,
+    points: 5,
+    prompt: "On a 4x4 board, stones are placed so the numbers in each row and column are all different. What is the minimum number of stones needed?",
+    options: [
+      "14",
+      "16",
+      "20",
+      "24",
+      "25"
+    ],
+    answer: 0,
+    explanation: "NEEDS_REVIEW: verify the minimum construction against the source key and 4x4 diagram.",
+    hint: "Each row and column count is between 0 and 4; use the requirement that all eight counts differ.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "26-0",
+        type: "text",
+        text: "14",
+        imageAlt: "A option"
+      },
+      {
+        id: "26-1",
+        type: "text",
+        text: "16",
+        imageAlt: "B option"
+      },
+      {
+        id: "26-2",
+        type: "text",
+        text: "20",
+        imageAlt: "C option"
+      },
+      {
+        id: "26-3",
+        type: "text",
+        text: "24",
+        imageAlt: "D option"
+      },
+      {
+        id: "26-4",
+        type: "text",
+        text: "25",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-9-10/junior/2009/questions/editor-q-26.png"
+  },
+  {
+    number: 27,
+    points: 5,
+    prompt: "A number of oranges, peaches, apples, and bananas are arranged in a row. What is the minimum number needed so every pair of fruit types occurs adjacent at least once?",
+    options: [
+      "4",
+      "5",
+      "8",
+      "11",
+      "It is not achievable"
+    ],
+    answer: 2,
+    explanation: "There are six different adjacent pairs to show. A seven-step walk can cover them all by repeating one pair; for example O–P–A–B–O–A–P–B uses 8 fruits and includes every pair. At least 6 steps are needed for 6 pairs, and 6 steps would require a trail using every edge once, which is impossible because all four fruit types would have odd degree. So 7 steps, or 8 fruits, is the minimum.",
+    hint: "List the six possible neighboring pairs. Then see whether you can join them into one walk, repeating as few pairs as possible.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "27-0",
+        type: "text",
+        text: "4",
+        imageAlt: "A option"
+      },
+      {
+        id: "27-1",
+        type: "text",
+        text: "5",
+        imageAlt: "B option"
+      },
+      {
+        id: "27-2",
+        type: "text",
+        text: "8",
+        imageAlt: "C option"
+      },
+      {
+        id: "27-3",
+        type: "text",
+        text: "11",
+        imageAlt: "D option"
+      },
+      {
+        id: "27-4",
+        type: "text",
+        text: "It is not achievable",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 28,
+    points: 5,
+    prompt: "What is the smallest whole number n for which (2^2-1)(3^2-1)(4^2-1)...(n^2-1) is a square?",
+    options: [
+      "6",
+      "8",
+      "16",
+      "27",
+      "A different number"
+    ],
+    answer: 1,
+    explanation: "Factoring each term gives ∏(k−1)(k+1)=(n−1)!(n+1)!/2. At n=8, the prime exponents in this product are all even, so it is a square. Checking n=2 through 7 leaves at least one odd exponent in each case; hence 8 is the first.",
+    hint: "Factor k²−1 as (k−1)(k+1), simplify the product, and track whether each prime exponent is even.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "28-0",
+        type: "text",
+        text: "6",
+        imageAlt: "A option"
+      },
+      {
+        id: "28-1",
+        type: "text",
+        text: "8",
+        imageAlt: "B option"
+      },
+      {
+        id: "28-2",
+        type: "text",
+        text: "16",
+        imageAlt: "C option"
+      },
+      {
+        id: "28-3",
+        type: "text",
+        text: "27",
+        imageAlt: "D option"
+      },
+      {
+        id: "28-4",
+        type: "text",
+        text: "A different number",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 29,
+    points: 5,
+    prompt: "A kangaroo starts at the origin and makes 10 unit jumps horizontally or vertically. How many points can it reach after exactly 10 jumps?",
+    options: [
+      "121",
+      "100",
+      "400",
+      "441",
+      "A different number"
+    ],
+    answer: 0,
+    explanation: "A point (x,y) is reachable exactly when |x|+|y|≤10 and this distance is even: extra steps can be spent walking back and forth in pairs. At distances 0,2,4,6,8,10 the counts are 1,8,16,24,32,40, totaling 121.",
+    hint: "Group points by Manhattan distance from the origin; only even distances up to 10 can occur.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "29-0",
+        type: "text",
+        text: "121",
+        imageAlt: "A option"
+      },
+      {
+        id: "29-1",
+        type: "text",
+        text: "100",
+        imageAlt: "B option"
+      },
+      {
+        id: "29-2",
+        type: "text",
+        text: "400",
+        imageAlt: "C option"
+      },
+      {
+        id: "29-3",
+        type: "text",
+        text: "441",
+        imageAlt: "D option"
+      },
+      {
+        id: "29-4",
+        type: "text",
+        text: "A different number",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 30,
+    points: 5,
+    prompt: "A single-digit prime is called strange. A multi-digit prime is strange if deleting its first and last digits gives strange primes again. How many strange primes are there?",
+    options: [
+      "6",
+      "7",
+      "8",
+      "9",
+      "11"
+    ],
+    answer: 3,
+    explanation: "NEEDS_REVIEW: enumerate strange primes using the exact recursive condition to confirm the keyed count of nine.",
+    hint: "Build the numbers outward from the single-digit prime seeds and test primality at each stage.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "30-0",
+        type: "text",
+        text: "6",
+        imageAlt: "A option"
+      },
+      {
+        id: "30-1",
+        type: "text",
+        text: "7",
+        imageAlt: "B option"
+      },
+      {
+        id: "30-2",
+        type: "text",
+        text: "8",
+        imageAlt: "C option"
+      },
+      {
+        id: "30-3",
+        type: "text",
+        text: "9",
+        imageAlt: "D option"
+      },
+      {
+        id: "30-4",
+        type: "text",
+        text: "11",
+        imageAlt: "E option"
+      }
+    ]
+  }
 ];
 
 const sections2009Junior: Section[] = [
-  { points: 3, label: "Section 1", range: "Questions 1-10", accent: "coral" },
-  { points: 4, label: "Section 2", range: "Questions 11-20", accent: "blue" },
-  { points: 5, label: "Section 3", range: "Questions 21-30", accent: "purple" }
+  {
+    points: 3,
+    label: "Section 1",
+    range: "Questions 1-10",
+    accent: "coral"
+  },
+  {
+    points: 4,
+    label: "Section 2",
+    range: "Questions 11-20",
+    accent: "blue"
+  },
+  {
+    points: 5,
+    label: "Section 3",
+    range: "Questions 21-30",
+    accent: "purple"
+  }
 ];
 
 export const edition2009Junior: QuestionSet = {
@@ -49,5 +1482,5 @@ export const edition2009Junior: QuestionSet = {
   timeLimitMinutes: 75,
   sourceUrl: "https://www.matematica.pt/en/docs/kangaroo/enunciados/2009/2009_Junior.pdf",
   questions: questions2009Junior,
-  sections: sections2009Junior
+  sections: sections2009Junior,
 };
