@@ -1,42 +1,1503 @@
 import type { Question, QuestionSet, Section } from "../../../types";
 
 const questions2023Junior: Question[] = [
-  { number: 1, points: 3, prompt: "A dark disc with two holes is placed on the dial of a watch. The disc is rotated so that the number 10 can be seen through one hole. Which pair of numbers could be seen through the other hole?", options: ["2 and 6", "3 and 7", "3 and 6", "1 and 9", "2 and 7"], answer: 0, explanation: "The holes stay at the same angular separation while the disc rotates. Aligning one hole with 10 leaves the other over 2 and 6.", hint: "Compare the positions of the two holes on the dial before and after rotating the disc.", image: "/assets/kangaroo/grades-9-10/junior/2023/questions/q-01-diagram.png", imageAlt: "Watch dial and dark rotating disc with two holes", sourcePage: 2 },
-  { number: 2, points: 3, prompt: "On her way to school Maria first had to run to the underground, she exited from that after two stops, and subsequently walked the rest of the way to school. Which speed-time diagram best describes her journey?", options: ["A", "B", "C", "D", "E"], answer: 3, explanation: "The journey has three stages: a short run, a faster underground ride with a stop after two stations, and a slower walk to school. Diagram D shows that order.", hint: "Match the three stages and their relative speeds, including the stop between the two underground sections.", imageExtra: "/assets/kangaroo/grades-9-10/junior/2023/questions/q-02-choices.png", imageChoices: true, imageAlt: "Five speed-time graph choices in source order", sourcePage: 2 },
-  { number: 3, points: 3, prompt: "The positive integers m and n are odd. Which of the following numbers is odd?", options: ["m x n + 2", "(m + 1) x (n + 1)", "m + n + 2", "m x (n + 1)", "m + n"], answer: 0, explanation: "The product of two odd integers is odd, and adding 2 preserves odd parity.", hint: "Use the parity of each expression when m and n are odd.", sourcePage: 2 },
-  { number: 4, points: 3, prompt: "A small square with side length 4 cm is drawn inside a large square with side length 10 cm, with their sides parallel. What percentage of the figure is shaded?", options: ["25%", "30%", "40%", "42%", "45%"], answer: 3, explanation: "The large square has area 100 cm^2 and the small square has area 16 cm^2. The two shaded trapezoids together have area 42 cm^2, so the shaded percentage is 42%.", hint: "Use the areas of the two squares and the symmetry of the four surrounding regions.", image: "/assets/kangaroo/grades-9-10/junior/2023/questions/q-04-diagram.png", imageAlt: "A 4 cm square inside a 10 cm square with two shaded trapezoids", sourcePage: 2 },
-  { number: 5, points: 3, prompt: "Today is Thursday. What day of the week is it in 2023 days?", options: ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], answer: 2, explanation: "2023 is divisible by 7, so the weekday is unchanged: Thursday.", hint: "Reduce the number of days modulo 7.", sourcePage: 2 },
-  { number: 6, points: 3, prompt: "The big rectangle shown is divided into 30 equally sized squares. The perimeter of the grey region is 240 cm. How large is the area of the big rectangle?", options: ["480 cm^2", "750 cm^2", "1080 cm^2", "1920 cm^2", "2430 cm^2"], answer: 3, explanation: "The grey boundary contains 30 small-square side lengths. Each side is therefore 240/30=8 cm. The rectangle contains 30 squares, so its area is 30 x 8^2 = 1920 cm^2.", hint: "Count unit edges along the grey boundary to find the side length of one small square.", image: "/assets/kangaroo/grades-9-10/junior/2023/questions/q-06-diagram.png", imageAlt: "Thirty-square rectangle with a grey region", sourcePage: 2 },
-  { number: 7, points: 3, prompt: "The ages of all five members of a family add up to 80. The two youngest children are 6 and 8 years old. How large was the sum of the ages of the family members 7 years ago?", options: ["35", "36", "44", "46", "66"], answer: 3, explanation: "Seven years ago the six-year-old had not yet been born; the other four family members' ages summed to 80-6-8-21=45, and the eight-year-old was then 1, giving a total of 46.", hint: "Seven years ago, count only the family members who had already been born.", sourcePage: 2 },
-  { number: 8, points: 3, prompt: "A straight wooden fence is made of vertical beams in the ground, each connected to the next beam by 4 horizontal beams. The fence begins and ends with a vertical beam. Out of how many beams could such a fence be made?", options: ["95", "96", "97", "98", "99"], answer: 1, explanation: "The pictured alternating overlaps repeat in a four-beam cycle. Counting the required vertical and horizontal beams gives 96 total beams.", hint: "Count the vertical supports and the four horizontal rails between successive supports, accounting for the alternating joins.", image: "/assets/kangaroo/grades-9-10/junior/2023/questions/q-08-diagram.png", imageAlt: "Repeated fence section with vertical supports and four horizontal rails", sourcePage: 2 },
-  { number: 9, points: 3, prompt: "How many pairs of positive integers (a,b) satisfy the equation a/5 = 7/b?", options: ["0", "1", "2", "3", "4"], answer: 4, explanation: "Cross-multiplication gives ab=35. The positive factor pairs are (1,35), (5,7), (7,5), and (35,1), for four pairs.", hint: "Cross-multiply and list the positive factor pairs of 35.", sourcePage: 2 },
-  { number: 10, points: 3, prompt: "After playing 200 games of chess, Beth's winning rate is exactly 49%. What is the minimum number of further games she must win to increase her winning rate to 50%?", options: ["1", "2", "3", "4", "5"], answer: 3, explanation: "She has 98 wins. After x additional wins, (98+x)/(200+x)=1/2, which gives x=4.", hint: "Set the new number of wins equal to half the new total number of games.", sourcePage: 2 },
-  { number: 11, points: 4, prompt: "Jennifer reduces the water pressure, reducing the water usage by one quarter. She also reduces her shower time by one quarter. By what fraction in total does she reduce the water usage for her shower?", options: ["1/4", "3/8", "1/16", "5/12", "7/16"], answer: 4, explanation: "The new flow rate and shower time are each 3/4 of the original, so usage becomes 9/16. The reduction is 1-9/16=7/16.", hint: "Multiply the two remaining fractions of water flow and shower time.", sourcePage: 2 },
-  { number: 12, points: 4, prompt: "The diagram shows three adjacent squares with side lengths 3 cm, 5 cm, and 8 cm. What is the area of the shaded trapezium?", options: ["13 cm^2", "55/4 cm^2", "61/4 cm^2", "65/4 cm^2", "69/4 cm^2"], answer: 1, explanation: "The three squares have total width 3+5+8=16 cm and height 8 cm, so the diagonal rises 8/16=1/2 cm per horizontal centimetre. Across the 5 cm square, its heights are 3/2 cm at the left edge and 4 cm at the right edge. The shaded trapezium's area is 5 x (3/2+4)/2=55/4 cm^2.", hint: "The diagonal rises 8 cm over the full 16 cm width; use that slope to find its heights at the two sides of the 5 cm square.", image: "/assets/kangaroo/grades-9-10/junior/2023/questions/q-12-diagram.png", imageAlt: "Three adjacent squares of sides 3, 5, and 8 cm with a shaded trapezium", sourcePage: 3 },
-  { number: 13, points: 4, prompt: "A rope 95 m long is cut into three pieces so that each piece is half as long again as the previous piece. How long is the longest piece?", options: ["39 m", "42 m", "45 m", "48 m", "54 m"], answer: 2, explanation: "If the first piece is x, the lengths are x, 3x/2, and 9x/4. Their sum is 19x/4=95, so x=20 and the longest piece is 45 m.", hint: "Write the three lengths as a geometric sequence with ratio 3/2.", sourcePage: 3 },
-  { number: 14, points: 4, prompt: "The points M and N are the midpoints of two sides of the large rectangle. Which fraction of the rectangle's area is shaded?", options: ["1/6", "1/5", "1/4", "1/3", "1/2"], answer: 2, explanation: "The shaded triangular regions above and below the midpoint line have combined area equal to one quarter of the rectangle.", hint: "Use the midpoint line to compare each shaded triangle with a rectangle of the same base and height.", image: "/assets/kangaroo/grades-9-10/junior/2023/questions/q-14-diagram.png", imageAlt: "Rectangle with M and N at side midpoints and shaded triangles", sourcePage: 3 },
-  { number: 15, points: 4, prompt: "The pentagon ABCDE is split into four triangles that all have the same perimeter. Triangle ABC is equilateral, and triangles AEF, DFE, and CDF are congruent isosceles triangles. What is the ratio of the perimeter of pentagon ABCDE to the perimeter of triangle ABC?", options: ["2", "3/2", "4/3", "5/3", "5/2"], answer: 3, explanation: "Let the side of equilateral triangle ABC be s. Congruence gives AF=FC=s/2. Each small isosceles triangle has perimeter 3s, so AF must be its base: its two equal sides are (3s-s/2)/2=5s/4. Thus the pentagon perimeter is AB+BC+AE+DE+CD=s+s+5s/4+s/2+5s/4=5s, and the ratio to 3s is 5/3.", hint: "Use congruence to find AF and FC, then use the common triangle perimeter to determine the equal sides of each small isosceles triangle.", image: "/assets/kangaroo/grades-9-10/junior/2023/questions/q-15-diagram.png", imageAlt: "Pentagon divided into four triangles with shared point F", sourcePage: 3 },
-  { number: 16, points: 4, prompt: "A tower consists of blocks labelled from bottom to top with the numbers 1 to 90. At each step Bob takes the top three blocks from the old tower and places them on the new tower without changing their order. How many blocks are between the blocks labelled 39 and 40 in the new tower?", options: ["0", "1", "2", "3", "4"], answer: 4, explanation: "Each transfer reverses the order of three consecutive blocks when they are placed on the new tower. Following the three-block groups through the 90-block tower leaves four blocks between 39 and 40.", hint: "Track the three-block groups containing 39 and 40 and preserve the within-group order.", image: "/assets/kangaroo/grades-9-10/junior/2023/questions/q-16-diagram.png", imageAlt: "Old and new towers showing the order of transferred blocks", sourcePage: 3 },
-  { number: 17, points: 4, prompt: "A staircase has 2023 steps. Every third step is black. Anita steps on each step exactly once, alternating her right and left foot. She can start with either foot. What is the minimum number of black steps she steps on with her right foot?", options: ["332", "333", "336", "337", "672"], answer: 3, explanation: "There are 674 black steps, numbered 3k for k=1,...,674. Regardless of the starting foot, exactly half of these have the right foot on them: 337.", hint: "Among the multiples of 3 from 3 to 2022, count those with the parity corresponding to the right foot.", image: "/assets/kangaroo/grades-9-10/junior/2023/questions/q-17-diagram.png", imageAlt: "Staircase with every third step shaded black", sourcePage: 3 },
-  { number: 18, points: 4, prompt: "A positive integer is powerfree if none of its digits can be written as an integer power with exponent greater than 1. For example, 53 is powerfree but 54 is not because 4=2^2. Which number is the difference between the largest and smallest two-digit powerfree numbers?", options: ["24", "55", "63", "88", "89"], answer: 1, explanation: "The allowed digits are 2, 3, 5, 6, and 7. The largest powerfree two-digit number is 77 and the smallest is 22, so the difference is 55.", hint: "Exclude digits that are perfect powers, then form the largest and smallest allowed two-digit numbers.", sourcePage: 3 },
-  { number: 19, points: 4, prompt: "A square of side length 30 cm is split into 9 equal squares. The big square contains three circles with radii 5 cm, 4 cm, and 3 cm at the shown positions. How many square centimetres are shaded grey?", options: ["500 + 25 pi", "500", "400 + 50 pi", "400", "500 - 25 pi"], answer: 1, explanation: "Five of the 10 cm squares are shaded, contributing 5 x 100=500 cm^2. The two grey circles add 16pi+9pi=25pi cm^2, while the white circle removes 25pi cm^2. These circular areas cancel, leaving 500 cm^2.", hint: "Count the five shaded grid squares, then compare the areas of the two grey circles with the white circle.", image: "/assets/kangaroo/grades-9-10/junior/2023/questions/q-19-diagram.png", imageAlt: "Nine-square grid with three circles and grey shaded cells", sourcePage: 3 },
-  { number: 20, points: 4, prompt: "The arithmetic mean of five different prime numbers is an integer. What is the smallest possible value of this mean?", options: ["5", "6", "7", "8", "9"], answer: 1, explanation: "The five distinct primes 2, 3, 5, 7, and 13 sum to 30, giving mean 6. The five smallest distinct primes sum to 28, which is not divisible by 5, so no smaller integer mean works.", hint: "Start with the five smallest distinct primes and increase the largest prime until the sum is divisible by 5.", sourcePage: 3 },
-  { number: 21, points: 5, prompt: "The numbers 1 through 9 are distributed among the nine squares in a row. The sum of every three adjacent numbers must be a multiple of 3. The numbers 3 and 1 are already placed as shown. How many ways are there to place the remaining numbers?", options: ["9", "12", "15", "18", "24"], answer: 4, explanation: "Reducing the numbers modulo 3, each length-three window must contain residue sum 0. Applying these overlapping conditions with the fixed 3 and 1 leaves 24 arrangements.", hint: "Work with residues modulo 3; consecutive window sums determine the next residue from the previous two.", image: "/assets/kangaroo/grades-9-10/junior/2023/questions/q-21-diagram.png", imageAlt: "Nine boxes in a row with 3 and 1 fixed in two positions", sourcePage: 3 },
-  { number: 22, points: 5, prompt: "How many different ways are there to read the word BANANA in the shown table if we may only move to a field sharing an edge with the current field and may use fields several times?", options: ["56", "64", "84", "112", "128"], answer: 4, explanation: "Starting at the centre N, each step to an adjacent letter has two choices that continue the alternating A/B pattern. Counting all walks spelling BANANA gives 128.", hint: "Count valid walks by letter position, allowing a cell to be revisited as the rules permit.", image: "/assets/kangaroo/grades-9-10/junior/2023/questions/q-22-diagram.png", imageAlt: "Three-by-three letter grid spelling a symmetric BANANA layout", sourcePage: 4 },
-  { number: 23, points: 5, prompt: "Starting with 2, 0, 2, 3, the kangaroo machine creates numbers so that the next number is the smallest non-negative integer different from the four directly preceding numbers. Which number is in position 2023?", options: ["0", "1", "2", "3", "4"], answer: 2, explanation: "After the initial terms, the sequence repeats the five-term cycle 4, 0, 2, 3, 1. Position 2023 corresponds to the third term of that cycle, which is 2.", hint: "Generate the first few terms and identify the repeating block once the four-term history cycles.", sourcePage: 4 },
-  { number: 24, points: 5, prompt: "A circle with centre (75,30) and radius 10 is cut from a rectangle with vertices (0,0), (100,0), (100,50), and (0,50). What is the gradient of a line through (75,30) that divides the remaining part of the rectangle into two equal areas?", options: ["1/5", "1/3", "1/2", "2/5", "2/3"], answer: 0, explanation: "The line must divide the rectangle into equal halves while passing through the circle's centre. Accounting for the circular cutout gives gradient 1/5.", hint: "Compare the rectangle areas on both sides of the line and note that the centred circle itself is split equally by any line through its centre.", sourcePage: 4 },
-  { number: 25, points: 5, prompt: "When Matilda's smartphone is fully charged, it has a battery life of 32 hours of continuous phone calls, 20 hours of continuous internet use, or 80 hours on standby. During a train ride with a half-full battery, she spends equal amounts of time calling, using the internet, and not using the phone. When she arrives, the battery is empty. How long was the train ride?", options: ["10 hours", "12 hours", "14 hours", "16 hours", "18 hours"], answer: 3, explanation: "If each activity lasts t hours, the battery used is t/32+t/20+t/80=1/2. This gives t=16/3 hours, so the total ride is 3t=16 hours.", hint: "Add the fractions of full battery used per hour for the three activities.", sourcePage: 4 },
-  { number: 26, points: 5, prompt: "Seven pairwise different single-digit numbers are placed in the circles shown so that the product of the three numbers on each straight line is the same. Which number is in the circle marked with a question mark?", options: ["2", "3", "4", "6", "8"], answer: 0, explanation: "Equating the products on the three horizontal lines and the vertical line, while using seven distinct single-digit values, forces the bottom value to be 2.", hint: "Set the products on each straight line equal and use the fact that all seven digits differ.", image: "/assets/kangaroo/grades-9-10/junior/2023/questions/q-26-diagram.png", imageAlt: "Seven circles in three horizontal rows and a vertical line, with a question mark at the bottom", sourcePage: 4 },
-  { number: 27, points: 5, prompt: "Two touching semicircles have radius 1 and diameters AB and CD, which are parallel. The extensions of the diameters are tangent to the other semicircle. What is the square of the length AD?", options: ["16", "8 + 4 sqrt(3)", "12", "9", "5 + 2 sqrt(3)"], answer: 1, explanation: "Using the tangencies and the unit radii gives perpendicular displacement components whose squared lengths sum to 8+4 sqrt(3). Thus AD^2 is that value.", hint: "Use the unit radii and tangent lines to determine the horizontal and vertical components of AD.", image: "/assets/kangaroo/grades-9-10/junior/2023/questions/q-27-diagram.png", imageAlt: "Two touching unit semicircles with parallel diameters and segment AD", sourcePage: 4 },
-  { number: 28, points: 5, prompt: "Leon has drawn a closed loop on the surface of a cuboid. Which net cannot show this loop?", options: ["A", "B", "C", "D", "E"], answer: 2, explanation: "Option C joins the path segments on edges that do not meet in the corresponding folded cuboid, so it cannot form a continuous closed loop on the surface.", hint: "Fold each net mentally and check that the path connects across matching edges without a break.", imageExtra: "/assets/kangaroo/grades-9-10/junior/2023/questions/q-28-choices.png", imageChoices: true, imageAlt: "Five cuboid nets with loop paths, choices A through E", sourcePage: 4 },
-  { number: 29, points: 5, prompt: "Several points are marked on a straight line. Renate marks another point between every pair of adjacent points and repeats this process three more times. Now there are 225 points on the line. How many points were marked at the start?", options: ["15", "20", "25", "29", "32"], answer: 0, explanation: "Each round changes N points to 2N-1. After four rounds, 225=16N-15, so the initial number was N=15.", hint: "Apply the recurrence N_next=2N-1 four times, then solve backwards from 225.", sourcePage: 4 },
-  { number: 30, points: 5, prompt: "The diagram shows a map of a park split into sections. The number in each section is its perimeter in kilometres. How long is the perimeter of the entire park?", options: ["18 km", "22 km", "26 km", "32 km", "42 km"], answer: 2, explanation: "Adding the section perimeters counts every internal boundary twice. Removing those shared internal boundaries leaves an outer park perimeter of 26 km.", hint: "Sum the labelled perimeters and subtract twice the total length of internal boundaries.", image: "/assets/kangaroo/grades-9-10/junior/2023/questions/q-30-diagram.png", imageAlt: "Park map split into numbered regions", sourcePage: 4 }
+  {
+    number: 1,
+    points: 3,
+    prompt: "A dark disc with two holes is placed on the dial of a watch. The disc is rotated so that the number 10 can be seen through one hole. Which pair of numbers could be seen through the other hole?",
+    options: [
+      "2 and 6",
+      "3 and 7",
+      "3 and 6",
+      "1 and 9",
+      "2 and 7"
+    ],
+    answer: 0,
+    explanation: "The holes stay at the same angular separation while the disc rotates. Aligning one hole with 10 leaves the other over 2 and 6.",
+    hint: "Compare the positions of the two holes on the dial before and after rotating the disc.",
+    image: "/assets/kangaroo/grades-9-10/junior/2023/questions/q-01-diagram.png",
+    imageAlt: "Watch dial and dark rotating disc with two holes",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "1-0",
+        type: "text",
+        text: "2 and 6",
+        imageAlt: "A option"
+      },
+      {
+        id: "1-1",
+        type: "text",
+        text: "3 and 7",
+        imageAlt: "B option"
+      },
+      {
+        id: "1-2",
+        type: "text",
+        text: "3 and 6",
+        imageAlt: "C option"
+      },
+      {
+        id: "1-3",
+        type: "text",
+        text: "1 and 9",
+        imageAlt: "D option"
+      },
+      {
+        id: "1-4",
+        type: "text",
+        text: "2 and 7",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 2,
+    points: 3,
+    prompt: "On her way to school Maria first had to run to the underground, she exited from that after two stops, and subsequently walked the rest of the way to school. Which speed-time diagram best describes her journey?",
+    options: [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    answer: 3,
+    explanation: "The journey has three stages: a short run, a faster underground ride with a stop after two stations, and a slower walk to school. Diagram D shows that order.",
+    hint: "Match the three stages and their relative speeds, including the stop between the two underground sections.",
+    imageExtra: "/assets/kangaroo/grades-9-10/junior/2023/questions/editor-q-02-extra.png",
+    imageChoices: true,
+    imageAlt: "Five speed-time graph choices in source order",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "2-0",
+        type: "text",
+        text: "A",
+        imageAlt: "A option"
+      },
+      {
+        id: "2-1",
+        type: "text",
+        text: "B",
+        imageAlt: "B option"
+      },
+      {
+        id: "2-2",
+        type: "text",
+        text: "C",
+        imageAlt: "C option"
+      },
+      {
+        id: "2-3",
+        type: "text",
+        text: "D",
+        imageAlt: "D option"
+      },
+      {
+        id: "2-4",
+        type: "text",
+        text: "E",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 3,
+    points: 3,
+    prompt: "The positive integers m and n are odd. Which of the following numbers is odd?",
+    options: [
+      "m x n + 2",
+      "(m + 1) x (n + 1)",
+      "m + n + 2",
+      "m x (n + 1)",
+      "m + n"
+    ],
+    answer: 0,
+    explanation: "The product of two odd integers is odd, and adding 2 preserves odd parity.",
+    hint: "Use the parity of each expression when m and n are odd.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "3-0",
+        type: "text",
+        text: "m x n + 2",
+        imageAlt: "A option"
+      },
+      {
+        id: "3-1",
+        type: "text",
+        text: "(m + 1) x (n + 1)",
+        imageAlt: "B option"
+      },
+      {
+        id: "3-2",
+        type: "text",
+        text: "m + n + 2",
+        imageAlt: "C option"
+      },
+      {
+        id: "3-3",
+        type: "text",
+        text: "m x (n + 1)",
+        imageAlt: "D option"
+      },
+      {
+        id: "3-4",
+        type: "text",
+        text: "m + n",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 4,
+    points: 3,
+    prompt: "A small square with side length 4 cm is drawn inside a large square with side length 10 cm, with their sides parallel. What percentage of the figure is shaded?",
+    options: [
+      "25%",
+      "30%",
+      "40%",
+      "42%",
+      "45%"
+    ],
+    answer: 3,
+    explanation: "The large square has area 100 cm^2 and the small square has area 16 cm^2. The two shaded trapezoids together have area 42 cm^2, so the shaded percentage is 42%.",
+    hint: "Use the areas of the two squares and the symmetry of the four surrounding regions.",
+    image: "/assets/kangaroo/grades-9-10/junior/2023/questions/q-04-diagram.png",
+    imageAlt: "A 4 cm square inside a 10 cm square with two shaded trapezoids",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "4-0",
+        type: "text",
+        text: "25%",
+        imageAlt: "A option"
+      },
+      {
+        id: "4-1",
+        type: "text",
+        text: "30%",
+        imageAlt: "B option"
+      },
+      {
+        id: "4-2",
+        type: "text",
+        text: "40%",
+        imageAlt: "C option"
+      },
+      {
+        id: "4-3",
+        type: "text",
+        text: "42%",
+        imageAlt: "D option"
+      },
+      {
+        id: "4-4",
+        type: "text",
+        text: "45%",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 5,
+    points: 3,
+    prompt: "Today is Thursday. What day of the week is it in 2023 days?",
+    options: [
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday"
+    ],
+    answer: 2,
+    explanation: "2023 is divisible by 7, so the weekday is unchanged: Thursday.",
+    hint: "Reduce the number of days modulo 7.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "5-0",
+        type: "text",
+        text: "Tuesday",
+        imageAlt: "A option"
+      },
+      {
+        id: "5-1",
+        type: "text",
+        text: "Wednesday",
+        imageAlt: "B option"
+      },
+      {
+        id: "5-2",
+        type: "text",
+        text: "Thursday",
+        imageAlt: "C option"
+      },
+      {
+        id: "5-3",
+        type: "text",
+        text: "Friday",
+        imageAlt: "D option"
+      },
+      {
+        id: "5-4",
+        type: "text",
+        text: "Saturday",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 6,
+    points: 3,
+    prompt: "The big rectangle shown is divided into 30 equally sized squares. The perimeter of the grey region is 240 cm. How large is the area of the big rectangle?",
+    options: [
+      "480 cm^2",
+      "750 cm^2",
+      "1080 cm^2",
+      "1920 cm^2",
+      "2430 cm^2"
+    ],
+    answer: 3,
+    explanation: "The grey boundary contains 30 small-square side lengths. Each side is therefore 240/30=8 cm. The rectangle contains 30 squares, so its area is 30 x 8^2 = 1920 cm^2.",
+    hint: "Count unit edges along the grey boundary to find the side length of one small square.",
+    image: "/assets/kangaroo/grades-9-10/junior/2023/questions/q-06-diagram.png",
+    imageAlt: "Thirty-square rectangle with a grey region",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "6-0",
+        type: "text",
+        text: "480 cm^2",
+        imageAlt: "A option"
+      },
+      {
+        id: "6-1",
+        type: "text",
+        text: "750 cm^2",
+        imageAlt: "B option"
+      },
+      {
+        id: "6-2",
+        type: "text",
+        text: "1080 cm^2",
+        imageAlt: "C option"
+      },
+      {
+        id: "6-3",
+        type: "text",
+        text: "1920 cm^2",
+        imageAlt: "D option"
+      },
+      {
+        id: "6-4",
+        type: "text",
+        text: "2430 cm^2",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 7,
+    points: 3,
+    prompt: "The ages of all five members of a family add up to 80. The two youngest children are 6 and 8 years old. How large was the sum of the ages of the family members 7 years ago?",
+    options: [
+      "35",
+      "36",
+      "44",
+      "46",
+      "66"
+    ],
+    answer: 3,
+    explanation: "Seven years ago the six-year-old had not yet been born; the other four family members' ages summed to 80-6-8-21=45, and the eight-year-old was then 1, giving a total of 46.",
+    hint: "Seven years ago, count only the family members who had already been born.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "7-0",
+        type: "text",
+        text: "35",
+        imageAlt: "A option"
+      },
+      {
+        id: "7-1",
+        type: "text",
+        text: "36",
+        imageAlt: "B option"
+      },
+      {
+        id: "7-2",
+        type: "text",
+        text: "44",
+        imageAlt: "C option"
+      },
+      {
+        id: "7-3",
+        type: "text",
+        text: "46",
+        imageAlt: "D option"
+      },
+      {
+        id: "7-4",
+        type: "text",
+        text: "66",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 8,
+    points: 3,
+    prompt: "A straight wooden fence is made of vertical beams in the ground, each connected to the next beam by 4 horizontal beams. The fence begins and ends with a vertical beam. Out of how many beams could such a fence be made?",
+    options: [
+      "95",
+      "96",
+      "97",
+      "98",
+      "99"
+    ],
+    answer: 1,
+    explanation: "The pictured alternating overlaps repeat in a four-beam cycle. Counting the required vertical and horizontal beams gives 96 total beams.",
+    hint: "Count the vertical supports and the four horizontal rails between successive supports, accounting for the alternating joins.",
+    image: "/assets/kangaroo/grades-9-10/junior/2023/questions/q-08-diagram.png",
+    imageAlt: "Repeated fence section with vertical supports and four horizontal rails",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "8-0",
+        type: "text",
+        text: "95",
+        imageAlt: "A option"
+      },
+      {
+        id: "8-1",
+        type: "text",
+        text: "96",
+        imageAlt: "B option"
+      },
+      {
+        id: "8-2",
+        type: "text",
+        text: "97",
+        imageAlt: "C option"
+      },
+      {
+        id: "8-3",
+        type: "text",
+        text: "98",
+        imageAlt: "D option"
+      },
+      {
+        id: "8-4",
+        type: "text",
+        text: "99",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 9,
+    points: 3,
+    prompt: "How many pairs of positive integers (a,b) satisfy the equation a/5 = 7/b?",
+    options: [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    answer: 4,
+    explanation: "Cross-multiplication gives ab=35. The positive factor pairs are (1,35), (5,7), (7,5), and (35,1), for four pairs.",
+    hint: "Cross-multiply and list the positive factor pairs of 35.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "9-0",
+        type: "text",
+        text: "0",
+        imageAlt: "A option"
+      },
+      {
+        id: "9-1",
+        type: "text",
+        text: "1",
+        imageAlt: "B option"
+      },
+      {
+        id: "9-2",
+        type: "text",
+        text: "2",
+        imageAlt: "C option"
+      },
+      {
+        id: "9-3",
+        type: "text",
+        text: "3",
+        imageAlt: "D option"
+      },
+      {
+        id: "9-4",
+        type: "text",
+        text: "4",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 10,
+    points: 3,
+    prompt: "After playing 200 games of chess, Beth's winning rate is exactly 49%. What is the minimum number of further games she must win to increase her winning rate to 50%?",
+    options: [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    answer: 3,
+    explanation: "She has 98 wins. After x additional wins, (98+x)/(200+x)=1/2, which gives x=4.",
+    hint: "Set the new number of wins equal to half the new total number of games.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "10-0",
+        type: "text",
+        text: "1",
+        imageAlt: "A option"
+      },
+      {
+        id: "10-1",
+        type: "text",
+        text: "2",
+        imageAlt: "B option"
+      },
+      {
+        id: "10-2",
+        type: "text",
+        text: "3",
+        imageAlt: "C option"
+      },
+      {
+        id: "10-3",
+        type: "text",
+        text: "4",
+        imageAlt: "D option"
+      },
+      {
+        id: "10-4",
+        type: "text",
+        text: "5",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 11,
+    points: 4,
+    prompt: "Jennifer reduces the water pressure, reducing the water usage by one quarter. She also reduces her shower time by one quarter. By what fraction in total does she reduce the water usage for her shower?",
+    options: [
+      "1/4",
+      "3/8",
+      "1/16",
+      "5/12",
+      "7/16"
+    ],
+    answer: 4,
+    explanation: "The new flow rate and shower time are each 3/4 of the original, so usage becomes 9/16. The reduction is 1-9/16=7/16.",
+    hint: "Multiply the two remaining fractions of water flow and shower time.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "11-0",
+        type: "text",
+        text: "1/4",
+        imageAlt: "A option"
+      },
+      {
+        id: "11-1",
+        type: "text",
+        text: "3/8",
+        imageAlt: "B option"
+      },
+      {
+        id: "11-2",
+        type: "text",
+        text: "1/16",
+        imageAlt: "C option"
+      },
+      {
+        id: "11-3",
+        type: "text",
+        text: "5/12",
+        imageAlt: "D option"
+      },
+      {
+        id: "11-4",
+        type: "text",
+        text: "7/16",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 12,
+    points: 4,
+    prompt: "The diagram shows three adjacent squares with side lengths 3 cm, 5 cm, and 8 cm. What is the area of the shaded trapezium?",
+    options: [
+      "13 cm^2",
+      "55/4 cm^2",
+      "61/4 cm^2",
+      "65/4 cm^2",
+      "69/4 cm^2"
+    ],
+    answer: 1,
+    explanation: "The three squares have total width 3+5+8=16 cm and height 8 cm, so the diagonal rises 8/16=1/2 cm per horizontal centimetre. Across the 5 cm square, its heights are 3/2 cm at the left edge and 4 cm at the right edge. The shaded trapezium's area is 5 x (3/2+4)/2=55/4 cm^2.",
+    hint: "The diagonal rises 8 cm over the full 16 cm width; use that slope to find its heights at the two sides of the 5 cm square.",
+    image: "/assets/kangaroo/grades-9-10/junior/2023/questions/q-12-diagram.png",
+    imageAlt: "Three adjacent squares of sides 3, 5, and 8 cm with a shaded trapezium",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "12-0",
+        type: "text",
+        text: "13 cm^2",
+        imageAlt: "A option"
+      },
+      {
+        id: "12-1",
+        type: "text",
+        text: "55/4 cm^2",
+        imageAlt: "B option"
+      },
+      {
+        id: "12-2",
+        type: "text",
+        text: "61/4 cm^2",
+        imageAlt: "C option"
+      },
+      {
+        id: "12-3",
+        type: "text",
+        text: "65/4 cm^2",
+        imageAlt: "D option"
+      },
+      {
+        id: "12-4",
+        type: "text",
+        text: "69/4 cm^2",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 13,
+    points: 4,
+    prompt: "A rope 95 m long is cut into three pieces so that each piece is half as long again as the previous piece. How long is the longest piece?",
+    options: [
+      "39 m",
+      "42 m",
+      "45 m",
+      "48 m",
+      "54 m"
+    ],
+    answer: 2,
+    explanation: "If the first piece is x, the lengths are x, 3x/2, and 9x/4. Their sum is 19x/4=95, so x=20 and the longest piece is 45 m.",
+    hint: "Write the three lengths as a geometric sequence with ratio 3/2.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "13-0",
+        type: "text",
+        text: "39 m",
+        imageAlt: "A option"
+      },
+      {
+        id: "13-1",
+        type: "text",
+        text: "42 m",
+        imageAlt: "B option"
+      },
+      {
+        id: "13-2",
+        type: "text",
+        text: "45 m",
+        imageAlt: "C option"
+      },
+      {
+        id: "13-3",
+        type: "text",
+        text: "48 m",
+        imageAlt: "D option"
+      },
+      {
+        id: "13-4",
+        type: "text",
+        text: "54 m",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 14,
+    points: 4,
+    prompt: "The points M and N are the midpoints of two sides of the large rectangle. Which fraction of the rectangle's area is shaded?",
+    options: [
+      "1/6",
+      "1/5",
+      "1/4",
+      "1/3",
+      "1/2"
+    ],
+    answer: 2,
+    explanation: "The shaded triangular regions above and below the midpoint line have combined area equal to one quarter of the rectangle.",
+    hint: "Use the midpoint line to compare each shaded triangle with a rectangle of the same base and height.",
+    image: "/assets/kangaroo/grades-9-10/junior/2023/questions/q-14-diagram.png",
+    imageAlt: "Rectangle with M and N at side midpoints and shaded triangles",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "14-0",
+        type: "text",
+        text: "1/6",
+        imageAlt: "A option"
+      },
+      {
+        id: "14-1",
+        type: "text",
+        text: "1/5",
+        imageAlt: "B option"
+      },
+      {
+        id: "14-2",
+        type: "text",
+        text: "1/4",
+        imageAlt: "C option"
+      },
+      {
+        id: "14-3",
+        type: "text",
+        text: "1/3",
+        imageAlt: "D option"
+      },
+      {
+        id: "14-4",
+        type: "text",
+        text: "1/2",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 15,
+    points: 4,
+    prompt: "The pentagon ABCDE is split into four triangles that all have the same perimeter. Triangle ABC is equilateral, and triangles AEF, DFE, and CDF are congruent isosceles triangles. What is the ratio of the perimeter of pentagon ABCDE to the perimeter of triangle ABC?",
+    options: [
+      "2",
+      "3/2",
+      "4/3",
+      "5/3",
+      "5/2"
+    ],
+    answer: 3,
+    explanation: "Let the side of equilateral triangle ABC be s. Congruence gives AF=FC=s/2. Each small isosceles triangle has perimeter 3s, so AF must be its base: its two equal sides are (3s-s/2)/2=5s/4. Thus the pentagon perimeter is AB+BC+AE+DE+CD=s+s+5s/4+s/2+5s/4=5s, and the ratio to 3s is 5/3.",
+    hint: "Use congruence to find AF and FC, then use the common triangle perimeter to determine the equal sides of each small isosceles triangle.",
+    image: "/assets/kangaroo/grades-9-10/junior/2023/questions/q-15-diagram.png",
+    imageAlt: "Pentagon divided into four triangles with shared point F",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "15-0",
+        type: "text",
+        text: "2",
+        imageAlt: "A option"
+      },
+      {
+        id: "15-1",
+        type: "text",
+        text: "3/2",
+        imageAlt: "B option"
+      },
+      {
+        id: "15-2",
+        type: "text",
+        text: "4/3",
+        imageAlt: "C option"
+      },
+      {
+        id: "15-3",
+        type: "text",
+        text: "5/3",
+        imageAlt: "D option"
+      },
+      {
+        id: "15-4",
+        type: "text",
+        text: "5/2",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 16,
+    points: 4,
+    prompt: "A tower consists of blocks labelled from bottom to top with the numbers 1 to 90. At each step Bob takes the top three blocks from the old tower and places them on the new tower without changing their order. How many blocks are between the blocks labelled 39 and 40 in the new tower?",
+    options: [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    answer: 4,
+    explanation: "Each transfer reverses the order of three consecutive blocks when they are placed on the new tower. Following the three-block groups through the 90-block tower leaves four blocks between 39 and 40.",
+    hint: "Track the three-block groups containing 39 and 40 and preserve the within-group order.",
+    image: "/assets/kangaroo/grades-9-10/junior/2023/questions/editor-q-16.png",
+    imageAlt: "Old and new towers showing the order of transferred blocks",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "16-0",
+        type: "text",
+        text: "0",
+        imageAlt: "A option"
+      },
+      {
+        id: "16-1",
+        type: "text",
+        text: "1",
+        imageAlt: "B option"
+      },
+      {
+        id: "16-2",
+        type: "text",
+        text: "2",
+        imageAlt: "C option"
+      },
+      {
+        id: "16-3",
+        type: "text",
+        text: "3",
+        imageAlt: "D option"
+      },
+      {
+        id: "16-4",
+        type: "text",
+        text: "4",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 17,
+    points: 4,
+    prompt: "A staircase has 2023 steps. Every third step is black. Anita steps on each step exactly once, alternating her right and left foot. She can start with either foot. What is the minimum number of black steps she steps on with her right foot?",
+    options: [
+      "332",
+      "333",
+      "336",
+      "337",
+      "672"
+    ],
+    answer: 3,
+    explanation: "There are 674 black steps, numbered 3k for k=1,...,674. Regardless of the starting foot, exactly half of these have the right foot on them: 337.",
+    hint: "Among the multiples of 3 from 3 to 2022, count those with the parity corresponding to the right foot.",
+    image: "/assets/kangaroo/grades-9-10/junior/2023/questions/editor-q-17.png",
+    imageAlt: "Staircase with every third step shaded black",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "17-0",
+        type: "text",
+        text: "332",
+        imageAlt: "A option"
+      },
+      {
+        id: "17-1",
+        type: "text",
+        text: "333",
+        imageAlt: "B option"
+      },
+      {
+        id: "17-2",
+        type: "text",
+        text: "336",
+        imageAlt: "C option"
+      },
+      {
+        id: "17-3",
+        type: "text",
+        text: "337",
+        imageAlt: "D option"
+      },
+      {
+        id: "17-4",
+        type: "text",
+        text: "672",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 18,
+    points: 4,
+    prompt: "A positive integer is powerfree if none of its digits can be written as an integer power with exponent greater than 1. For example, 53 is powerfree but 54 is not because 4=2^2. Which number is the difference between the largest and smallest two-digit powerfree numbers?",
+    options: [
+      "24",
+      "55",
+      "63",
+      "88",
+      "89"
+    ],
+    answer: 1,
+    explanation: "The allowed digits are 2, 3, 5, 6, and 7. The largest powerfree two-digit number is 77 and the smallest is 22, so the difference is 55.",
+    hint: "Exclude digits that are perfect powers, then form the largest and smallest allowed two-digit numbers.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "18-0",
+        type: "text",
+        text: "24",
+        imageAlt: "A option"
+      },
+      {
+        id: "18-1",
+        type: "text",
+        text: "55",
+        imageAlt: "B option"
+      },
+      {
+        id: "18-2",
+        type: "text",
+        text: "63",
+        imageAlt: "C option"
+      },
+      {
+        id: "18-3",
+        type: "text",
+        text: "88",
+        imageAlt: "D option"
+      },
+      {
+        id: "18-4",
+        type: "text",
+        text: "89",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 19,
+    points: 4,
+    prompt: "A square of side length 30 cm is split into 9 equal squares. The big square contains three circles with radii 5 cm, 4 cm, and 3 cm at the shown positions. How many square centimetres are shaded grey?",
+    options: [
+      "500 + 25 pi",
+      "500",
+      "400 + 50 pi",
+      "400",
+      "500 - 25 pi"
+    ],
+    answer: 1,
+    explanation: "Five of the 10 cm squares are shaded, contributing 5 x 100=500 cm^2. The two grey circles add 16pi+9pi=25pi cm^2, while the white circle removes 25pi cm^2. These circular areas cancel, leaving 500 cm^2.",
+    hint: "Count the five shaded grid squares, then compare the areas of the two grey circles with the white circle.",
+    image: "/assets/kangaroo/grades-9-10/junior/2023/questions/q-19-diagram.png",
+    imageAlt: "Nine-square grid with three circles and grey shaded cells",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "19-0",
+        type: "text",
+        text: "500 + 25 pi",
+        imageAlt: "A option"
+      },
+      {
+        id: "19-1",
+        type: "text",
+        text: "500",
+        imageAlt: "B option"
+      },
+      {
+        id: "19-2",
+        type: "text",
+        text: "400 + 50 pi",
+        imageAlt: "C option"
+      },
+      {
+        id: "19-3",
+        type: "text",
+        text: "400",
+        imageAlt: "D option"
+      },
+      {
+        id: "19-4",
+        type: "text",
+        text: "500 - 25 pi",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 20,
+    points: 4,
+    prompt: "The arithmetic mean of five different prime numbers is an integer. What is the smallest possible value of this mean?",
+    options: [
+      "5",
+      "6",
+      "7",
+      "8",
+      "9"
+    ],
+    answer: 1,
+    explanation: "The five distinct primes 2, 3, 5, 7, and 13 sum to 30, giving mean 6. The five smallest distinct primes sum to 28, which is not divisible by 5, so no smaller integer mean works.",
+    hint: "Start with the five smallest distinct primes and increase the largest prime until the sum is divisible by 5.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "20-0",
+        type: "text",
+        text: "5",
+        imageAlt: "A option"
+      },
+      {
+        id: "20-1",
+        type: "text",
+        text: "6",
+        imageAlt: "B option"
+      },
+      {
+        id: "20-2",
+        type: "text",
+        text: "7",
+        imageAlt: "C option"
+      },
+      {
+        id: "20-3",
+        type: "text",
+        text: "8",
+        imageAlt: "D option"
+      },
+      {
+        id: "20-4",
+        type: "text",
+        text: "9",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 21,
+    points: 5,
+    prompt: "The numbers 1 through 9 are distributed among the nine squares in a row. The sum of every three adjacent numbers must be a multiple of 3. The numbers 3 and 1 are already placed as shown. How many ways are there to place the remaining numbers?",
+    options: [
+      "9",
+      "12",
+      "15",
+      "18",
+      "24"
+    ],
+    answer: 4,
+    explanation: "Reducing the numbers modulo 3, each length-three window must contain residue sum 0. Applying these overlapping conditions with the fixed 3 and 1 leaves 24 arrangements.",
+    hint: "Work with residues modulo 3; consecutive window sums determine the next residue from the previous two.",
+    image: "/assets/kangaroo/grades-9-10/junior/2023/questions/q-21-diagram.png",
+    imageAlt: "Nine boxes in a row with 3 and 1 fixed in two positions",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "21-0",
+        type: "text",
+        text: "9",
+        imageAlt: "A option"
+      },
+      {
+        id: "21-1",
+        type: "text",
+        text: "12",
+        imageAlt: "B option"
+      },
+      {
+        id: "21-2",
+        type: "text",
+        text: "15",
+        imageAlt: "C option"
+      },
+      {
+        id: "21-3",
+        type: "text",
+        text: "18",
+        imageAlt: "D option"
+      },
+      {
+        id: "21-4",
+        type: "text",
+        text: "24",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 22,
+    points: 5,
+    prompt: "How many different ways are there to read the word BANANA in the shown table if we may only move to a field sharing an edge with the current field and may use fields several times?",
+    options: [
+      "56",
+      "64",
+      "84",
+      "112",
+      "128"
+    ],
+    answer: 4,
+    explanation: "Starting at the centre N, each step to an adjacent letter has two choices that continue the alternating A/B pattern. Counting all walks spelling BANANA gives 128.",
+    hint: "Count valid walks by letter position, allowing a cell to be revisited as the rules permit.",
+    image: "/assets/kangaroo/grades-9-10/junior/2023/questions/q-22-diagram.png",
+    imageAlt: "Three-by-three letter grid spelling a symmetric BANANA layout",
+    sourcePage: 4,
+    optionContent: [
+      {
+        id: "22-0",
+        type: "text",
+        text: "56",
+        imageAlt: "A option"
+      },
+      {
+        id: "22-1",
+        type: "text",
+        text: "64",
+        imageAlt: "B option"
+      },
+      {
+        id: "22-2",
+        type: "text",
+        text: "84",
+        imageAlt: "C option"
+      },
+      {
+        id: "22-3",
+        type: "text",
+        text: "112",
+        imageAlt: "D option"
+      },
+      {
+        id: "22-4",
+        type: "text",
+        text: "128",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 23,
+    points: 5,
+    prompt: "Starting with 2, 0, 2, 3, the kangaroo machine creates numbers so that the next number is the smallest non-negative integer different from the four directly preceding numbers. Which number is in position 2023?",
+    options: [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    answer: 2,
+    explanation: "After the initial terms, the sequence repeats the five-term cycle 4, 0, 2, 3, 1. Position 2023 corresponds to the third term of that cycle, which is 2.",
+    hint: "Generate the first few terms and identify the repeating block once the four-term history cycles.",
+    sourcePage: 4,
+    optionContent: [
+      {
+        id: "23-0",
+        type: "text",
+        text: "0",
+        imageAlt: "A option"
+      },
+      {
+        id: "23-1",
+        type: "text",
+        text: "1",
+        imageAlt: "B option"
+      },
+      {
+        id: "23-2",
+        type: "text",
+        text: "2",
+        imageAlt: "C option"
+      },
+      {
+        id: "23-3",
+        type: "text",
+        text: "3",
+        imageAlt: "D option"
+      },
+      {
+        id: "23-4",
+        type: "text",
+        text: "4",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 24,
+    points: 5,
+    prompt: "A circle with centre (75,30) and radius 10 is cut from a rectangle with vertices (0,0), (100,0), (100,50), and (0,50). What is the gradient of a line through (75,30) that divides the remaining part of the rectangle into two equal areas?",
+    options: [
+      "1/5",
+      "1/3",
+      "1/2",
+      "2/5",
+      "2/3"
+    ],
+    answer: 0,
+    explanation: "The line must divide the rectangle into equal halves while passing through the circle's centre. Accounting for the circular cutout gives gradient 1/5.",
+    hint: "Compare the rectangle areas on both sides of the line and note that the centred circle itself is split equally by any line through its centre.",
+    sourcePage: 4,
+    optionContent: [
+      {
+        id: "24-0",
+        type: "text",
+        text: "1/5",
+        imageAlt: "A option"
+      },
+      {
+        id: "24-1",
+        type: "text",
+        text: "1/3",
+        imageAlt: "B option"
+      },
+      {
+        id: "24-2",
+        type: "text",
+        text: "1/2",
+        imageAlt: "C option"
+      },
+      {
+        id: "24-3",
+        type: "text",
+        text: "2/5",
+        imageAlt: "D option"
+      },
+      {
+        id: "24-4",
+        type: "text",
+        text: "2/3",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 25,
+    points: 5,
+    prompt: "When Matilda's smartphone is fully charged, it has a battery life of 32 hours of continuous phone calls, 20 hours of continuous internet use, or 80 hours on standby. During a train ride with a half-full battery, she spends equal amounts of time calling, using the internet, and not using the phone. When she arrives, the battery is empty. How long was the train ride?",
+    options: [
+      "10 hours",
+      "12 hours",
+      "14 hours",
+      "16 hours",
+      "18 hours"
+    ],
+    answer: 3,
+    explanation: "If each activity lasts t hours, the battery used is t/32+t/20+t/80=1/2. This gives t=16/3 hours, so the total ride is 3t=16 hours.",
+    hint: "Add the fractions of full battery used per hour for the three activities.",
+    sourcePage: 4,
+    optionContent: [
+      {
+        id: "25-0",
+        type: "text",
+        text: "10 hours",
+        imageAlt: "A option"
+      },
+      {
+        id: "25-1",
+        type: "text",
+        text: "12 hours",
+        imageAlt: "B option"
+      },
+      {
+        id: "25-2",
+        type: "text",
+        text: "14 hours",
+        imageAlt: "C option"
+      },
+      {
+        id: "25-3",
+        type: "text",
+        text: "16 hours",
+        imageAlt: "D option"
+      },
+      {
+        id: "25-4",
+        type: "text",
+        text: "18 hours",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 26,
+    points: 5,
+    prompt: "Seven pairwise different single-digit numbers are placed in the circles shown so that the product of the three numbers on each straight line is the same. Which number is in the circle marked with a question mark?",
+    options: [
+      "2",
+      "3",
+      "4",
+      "6",
+      "8"
+    ],
+    answer: 0,
+    explanation: "Equating the products on the three horizontal lines and the vertical line, while using seven distinct single-digit values, forces the bottom value to be 2.",
+    hint: "Set the products on each straight line equal and use the fact that all seven digits differ.",
+    image: "/assets/kangaroo/grades-9-10/junior/2023/questions/editor-q-26.png",
+    imageAlt: "Seven circles in three horizontal rows and a vertical line, with a question mark at the bottom",
+    sourcePage: 4,
+    optionContent: [
+      {
+        id: "26-0",
+        type: "text",
+        text: "2",
+        imageAlt: "A option"
+      },
+      {
+        id: "26-1",
+        type: "text",
+        text: "3",
+        imageAlt: "B option"
+      },
+      {
+        id: "26-2",
+        type: "text",
+        text: "4",
+        imageAlt: "C option"
+      },
+      {
+        id: "26-3",
+        type: "text",
+        text: "6",
+        imageAlt: "D option"
+      },
+      {
+        id: "26-4",
+        type: "text",
+        text: "8",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 27,
+    points: 5,
+    prompt: "Two touching semicircles have radius 1 and diameters AB and CD, which are parallel. The extensions of the diameters are tangent to the other semicircle. What is the square of the length AD?",
+    options: [
+      "16",
+      "8 + 4 sqrt(3)",
+      "12",
+      "9",
+      "5 + 2 sqrt(3)"
+    ],
+    answer: 1,
+    explanation: "Using the tangencies and the unit radii gives perpendicular displacement components whose squared lengths sum to 8+4 sqrt(3). Thus AD^2 is that value.",
+    hint: "Use the unit radii and tangent lines to determine the horizontal and vertical components of AD.",
+    image: "/assets/kangaroo/grades-9-10/junior/2023/questions/q-27-diagram.png",
+    imageAlt: "Two touching unit semicircles with parallel diameters and segment AD",
+    sourcePage: 4,
+    optionContent: [
+      {
+        id: "27-0",
+        type: "text",
+        text: "16",
+        imageAlt: "A option"
+      },
+      {
+        id: "27-1",
+        type: "text",
+        text: "8 + 4 sqrt(3)",
+        imageAlt: "B option"
+      },
+      {
+        id: "27-2",
+        type: "text",
+        text: "12",
+        imageAlt: "C option"
+      },
+      {
+        id: "27-3",
+        type: "text",
+        text: "9",
+        imageAlt: "D option"
+      },
+      {
+        id: "27-4",
+        type: "text",
+        text: "5 + 2 sqrt(3)",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 28,
+    points: 5,
+    prompt: "Leon has drawn a closed loop on the surface of a cuboid. Which net cannot show this loop?",
+    options: [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    answer: 2,
+    explanation: "Option C joins the path segments on edges that do not meet in the corresponding folded cuboid, so it cannot form a continuous closed loop on the surface.",
+    hint: "Fold each net mentally and check that the path connects across matching edges without a break.",
+    imageExtra: "/assets/kangaroo/grades-9-10/junior/2023/questions/q-28-choices.png",
+    imageChoices: true,
+    imageAlt: "Five cuboid nets with loop paths, choices A through E",
+    sourcePage: 4,
+    optionContent: [
+      {
+        id: "28-0",
+        type: "text",
+        text: "A",
+        imageAlt: "A option"
+      },
+      {
+        id: "28-1",
+        type: "text",
+        text: "B",
+        imageAlt: "B option"
+      },
+      {
+        id: "28-2",
+        type: "text",
+        text: "C",
+        imageAlt: "C option"
+      },
+      {
+        id: "28-3",
+        type: "text",
+        text: "D",
+        imageAlt: "D option"
+      },
+      {
+        id: "28-4",
+        type: "text",
+        text: "E",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 29,
+    points: 5,
+    prompt: "Several points are marked on a straight line. Renate marks another point between every pair of adjacent points and repeats this process three more times. Now there are 225 points on the line. How many points were marked at the start?",
+    options: [
+      "15",
+      "20",
+      "25",
+      "29",
+      "32"
+    ],
+    answer: 0,
+    explanation: "Each round changes N points to 2N-1. After four rounds, 225=16N-15, so the initial number was N=15.",
+    hint: "Apply the recurrence N_next=2N-1 four times, then solve backwards from 225.",
+    sourcePage: 4,
+    optionContent: [
+      {
+        id: "29-0",
+        type: "text",
+        text: "15",
+        imageAlt: "A option"
+      },
+      {
+        id: "29-1",
+        type: "text",
+        text: "20",
+        imageAlt: "B option"
+      },
+      {
+        id: "29-2",
+        type: "text",
+        text: "25",
+        imageAlt: "C option"
+      },
+      {
+        id: "29-3",
+        type: "text",
+        text: "29",
+        imageAlt: "D option"
+      },
+      {
+        id: "29-4",
+        type: "text",
+        text: "32",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 30,
+    points: 5,
+    prompt: "The diagram shows a map of a park split into sections. The number in each section is its perimeter in kilometres. How long is the perimeter of the entire park?",
+    options: [
+      "18 km",
+      "22 km",
+      "26 km",
+      "32 km",
+      "42 km"
+    ],
+    answer: 2,
+    explanation: "Adding the section perimeters counts every internal boundary twice. Removing those shared internal boundaries leaves an outer park perimeter of 26 km.",
+    hint: "Sum the labelled perimeters and subtract twice the total length of internal boundaries.",
+    image: "/assets/kangaroo/grades-9-10/junior/2023/questions/q-30-diagram.png",
+    imageAlt: "Park map split into numbered regions",
+    sourcePage: 4,
+    optionContent: [
+      {
+        id: "30-0",
+        type: "text",
+        text: "18 km",
+        imageAlt: "A option"
+      },
+      {
+        id: "30-1",
+        type: "text",
+        text: "22 km",
+        imageAlt: "B option"
+      },
+      {
+        id: "30-2",
+        type: "text",
+        text: "26 km",
+        imageAlt: "C option"
+      },
+      {
+        id: "30-3",
+        type: "text",
+        text: "32 km",
+        imageAlt: "D option"
+      },
+      {
+        id: "30-4",
+        type: "text",
+        text: "42 km",
+        imageAlt: "E option"
+      }
+    ]
+  }
 ];
 
 const sections2023Junior: Section[] = [
-  { points: 3, label: "Section 1", range: "Questions 1-10", accent: "coral" },
-  { points: 4, label: "Section 2", range: "Questions 11-20", accent: "blue" },
-  { points: 5, label: "Section 3", range: "Questions 21-30", accent: "purple" }
+  {
+    points: 3,
+    label: "Section 1",
+    range: "Questions 1-10",
+    accent: "coral"
+  },
+  {
+    points: 4,
+    label: "Section 2",
+    range: "Questions 11-20",
+    accent: "blue"
+  },
+  {
+    points: 5,
+    label: "Section 3",
+    range: "Questions 21-30",
+    accent: "purple"
+  }
 ];
 
 export const edition2023Junior: QuestionSet = {
@@ -49,5 +1510,5 @@ export const edition2023Junior: QuestionSet = {
   timeLimitMinutes: 75,
   sourceUrl: "https://www.matematica.pt/en/docs/kangaroo/enunciados/2023/2023_Junior.pdf",
   questions: questions2023Junior,
-  sections: sections2023Junior
+  sections: sections2023Junior,
 };

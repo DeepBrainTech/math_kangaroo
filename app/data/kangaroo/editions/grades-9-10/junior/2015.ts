@@ -1,42 +1,1482 @@
 import type { Question, QuestionSet, Section } from "../../../types";
 
 const questions2015Junior: Question[] = [
-  { number: 1, points: 3, prompt: "Which of the following numbers is closest to the product 20.15 x 51.02?", options: ["100", "1000", "10000", "100000", "1000000"], answer: 0, explanation: "The product is about 1028, so 1000 is closest.", hint: "Estimate each factor and compare the product with the choices.", sourcePage: 1 },
-  { number: 2, points: 3, prompt: "After Mum hung T-shirts on a washing line, her son hung one sock between each two T-shirts. There are 29 pieces of clothing on the line. How many are T-shirts?", options: ["10", "11", "13", "14", "15"], answer: 4, explanation: "If there are n shirts, there are n-1 socks, so 2n-1=29 and n=15.", hint: "There is one fewer gap-sock than there are shirts.", sourcePage: 1 },
-  { number: 3, points: 3, prompt: "The grey areas in the square with side length a are bounded by a semicircle and two quarter-circles. What is their total area?", options: ["pi a^2/8", "a^2/2", "pi a^2/2", "a^2/4", "pi a^2/4"], answer: 1, explanation: "The semicircle and two quarter-circles combine to give total grey area a^2/2.", hint: "Add the semicircle area and the two quarter-circle areas, accounting for the shared radius.", image: "/assets/kangaroo/grades-9-10/junior/2015/questions/q-03-diagram.png", imageAlt: "Square with a shaded semicircle and two shaded quarter-circles", sourcePage: 1 },
-  { number: 4, points: 3, prompt: "Anna, Beate, and Cindy buy 30 biscuits together. They receive 10 each. Anna paid 80 cents, Beate 50 cents, and Cindy 20 cents. How many more biscuits should Anna receive if they share in proportion to what each paid?", options: ["10", "9", "8", "7", "6"], answer: 4, explanation: "The total payment is 150 cents. Anna paid 80/150 of the cost, so her fair share is 16 biscuits, six more than the 10 she received.", hint: "Allocate the 30 biscuits in the ratio 80:50:20.", sourcePage: 1 },
-  { number: 5, points: 3, prompt: "Mr Hide remembers that his treasure is at least 5 m from a hedge and no more than 5 m from an old pear tree. Which picture best shows the area where he should look?", options: ["A", "B", "C", "D", "E"], answer: 1, explanation: "The treasure must lie outside the 5 m strip beside the hedge and inside the 5 m circle around the tree; choice B shows that intersection.", hint: "Combine the region more than 5 m from the hedge with the region at most 5 m from the tree.", imageExtra: "/assets/kangaroo/grades-9-10/junior/2015/questions/q-05-choices.png", imageChoices: true, imageAlt: "Five shaded search regions relative to a hedge and a tree", sourcePage: 1 },
-  { number: 6, points: 3, prompt: "What is the units digit of 2015^2 + 2015^0 + 2015^1 + 2015^5?", options: ["1", "5", "6", "7", "9"], answer: 2, explanation: "The units digits are 5, 1, 5, and 5. Their sum is 16, so the units digit is 6.", hint: "Only the units digit of each power matters.", sourcePage: 1 },
-  { number: 7, points: 3, prompt: "There are 33 teenagers in a class. Three like both computing and PE. Twice as many like computing only as like PE only. How many like computing?", options: ["15", "18", "20", "22", "23"], answer: 4, explanation: "Let PE-only be x and computing-only be 2x. Then 3x+3=33, so x=10; the number who like computing is 20+3=23.", hint: "Partition the class into computing-only, PE-only, and both groups.", sourcePage: 1 },
-  { number: 8, points: 3, prompt: "Which of the following numbers is neither a square nor a cube number?", options: ["6^13", "5^12", "4^11", "3^10", "2^9"], answer: 0, explanation: "6^13 has exponents not divisible by 2 or 3 in its prime factorization, so it is neither a square nor a cube.", hint: "A perfect square needs all prime exponents even; a perfect cube needs them all divisible by 3.", sourcePage: 1 },
-  { number: 9, points: 3, prompt: "Herr Waxi buys 100 candles. Each day he burns one candle. From the leftovers of seven burned candles he can make a new candle. After how many days must he buy new candles?", options: ["112", "114", "115", "116", "117"], answer: 3, explanation: "The 100 original candles produce 14 new candles and 2 leftovers. Burning those 14 produces 2 more candles; burning those 2 leaves only 4 stubs. The total is 100+14+2=116 days.", hint: "Track both the number of new candles and leftover stubs after each batch of seven.", sourcePage: 1 },
-  { number: 10, points: 3, prompt: "A convex pentagon has all internal angles less than 180 degrees. Which list gives all possible numbers of right angles in it?", options: ["1, 2, 3", "0, 1, 2, 3, 4", "0, 1, 2, 3", "0, 1, 2", "1, 2"], answer: 2, explanation: "A convex pentagon's angle sum is 540 degrees. Zero through three right angles are possible, but four would force the remaining angle to be 180 degrees.", hint: "Use the 540-degree interior-angle sum and the strict convexity condition.", sourcePage: 2 },
-  { number: 11, points: 4, prompt: "A decision die has three different positions shown. What is the probability of getting YES when rolling it once?", options: ["1/3", "1/2", "5/9", "2/3", "5/6"], answer: 1, explanation: "The three views show that 3 of the die's 6 faces say YES. Each face is equally likely to land uppermost, so the probability is 3/6=1/2.", hint: "Use the three views to identify the die's faces without counting a face twice, then compare the YES faces with all six.", image: "/assets/kangaroo/grades-9-10/junior/2015/questions/q-11-diagram.png", imageAlt: "Three orientations of a decision die with YES and NO faces", sourcePage: 2 },
-  { number: 12, points: 4, prompt: "The sides of the small squares in the diagram are 1. What is the shortest path from Start to Ziel if you may move only along square sides and diagonals?", options: ["2sqrt(5)", "sqrt(10)+sqrt(2)", "2+2sqrt(2)", "4sqrt(2)", "6"], answer: 2, explanation: "The shortest route uses two diagonals and two unit sides, for a length of 2sqrt(2)+2.", hint: "Compare routes using the allowed unit and diagonal moves across the grid.", image: "/assets/kangaroo/grades-9-10/junior/2015/questions/q-12-diagram.png", imageAlt: "Two-row grid with Start and Ziel at opposite corners", sourcePage: 2 },
-  { number: 13, points: 4, prompt: "Three inhabitants each have at least two ears. Imi sees 8 ears, Dimi sees 7, and Trimi says she can only see 5. None can see their own ears. How many ears does Trimi have?", options: ["2", "4", "5", "6", "7"], answer: 2, explanation: "Imi sees Dimi and Trimi, so their ears total 8. Dimi sees Imi and Trimi, totalling 7. Thus Imi has one more ear than Dimi; using Trimi's view of 5 gives Trimi 5 ears.", hint: "Write one equation for the ears each person can see, excluding their own.", sourcePage: 2 },
-  { number: 14, points: 4, prompt: "A cuboid container has a square base of side 10 cm and is filled to height h. A metal cube of side 2 cm sinks to the bottom. The water reaches the top corner of the cube. Determine h.", options: ["1.92 cm", "1.93 cm", "1.90 cm", "1.91 cm", "1.94 cm"], answer: 0, explanation: "The cube displaces 8 cm^3, raising the level by 8/100=0.08 cm. Since the final level is 2 cm, the initial height is h=1.92 cm.", hint: "Use the displaced volume over the 100 cm^2 base area to find how much the water level rises.", sourcePage: 2 },
-  { number: 15, points: 4, prompt: "The square ABCD has area 80. Points E, F, G, and H lie on the sides with AE=BF=CG=DH. What is the grey area if AE=3 x EB?", options: ["20", "25", "30", "35", "40"], answer: 1, explanation: "NEEDS_REVIEW: the source diagram is needed to derive the shaded-area calculation; the answer key gives 25.", hint: "Use the equal side segments and the 3:1 division to compare the shaded triangles with the square.", sourcePage: 2 },
-  { number: 16, points: 4, prompt: "A father's whole-number age multiplied by his son's whole-number age is 2015. Both were born in the 20th century. What is their age gap?", options: ["26", "29", "31", "34", "36"], answer: 3, explanation: "2015=5 x 13 x 31. The valid father and son ages in the stated century are 65 and 31, a difference of 34.", hint: "Factor 2015 and check factor pairs that can be ages in the specified century.", sourcePage: 2 },
-  { number: 17, points: 4, prompt: "Four objects a,b,c,d are on a double balance. Two are exchanged, changing the balance positions as shown. Which two objects were exchanged?", options: ["a and b", "b and d", "b and c", "a and d", "a and c"], answer: 3, explanation: "NEEDS_REVIEW: the balance diagram is essential to compare the changes in the linked arms; the answer key gives D.", hint: "Compare how swapping each candidate pair changes the torque on both balances.", sourcePage: 2 },
-  { number: 18, points: 4, prompt: "The roots of x^2-85x+c=0 are prime numbers. What is the digit sum of c?", options: ["12", "13", "14", "15", "21"], answer: 1, explanation: "The two prime roots sum to 85. The pair is 2 and 83, so c=166 and its digit sum is 13.", hint: "Use the sum of roots and the fact that 85 is odd, so one prime root must be 2.", sourcePage: 2 },
-  { number: 19, points: 4, prompt: "How many three-digit positive integers have digits that, when placed side by side, always differ by 3?", options: ["12", "14", "16", "20", "27"], answer: 3, explanation: "Counting valid digit sequences where each adjacent pair differs by 3 gives 20 three-digit numbers.", hint: "Build the allowed transitions between digits 0-9 and count three-digit paths, excluding a leading zero.", sourcePage: 2 },
-  { number: 20, points: 4, prompt: "Which value of n is a counterexample to: if n is prime, then exactly one of n-2 and n+2 is prime?", options: ["11", "19", "21", "29", "37"], answer: 4, explanation: "For n=37, both 35 and 39 are composite, so neither is prime; this is a counterexample.", hint: "Check the two numbers two away from each prime choice.", sourcePage: 2 },
-  { number: 21, points: 5, prompt: "Seven sections are bounded by three circles. Each section contains a number equal to the sum of all numbers in adjacent sections. Two numbers are 1 and 2 as shown. What is the number in the inner area?", options: ["0", "-3", "3", "-6", "6"], answer: 0, explanation: "Using the adjacency sums for the three-circle arrangement and the two given values gives 0 in the central region.", hint: "Write one equation for each region using the sections that share more than one corner point.", image: "/assets/kangaroo/grades-9-10/junior/2015/questions/q-21-diagram.png", imageAlt: "Three-circle Venn diagram with 1 and 2 in two regions", sourcePage: 3 },
-  { number: 22, points: 5, prompt: "How many two-digit numbers can be written as a sum of exactly six different powers of two?", options: ["0", "1", "2", "3", "4"], answer: 2, explanation: "The qualifying two-digit sums are 63 and 95, each written as six distinct powers of two, so there are 2.", hint: "Use binary representation: the number of powers is the number of 1s in its binary form.", sourcePage: 3 },
-  { number: 23, points: 5, prompt: "Petra has three different dictionaries and two different novels. How many arrangements keep all dictionaries together and all novels together?", options: ["12", "24", "30", "60", "120"], answer: 1, explanation: "Treat each group as a block. The two blocks can be ordered in 2 ways, the dictionaries in 3! ways, and the novels in 2! ways: 2 x 6 x 2=24.", hint: "Arrange the two subject blocks, then permute the books within each block.", sourcePage: 3 },
-  { number: 24, points: 5, prompt: "Lines parallel to base AC of triangle ABC are drawn through X and Y. The grey areas are equal. If BX:XA=4:1, what is BY:YA?", options: ["1:1", "2:1", "3:1", "3:2", "4:3"], answer: 3, explanation: "The area ratios of similar triangles vary as the square of the side ratios. Equating the grey bands gives BY:YA=3:2.", hint: "Express each shaded area as a difference of similar-triangle areas.", image: "/assets/kangaroo/grades-9-10/junior/2015/questions/q-24-diagram.png", imageAlt: "Two triangles with parallel cuts and equal grey areas", sourcePage: 3 },
-  { number: 25, points: 5, prompt: "In a right-angled triangle, the angle bisector of an acute angle divides the opposite side into segments of lengths 1 and 2. How long is the angle bisector?", options: ["sqrt(2)", "sqrt(3)", "sqrt(4)", "sqrt(5)", "sqrt(6)"], answer: 2, explanation: "The angle-bisector theorem gives adjacent sides in ratio 1:2. Applying the right-triangle relation gives a bisector length of sqrt(4)=2.", hint: "Combine the angle-bisector theorem with the Pythagorean theorem.", sourcePage: 3 },
-  { number: 26, points: 5, prompt: "Three different digits a,b,c form the two-digit numbers ab, bc, and ca. How many choices satisfy ab<bc<ca?", options: ["84", "96", "125", "201", "502"], answer: 0, explanation: "From 10a+b<10b+c we must have a<b; otherwise the tens-digit difference is at least 10, too large for the units digits to reverse. Similarly, bc<ca forces b<c. Thus a,b,c are increasing nonzero digits, so choosing any 3 of 1,…,9 gives C(9,3)=84 choices.", hint: "Compare the tens digits first: a difference of 1 in the tens place outweighs any possible units-digit difference.", sourcePage: 3 },
-  { number: 27, points: 5, prompt: "One of the numbers 1,2,...,n is crossed out, and the average of the remaining numbers is 4.75. What number was crossed out?", options: ["5", "7", "8", "9", "It cannot be determined for certain"], answer: 1, explanation: "Solving (n(n+1)/2-k)/(n-1)=4.75 for an integer k in 1..n gives the crossed-out number 7.", hint: "Set the remaining sum equal to 4.75(n-1) and test integer n and k.", sourcePage: 3 },
-  { number: 28, points: 5, prompt: "An ant walks along every edge of a cube at least once and returns to its starting vertex. What is the minimum possible length of its walk?", options: ["12", "14", "15", "16", "20"], answer: 3, explanation: "A closed walk covering all 12 cube edges must repeat enough edges to pair the four odd-degree vertices; the minimum extra distance is 4, giving length 16.", hint: "Use the Chinese postman idea: duplicate the shortest set of edges that makes all vertex degrees even.", sourcePage: 3 },
-  { number: 29, points: 5, prompt: "Ten different numbers are written down. Each number equal to the product of the other nine may be underlined. What is the maximum number that can be underlined?", options: ["1", "2", "3", "9", "10"], answer: 1, explanation: "Let P be the product of all ten numbers. If x is underlined, then x=P/x, so x²=P. This equation has at most two distinct real solutions, and both can occur as +√P and −√P when the other eight numbers have product −1. Therefore the maximum is 2.", hint: "Compare an underlined number x with the product P of all ten numbers: the product of the other nine is P/x.", sourcePage: 3 },
-  { number: 30, points: 5, prompt: "Several points lie on a straight line. Every pair is connected. One point lies within exactly 80 of the connecting lines, and another within exactly 90. How many points are on the line?", options: ["20", "22", "80", "90", "Not enough information"], answer: 1, explanation: "A point between the two endpoints lies on k(n-k) connecting segments. The two given products 80 and 90 determine n=22.", hint: "For a point with k points on one side and n-k-1 on the other, count the segments passing through it.", sourcePage: 3 }
+  {
+    number: 1,
+    points: 3,
+    prompt: "Which of the following numbers is closest to the product 20.15 x 51.02?",
+    options: [
+      "100",
+      "1000",
+      "10000",
+      "100000",
+      "1000000"
+    ],
+    answer: 0,
+    explanation: "The product is about 1028, so 1000 is closest.",
+    hint: "Estimate each factor and compare the product with the choices.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "1-0",
+        type: "text",
+        text: "100",
+        imageAlt: "A option"
+      },
+      {
+        id: "1-1",
+        type: "text",
+        text: "1000",
+        imageAlt: "B option"
+      },
+      {
+        id: "1-2",
+        type: "text",
+        text: "10000",
+        imageAlt: "C option"
+      },
+      {
+        id: "1-3",
+        type: "text",
+        text: "100000",
+        imageAlt: "D option"
+      },
+      {
+        id: "1-4",
+        type: "text",
+        text: "1000000",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 2,
+    points: 3,
+    prompt: "After Mum hung T-shirts on a washing line, her son hung one sock between each two T-shirts. There are 29 pieces of clothing on the line. How many are T-shirts?",
+    options: [
+      "10",
+      "11",
+      "13",
+      "14",
+      "15"
+    ],
+    answer: 4,
+    explanation: "If there are n shirts, there are n-1 socks, so 2n-1=29 and n=15.",
+    hint: "There is one fewer gap-sock than there are shirts.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "2-0",
+        type: "text",
+        text: "10",
+        imageAlt: "A option"
+      },
+      {
+        id: "2-1",
+        type: "text",
+        text: "11",
+        imageAlt: "B option"
+      },
+      {
+        id: "2-2",
+        type: "text",
+        text: "13",
+        imageAlt: "C option"
+      },
+      {
+        id: "2-3",
+        type: "text",
+        text: "14",
+        imageAlt: "D option"
+      },
+      {
+        id: "2-4",
+        type: "text",
+        text: "15",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 3,
+    points: 3,
+    prompt: "The grey areas in the square with side length a are bounded by a semicircle and two quarter-circles. What is their total area?",
+    options: [
+      "pi a^2/8",
+      "a^2/2",
+      "pi a^2/2",
+      "a^2/4",
+      "pi a^2/4"
+    ],
+    answer: 1,
+    explanation: "The semicircle and two quarter-circles combine to give total grey area a^2/2.",
+    hint: "Add the semicircle area and the two quarter-circle areas, accounting for the shared radius.",
+    image: "/assets/kangaroo/grades-9-10/junior/2015/questions/q-03-diagram.png",
+    imageAlt: "Square with a shaded semicircle and two shaded quarter-circles",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "3-0",
+        type: "text",
+        text: "pi a^2/8",
+        imageAlt: "A option"
+      },
+      {
+        id: "3-1",
+        type: "text",
+        text: "a^2/2",
+        imageAlt: "B option"
+      },
+      {
+        id: "3-2",
+        type: "text",
+        text: "pi a^2/2",
+        imageAlt: "C option"
+      },
+      {
+        id: "3-3",
+        type: "text",
+        text: "a^2/4",
+        imageAlt: "D option"
+      },
+      {
+        id: "3-4",
+        type: "text",
+        text: "pi a^2/4",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 4,
+    points: 3,
+    prompt: "Anna, Beate, and Cindy buy 30 biscuits together. They receive 10 each. Anna paid 80 cents, Beate 50 cents, and Cindy 20 cents. How many more biscuits should Anna receive if they share in proportion to what each paid?",
+    options: [
+      "10",
+      "9",
+      "8",
+      "7",
+      "6"
+    ],
+    answer: 4,
+    explanation: "The total payment is 150 cents. Anna paid 80/150 of the cost, so her fair share is 16 biscuits, six more than the 10 she received.",
+    hint: "Allocate the 30 biscuits in the ratio 80:50:20.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "4-0",
+        type: "text",
+        text: "10",
+        imageAlt: "A option"
+      },
+      {
+        id: "4-1",
+        type: "text",
+        text: "9",
+        imageAlt: "B option"
+      },
+      {
+        id: "4-2",
+        type: "text",
+        text: "8",
+        imageAlt: "C option"
+      },
+      {
+        id: "4-3",
+        type: "text",
+        text: "7",
+        imageAlt: "D option"
+      },
+      {
+        id: "4-4",
+        type: "text",
+        text: "6",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 5,
+    points: 3,
+    prompt: "Mr Hide remembers that his treasure is at least 5 m from a hedge and no more than 5 m from an old pear tree. Which picture best shows the area where he should look?",
+    options: [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    answer: 1,
+    explanation: "The treasure must lie outside the 5 m strip beside the hedge and inside the 5 m circle around the tree; choice B shows that intersection.",
+    hint: "Combine the region more than 5 m from the hedge with the region at most 5 m from the tree.",
+    imageExtra: "/assets/kangaroo/grades-9-10/junior/2015/questions/q-05-choices.png",
+    imageChoices: true,
+    imageAlt: "Five shaded search regions relative to a hedge and a tree",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "5-0",
+        type: "text",
+        text: "A",
+        imageAlt: "A option"
+      },
+      {
+        id: "5-1",
+        type: "text",
+        text: "B",
+        imageAlt: "B option"
+      },
+      {
+        id: "5-2",
+        type: "text",
+        text: "C",
+        imageAlt: "C option"
+      },
+      {
+        id: "5-3",
+        type: "text",
+        text: "D",
+        imageAlt: "D option"
+      },
+      {
+        id: "5-4",
+        type: "text",
+        text: "E",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 6,
+    points: 3,
+    prompt: "What is the units digit of 2015^2 + 2015^0 + 2015^1 + 2015^5?",
+    options: [
+      "1",
+      "5",
+      "6",
+      "7",
+      "9"
+    ],
+    answer: 2,
+    explanation: "The units digits are 5, 1, 5, and 5. Their sum is 16, so the units digit is 6.",
+    hint: "Only the units digit of each power matters.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "6-0",
+        type: "text",
+        text: "1",
+        imageAlt: "A option"
+      },
+      {
+        id: "6-1",
+        type: "text",
+        text: "5",
+        imageAlt: "B option"
+      },
+      {
+        id: "6-2",
+        type: "text",
+        text: "6",
+        imageAlt: "C option"
+      },
+      {
+        id: "6-3",
+        type: "text",
+        text: "7",
+        imageAlt: "D option"
+      },
+      {
+        id: "6-4",
+        type: "text",
+        text: "9",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 7,
+    points: 3,
+    prompt: "There are 33 teenagers in a class. Three like both computing and PE. Twice as many like computing only as like PE only. How many like computing?",
+    options: [
+      "15",
+      "18",
+      "20",
+      "22",
+      "23"
+    ],
+    answer: 4,
+    explanation: "Let PE-only be x and computing-only be 2x. Then 3x+3=33, so x=10; the number who like computing is 20+3=23.",
+    hint: "Partition the class into computing-only, PE-only, and both groups.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "7-0",
+        type: "text",
+        text: "15",
+        imageAlt: "A option"
+      },
+      {
+        id: "7-1",
+        type: "text",
+        text: "18",
+        imageAlt: "B option"
+      },
+      {
+        id: "7-2",
+        type: "text",
+        text: "20",
+        imageAlt: "C option"
+      },
+      {
+        id: "7-3",
+        type: "text",
+        text: "22",
+        imageAlt: "D option"
+      },
+      {
+        id: "7-4",
+        type: "text",
+        text: "23",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 8,
+    points: 3,
+    prompt: "Which of the following numbers is neither a square nor a cube number?",
+    options: [
+      "6^13",
+      "5^12",
+      "4^11",
+      "3^10",
+      "2^9"
+    ],
+    answer: 0,
+    explanation: "6^13 has exponents not divisible by 2 or 3 in its prime factorization, so it is neither a square nor a cube.",
+    hint: "A perfect square needs all prime exponents even; a perfect cube needs them all divisible by 3.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "8-0",
+        type: "text",
+        text: "6^13",
+        imageAlt: "A option"
+      },
+      {
+        id: "8-1",
+        type: "text",
+        text: "5^12",
+        imageAlt: "B option"
+      },
+      {
+        id: "8-2",
+        type: "text",
+        text: "4^11",
+        imageAlt: "C option"
+      },
+      {
+        id: "8-3",
+        type: "text",
+        text: "3^10",
+        imageAlt: "D option"
+      },
+      {
+        id: "8-4",
+        type: "text",
+        text: "2^9",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 9,
+    points: 3,
+    prompt: "Herr Waxi buys 100 candles. Each day he burns one candle. From the leftovers of seven burned candles he can make a new candle. After how many days must he buy new candles?",
+    options: [
+      "112",
+      "114",
+      "115",
+      "116",
+      "117"
+    ],
+    answer: 3,
+    explanation: "The 100 original candles produce 14 new candles and 2 leftovers. Burning those 14 produces 2 more candles; burning those 2 leaves only 4 stubs. The total is 100+14+2=116 days.",
+    hint: "Track both the number of new candles and leftover stubs after each batch of seven.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "9-0",
+        type: "text",
+        text: "112",
+        imageAlt: "A option"
+      },
+      {
+        id: "9-1",
+        type: "text",
+        text: "114",
+        imageAlt: "B option"
+      },
+      {
+        id: "9-2",
+        type: "text",
+        text: "115",
+        imageAlt: "C option"
+      },
+      {
+        id: "9-3",
+        type: "text",
+        text: "116",
+        imageAlt: "D option"
+      },
+      {
+        id: "9-4",
+        type: "text",
+        text: "117",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 10,
+    points: 3,
+    prompt: "A convex pentagon has all internal angles less than 180 degrees. Which list gives all possible numbers of right angles in it?",
+    options: [
+      "1, 2, 3",
+      "0, 1, 2, 3, 4",
+      "0, 1, 2, 3",
+      "0, 1, 2",
+      "1, 2"
+    ],
+    answer: 2,
+    explanation: "A convex pentagon's angle sum is 540 degrees. Zero through three right angles are possible, but four would force the remaining angle to be 180 degrees.",
+    hint: "Use the 540-degree interior-angle sum and the strict convexity condition.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "10-0",
+        type: "text",
+        text: "1, 2, 3",
+        imageAlt: "A option"
+      },
+      {
+        id: "10-1",
+        type: "text",
+        text: "0, 1, 2, 3, 4",
+        imageAlt: "B option"
+      },
+      {
+        id: "10-2",
+        type: "text",
+        text: "0, 1, 2, 3",
+        imageAlt: "C option"
+      },
+      {
+        id: "10-3",
+        type: "text",
+        text: "0, 1, 2",
+        imageAlt: "D option"
+      },
+      {
+        id: "10-4",
+        type: "text",
+        text: "1, 2",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 11,
+    points: 4,
+    prompt: "A decision die has three different positions shown. What is the probability of getting YES when rolling it once?",
+    options: [
+      "1/3",
+      "1/2",
+      "5/9",
+      "2/3",
+      "5/6"
+    ],
+    answer: 1,
+    explanation: "The three views show that 3 of the die's 6 faces say YES. Each face is equally likely to land uppermost, so the probability is 3/6=1/2.",
+    hint: "Use the three views to identify the die's faces without counting a face twice, then compare the YES faces with all six.",
+    image: "/assets/kangaroo/grades-9-10/junior/2015/questions/q-11-diagram.png",
+    imageAlt: "Three orientations of a decision die with YES and NO faces",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "11-0",
+        type: "text",
+        text: "1/3",
+        imageAlt: "A option"
+      },
+      {
+        id: "11-1",
+        type: "text",
+        text: "1/2",
+        imageAlt: "B option"
+      },
+      {
+        id: "11-2",
+        type: "text",
+        text: "5/9",
+        imageAlt: "C option"
+      },
+      {
+        id: "11-3",
+        type: "text",
+        text: "2/3",
+        imageAlt: "D option"
+      },
+      {
+        id: "11-4",
+        type: "text",
+        text: "5/6",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 12,
+    points: 4,
+    prompt: "The sides of the small squares in the diagram are 1. What is the shortest path from Start to Ziel if you may move only along square sides and diagonals?",
+    options: [
+      "2sqrt(5)",
+      "sqrt(10)+sqrt(2)",
+      "2+2sqrt(2)",
+      "4sqrt(2)",
+      "6"
+    ],
+    answer: 2,
+    explanation: "The shortest route uses two diagonals and two unit sides, for a length of 2sqrt(2)+2.",
+    hint: "Compare routes using the allowed unit and diagonal moves across the grid.",
+    image: "/assets/kangaroo/grades-9-10/junior/2015/questions/q-12-diagram.png",
+    imageAlt: "Two-row grid with Start and Ziel at opposite corners",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "12-0",
+        type: "text",
+        text: "2sqrt(5)",
+        imageAlt: "A option"
+      },
+      {
+        id: "12-1",
+        type: "text",
+        text: "sqrt(10)+sqrt(2)",
+        imageAlt: "B option"
+      },
+      {
+        id: "12-2",
+        type: "text",
+        text: "2+2sqrt(2)",
+        imageAlt: "C option"
+      },
+      {
+        id: "12-3",
+        type: "text",
+        text: "4sqrt(2)",
+        imageAlt: "D option"
+      },
+      {
+        id: "12-4",
+        type: "text",
+        text: "6",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 13,
+    points: 4,
+    prompt: "Three inhabitants each have at least two ears. Imi sees 8 ears, Dimi sees 7, and Trimi says she can only see 5. None can see their own ears. How many ears does Trimi have?",
+    options: [
+      "2",
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    answer: 2,
+    explanation: "Imi sees Dimi and Trimi, so their ears total 8. Dimi sees Imi and Trimi, totalling 7. Thus Imi has one more ear than Dimi; using Trimi's view of 5 gives Trimi 5 ears.",
+    hint: "Write one equation for the ears each person can see, excluding their own.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "13-0",
+        type: "text",
+        text: "2",
+        imageAlt: "A option"
+      },
+      {
+        id: "13-1",
+        type: "text",
+        text: "4",
+        imageAlt: "B option"
+      },
+      {
+        id: "13-2",
+        type: "text",
+        text: "5",
+        imageAlt: "C option"
+      },
+      {
+        id: "13-3",
+        type: "text",
+        text: "6",
+        imageAlt: "D option"
+      },
+      {
+        id: "13-4",
+        type: "text",
+        text: "7",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 14,
+    points: 4,
+    prompt: "A cuboid container has a square base of side 10 cm and is filled to height h. A metal cube of side 2 cm sinks to the bottom. The water reaches the top corner of the cube. Determine h.",
+    options: [
+      "1.92 cm",
+      "1.93 cm",
+      "1.90 cm",
+      "1.91 cm",
+      "1.94 cm"
+    ],
+    answer: 0,
+    explanation: "The cube displaces 8 cm^3, raising the level by 8/100=0.08 cm. Since the final level is 2 cm, the initial height is h=1.92 cm.",
+    hint: "Use the displaced volume over the 100 cm^2 base area to find how much the water level rises.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "14-0",
+        type: "text",
+        text: "1.92 cm",
+        imageAlt: "A option"
+      },
+      {
+        id: "14-1",
+        type: "text",
+        text: "1.93 cm",
+        imageAlt: "B option"
+      },
+      {
+        id: "14-2",
+        type: "text",
+        text: "1.90 cm",
+        imageAlt: "C option"
+      },
+      {
+        id: "14-3",
+        type: "text",
+        text: "1.91 cm",
+        imageAlt: "D option"
+      },
+      {
+        id: "14-4",
+        type: "text",
+        text: "1.94 cm",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 15,
+    points: 4,
+    prompt: "The square ABCD has area 80. Points E, F, G, and H lie on the sides with AE=BF=CG=DH. What is the grey area if AE=3 x EB?",
+    options: [
+      "20",
+      "25",
+      "30",
+      "35",
+      "40"
+    ],
+    answer: 1,
+    explanation: "NEEDS_REVIEW: the source diagram is needed to derive the shaded-area calculation; the answer key gives 25.",
+    hint: "Use the equal side segments and the 3:1 division to compare the shaded triangles with the square.",
+    sourcePage: 2,
+    image: "/assets/kangaroo/grades-9-10/junior/2015/questions/editor-q-15.png",
+    optionContent: [
+      {
+        id: "15-0",
+        type: "text",
+        text: "20",
+        imageAlt: "A option"
+      },
+      {
+        id: "15-1",
+        type: "text",
+        text: "25",
+        imageAlt: "B option"
+      },
+      {
+        id: "15-2",
+        type: "text",
+        text: "30",
+        imageAlt: "C option"
+      },
+      {
+        id: "15-3",
+        type: "text",
+        text: "35",
+        imageAlt: "D option"
+      },
+      {
+        id: "15-4",
+        type: "text",
+        text: "40",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 16,
+    points: 4,
+    prompt: "A father's whole-number age multiplied by his son's whole-number age is 2015. Both were born in the 20th century. What is their age gap?",
+    options: [
+      "26",
+      "29",
+      "31",
+      "34",
+      "36"
+    ],
+    answer: 3,
+    explanation: "2015=5 x 13 x 31. The valid father and son ages in the stated century are 65 and 31, a difference of 34.",
+    hint: "Factor 2015 and check factor pairs that can be ages in the specified century.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "16-0",
+        type: "text",
+        text: "26",
+        imageAlt: "A option"
+      },
+      {
+        id: "16-1",
+        type: "text",
+        text: "29",
+        imageAlt: "B option"
+      },
+      {
+        id: "16-2",
+        type: "text",
+        text: "31",
+        imageAlt: "C option"
+      },
+      {
+        id: "16-3",
+        type: "text",
+        text: "34",
+        imageAlt: "D option"
+      },
+      {
+        id: "16-4",
+        type: "text",
+        text: "36",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 17,
+    points: 4,
+    prompt: "Four objects a,b,c,d are on a double balance. Two are exchanged, changing the balance positions as shown. Which two objects were exchanged?",
+    options: [
+      "a and b",
+      "b and d",
+      "b and c",
+      "a and d",
+      "a and c"
+    ],
+    answer: 3,
+    explanation: "NEEDS_REVIEW: the balance diagram is essential to compare the changes in the linked arms; the answer key gives D.",
+    hint: "Compare how swapping each candidate pair changes the torque on both balances.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "17-0",
+        type: "text",
+        text: "a and b",
+        imageAlt: "A option"
+      },
+      {
+        id: "17-1",
+        type: "text",
+        text: "b and d",
+        imageAlt: "B option"
+      },
+      {
+        id: "17-2",
+        type: "text",
+        text: "b and c",
+        imageAlt: "C option"
+      },
+      {
+        id: "17-3",
+        type: "text",
+        text: "a and d",
+        imageAlt: "D option"
+      },
+      {
+        id: "17-4",
+        type: "text",
+        text: "a and c",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-9-10/junior/2015/questions/editor-q-17.png"
+  },
+  {
+    number: 18,
+    points: 4,
+    prompt: "The roots of x^2-85x+c=0 are prime numbers. What is the digit sum of c?",
+    options: [
+      "12",
+      "13",
+      "14",
+      "15",
+      "21"
+    ],
+    answer: 1,
+    explanation: "The two prime roots sum to 85. The pair is 2 and 83, so c=166 and its digit sum is 13.",
+    hint: "Use the sum of roots and the fact that 85 is odd, so one prime root must be 2.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "18-0",
+        type: "text",
+        text: "12",
+        imageAlt: "A option"
+      },
+      {
+        id: "18-1",
+        type: "text",
+        text: "13",
+        imageAlt: "B option"
+      },
+      {
+        id: "18-2",
+        type: "text",
+        text: "14",
+        imageAlt: "C option"
+      },
+      {
+        id: "18-3",
+        type: "text",
+        text: "15",
+        imageAlt: "D option"
+      },
+      {
+        id: "18-4",
+        type: "text",
+        text: "21",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 19,
+    points: 4,
+    prompt: "How many three-digit positive integers have digits that, when placed side by side, always differ by 3?",
+    options: [
+      "12",
+      "14",
+      "16",
+      "20",
+      "27"
+    ],
+    answer: 3,
+    explanation: "Counting valid digit sequences where each adjacent pair differs by 3 gives 20 three-digit numbers.",
+    hint: "Build the allowed transitions between digits 0-9 and count three-digit paths, excluding a leading zero.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "19-0",
+        type: "text",
+        text: "12",
+        imageAlt: "A option"
+      },
+      {
+        id: "19-1",
+        type: "text",
+        text: "14",
+        imageAlt: "B option"
+      },
+      {
+        id: "19-2",
+        type: "text",
+        text: "16",
+        imageAlt: "C option"
+      },
+      {
+        id: "19-3",
+        type: "text",
+        text: "20",
+        imageAlt: "D option"
+      },
+      {
+        id: "19-4",
+        type: "text",
+        text: "27",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 20,
+    points: 4,
+    prompt: "Which value of n is a counterexample to: if n is prime, then exactly one of n-2 and n+2 is prime?",
+    options: [
+      "11",
+      "19",
+      "21",
+      "29",
+      "37"
+    ],
+    answer: 4,
+    explanation: "For n=37, both 35 and 39 are composite, so neither is prime; this is a counterexample.",
+    hint: "Check the two numbers two away from each prime choice.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "20-0",
+        type: "text",
+        text: "11",
+        imageAlt: "A option"
+      },
+      {
+        id: "20-1",
+        type: "text",
+        text: "19",
+        imageAlt: "B option"
+      },
+      {
+        id: "20-2",
+        type: "text",
+        text: "21",
+        imageAlt: "C option"
+      },
+      {
+        id: "20-3",
+        type: "text",
+        text: "29",
+        imageAlt: "D option"
+      },
+      {
+        id: "20-4",
+        type: "text",
+        text: "37",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 21,
+    points: 5,
+    prompt: "Seven sections are bounded by three circles. Each section contains a number equal to the sum of all numbers in adjacent sections. Two numbers are 1 and 2 as shown. What is the number in the inner area?",
+    options: [
+      "0",
+      "-3",
+      "3",
+      "-6",
+      "6"
+    ],
+    answer: 0,
+    explanation: "Using the adjacency sums for the three-circle arrangement and the two given values gives 0 in the central region.",
+    hint: "Write one equation for each region using the sections that share more than one corner point.",
+    image: "/assets/kangaroo/grades-9-10/junior/2015/questions/editor-q-21.png",
+    imageAlt: "Three-circle Venn diagram with 1 and 2 in two regions",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "21-0",
+        type: "text",
+        text: "0",
+        imageAlt: "A option"
+      },
+      {
+        id: "21-1",
+        type: "text",
+        text: "-3",
+        imageAlt: "B option"
+      },
+      {
+        id: "21-2",
+        type: "text",
+        text: "3",
+        imageAlt: "C option"
+      },
+      {
+        id: "21-3",
+        type: "text",
+        text: "-6",
+        imageAlt: "D option"
+      },
+      {
+        id: "21-4",
+        type: "text",
+        text: "6",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 22,
+    points: 5,
+    prompt: "How many two-digit numbers can be written as a sum of exactly six different powers of two?",
+    options: [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    answer: 2,
+    explanation: "The qualifying two-digit sums are 63 and 95, each written as six distinct powers of two, so there are 2.",
+    hint: "Use binary representation: the number of powers is the number of 1s in its binary form.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "22-0",
+        type: "text",
+        text: "0",
+        imageAlt: "A option"
+      },
+      {
+        id: "22-1",
+        type: "text",
+        text: "1",
+        imageAlt: "B option"
+      },
+      {
+        id: "22-2",
+        type: "text",
+        text: "2",
+        imageAlt: "C option"
+      },
+      {
+        id: "22-3",
+        type: "text",
+        text: "3",
+        imageAlt: "D option"
+      },
+      {
+        id: "22-4",
+        type: "text",
+        text: "4",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 23,
+    points: 5,
+    prompt: "Petra has three different dictionaries and two different novels. How many arrangements keep all dictionaries together and all novels together?",
+    options: [
+      "12",
+      "24",
+      "30",
+      "60",
+      "120"
+    ],
+    answer: 1,
+    explanation: "Treat each group as a block. The two blocks can be ordered in 2 ways, the dictionaries in 3! ways, and the novels in 2! ways: 2 x 6 x 2=24.",
+    hint: "Arrange the two subject blocks, then permute the books within each block.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "23-0",
+        type: "text",
+        text: "12",
+        imageAlt: "A option"
+      },
+      {
+        id: "23-1",
+        type: "text",
+        text: "24",
+        imageAlt: "B option"
+      },
+      {
+        id: "23-2",
+        type: "text",
+        text: "30",
+        imageAlt: "C option"
+      },
+      {
+        id: "23-3",
+        type: "text",
+        text: "60",
+        imageAlt: "D option"
+      },
+      {
+        id: "23-4",
+        type: "text",
+        text: "120",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 24,
+    points: 5,
+    prompt: "Lines parallel to base AC of triangle ABC are drawn through X and Y. The grey areas are equal. If BX:XA=4:1, what is BY:YA?",
+    options: [
+      "1:1",
+      "2:1",
+      "3:1",
+      "3:2",
+      "4:3"
+    ],
+    answer: 3,
+    explanation: "The area ratios of similar triangles vary as the square of the side ratios. Equating the grey bands gives BY:YA=3:2.",
+    hint: "Express each shaded area as a difference of similar-triangle areas.",
+    image: "/assets/kangaroo/grades-9-10/junior/2015/questions/editor-q-24.png",
+    imageAlt: "Two triangles with parallel cuts and equal grey areas",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "24-0",
+        type: "text",
+        text: "1:1",
+        imageAlt: "A option"
+      },
+      {
+        id: "24-1",
+        type: "text",
+        text: "2:1",
+        imageAlt: "B option"
+      },
+      {
+        id: "24-2",
+        type: "text",
+        text: "3:1",
+        imageAlt: "C option"
+      },
+      {
+        id: "24-3",
+        type: "text",
+        text: "3:2",
+        imageAlt: "D option"
+      },
+      {
+        id: "24-4",
+        type: "text",
+        text: "4:3",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 25,
+    points: 5,
+    prompt: "In a right-angled triangle, the angle bisector of an acute angle divides the opposite side into segments of lengths 1 and 2. How long is the angle bisector?",
+    options: [
+      "sqrt(2)",
+      "sqrt(3)",
+      "sqrt(4)",
+      "sqrt(5)",
+      "sqrt(6)"
+    ],
+    answer: 2,
+    explanation: "The angle-bisector theorem gives adjacent sides in ratio 1:2. Applying the right-triangle relation gives a bisector length of sqrt(4)=2.",
+    hint: "Combine the angle-bisector theorem with the Pythagorean theorem.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "25-0",
+        type: "text",
+        text: "sqrt(2)",
+        imageAlt: "A option"
+      },
+      {
+        id: "25-1",
+        type: "text",
+        text: "sqrt(3)",
+        imageAlt: "B option"
+      },
+      {
+        id: "25-2",
+        type: "text",
+        text: "sqrt(4)",
+        imageAlt: "C option"
+      },
+      {
+        id: "25-3",
+        type: "text",
+        text: "sqrt(5)",
+        imageAlt: "D option"
+      },
+      {
+        id: "25-4",
+        type: "text",
+        text: "sqrt(6)",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 26,
+    points: 5,
+    prompt: "Three different digits a,b,c form the two-digit numbers ab, bc, and ca. How many choices satisfy ab<bc<ca?",
+    options: [
+      "84",
+      "96",
+      "125",
+      "201",
+      "502"
+    ],
+    answer: 0,
+    explanation: "From 10a+b<10b+c we must have a<b; otherwise the tens-digit difference is at least 10, too large for the units digits to reverse. Similarly, bc<ca forces b<c. Thus a,b,c are increasing nonzero digits, so choosing any 3 of 1,…,9 gives C(9,3)=84 choices.",
+    hint: "Compare the tens digits first: a difference of 1 in the tens place outweighs any possible units-digit difference.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "26-0",
+        type: "text",
+        text: "84",
+        imageAlt: "A option"
+      },
+      {
+        id: "26-1",
+        type: "text",
+        text: "96",
+        imageAlt: "B option"
+      },
+      {
+        id: "26-2",
+        type: "text",
+        text: "125",
+        imageAlt: "C option"
+      },
+      {
+        id: "26-3",
+        type: "text",
+        text: "201",
+        imageAlt: "D option"
+      },
+      {
+        id: "26-4",
+        type: "text",
+        text: "502",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 27,
+    points: 5,
+    prompt: "One of the numbers 1,2,...,n is crossed out, and the average of the remaining numbers is 4.75. What number was crossed out?",
+    options: [
+      "5",
+      "7",
+      "8",
+      "9",
+      "It cannot be determined for certain"
+    ],
+    answer: 1,
+    explanation: "Solving (n(n+1)/2-k)/(n-1)=4.75 for an integer k in 1..n gives the crossed-out number 7.",
+    hint: "Set the remaining sum equal to 4.75(n-1) and test integer n and k.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "27-0",
+        type: "text",
+        text: "5",
+        imageAlt: "A option"
+      },
+      {
+        id: "27-1",
+        type: "text",
+        text: "7",
+        imageAlt: "B option"
+      },
+      {
+        id: "27-2",
+        type: "text",
+        text: "8",
+        imageAlt: "C option"
+      },
+      {
+        id: "27-3",
+        type: "text",
+        text: "9",
+        imageAlt: "D option"
+      },
+      {
+        id: "27-4",
+        type: "text",
+        text: "It cannot be determined for certain",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 28,
+    points: 5,
+    prompt: "An ant walks along every edge of a cube at least once and returns to its starting vertex. What is the minimum possible length of its walk?",
+    options: [
+      "12",
+      "14",
+      "15",
+      "16",
+      "20"
+    ],
+    answer: 3,
+    explanation: "A closed walk covering all 12 cube edges must repeat enough edges to pair the four odd-degree vertices; the minimum extra distance is 4, giving length 16.",
+    hint: "Use the Chinese postman idea: duplicate the shortest set of edges that makes all vertex degrees even.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "28-0",
+        type: "text",
+        text: "12",
+        imageAlt: "A option"
+      },
+      {
+        id: "28-1",
+        type: "text",
+        text: "14",
+        imageAlt: "B option"
+      },
+      {
+        id: "28-2",
+        type: "text",
+        text: "15",
+        imageAlt: "C option"
+      },
+      {
+        id: "28-3",
+        type: "text",
+        text: "16",
+        imageAlt: "D option"
+      },
+      {
+        id: "28-4",
+        type: "text",
+        text: "20",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 29,
+    points: 5,
+    prompt: "Ten different numbers are written down. Each number equal to the product of the other nine may be underlined. What is the maximum number that can be underlined?",
+    options: [
+      "1",
+      "2",
+      "3",
+      "9",
+      "10"
+    ],
+    answer: 1,
+    explanation: "Let P be the product of all ten numbers. If x is underlined, then x=P/x, so x²=P. This equation has at most two distinct real solutions, and both can occur as +√P and −√P when the other eight numbers have product −1. Therefore the maximum is 2.",
+    hint: "Compare an underlined number x with the product P of all ten numbers: the product of the other nine is P/x.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "29-0",
+        type: "text",
+        text: "1",
+        imageAlt: "A option"
+      },
+      {
+        id: "29-1",
+        type: "text",
+        text: "2",
+        imageAlt: "B option"
+      },
+      {
+        id: "29-2",
+        type: "text",
+        text: "3",
+        imageAlt: "C option"
+      },
+      {
+        id: "29-3",
+        type: "text",
+        text: "9",
+        imageAlt: "D option"
+      },
+      {
+        id: "29-4",
+        type: "text",
+        text: "10",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 30,
+    points: 5,
+    prompt: "Several points lie on a straight line. Every pair is connected. One point lies within exactly 80 of the connecting lines, and another within exactly 90. How many points are on the line?",
+    options: [
+      "20",
+      "22",
+      "80",
+      "90",
+      "Not enough information"
+    ],
+    answer: 1,
+    explanation: "A point between the two endpoints lies on k(n-k) connecting segments. The two given products 80 and 90 determine n=22.",
+    hint: "For a point with k points on one side and n-k-1 on the other, count the segments passing through it.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "30-0",
+        type: "text",
+        text: "20",
+        imageAlt: "A option"
+      },
+      {
+        id: "30-1",
+        type: "text",
+        text: "22",
+        imageAlt: "B option"
+      },
+      {
+        id: "30-2",
+        type: "text",
+        text: "80",
+        imageAlt: "C option"
+      },
+      {
+        id: "30-3",
+        type: "text",
+        text: "90",
+        imageAlt: "D option"
+      },
+      {
+        id: "30-4",
+        type: "text",
+        text: "Not enough information",
+        imageAlt: "E option"
+      }
+    ]
+  }
 ];
 
 const sections2015Junior: Section[] = [
-  { points: 3, label: "Section 1", range: "Questions 1-10", accent: "coral" },
-  { points: 4, label: "Section 2", range: "Questions 11-20", accent: "blue" },
-  { points: 5, label: "Section 3", range: "Questions 21-30", accent: "purple" }
+  {
+    points: 3,
+    label: "Section 1",
+    range: "Questions 1-10",
+    accent: "coral"
+  },
+  {
+    points: 4,
+    label: "Section 2",
+    range: "Questions 11-20",
+    accent: "blue"
+  },
+  {
+    points: 5,
+    label: "Section 3",
+    range: "Questions 21-30",
+    accent: "purple"
+  }
 ];
 
 export const edition2015Junior: QuestionSet = {
@@ -49,5 +1489,5 @@ export const edition2015Junior: QuestionSet = {
   timeLimitMinutes: 75,
   sourceUrl: "https://www.matematica.pt/en/docs/kangaroo/enunciados/2015/2015_Junior.pdf",
   questions: questions2015Junior,
-  sections: sections2015Junior
+  sections: sections2015Junior,
 };

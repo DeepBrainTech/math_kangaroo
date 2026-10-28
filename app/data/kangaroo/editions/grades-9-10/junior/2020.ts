@@ -1,42 +1,1499 @@
 import type { Question, QuestionSet, Section } from "../../../types";
 
 const questions2020Junior: Question[] = [
-  { number: 1, points: 3, prompt: "When the results of the following additions are written in descending order, what sum will be in the middle?", options: ["1 + 2 + 345", "12 + 3 + 45", "1 + 23 + 45", "12 + 34 + 5", "1 + 234 + 5"], answer: 2, explanation: "The sums are 348, 60, 69, 51, and 240. In descending order the middle sum is 69, choice C.", hint: "Evaluate all five sums and sort them from greatest to least.", sourcePage: 1 },
-  { number: 2, points: 3, prompt: "Who is the mother of the daughter of the mother of Lia's daughter?", options: ["Lia's sister", "Lia", "Lia's mother", "Lia's niece", "Lia's aunt"], answer: 3, explanation: "NEEDS_REVIEW: the answer key marks D, but the nested family relationship appears to identify Lia; confirm the exact intended parsing before finalizing.", hint: "Resolve the relationship from the innermost phrase outward, one generation at a time.", sourcePage: 1 },
-  { number: 3, points: 3, prompt: "When Cosme correctly wears his new shirt, its horizontal stripes form seven closed arches around his body. This morning he buttoned it incorrectly. How many open arches were there around his body?", options: ["0", "1", "2", "3", "4"], answer: 1, explanation: "The incorrect buttoning leaves one stripe path open rather than closing all seven arches.", hint: "Follow each stripe around the shirt and count the paths that fail to close.", image: "/assets/kangaroo/grades-9-10/junior/2020/questions/q-03-diagram.png", imageAlt: "Correct and incorrect ways of buttoning Cosme's striped shirt", sourcePage: 1 },
-  { number: 4, points: 3, prompt: "Four integers have sum S and product 9. What is the lowest possible value of S?", options: ["-18", "-12", "-8", "0", "6"], answer: 1, explanation: "The absolute values of the four integers must multiply to 9, so they are either 9,1,1,1 or 3,3,1,1 in some order. Because the product is positive, there must be an even number of negative factors. Making all four factors negative gives sums −12 or −8, and the other sign patterns have larger sums. Thus the minimum is −12.", hint: "List the ways to factor 9 into four positive factors, then choose signs that keep the product positive and make the sum as small as possible.", sourcePage: 1 },
-  { number: 5, points: 3, prompt: "Maria has ten pieces of paper, some squares and the rest triangles. She cuts each square along a diagonal. The total number of vertices of the resulting pieces is 48. How many squares were there originally?", options: ["3", "4", "5", "6", "7"], answer: 3, explanation: "If s pieces are squares, cutting them gives 6s vertices; the other 10-s triangles contribute 3(10-s). Thus 30+3s=48 and s=6.", hint: "Count how many vertices each original square and triangle contributes after the cuts.", sourcePage: 1 },
-  { number: 6, points: 3, prompt: "In the addition shown, different letters represent different digits and equal letters represent equal digits. The result is a four-digit number and B is nonzero. What is the sum of the digits of this number?", options: ["AA", "BB", "AB", "BE", "EA"], answer: 1, explanation: "The addition determines a four-digit result whose digit sum is BB.", hint: "Use the column carries and the distinct-digit conditions to determine the result.", image: "/assets/kangaroo/grades-9-10/junior/2020/questions/q-06-diagram.png", imageAlt: "Letter addition A + AB + ABA = BEBA", sourcePage: 1 },
-  { number: 7, points: 3, prompt: "The digits of the year 2020 are repeated twice each and are different. How many times has this happened from the year 1000 until now?", options: ["11", "17", "20", "24", "29"], answer: 4, explanation: "Counting years from 1000 through 2020 whose four digits form two distinct pairs gives 29.", hint: "Count the possible repeated digit pairs by their thousands and hundreds digits, then stop at 2020.", sourcePage: 1 },
-  { number: 8, points: 3, prompt: "Figures can be formed from nine unit squares joined side by side. One figure has the largest possible perimeter. What is that perimeter?", options: ["12 cm", "14 cm", "16 cm", "18 cm", "20 cm"], answer: 4, explanation: "The greatest perimeter comes from arranging the nine squares in a single row, giving 2(9+1)=20 cm.", hint: "Separate squares increase the perimeter; among connected figures, a straight row maximizes it.", image: "/assets/kangaroo/grades-9-10/junior/2020/questions/q-08-diagram.png", imageAlt: "Example polyomino made from nine unit squares", sourcePage: 1 },
-  { number: 9, points: 3, prompt: "Four points are marked on a grid of 1 cm squares. Among all triangles with vertices at three of these points, one has the largest area. What is its area?", options: ["2.5 cm^2", "3.5 cm^2", "4.5 cm^2", "5.5 cm^2", "6.5 cm^2"], answer: 3, explanation: "Using the three points that maximize the base-height product gives a triangle area of 5.5 cm^2.", hint: "Use each possible triple and calculate half the base times perpendicular height.", image: "/assets/kangaroo/grades-9-10/junior/2020/questions/q-09-diagram.png", imageAlt: "Four marked points on a square grid", sourcePage: 2 },
-  { number: 10, points: 3, prompt: "Martinho made a bicolour kite with six pieces of bamboo. Two pieces form perpendicular diagonals; the other four join the midpoints of the kite's sides. What is the ratio between the blue and yellow areas?", options: ["2/3", "3/2", "3/4", "4/3", "1"], answer: 4, explanation: "The perpendicular diagonals divide the kite into four triangles, and the midpoint segments split the blue and yellow regions into equal total areas. The ratio is 1.", hint: "Compare the areas of the four triangles formed by the diagonals and midpoint joins.", image: "/assets/kangaroo/grades-9-10/junior/2020/questions/q-10-diagram.png", imageAlt: "Bicolour kite divided by perpendicular diagonals and midpoint segments", sourcePage: 2 },
-  { number: 11, points: 4, prompt: "Adam, Breno, and Carlos share a treadmill. Nobody uses it on Wednesdays or Sundays, and at most one person uses it each day. Adam uses it four times a week, Breno five times, and Carlos once. On four consecutive days Adam uses it on the first but not the second, while Breno does not use it on the fourth. Which day does Carlos use it?", options: ["Friday", "Saturday", "Tuesday", "Thursday", "Monday"], answer: 0, explanation: "Fitting the ten weekly uses into the permitted days and applying the four-day conditions leaves Friday as Carlos's day.", hint: "Treat each permitted weekday as one user's slot and apply the consecutive-day restrictions.", sourcePage: 2 },
-  { number: 12, points: 4, prompt: "Integers a, b, c, and d satisfy 2ab=3cd. Which of the following numbers can be the product abcd?", options: ["50", "100", "150", "200", "250"], answer: 2, explanation: "Since 2ab=3cd and 2 and 3 are coprime, write ab=3k and cd=2k for an integer k. Then abcd=6k². Of the choices, only 150 is 6 times a square (6·5²); for instance, ab=15 and cd=10 are achievable with integers.", hint: "Use the equality to write ab and cd as multiples of 3 and 2, then look for a choice equal to six times a square.", sourcePage: 2 },
-  { number: 13, points: 4, prompt: "The shortest way from Atown to Cetown is through Betown. Returning from Cetown to Atown, we first see the signposts on the left side of the road and later those on the right. How far is it from Betown to Atown?", options: ["1 km", "2 km", "3 km", "4 km", "5 km"], answer: 3, explanation: "Reading the paired signs in the return direction gives a 4 km distance from Betown to Atown.", hint: "Interpret each sign from the direction of travel and use the known distances between towns.", image: "/assets/kangaroo/grades-9-10/junior/2020/questions/q-13-diagram.png", imageAlt: "Two signposts for Atown, Betown, and Cetown with distances", sourcePage: 2 },
-  { number: 14, points: 4, prompt: "Two nonsimilar isosceles triangles have equal perimeters and each has a side of length 20 cm. If one triangle has a side of length 8 cm, which could be a side length of the other triangle?", options: ["8 cm", "10 cm", "12 cm", "14 cm", "16 cm"], answer: 3, explanation: "The triangle with sides 20 and 8 must have sides 20,20,8; 20,8,8 is impossible by the triangle inequality. Its perimeter is 48 cm. In the other triangle, let 20 be the base and x the equal side length: 20+2x=48, so x=14. This gives the nonsimilar triangle 14,14,20.", hint: "First determine which isosceles triangle can have both a 20 cm side and an 8 cm side.", sourcePage: 2 },
-  { number: 15, points: 4, prompt: "Toninho writes strictly positive consecutive integers in nine places so the sum of the three numbers on each diameter is 24. What is the largest possible sum of all nine numbers?", options: ["81", "90", "99", "108", "117"], answer: 0, explanation: "Let the nine consecutive integers be n through n+8, and let c be the centre. Adding the four diameter equations gives (sum of outer numbers)+4c=96. Hence the sum of all nine numbers is 96−3c. Since the total of n through n+8 is 9n+36, this also gives c=20−3n. As c must be among n,…,n+8, n can be 3, 4, or 5; the smallest possible c is 5, attained at n=5. The outer values 6 through 13 can then be paired to sum 19 on each diameter, so the maximum 96−3·5=81 is attainable.", hint: "Add the four diameter equations, remembering that the centre is counted four times and each outer position once.", image: "/assets/kangaroo/grades-9-10/junior/2020/questions/q-15-diagram.png", imageAlt: "Eight outer squares and one central square arranged in four diameters", sourcePage: 2 },
-  { number: 16, points: 4, prompt: "The number 2020 has the property that the two digits on the left form the same number as the two digits on the right. How many four-digit numbers, including 2020, have this property?", options: ["49", "50", "81", "90", "99"], answer: 3, explanation: "The first two-digit number can be 10 through 99, giving 90 choices, and the last two digits must match it.", hint: "Choose the first two digits; the first cannot be zero.", sourcePage: 3 },
-  { number: 17, points: 4, prompt: "Two circles are tangent to each other and to two sides of a square. What is the measure of angle AOB, determined by the three points of tangency?", options: ["110 degrees", "112 degrees", "120 degrees", "128 degrees", "135 degrees"], answer: 4, explanation: "The radii to the tangency points and the square's diagonal give equal right triangles; the angle at O is 135 degrees.", hint: "Use the perpendicular radii at the side tangencies and the 45-degree square diagonal.", image: "/assets/kangaroo/grades-9-10/junior/2020/questions/q-17-diagram.png", imageAlt: "Two tangent circles inside a square with points A, O, and B marked", sourcePage: 3 },
-  { number: 18, points: 4, prompt: "Roberto and Maria leave together on a circular track. Maria completes a lap 24 minutes before Roberto and waits. When Roberto reaches the point, Maria rides in the opposite direction and they meet 5 minutes later. How long does Roberto take to complete a lap?", options: ["30 min", "29 min", "28 min", "27 min", "26 min"], answer: 0, explanation: "Let Roberto's lap time be T, so Maria's is T−24. Once Roberto reaches the start/finish point, they move in opposite directions; in 5 minutes their combined distances make one lap: 5/T+5/(T−24)=1. This gives T²−34T+120=0, whose roots are 30 and 4. Since T>24, Roberto's lap takes 30 minutes.", hint: "Set the sum of their opposite-direction speeds times 5 minutes equal to one lap.", sourcePage: 3 },
-  { number: 19, points: 4, prompt: "Let 17x+51y=102. If x and y are positive integers, what is x-3y?", options: ["-3", "0", "3", "12", "undetermined"], answer: 1, explanation: "Divide by 17 to get x+3y=6. Since x and y are positive integers, y can only be 1; then x=3. Thus x−3y=3−3=0.", hint: "Divide by 17, then use positivity to find the possible values of y.", sourcePage: 3 },
-  { number: 20, points: 4, prompt: "Ana places a token in each cell of an n x n board so that no two token cells have a common point. The examples show the pattern for 5 x 5 and 6 x 6 boards. How many chips can she place on a 2020 x 2020 board?", options: ["2020", "4039", "674^2", "1010^2", "2020^2"], answer: 3, explanation: "To avoid even touching at a corner, at most one cell can be selected in each 2 x 2 block. A checker pattern achieves 1010^2 tokens on a 2020 x 2020 board.", hint: "Partition the board into 2 x 2 blocks and choose the maximum non-touching pattern in each block.", image: "/assets/kangaroo/grades-9-10/junior/2020/questions/q-20-diagram.png", imageAlt: "Examples of maximum non-touching token placements on 5-by-5 and 6-by-6 boards", sourcePage: 3 },
-  { number: 21, points: 5, prompt: "A unit-square window is divided into four triangles with areas A, B, C, and D. The areas satisfy 3A=4B and 2C=3D. A fly is at the point where the triangles meet and flies directly to the nearest side. How far does it fly?", options: ["40 cm", "30 cm", "25 cm", "20 cm", "10 cm"], answer: 0, explanation: "The two area ratios determine the distances from the centre to the four sides. The shortest distance is 40 cm.", hint: "Express each triangle area as half the side length times its perpendicular distance from the centre.", image: "/assets/kangaroo/grades-9-10/junior/2020/questions/q-21-diagram.png", imageAlt: "Square divided into four triangles labelled A, B, C, and D with a central point", sourcePage: 3 },
-  { number: 22, points: 5, prompt: "Julia puts nine chips numbered 1 through 9 in a box. She draws them one by one without looking and writes their digits in order to form a nine-digit number. What is the probability that the number is divisible by 45?", options: ["1/9", "2/9", "1/3", "4/9", "8/9"], answer: 0, explanation: "The digit sum is 45, so divisibility by 9 is automatic. Divisibility by 5 requires the last digit to be 5, which occurs with probability 1/9.", hint: "Use divisibility by 5 and 9 separately.", image: "/assets/kangaroo/grades-9-10/junior/2020/questions/q-22-diagram.png", imageAlt: "Nine numbered chips from 1 through 9", sourcePage: 3 },
-  { number: 23, points: 5, prompt: "A rectangular sheet with one side of 12 cm is folded along its 20 cm diagonal. What is the overlapping area of the folded parts, shown in grey?", options: ["24 cm^2", "36 cm^2", "48 cm^2", "50 cm^2", "75 cm^2"], answer: 4, explanation: "The rectangle's other side is 16 cm. The fold geometry makes the overlap triangle have base 12 cm and height 12.5 cm, so its area is 75 cm^2.", hint: "Use the 12-16-20 right triangle and the reflection created by the fold.", image: "/assets/kangaroo/grades-9-10/junior/2020/questions/q-23-diagram.png", imageAlt: "A rectangle folded along a 20 cm diagonal with a shaded overlap", sourcePage: 4 },
-  { number: 24, points: 5, prompt: "Carlos tells the truth on alternate days and lies on the others. Today he made exactly four of five statements. Which statement was not made by him?", options: ["My number of male and female friends is prime.", "My male friends equal my female friends.", "My name is Carlos.", "Three male friends are older than me.", "I always tell the truth."], answer: 2, explanation: "On a lying day, the true statement about his name cannot be one of the statements he makes while exactly four are true; checking both day types rules out C.", hint: "Determine whether today is a truth or lie day, then test which statement's truth value is incompatible.", sourcePage: 4 },
-  { number: 25, points: 5, prompt: "Julia writes four positive integers, one at each vertex of a triangular-base pyramid. The sum on one face and the products on the other two faces are 15, 20, and 30. What is the greatest possible product of the four numbers?", options: ["40", "50", "60", "90", "120"], answer: 4, explanation: "Let the three vertices of the face with sum 15 be a,b,c and let d be the fourth. The two product faces share d and one base vertex, so their products 20 and 30 imply that the other two base values are in ratio 2:3. Write them as 2k and 3k; the remaining base value is 15−5k. The face product equations give (15−5k)kd=10, so k=1 or 2. The total product is 60k, whose maximum is 120 when k=2.", hint: "Use the two face products to compare their shared vertex factors, then use the face sum to constrain the remaining values.", image: "/assets/kangaroo/grades-9-10/junior/2020/questions/q-25-diagram.png", imageAlt: "Triangular pyramid with one shaded face and a dashed hidden edge", sourcePage: 4 },
-  { number: 26, points: 5, prompt: "Pedro assembles a cube from 64 equal white cubes and paints it red. He disassembles it and reassembles it so all its faces are white, then paints the cube red again. How many white faces of the small cubes remain white?", options: ["0", "72", "109", "144", "192"], answer: 4, explanation: "A 4×4×4 cube has 6·4²=96 small faces on its outside. After the pieces are turned so every outside face is white, the second coat makes those 96 faces red. Initially the 64 little cubes had 384 faces, of which 96 were red, leaving 288 white; therefore 288−96=192 white faces stay unpainted inside.", hint: "Count the small-cube faces that were white after the first painting, then subtract the faces exposed to the second coat.", sourcePage: 4 },
-  { number: 27, points: 5, prompt: "In the 4 x 4 grid, positive integers are written in the cells. The sums of the four numbers in each row and column must be equal. Some entries are shown. What is the smallest possible sum of the six missing numbers?", options: ["32", "24", "20", "18", "12"], answer: 1, explanation: "Balancing the four row sums and four column sums with positive integers gives minimum total 24 for the six blank cells.", hint: "Let the common row and column sum be S, then derive lower bounds from each partially filled row and column.", image: "/assets/kangaroo/grades-9-10/junior/2020/questions/q-27-diagram.png", imageAlt: "4-by-4 grid with six given entries and ten blank cells", sourcePage: 4 },
-  { number: 28, points: 5, prompt: "A rectangular plot is divided into two lots by an ABCDE fence. AB, BC, and CD are parallel to the sides of the rectangle and have lengths 30 m, 24 m, and 10 m. The owners replace the fence with a straight fence AE without changing either lot's area. How far from point D should E be?", options: ["8 m", "10 m", "12 m", "14 m", "16 m"], answer: 2, explanation: "Equal lot areas require the straight fence to preserve the same signed area on either side of the original stepped fence. Using the 30, 24, and 10 m offsets gives DE=12 m.", hint: "Equate the areas on both sides of the stepped and straight fences.", image: "/assets/kangaroo/grades-9-10/junior/2020/questions/q-28-diagram.png", imageAlt: "Rectangular lots divided by stepped fence ABCDE and proposed straight fence AE", sourcePage: 4 },
-  { number: 29, points: 5, prompt: "The number K consists of n digits, all equal to 9. What is the sum of the digits of K^3?", options: ["n+17", "a string of n 9s", "a string of 3n 9s", "18n", "10^(6n)-1"], answer: 3, explanation: "A number of n nines is (10^n-1)/9. Cubing and carrying the decimal blocks gives digit sum 18n.", hint: "Write K=(10^n-1)/9 and examine the resulting repeated blocks after cubing.", sourcePage: 5 },
-  { number: 30, points: 5, prompt: "On an 8 x 8 board, how many ways can one green chip and one red chip be placed in different-coloured cells so they are not in the same row or column?", options: ["112", "672", "768", "1344", "1536"], answer: 4, explanation: "Counting ordered green-red placements on opposite-colour squares while excluding shared rows and columns gives 1536 ways.", hint: "Count the eligible cell pairs by board colour, then subtract pairs sharing a row or column.", image: "/assets/kangaroo/grades-9-10/junior/2020/questions/q-30-diagram.png", imageAlt: "8-by-8 checkerboard with green and red chips in sample cells", sourcePage: 5 }
+  {
+    number: 1,
+    points: 3,
+    prompt: "When the results of the following additions are written in descending order, what sum will be in the middle?",
+    options: [
+      "1 + 2 + 345",
+      "12 + 3 + 45",
+      "1 + 23 + 45",
+      "12 + 34 + 5",
+      "1 + 234 + 5"
+    ],
+    answer: 2,
+    explanation: "The sums are 348, 60, 69, 51, and 240. In descending order the middle sum is 69, choice C.",
+    hint: "Evaluate all five sums and sort them from greatest to least.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "1-0",
+        type: "text",
+        text: "1 + 2 + 345",
+        imageAlt: "A option"
+      },
+      {
+        id: "1-1",
+        type: "text",
+        text: "12 + 3 + 45",
+        imageAlt: "B option"
+      },
+      {
+        id: "1-2",
+        type: "text",
+        text: "1 + 23 + 45",
+        imageAlt: "C option"
+      },
+      {
+        id: "1-3",
+        type: "text",
+        text: "12 + 34 + 5",
+        imageAlt: "D option"
+      },
+      {
+        id: "1-4",
+        type: "text",
+        text: "1 + 234 + 5",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 2,
+    points: 3,
+    prompt: "Who is the mother of the daughter of the mother of Lia's daughter?",
+    options: [
+      "Lia's sister",
+      "Lia",
+      "Lia's mother",
+      "Lia's niece",
+      "Lia's aunt"
+    ],
+    answer: 3,
+    explanation: "NEEDS_REVIEW: the answer key marks D, but the nested family relationship appears to identify Lia; confirm the exact intended parsing before finalizing.",
+    hint: "Resolve the relationship from the innermost phrase outward, one generation at a time.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "2-0",
+        type: "text",
+        text: "Lia's sister",
+        imageAlt: "A option"
+      },
+      {
+        id: "2-1",
+        type: "text",
+        text: "Lia",
+        imageAlt: "B option"
+      },
+      {
+        id: "2-2",
+        type: "text",
+        text: "Lia's mother",
+        imageAlt: "C option"
+      },
+      {
+        id: "2-3",
+        type: "text",
+        text: "Lia's niece",
+        imageAlt: "D option"
+      },
+      {
+        id: "2-4",
+        type: "text",
+        text: "Lia's aunt",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 3,
+    points: 3,
+    prompt: "When Cosme correctly wears his new shirt, its horizontal stripes form seven closed arches around his body. This morning he buttoned it incorrectly. How many open arches were there around his body?",
+    options: [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    answer: 1,
+    explanation: "The incorrect buttoning leaves one stripe path open rather than closing all seven arches.",
+    hint: "Follow each stripe around the shirt and count the paths that fail to close.",
+    image: "/assets/kangaroo/grades-9-10/junior/2020/questions/q-03-diagram.png",
+    imageAlt: "Correct and incorrect ways of buttoning Cosme's striped shirt",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "3-0",
+        type: "text",
+        text: "0",
+        imageAlt: "A option"
+      },
+      {
+        id: "3-1",
+        type: "text",
+        text: "1",
+        imageAlt: "B option"
+      },
+      {
+        id: "3-2",
+        type: "text",
+        text: "2",
+        imageAlt: "C option"
+      },
+      {
+        id: "3-3",
+        type: "text",
+        text: "3",
+        imageAlt: "D option"
+      },
+      {
+        id: "3-4",
+        type: "text",
+        text: "4",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 4,
+    points: 3,
+    prompt: "Four integers have sum S and product 9. What is the lowest possible value of S?",
+    options: [
+      "-18",
+      "-12",
+      "-8",
+      "0",
+      "6"
+    ],
+    answer: 1,
+    explanation: "The absolute values of the four integers must multiply to 9, so they are either 9,1,1,1 or 3,3,1,1 in some order. Because the product is positive, there must be an even number of negative factors. Making all four factors negative gives sums −12 or −8, and the other sign patterns have larger sums. Thus the minimum is −12.",
+    hint: "List the ways to factor 9 into four positive factors, then choose signs that keep the product positive and make the sum as small as possible.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "4-0",
+        type: "text",
+        text: "-18",
+        imageAlt: "A option"
+      },
+      {
+        id: "4-1",
+        type: "text",
+        text: "-12",
+        imageAlt: "B option"
+      },
+      {
+        id: "4-2",
+        type: "text",
+        text: "-8",
+        imageAlt: "C option"
+      },
+      {
+        id: "4-3",
+        type: "text",
+        text: "0",
+        imageAlt: "D option"
+      },
+      {
+        id: "4-4",
+        type: "text",
+        text: "6",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 5,
+    points: 3,
+    prompt: "Maria has ten pieces of paper, some squares and the rest triangles. She cuts each square along a diagonal. The total number of vertices of the resulting pieces is 48. How many squares were there originally?",
+    options: [
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    answer: 3,
+    explanation: "If s pieces are squares, cutting them gives 6s vertices; the other 10-s triangles contribute 3(10-s). Thus 30+3s=48 and s=6.",
+    hint: "Count how many vertices each original square and triangle contributes after the cuts.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "5-0",
+        type: "text",
+        text: "3",
+        imageAlt: "A option"
+      },
+      {
+        id: "5-1",
+        type: "text",
+        text: "4",
+        imageAlt: "B option"
+      },
+      {
+        id: "5-2",
+        type: "text",
+        text: "5",
+        imageAlt: "C option"
+      },
+      {
+        id: "5-3",
+        type: "text",
+        text: "6",
+        imageAlt: "D option"
+      },
+      {
+        id: "5-4",
+        type: "text",
+        text: "7",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 6,
+    points: 3,
+    prompt: "In the addition shown, different letters represent different digits and equal letters represent equal digits. The result is a four-digit number and B is nonzero. What is the sum of the digits of this number?",
+    options: [
+      "AA",
+      "BB",
+      "AB",
+      "BE",
+      "EA"
+    ],
+    answer: 1,
+    explanation: "The addition determines a four-digit result whose digit sum is BB.",
+    hint: "Use the column carries and the distinct-digit conditions to determine the result.",
+    image: "/assets/kangaroo/grades-9-10/junior/2020/questions/q-06-diagram.png",
+    imageAlt: "Letter addition A + AB + ABA = BEBA",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "6-0",
+        type: "text",
+        text: "AA",
+        imageAlt: "A option"
+      },
+      {
+        id: "6-1",
+        type: "text",
+        text: "BB",
+        imageAlt: "B option"
+      },
+      {
+        id: "6-2",
+        type: "text",
+        text: "AB",
+        imageAlt: "C option"
+      },
+      {
+        id: "6-3",
+        type: "text",
+        text: "BE",
+        imageAlt: "D option"
+      },
+      {
+        id: "6-4",
+        type: "text",
+        text: "EA",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 7,
+    points: 3,
+    prompt: "The digits of the year 2020 are repeated twice each and are different. How many times has this happened from the year 1000 until now?",
+    options: [
+      "11",
+      "17",
+      "20",
+      "24",
+      "29"
+    ],
+    answer: 4,
+    explanation: "Counting years from 1000 through 2020 whose four digits form two distinct pairs gives 29.",
+    hint: "Count the possible repeated digit pairs by their thousands and hundreds digits, then stop at 2020.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "7-0",
+        type: "text",
+        text: "11",
+        imageAlt: "A option"
+      },
+      {
+        id: "7-1",
+        type: "text",
+        text: "17",
+        imageAlt: "B option"
+      },
+      {
+        id: "7-2",
+        type: "text",
+        text: "20",
+        imageAlt: "C option"
+      },
+      {
+        id: "7-3",
+        type: "text",
+        text: "24",
+        imageAlt: "D option"
+      },
+      {
+        id: "7-4",
+        type: "text",
+        text: "29",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 8,
+    points: 3,
+    prompt: "Figures can be formed from nine unit squares joined side by side. One figure has the largest possible perimeter. What is that perimeter?",
+    options: [
+      "12 cm",
+      "14 cm",
+      "16 cm",
+      "18 cm",
+      "20 cm"
+    ],
+    answer: 4,
+    explanation: "The greatest perimeter comes from arranging the nine squares in a single row, giving 2(9+1)=20 cm.",
+    hint: "Separate squares increase the perimeter; among connected figures, a straight row maximizes it.",
+    image: "/assets/kangaroo/grades-9-10/junior/2020/questions/q-08-diagram.png",
+    imageAlt: "Example polyomino made from nine unit squares",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "8-0",
+        type: "text",
+        text: "12 cm",
+        imageAlt: "A option"
+      },
+      {
+        id: "8-1",
+        type: "text",
+        text: "14 cm",
+        imageAlt: "B option"
+      },
+      {
+        id: "8-2",
+        type: "text",
+        text: "16 cm",
+        imageAlt: "C option"
+      },
+      {
+        id: "8-3",
+        type: "text",
+        text: "18 cm",
+        imageAlt: "D option"
+      },
+      {
+        id: "8-4",
+        type: "text",
+        text: "20 cm",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 9,
+    points: 3,
+    prompt: "Four points are marked on a grid of 1 cm squares. Among all triangles with vertices at three of these points, one has the largest area. What is its area?",
+    options: [
+      "2.5 cm^2",
+      "3.5 cm^2",
+      "4.5 cm^2",
+      "5.5 cm^2",
+      "6.5 cm^2"
+    ],
+    answer: 3,
+    explanation: "Using the three points that maximize the base-height product gives a triangle area of 5.5 cm^2.",
+    hint: "Use each possible triple and calculate half the base times perpendicular height.",
+    image: "/assets/kangaroo/grades-9-10/junior/2020/questions/q-09-diagram.png",
+    imageAlt: "Four marked points on a square grid",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "9-0",
+        type: "text",
+        text: "2.5 cm^2",
+        imageAlt: "A option"
+      },
+      {
+        id: "9-1",
+        type: "text",
+        text: "3.5 cm^2",
+        imageAlt: "B option"
+      },
+      {
+        id: "9-2",
+        type: "text",
+        text: "4.5 cm^2",
+        imageAlt: "C option"
+      },
+      {
+        id: "9-3",
+        type: "text",
+        text: "5.5 cm^2",
+        imageAlt: "D option"
+      },
+      {
+        id: "9-4",
+        type: "text",
+        text: "6.5 cm^2",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 10,
+    points: 3,
+    prompt: "Martinho made a bicolour kite with six pieces of bamboo. Two pieces form perpendicular diagonals; the other four join the midpoints of the kite's sides. What is the ratio between the blue and yellow areas?",
+    options: [
+      "2/3",
+      "3/2",
+      "3/4",
+      "4/3",
+      "1"
+    ],
+    answer: 4,
+    explanation: "The perpendicular diagonals divide the kite into four triangles, and the midpoint segments split the blue and yellow regions into equal total areas. The ratio is 1.",
+    hint: "Compare the areas of the four triangles formed by the diagonals and midpoint joins.",
+    image: "/assets/kangaroo/grades-9-10/junior/2020/questions/q-10-diagram.png",
+    imageAlt: "Bicolour kite divided by perpendicular diagonals and midpoint segments",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "10-0",
+        type: "text",
+        text: "2/3",
+        imageAlt: "A option"
+      },
+      {
+        id: "10-1",
+        type: "text",
+        text: "3/2",
+        imageAlt: "B option"
+      },
+      {
+        id: "10-2",
+        type: "text",
+        text: "3/4",
+        imageAlt: "C option"
+      },
+      {
+        id: "10-3",
+        type: "text",
+        text: "4/3",
+        imageAlt: "D option"
+      },
+      {
+        id: "10-4",
+        type: "text",
+        text: "1",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 11,
+    points: 4,
+    prompt: "Adam, Breno, and Carlos share a treadmill. Nobody uses it on Wednesdays or Sundays, and at most one person uses it each day. Adam uses it four times a week, Breno five times, and Carlos once. On four consecutive days Adam uses it on the first but not the second, while Breno does not use it on the fourth. Which day does Carlos use it?",
+    options: [
+      "Friday",
+      "Saturday",
+      "Tuesday",
+      "Thursday",
+      "Monday"
+    ],
+    answer: 0,
+    explanation: "Fitting the ten weekly uses into the permitted days and applying the four-day conditions leaves Friday as Carlos's day.",
+    hint: "Treat each permitted weekday as one user's slot and apply the consecutive-day restrictions.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "11-0",
+        type: "text",
+        text: "Friday",
+        imageAlt: "A option"
+      },
+      {
+        id: "11-1",
+        type: "text",
+        text: "Saturday",
+        imageAlt: "B option"
+      },
+      {
+        id: "11-2",
+        type: "text",
+        text: "Tuesday",
+        imageAlt: "C option"
+      },
+      {
+        id: "11-3",
+        type: "text",
+        text: "Thursday",
+        imageAlt: "D option"
+      },
+      {
+        id: "11-4",
+        type: "text",
+        text: "Monday",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 12,
+    points: 4,
+    prompt: "Integers a, b, c, and d satisfy 2ab=3cd. Which of the following numbers can be the product abcd?",
+    options: [
+      "50",
+      "100",
+      "150",
+      "200",
+      "250"
+    ],
+    answer: 2,
+    explanation: "Since 2ab=3cd and 2 and 3 are coprime, write ab=3k and cd=2k for an integer k. Then abcd=6k². Of the choices, only 150 is 6 times a square (6·5²); for instance, ab=15 and cd=10 are achievable with integers.",
+    hint: "Use the equality to write ab and cd as multiples of 3 and 2, then look for a choice equal to six times a square.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "12-0",
+        type: "text",
+        text: "50",
+        imageAlt: "A option"
+      },
+      {
+        id: "12-1",
+        type: "text",
+        text: "100",
+        imageAlt: "B option"
+      },
+      {
+        id: "12-2",
+        type: "text",
+        text: "150",
+        imageAlt: "C option"
+      },
+      {
+        id: "12-3",
+        type: "text",
+        text: "200",
+        imageAlt: "D option"
+      },
+      {
+        id: "12-4",
+        type: "text",
+        text: "250",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 13,
+    points: 4,
+    prompt: "The shortest way from Atown to Cetown is through Betown. Returning from Cetown to Atown, we first see the signposts on the left side of the road and later those on the right. How far is it from Betown to Atown?",
+    options: [
+      "1 km",
+      "2 km",
+      "3 km",
+      "4 km",
+      "5 km"
+    ],
+    answer: 3,
+    explanation: "Reading the paired signs in the return direction gives a 4 km distance from Betown to Atown.",
+    hint: "Interpret each sign from the direction of travel and use the known distances between towns.",
+    image: "/assets/kangaroo/grades-9-10/junior/2020/questions/q-13-diagram.png",
+    imageAlt: "Two signposts for Atown, Betown, and Cetown with distances",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "13-0",
+        type: "text",
+        text: "1 km",
+        imageAlt: "A option"
+      },
+      {
+        id: "13-1",
+        type: "text",
+        text: "2 km",
+        imageAlt: "B option"
+      },
+      {
+        id: "13-2",
+        type: "text",
+        text: "3 km",
+        imageAlt: "C option"
+      },
+      {
+        id: "13-3",
+        type: "text",
+        text: "4 km",
+        imageAlt: "D option"
+      },
+      {
+        id: "13-4",
+        type: "text",
+        text: "5 km",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 14,
+    points: 4,
+    prompt: "Two nonsimilar isosceles triangles have equal perimeters and each has a side of length 20 cm. If one triangle has a side of length 8 cm, which could be a side length of the other triangle?",
+    options: [
+      "8 cm",
+      "10 cm",
+      "12 cm",
+      "14 cm",
+      "16 cm"
+    ],
+    answer: 3,
+    explanation: "The triangle with sides 20 and 8 must have sides 20,20,8; 20,8,8 is impossible by the triangle inequality. Its perimeter is 48 cm. In the other triangle, let 20 be the base and x the equal side length: 20+2x=48, so x=14. This gives the nonsimilar triangle 14,14,20.",
+    hint: "First determine which isosceles triangle can have both a 20 cm side and an 8 cm side.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "14-0",
+        type: "text",
+        text: "8 cm",
+        imageAlt: "A option"
+      },
+      {
+        id: "14-1",
+        type: "text",
+        text: "10 cm",
+        imageAlt: "B option"
+      },
+      {
+        id: "14-2",
+        type: "text",
+        text: "12 cm",
+        imageAlt: "C option"
+      },
+      {
+        id: "14-3",
+        type: "text",
+        text: "14 cm",
+        imageAlt: "D option"
+      },
+      {
+        id: "14-4",
+        type: "text",
+        text: "16 cm",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 15,
+    points: 4,
+    prompt: "Toninho writes strictly positive consecutive integers in nine places so the sum of the three numbers on each diameter is 24. What is the largest possible sum of all nine numbers?",
+    options: [
+      "81",
+      "90",
+      "99",
+      "108",
+      "117"
+    ],
+    answer: 0,
+    explanation: "Let the nine consecutive integers be n through n+8, and let c be the centre. Adding the four diameter equations gives (sum of outer numbers)+4c=96. Hence the sum of all nine numbers is 96−3c. Since the total of n through n+8 is 9n+36, this also gives c=20−3n. As c must be among n,…,n+8, n can be 3, 4, or 5; the smallest possible c is 5, attained at n=5. The outer values 6 through 13 can then be paired to sum 19 on each diameter, so the maximum 96−3·5=81 is attainable.",
+    hint: "Add the four diameter equations, remembering that the centre is counted four times and each outer position once.",
+    image: "/assets/kangaroo/grades-9-10/junior/2020/questions/editor-q-15.png",
+    imageAlt: "Eight outer squares and one central square arranged in four diameters",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "15-0",
+        type: "text",
+        text: "81",
+        imageAlt: "A option"
+      },
+      {
+        id: "15-1",
+        type: "text",
+        text: "90",
+        imageAlt: "B option"
+      },
+      {
+        id: "15-2",
+        type: "text",
+        text: "99",
+        imageAlt: "C option"
+      },
+      {
+        id: "15-3",
+        type: "text",
+        text: "108",
+        imageAlt: "D option"
+      },
+      {
+        id: "15-4",
+        type: "text",
+        text: "117",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 16,
+    points: 4,
+    prompt: "The number 2020 has the property that the two digits on the left form the same number as the two digits on the right. How many four-digit numbers, including 2020, have this property?",
+    options: [
+      "49",
+      "50",
+      "81",
+      "90",
+      "99"
+    ],
+    answer: 3,
+    explanation: "The first two-digit number can be 10 through 99, giving 90 choices, and the last two digits must match it.",
+    hint: "Choose the first two digits; the first cannot be zero.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "16-0",
+        type: "text",
+        text: "49",
+        imageAlt: "A option"
+      },
+      {
+        id: "16-1",
+        type: "text",
+        text: "50",
+        imageAlt: "B option"
+      },
+      {
+        id: "16-2",
+        type: "text",
+        text: "81",
+        imageAlt: "C option"
+      },
+      {
+        id: "16-3",
+        type: "text",
+        text: "90",
+        imageAlt: "D option"
+      },
+      {
+        id: "16-4",
+        type: "text",
+        text: "99",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 17,
+    points: 4,
+    prompt: "Two circles are tangent to each other and to two sides of a square. What is the measure of angle AOB, determined by the three points of tangency?",
+    options: [
+      "110 degrees",
+      "112 degrees",
+      "120 degrees",
+      "128 degrees",
+      "135 degrees"
+    ],
+    answer: 4,
+    explanation: "The radii to the tangency points and the square's diagonal give equal right triangles; the angle at O is 135 degrees.",
+    hint: "Use the perpendicular radii at the side tangencies and the 45-degree square diagonal.",
+    image: "/assets/kangaroo/grades-9-10/junior/2020/questions/q-17-diagram.png",
+    imageAlt: "Two tangent circles inside a square with points A, O, and B marked",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "17-0",
+        type: "text",
+        text: "110 degrees",
+        imageAlt: "A option"
+      },
+      {
+        id: "17-1",
+        type: "text",
+        text: "112 degrees",
+        imageAlt: "B option"
+      },
+      {
+        id: "17-2",
+        type: "text",
+        text: "120 degrees",
+        imageAlt: "C option"
+      },
+      {
+        id: "17-3",
+        type: "text",
+        text: "128 degrees",
+        imageAlt: "D option"
+      },
+      {
+        id: "17-4",
+        type: "text",
+        text: "135 degrees",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 18,
+    points: 4,
+    prompt: "Roberto and Maria leave together on a circular track. Maria completes a lap 24 minutes before Roberto and waits. When Roberto reaches the point, Maria rides in the opposite direction and they meet 5 minutes later. How long does Roberto take to complete a lap?",
+    options: [
+      "30 min",
+      "29 min",
+      "28 min",
+      "27 min",
+      "26 min"
+    ],
+    answer: 0,
+    explanation: "Let Roberto's lap time be T, so Maria's is T−24. Once Roberto reaches the start/finish point, they move in opposite directions; in 5 minutes their combined distances make one lap: 5/T+5/(T−24)=1. This gives T²−34T+120=0, whose roots are 30 and 4. Since T>24, Roberto's lap takes 30 minutes.",
+    hint: "Set the sum of their opposite-direction speeds times 5 minutes equal to one lap.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "18-0",
+        type: "text",
+        text: "30 min",
+        imageAlt: "A option"
+      },
+      {
+        id: "18-1",
+        type: "text",
+        text: "29 min",
+        imageAlt: "B option"
+      },
+      {
+        id: "18-2",
+        type: "text",
+        text: "28 min",
+        imageAlt: "C option"
+      },
+      {
+        id: "18-3",
+        type: "text",
+        text: "27 min",
+        imageAlt: "D option"
+      },
+      {
+        id: "18-4",
+        type: "text",
+        text: "26 min",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 19,
+    points: 4,
+    prompt: "Let 17x+51y=102. If x and y are positive integers, what is x-3y?",
+    options: [
+      "-3",
+      "0",
+      "3",
+      "12",
+      "undetermined"
+    ],
+    answer: 1,
+    explanation: "Divide by 17 to get x+3y=6. Since x and y are positive integers, y can only be 1; then x=3. Thus x−3y=3−3=0.",
+    hint: "Divide by 17, then use positivity to find the possible values of y.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "19-0",
+        type: "text",
+        text: "-3",
+        imageAlt: "A option"
+      },
+      {
+        id: "19-1",
+        type: "text",
+        text: "0",
+        imageAlt: "B option"
+      },
+      {
+        id: "19-2",
+        type: "text",
+        text: "3",
+        imageAlt: "C option"
+      },
+      {
+        id: "19-3",
+        type: "text",
+        text: "12",
+        imageAlt: "D option"
+      },
+      {
+        id: "19-4",
+        type: "text",
+        text: "undetermined",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 20,
+    points: 4,
+    prompt: "Ana places a token in each cell of an n x n board so that no two token cells have a common point. The examples show the pattern for 5 x 5 and 6 x 6 boards. How many chips can she place on a 2020 x 2020 board?",
+    options: [
+      "2020",
+      "4039",
+      "674^2",
+      "1010^2",
+      "2020^2"
+    ],
+    answer: 3,
+    explanation: "To avoid even touching at a corner, at most one cell can be selected in each 2 x 2 block. A checker pattern achieves 1010^2 tokens on a 2020 x 2020 board.",
+    hint: "Partition the board into 2 x 2 blocks and choose the maximum non-touching pattern in each block.",
+    image: "/assets/kangaroo/grades-9-10/junior/2020/questions/q-20-diagram.png",
+    imageAlt: "Examples of maximum non-touching token placements on 5-by-5 and 6-by-6 boards",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "20-0",
+        type: "text",
+        text: "2020",
+        imageAlt: "A option"
+      },
+      {
+        id: "20-1",
+        type: "text",
+        text: "4039",
+        imageAlt: "B option"
+      },
+      {
+        id: "20-2",
+        type: "text",
+        text: "674^2",
+        imageAlt: "C option"
+      },
+      {
+        id: "20-3",
+        type: "text",
+        text: "1010^2",
+        imageAlt: "D option"
+      },
+      {
+        id: "20-4",
+        type: "text",
+        text: "2020^2",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 21,
+    points: 5,
+    prompt: "A unit-square window is divided into four triangles with areas A, B, C, and D. The areas satisfy 3A=4B and 2C=3D. A fly is at the point where the triangles meet and flies directly to the nearest side. How far does it fly?",
+    options: [
+      "40 cm",
+      "30 cm",
+      "25 cm",
+      "20 cm",
+      "10 cm"
+    ],
+    answer: 0,
+    explanation: "The two area ratios determine the distances from the centre to the four sides. The shortest distance is 40 cm.",
+    hint: "Express each triangle area as half the side length times its perpendicular distance from the centre.",
+    image: "/assets/kangaroo/grades-9-10/junior/2020/questions/q-21-diagram.png",
+    imageAlt: "Square divided into four triangles labelled A, B, C, and D with a central point",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "21-0",
+        type: "text",
+        text: "40 cm",
+        imageAlt: "A option"
+      },
+      {
+        id: "21-1",
+        type: "text",
+        text: "30 cm",
+        imageAlt: "B option"
+      },
+      {
+        id: "21-2",
+        type: "text",
+        text: "25 cm",
+        imageAlt: "C option"
+      },
+      {
+        id: "21-3",
+        type: "text",
+        text: "20 cm",
+        imageAlt: "D option"
+      },
+      {
+        id: "21-4",
+        type: "text",
+        text: "10 cm",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 22,
+    points: 5,
+    prompt: "Julia puts nine chips numbered 1 through 9 in a box. She draws them one by one without looking and writes their digits in order to form a nine-digit number. What is the probability that the number is divisible by 45?",
+    options: [
+      "1/9",
+      "2/9",
+      "1/3",
+      "4/9",
+      "8/9"
+    ],
+    answer: 0,
+    explanation: "The digit sum is 45, so divisibility by 9 is automatic. Divisibility by 5 requires the last digit to be 5, which occurs with probability 1/9.",
+    hint: "Use divisibility by 5 and 9 separately.",
+    image: "/assets/kangaroo/grades-9-10/junior/2020/questions/q-22-diagram.png",
+    imageAlt: "Nine numbered chips from 1 through 9",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "22-0",
+        type: "text",
+        text: "1/9",
+        imageAlt: "A option"
+      },
+      {
+        id: "22-1",
+        type: "text",
+        text: "2/9",
+        imageAlt: "B option"
+      },
+      {
+        id: "22-2",
+        type: "text",
+        text: "1/3",
+        imageAlt: "C option"
+      },
+      {
+        id: "22-3",
+        type: "text",
+        text: "4/9",
+        imageAlt: "D option"
+      },
+      {
+        id: "22-4",
+        type: "text",
+        text: "8/9",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 23,
+    points: 5,
+    prompt: "A rectangular sheet with one side of 12 cm is folded along its 20 cm diagonal. What is the overlapping area of the folded parts, shown in grey?",
+    options: [
+      "24 cm^2",
+      "36 cm^2",
+      "48 cm^2",
+      "50 cm^2",
+      "75 cm^2"
+    ],
+    answer: 4,
+    explanation: "The rectangle's other side is 16 cm. The fold geometry makes the overlap triangle have base 12 cm and height 12.5 cm, so its area is 75 cm^2.",
+    hint: "Use the 12-16-20 right triangle and the reflection created by the fold.",
+    image: "/assets/kangaroo/grades-9-10/junior/2020/questions/editor-q-23.png",
+    imageAlt: "A rectangle folded along a 20 cm diagonal with a shaded overlap",
+    sourcePage: 4,
+    optionContent: [
+      {
+        id: "23-0",
+        type: "text",
+        text: "24 cm^2",
+        imageAlt: "A option"
+      },
+      {
+        id: "23-1",
+        type: "text",
+        text: "36 cm^2",
+        imageAlt: "B option"
+      },
+      {
+        id: "23-2",
+        type: "text",
+        text: "48 cm^2",
+        imageAlt: "C option"
+      },
+      {
+        id: "23-3",
+        type: "text",
+        text: "50 cm^2",
+        imageAlt: "D option"
+      },
+      {
+        id: "23-4",
+        type: "text",
+        text: "75 cm^2",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 24,
+    points: 5,
+    prompt: "Carlos tells the truth on alternate days and lies on the others. Today he made exactly four of five statements. Which statement was not made by him?",
+    options: [
+      "My number of male and female friends is prime.",
+      "My male friends equal my female friends.",
+      "My name is Carlos.",
+      "Three male friends are older than me.",
+      "I always tell the truth."
+    ],
+    answer: 2,
+    explanation: "On a lying day, the true statement about his name cannot be one of the statements he makes while exactly four are true; checking both day types rules out C.",
+    hint: "Determine whether today is a truth or lie day, then test which statement's truth value is incompatible.",
+    sourcePage: 4,
+    optionContent: [
+      {
+        id: "24-0",
+        type: "text",
+        text: "My number of male and female friends is prime.",
+        imageAlt: "A option"
+      },
+      {
+        id: "24-1",
+        type: "text",
+        text: "My male friends equal my female friends.",
+        imageAlt: "B option"
+      },
+      {
+        id: "24-2",
+        type: "text",
+        text: "My name is Carlos.",
+        imageAlt: "C option"
+      },
+      {
+        id: "24-3",
+        type: "text",
+        text: "Three male friends are older than me.",
+        imageAlt: "D option"
+      },
+      {
+        id: "24-4",
+        type: "text",
+        text: "I always tell the truth.",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 25,
+    points: 5,
+    prompt: "Julia writes four positive integers, one at each vertex of a triangular-base pyramid. The sum on one face and the products on the other two faces are 15, 20, and 30. What is the greatest possible product of the four numbers?",
+    options: [
+      "40",
+      "50",
+      "60",
+      "90",
+      "120"
+    ],
+    answer: 4,
+    explanation: "Let the three vertices of the face with sum 15 be a,b,c and let d be the fourth. The two product faces share d and one base vertex, so their products 20 and 30 imply that the other two base values are in ratio 2:3. Write them as 2k and 3k; the remaining base value is 15−5k. The face product equations give (15−5k)kd=10, so k=1 or 2. The total product is 60k, whose maximum is 120 when k=2.",
+    hint: "Use the two face products to compare their shared vertex factors, then use the face sum to constrain the remaining values.",
+    image: "/assets/kangaroo/grades-9-10/junior/2020/questions/q-25-diagram.png",
+    imageAlt: "Triangular pyramid with one shaded face and a dashed hidden edge",
+    sourcePage: 4,
+    optionContent: [
+      {
+        id: "25-0",
+        type: "text",
+        text: "40",
+        imageAlt: "A option"
+      },
+      {
+        id: "25-1",
+        type: "text",
+        text: "50",
+        imageAlt: "B option"
+      },
+      {
+        id: "25-2",
+        type: "text",
+        text: "60",
+        imageAlt: "C option"
+      },
+      {
+        id: "25-3",
+        type: "text",
+        text: "90",
+        imageAlt: "D option"
+      },
+      {
+        id: "25-4",
+        type: "text",
+        text: "120",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 26,
+    points: 5,
+    prompt: "Pedro assembles a cube from 64 equal white cubes and paints it red. He disassembles it and reassembles it so all its faces are white, then paints the cube red again. How many white faces of the small cubes remain white?",
+    options: [
+      "0",
+      "72",
+      "109",
+      "144",
+      "192"
+    ],
+    answer: 4,
+    explanation: "A 4×4×4 cube has 6·4²=96 small faces on its outside. After the pieces are turned so every outside face is white, the second coat makes those 96 faces red. Initially the 64 little cubes had 384 faces, of which 96 were red, leaving 288 white; therefore 288−96=192 white faces stay unpainted inside.",
+    hint: "Count the small-cube faces that were white after the first painting, then subtract the faces exposed to the second coat.",
+    sourcePage: 4,
+    optionContent: [
+      {
+        id: "26-0",
+        type: "text",
+        text: "0",
+        imageAlt: "A option"
+      },
+      {
+        id: "26-1",
+        type: "text",
+        text: "72",
+        imageAlt: "B option"
+      },
+      {
+        id: "26-2",
+        type: "text",
+        text: "109",
+        imageAlt: "C option"
+      },
+      {
+        id: "26-3",
+        type: "text",
+        text: "144",
+        imageAlt: "D option"
+      },
+      {
+        id: "26-4",
+        type: "text",
+        text: "192",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 27,
+    points: 5,
+    prompt: "In the 4 x 4 grid, positive integers are written in the cells. The sums of the four numbers in each row and column must be equal. Some entries are shown. What is the smallest possible sum of the six missing numbers?",
+    options: [
+      "32",
+      "24",
+      "20",
+      "18",
+      "12"
+    ],
+    answer: 1,
+    explanation: "Balancing the four row sums and four column sums with positive integers gives minimum total 24 for the six blank cells.",
+    hint: "Let the common row and column sum be S, then derive lower bounds from each partially filled row and column.",
+    image: "/assets/kangaroo/grades-9-10/junior/2020/questions/q-27-diagram.png",
+    imageAlt: "4-by-4 grid with six given entries and ten blank cells",
+    sourcePage: 4,
+    optionContent: [
+      {
+        id: "27-0",
+        type: "text",
+        text: "32",
+        imageAlt: "A option"
+      },
+      {
+        id: "27-1",
+        type: "text",
+        text: "24",
+        imageAlt: "B option"
+      },
+      {
+        id: "27-2",
+        type: "text",
+        text: "20",
+        imageAlt: "C option"
+      },
+      {
+        id: "27-3",
+        type: "text",
+        text: "18",
+        imageAlt: "D option"
+      },
+      {
+        id: "27-4",
+        type: "text",
+        text: "12",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 28,
+    points: 5,
+    prompt: "A rectangular plot is divided into two lots by an ABCDE fence. AB, BC, and CD are parallel to the sides of the rectangle and have lengths 30 m, 24 m, and 10 m. The owners replace the fence with a straight fence AE without changing either lot's area. How far from point D should E be?",
+    options: [
+      "8 m",
+      "10 m",
+      "12 m",
+      "14 m",
+      "16 m"
+    ],
+    answer: 2,
+    explanation: "Equal lot areas require the straight fence to preserve the same signed area on either side of the original stepped fence. Using the 30, 24, and 10 m offsets gives DE=12 m.",
+    hint: "Equate the areas on both sides of the stepped and straight fences.",
+    image: "/assets/kangaroo/grades-9-10/junior/2020/questions/q-28-diagram.png",
+    imageAlt: "Rectangular lots divided by stepped fence ABCDE and proposed straight fence AE",
+    sourcePage: 4,
+    optionContent: [
+      {
+        id: "28-0",
+        type: "text",
+        text: "8 m",
+        imageAlt: "A option"
+      },
+      {
+        id: "28-1",
+        type: "text",
+        text: "10 m",
+        imageAlt: "B option"
+      },
+      {
+        id: "28-2",
+        type: "text",
+        text: "12 m",
+        imageAlt: "C option"
+      },
+      {
+        id: "28-3",
+        type: "text",
+        text: "14 m",
+        imageAlt: "D option"
+      },
+      {
+        id: "28-4",
+        type: "text",
+        text: "16 m",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 29,
+    points: 5,
+    prompt: "The number K consists of n digits, all equal to 9. What is the sum of the digits of K^3?",
+    options: [
+      "n+17",
+      "a string of n 9s",
+      "a string of 3n 9s",
+      "18n",
+      "10^(6n)-1"
+    ],
+    answer: 3,
+    explanation: "A number of n nines is (10^n-1)/9. Cubing and carrying the decimal blocks gives digit sum 18n.",
+    hint: "Write K=(10^n-1)/9 and examine the resulting repeated blocks after cubing.",
+    sourcePage: 5,
+    optionContent: [
+      {
+        id: "29-0",
+        type: "text",
+        text: "n+17",
+        imageAlt: "A option"
+      },
+      {
+        id: "29-1",
+        type: "text",
+        text: "a string of n 9s",
+        imageAlt: "B option"
+      },
+      {
+        id: "29-2",
+        type: "text",
+        text: "a string of 3n 9s",
+        imageAlt: "C option"
+      },
+      {
+        id: "29-3",
+        type: "text",
+        text: "18n",
+        imageAlt: "D option"
+      },
+      {
+        id: "29-4",
+        type: "text",
+        text: "10^(6n)-1",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 30,
+    points: 5,
+    prompt: "On an 8 x 8 board, how many ways can one green chip and one red chip be placed in different-coloured cells so they are not in the same row or column?",
+    options: [
+      "112",
+      "672",
+      "768",
+      "1344",
+      "1536"
+    ],
+    answer: 4,
+    explanation: "Counting ordered green-red placements on opposite-colour squares while excluding shared rows and columns gives 1536 ways.",
+    hint: "Count the eligible cell pairs by board colour, then subtract pairs sharing a row or column.",
+    image: "/assets/kangaroo/grades-9-10/junior/2020/questions/q-30-diagram.png",
+    imageAlt: "8-by-8 checkerboard with green and red chips in sample cells",
+    sourcePage: 5,
+    optionContent: [
+      {
+        id: "30-0",
+        type: "text",
+        text: "112",
+        imageAlt: "A option"
+      },
+      {
+        id: "30-1",
+        type: "text",
+        text: "672",
+        imageAlt: "B option"
+      },
+      {
+        id: "30-2",
+        type: "text",
+        text: "768",
+        imageAlt: "C option"
+      },
+      {
+        id: "30-3",
+        type: "text",
+        text: "1344",
+        imageAlt: "D option"
+      },
+      {
+        id: "30-4",
+        type: "text",
+        text: "1536",
+        imageAlt: "E option"
+      }
+    ]
+  }
 ];
 
 const sections2020Junior: Section[] = [
-  { points: 3, label: "Section 1", range: "Questions 1-10", accent: "coral" },
-  { points: 4, label: "Section 2", range: "Questions 11-20", accent: "blue" },
-  { points: 5, label: "Section 3", range: "Questions 21-30", accent: "purple" }
+  {
+    points: 3,
+    label: "Section 1",
+    range: "Questions 1-10",
+    accent: "coral"
+  },
+  {
+    points: 4,
+    label: "Section 2",
+    range: "Questions 11-20",
+    accent: "blue"
+  },
+  {
+    points: 5,
+    label: "Section 3",
+    range: "Questions 21-30",
+    accent: "purple"
+  }
 ];
 
 export const edition2020Junior: QuestionSet = {
@@ -49,5 +1506,5 @@ export const edition2020Junior: QuestionSet = {
   timeLimitMinutes: 75,
   sourceUrl: "https://www.matematica.pt/en/docs/kangaroo/enunciados/2020/2020_Junior.pdf",
   questions: questions2020Junior,
-  sections: sections2020Junior
+  sections: sections2020Junior,
 };

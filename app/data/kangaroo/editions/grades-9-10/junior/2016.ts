@@ -1,42 +1,1482 @@
 import type { Question, QuestionSet, Section } from "../../../types";
 
 const questions2016Junior: Question[] = [
-  { number: 1, points: 3, prompt: "The arithmetic mean of four numbers is 9. What is the fourth number if the other three are 5, 9, and 12?", options: ["6", "8", "9", "10", "36"], answer: 3, explanation: "The four numbers sum to 36. The missing number is 36-(5+9+12)=10.", hint: "Multiply the mean by four to get the total sum.", sourcePage: 1 },
-  { number: 2, points: 3, prompt: "Which number is closest to (17 x 0.3 x 20.16)/999?", options: ["0.01", "0.1", "1", "10", "100"], answer: 1, explanation: "The numerator is about 103, and dividing by 999 gives about 0.103, closest to 0.1.", hint: "Estimate the numerator and compare the quotient with the choices.", sourcePage: 1 },
-  { number: 3, points: 3, prompt: "Ruth answers all 30 competition questions. She has 50% more right answers than wrong answers. How many are right?", options: ["10", "12", "15", "18", "20"], answer: 3, explanation: "If wrong answers are w, right answers are 1.5w. Then 2.5w=30, so w=12 and right answers are 18.", hint: "Let the number wrong be w and use the total of 30.", sourcePage: 1 },
-  { number: 4, points: 3, prompt: "Five points are P(-1,3), Q(0,-4), R(-2,-1), S(1,1), and T(3,-2). Four are vertices of a square. Which point does not belong?", options: ["P", "Q", "R", "S", "T"], answer: 0, explanation: "The points Q, R, S, and T have equal side lengths and perpendicular successive sides, so they form the square; P is the extra point.", hint: "Compare squared distances among the points to find four equal sides and equal diagonals.", sourcePage: 1 },
-  { number: 5, points: 3, prompt: "A positive integer x leaves remainder 3 when divided by 6. What remainder does 3x leave when divided by 6?", options: ["4", "3", "2", "1", "0"], answer: 1, explanation: "Write x=6k+3. Then 3x=18k+9, which leaves remainder 3 modulo 6.", hint: "Substitute x=6k+3 and reduce modulo 6.", sourcePage: 1 },
-  { number: 6, points: 3, prompt: "2016 hours are how many weeks?", options: ["6", "8", "10", "12", "16"], answer: 3, explanation: "A week has 7 x 24=168 hours, and 2016/168=12.", hint: "Convert one week to hours and divide.", sourcePage: 1 },
-  { number: 7, points: 3, prompt: "Lukas writes negative numbers as strings of zeroes while counting backwards: ..., 3, 2, 1, 0, 00, 000, 0000, ... What is 000+0000 in this notation?", options: ["1", "00000", "000000", "0000000", "00000000"], answer: 2, explanation: "The strings 000 and 0000 represent -3 and -4, whose sum is -7, written 0000000.", hint: "Interpret each additional zero as the next negative integer.", sourcePage: 1 },
-  { number: 8, points: 3, prompt: "Unusual dice have faces -1, 2, -3, 4, -5, and 6. Which sum cannot be obtained by rolling two such dice?", options: ["3", "4", "5", "7", "8"], answer: 3, explanation: "Two even faces or two negative odd faces give an even sum. To get the odd sum 7, one face would have to be even and the other odd; the largest such sum is 6+(−1)=5. So 7 cannot be made.", hint: "An odd total needs one even face and one odd face; find the largest total of that kind.", sourcePage: 1 },
-  { number: 9, points: 3, prompt: "Step by step, VELO is changed into LOVE by swapping adjacent letters. What is the minimum number of steps?", options: ["3", "4", "5", "6", "7"], answer: 1, explanation: "One shortest sequence is VELO→VLEO→LVEO→LVOE→LOVE, using four adjacent swaps. The target order has four inversions relative to VELO, so fewer swaps cannot suffice.", hint: "Count how many pairs of letters appear in the opposite order in VELO and LOVE; each adjacent swap fixes one such pair.", sourcePage: 1 },
-  { number: 10, points: 3, prompt: "Sven writes five different positive one-digit integers, and no pair sums to 10. Which number must he have written?", options: ["1", "2", "3", "4", "5"], answer: 4, explanation: "The four complementary pairs summing to 10 are (1,9), (2,8), (3,7), and (4,6). Choosing five distinct digits without a complete pair requires the middle digit 5.", hint: "Group the digits into complementary pairs that sum to 10.", sourcePage: 1 },
-  { number: 11, points: 4, prompt: "For real numbers a,b,c,d, a+5=b^2-1=c^2+3=d-4. Which number is greatest?", options: ["a", "b", "c", "d", "It cannot be uniquely determined"], answer: 3, explanation: "Let the common value be k. Then a=k−5, d=k+4, b²=k+1, and c²=k−3, so k≥3. Therefore |b|=√(k+1)<k+4=d and |c|=√(k−3)<k+4=d, while a=d−9. Thus d is greatest.", hint: "Set all four expressions equal to k, then compare d with the largest possible values of b and c.", sourcePage: 1 },
-  { number: 12, points: 4, prompt: "A 3 x 3 square grid has two unit circles inscribed in opposite corner squares. What is the shortest distance between the circles?", options: ["2sqrt(2)-1", "sqrt(2)+1", "2sqrt(2)", "2", "3"], answer: 0, explanation: "The circle centres are separated by 2sqrt(2) units diagonally. Subtract the two radii, whose sum is 1, giving 2sqrt(2)-1.", hint: "Find the diagonal distance between the centres and subtract both radii.", image: "/assets/kangaroo/grades-9-10/junior/2016/questions/q-12-diagram.png", imageAlt: "Two unit circles in opposite corner cells of a 3-by-3 grid", sourcePage: 2 },
-  { number: 13, points: 4, prompt: "A knockout tennis tournament has seven matches. Six results are known: Bella beats Ann, Gina beats Celine, Celine beats Donna, Celine beats Bella, Gina beats Holly, and Emma beats Farah. Which result is missing?", options: ["Gina beats Bella", "Celine beats Ann", "Emma beats Celine", "Bella beats Holly", "Gina beats Emma"], answer: 4, explanation: "The seven matches form a knockout bracket; the remaining result needed to connect the winners is Gina beats Emma.", hint: "Draw the seven-match elimination bracket and place the known winners into it.", sourcePage: 2 },
-  { number: 14, points: 4, prompt: "What percentage of the area of the triangle is coloured grey in the diagram?", options: ["80%", "85%", "88%", "90%", "It cannot be calculated"], answer: 2, explanation: "Each side is split into lengths 1, 3, and 1, so the whole side is 5. Each white corner triangle is similar to the large triangle with side scale 1/5, and therefore has 1/25 of its area. The three white corners total 3/25=12%, leaving 22/25=88% grey.", hint: "Compare a small white corner triangle with the whole triangle by using the ratio of their corresponding side lengths.", image: "/assets/kangaroo/grades-9-10/junior/2016/questions/q-14-diagram.png", imageAlt: "Large triangle with grey central region and side lengths labelled 1 and 3", sourcePage: 2 },
-  { number: 15, points: 4, prompt: "Jilly makes a multiplication magic square using 1, 2, 4, 5, 10, 20, 25, 50, and 100. Products in every row, column, and diagonal are equal. Given 20 and 1 in the top row, which number goes in the marked cell?", options: ["2", "4", "5", "10", "25"], answer: 1, explanation: "Balancing the products in the rows, columns, and diagonals places 4 in the marked cell.", hint: "Use prime-factor exponents for 2 and 5 in the equal products.", image: "/assets/kangaroo/grades-9-10/junior/2016/questions/q-15-diagram.png", imageAlt: "3-by-3 multiplication magic square with 20 and 1 given", sourcePage: 2 },
-  { number: 16, points: 4, prompt: "Jack keeps six tubes of diameter 2 cm together with a rubber band. He arranges them in two shown ways. How do the band lengths compare?", options: ["Left is pi cm shorter", "Left is 4 cm shorter", "Right is pi cm shorter", "Right is 4 cm shorter", "They are equal"], answer: 4, explanation: "For both arrangements, the straight portions total the same length and the rounded portions together make one full circumference. The bands have equal length.", hint: "Compare the perimeter of the centres' convex hull plus the same circular end contribution.", image: "/assets/kangaroo/grades-9-10/junior/2016/questions/q-16-diagram.png", imageAlt: "Six tubes in a parallelogram and triangular arrangement with rubber bands", sourcePage: 2 },
-  { number: 17, points: 4, prompt: "Peter colours a 3 x 3 square so every row, column, and both diagonals contain three different colours. What is the smallest number of colours needed?", options: ["3", "4", "5", "6", "7"], answer: 2, explanation: "The centre must differ from the six cells on the middle row and both diagonals, so three colours cannot work. With four, name the top row A,B,C; the centre must be D. If the middle-left cell is B, the bottom-left cell has no colour allowed by its column and diagonal. If it is C, the bottom-left must be B, and the remaining row/column restrictions force a repeat at a bottom corner. Five work, for example: A B C / B D A / E A B. Thus the minimum is 5.", hint: "The centre must differ from every other cell on the middle row and both diagonals; then test whether four colours can complete the bottom row.", sourcePage: 2 },
-  { number: 18, points: 4, prompt: "Cards numbered 1, 2, 4, 8, 16, 32, 64, and 128 are divided between Eva and Ali. Eva's sum is 31 greater than Ali's. How many cards did Eva choose?", options: ["2", "3", "4", "5", "6"], answer: 3, explanation: "The total is 255, so Eva's sum is 143. The powers of two summing to 143 are 128+8+4+2+1, five cards.", hint: "Find Eva's total from the combined sum, then write it as a sum of distinct powers of two.", sourcePage: 2 },
-  { number: 19, points: 4, prompt: "The diagram shows a cube and four marked angles. What is the sum of the four angles?", options: ["315 degrees", "330 degrees", "345 degrees", "360 degrees", "375 degrees"], answer: 1, explanation: "Projecting the four marked angles around the cube and using the right angles at its faces gives a total of 330 degrees.", hint: "Unfold the relevant faces into a plane and use the angle sum around the projected path.", image: "/assets/kangaroo/grades-9-10/junior/2016/questions/q-19-diagram.png", imageAlt: "Cube with four marked angles on its faces", sourcePage: 2 },
-  { number: 20, points: 4, prompt: "An enclosure has 2016 red or grey kangaroos, with at least one of each colour. For each kangaroo, calculate the fraction of the other colour divided by the number of its own colour including itself. What is the sum of these 2016 fractions?", options: ["2016", "1344", "1008", "672", "More information is necessary"], answer: 0, explanation: "If there are r red and g grey kangaroos, the red contribution is r*g/r=g and the grey contribution is g*r/g=r. Their sum is r+g=2016.", hint: "Group the equal fractions by colour and simplify each group's total.", sourcePage: 2 },
-  { number: 21, points: 5, prompt: "A creeping plant twists exactly five times around a post of circumference 15 cm and reaches a height of 1 m. If it grows at a constant rate, how long is the plant?", options: ["0.75 m", "1.0 m", "1.25 m", "1.5 m", "1.75 m"], answer: 2, explanation: "Unwrapping the post gives a rectangle 75 cm wide and 100 cm high. The plant length is sqrt(75^2+100^2)=125 cm=1.25 m.", hint: "Unwrap the post into a rectangle and use the Pythagorean theorem.", image: "/assets/kangaroo/grades-9-10/junior/2016/questions/q-21-diagram.png", imageAlt: "Plant winding five times around a post marked 1 m high", sourcePage: 3 },
-  { number: 22, points: 5, prompt: "What is the largest remainder when a two-digit number is divided by the sum of its digits?", options: ["13", "14", "15", "16", "17"], answer: 2, explanation: "A remainder is less than the digit sum, which is at most 18. Remainders 16 or 17 would require a digit sum of 17 or 18: the only numbers with those sums are 89, 98, and 99, whose remainders are 4, 13, and 9. But 79 divided by 7+9=16 leaves remainder 15, so the maximum is 15.", hint: "First bound the remainder by the largest possible digit sum, then check the numbers whose digit sums could allow 16 or 17.", sourcePage: 3 },
-  { number: 23, points: 5, prompt: "A 5 x 5 board starts white. Each move changes the colours of two horizontally or vertically adjacent cells. What is the minimum number of moves needed to obtain the shown checkerboard colouring?", options: ["11", "12", "13", "14", "15"], answer: 1, explanation: "The target has 12 grey cells, and no two grey cells share an edge. A move can therefore change at most one target-grey cell, so at least 12 moves are needed. Twelve suffice: pair grey cells two steps apart within each row, except pair the two cells in the far-right column of rows 2 and 4. Flip the two adjacent edges along each pair's length-2 path; the middle cell flips twice and ends white, while each grey endpoint flips once. Thus the minimum is 12.", hint: "Since no two target-grey cells are adjacent, each one needs its own move; pair grey cells two grid steps apart to build a matching sequence.", image: "/assets/kangaroo/grades-9-10/junior/2016/questions/q-23-diagram.png", imageAlt: "Blank 5-by-5 board and target checkerboard pattern", sourcePage: 3 },
-  { number: 24, points: 5, prompt: "A motorboat travels downstream from X to Y in 4 hours and upstream back in 6 hours. How long does a tree trunk take to float downstream from X to Y?", options: ["5", "10", "12", "20", "24"], answer: 4, explanation: "If the distance is D, the boat speed b and stream speed s satisfy D=4(b+s)=6(b-s). This gives b=5s, so D=4(6s)=24s. A floating trunk moves at speed s and needs 24 hours.", hint: "Solve the downstream and upstream equations for the stream speed, then divide the distance by it.", sourcePage: 3 },
-  { number: 25, points: 5, prompt: "In a 40-day month, days divisible by 6 and prime-numbered days are public holidays. How often is there exactly one working day between two public holidays?", options: ["1", "2", "3", "4", "5"], answer: 0, explanation: "Listing the holiday dates from 1 to 40 and checking the gaps gives one instance with exactly one working day between holidays.", hint: "List all prime dates and multiples of 6, then inspect consecutive holiday gaps.", sourcePage: 3 },
-  { number: 26, points: 5, prompt: "Two heights of a triangle are 10 cm and 11 cm. Which cannot be the length of the third height?", options: ["5 cm", "6 cm", "7 cm", "10 cm", "100 cm"], answer: 0, explanation: "For a fixed area, the three side lengths are proportional to the reciprocals of the altitudes and must satisfy the triangle inequalities. A third altitude of 5 cm is impossible.", hint: "Express side lengths as 2A divided by each altitude and apply the triangle inequality.", sourcePage: 3 },
-  { number: 27, points: 5, prompt: "Jakob writes four consecutive positive integers. None of the sums of three of them is prime. What is the smallest possible first number?", options: ["12", "10", "7", "6", "3"], answer: 2, explanation: "Testing consecutive quadruples, the smallest start for which all four three-number sums are composite is 7.", hint: "Check the four sums obtained by omitting one number from the consecutive quadruple.", sourcePage: 3 },
-  { number: 28, points: 5, prompt: "Four people sit around a table and do four different sports. The skier sits left of Sandra, the ice skater opposite Benjamin, Eva and Philipp sit next to each other, and a woman sits next to the hockey player. Which sport does Eva do?", options: ["Ice skating", "Skiing", "Hockey", "Sledging", "It cannot be determined"], answer: 0, explanation: "Applying the seating and gender constraints leaves Eva as the ice skater.", hint: "Place Benjamin opposite the ice skater, then enforce the adjacency clues around the table.", sourcePage: 3 },
-    { number: 29, points: 5, prompt: "A date is written DD.MM.YYYY, and a date is surprising if all eight digits are different. Starting from 17.03.2016, in which month does the next surprising date occur?", options: ["March", "June", "July", "August", "December"], answer: 1, explanation: "NEEDS_REVIEW: the answer key marks June, but the exact date convention and the 'next' surprising date need to be reconciled with the stated eight distinct digits.", hint: "Check candidate dates digit by digit, including leading zeroes in the day and month.", sourcePage: 3 },
-    { number: 30, points: 5, prompt: "Exactly 2016 people are at a conference, numbered P1 to P2016. Each of P1 through P2015 has shaken hands with exactly as many people as their number indicates. How many people did P2016 shake hands with?", options: ["1", "504", "672", "1008", "2015"], answer: 3, explanation: "The specified degrees 1 through 2015 constrain the remaining degree through the graph's handshake and graphical-sequence conditions; it is 1008.", hint: "Use the handshake lemma and check which remaining degree makes the full degree sequence graphical.", sourcePage: 3 },
+  {
+    number: 1,
+    points: 3,
+    prompt: "The arithmetic mean of four numbers is 9. What is the fourth number if the other three are 5, 9, and 12?",
+    options: [
+      "6",
+      "8",
+      "9",
+      "10",
+      "36"
+    ],
+    answer: 3,
+    explanation: "The four numbers sum to 36. The missing number is 36-(5+9+12)=10.",
+    hint: "Multiply the mean by four to get the total sum.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "1-0",
+        type: "text",
+        text: "6",
+        imageAlt: "A option"
+      },
+      {
+        id: "1-1",
+        type: "text",
+        text: "8",
+        imageAlt: "B option"
+      },
+      {
+        id: "1-2",
+        type: "text",
+        text: "9",
+        imageAlt: "C option"
+      },
+      {
+        id: "1-3",
+        type: "text",
+        text: "10",
+        imageAlt: "D option"
+      },
+      {
+        id: "1-4",
+        type: "text",
+        text: "36",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 2,
+    points: 3,
+    prompt: "Which number is closest to (17 x 0.3 x 20.16)/999?",
+    options: [
+      "0.01",
+      "0.1",
+      "1",
+      "10",
+      "100"
+    ],
+    answer: 1,
+    explanation: "The numerator is about 103, and dividing by 999 gives about 0.103, closest to 0.1.",
+    hint: "Estimate the numerator and compare the quotient with the choices.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "2-0",
+        type: "text",
+        text: "0.01",
+        imageAlt: "A option"
+      },
+      {
+        id: "2-1",
+        type: "text",
+        text: "0.1",
+        imageAlt: "B option"
+      },
+      {
+        id: "2-2",
+        type: "text",
+        text: "1",
+        imageAlt: "C option"
+      },
+      {
+        id: "2-3",
+        type: "text",
+        text: "10",
+        imageAlt: "D option"
+      },
+      {
+        id: "2-4",
+        type: "text",
+        text: "100",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 3,
+    points: 3,
+    prompt: "Ruth answers all 30 competition questions. She has 50% more right answers than wrong answers. How many are right?",
+    options: [
+      "10",
+      "12",
+      "15",
+      "18",
+      "20"
+    ],
+    answer: 3,
+    explanation: "If wrong answers are w, right answers are 1.5w. Then 2.5w=30, so w=12 and right answers are 18.",
+    hint: "Let the number wrong be w and use the total of 30.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "3-0",
+        type: "text",
+        text: "10",
+        imageAlt: "A option"
+      },
+      {
+        id: "3-1",
+        type: "text",
+        text: "12",
+        imageAlt: "B option"
+      },
+      {
+        id: "3-2",
+        type: "text",
+        text: "15",
+        imageAlt: "C option"
+      },
+      {
+        id: "3-3",
+        type: "text",
+        text: "18",
+        imageAlt: "D option"
+      },
+      {
+        id: "3-4",
+        type: "text",
+        text: "20",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 4,
+    points: 3,
+    prompt: "Five points are P(-1,3), Q(0,-4), R(-2,-1), S(1,1), and T(3,-2). Four are vertices of a square. Which point does not belong?",
+    options: [
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T"
+    ],
+    answer: 0,
+    explanation: "The points Q, R, S, and T have equal side lengths and perpendicular successive sides, so they form the square; P is the extra point.",
+    hint: "Compare squared distances among the points to find four equal sides and equal diagonals.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "4-0",
+        type: "text",
+        text: "P",
+        imageAlt: "A option"
+      },
+      {
+        id: "4-1",
+        type: "text",
+        text: "Q",
+        imageAlt: "B option"
+      },
+      {
+        id: "4-2",
+        type: "text",
+        text: "R",
+        imageAlt: "C option"
+      },
+      {
+        id: "4-3",
+        type: "text",
+        text: "S",
+        imageAlt: "D option"
+      },
+      {
+        id: "4-4",
+        type: "text",
+        text: "T",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 5,
+    points: 3,
+    prompt: "A positive integer x leaves remainder 3 when divided by 6. What remainder does 3x leave when divided by 6?",
+    options: [
+      "4",
+      "3",
+      "2",
+      "1",
+      "0"
+    ],
+    answer: 1,
+    explanation: "Write x=6k+3. Then 3x=18k+9, which leaves remainder 3 modulo 6.",
+    hint: "Substitute x=6k+3 and reduce modulo 6.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "5-0",
+        type: "text",
+        text: "4",
+        imageAlt: "A option"
+      },
+      {
+        id: "5-1",
+        type: "text",
+        text: "3",
+        imageAlt: "B option"
+      },
+      {
+        id: "5-2",
+        type: "text",
+        text: "2",
+        imageAlt: "C option"
+      },
+      {
+        id: "5-3",
+        type: "text",
+        text: "1",
+        imageAlt: "D option"
+      },
+      {
+        id: "5-4",
+        type: "text",
+        text: "0",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 6,
+    points: 3,
+    prompt: "2016 hours are how many weeks?",
+    options: [
+      "6",
+      "8",
+      "10",
+      "12",
+      "16"
+    ],
+    answer: 3,
+    explanation: "A week has 7 x 24=168 hours, and 2016/168=12.",
+    hint: "Convert one week to hours and divide.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "6-0",
+        type: "text",
+        text: "6",
+        imageAlt: "A option"
+      },
+      {
+        id: "6-1",
+        type: "text",
+        text: "8",
+        imageAlt: "B option"
+      },
+      {
+        id: "6-2",
+        type: "text",
+        text: "10",
+        imageAlt: "C option"
+      },
+      {
+        id: "6-3",
+        type: "text",
+        text: "12",
+        imageAlt: "D option"
+      },
+      {
+        id: "6-4",
+        type: "text",
+        text: "16",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 7,
+    points: 3,
+    prompt: "Lukas writes negative numbers as strings of zeroes while counting backwards: ..., 3, 2, 1, 0, 00, 000, 0000, ... What is 000+0000 in this notation?",
+    options: [
+      "1",
+      "00000",
+      "000000",
+      "0000000",
+      "00000000"
+    ],
+    answer: 2,
+    explanation: "The strings 000 and 0000 represent -3 and -4, whose sum is -7, written 0000000.",
+    hint: "Interpret each additional zero as the next negative integer.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "7-0",
+        type: "text",
+        text: "1",
+        imageAlt: "A option"
+      },
+      {
+        id: "7-1",
+        type: "text",
+        text: "00000",
+        imageAlt: "B option"
+      },
+      {
+        id: "7-2",
+        type: "text",
+        text: "000000",
+        imageAlt: "C option"
+      },
+      {
+        id: "7-3",
+        type: "text",
+        text: "0000000",
+        imageAlt: "D option"
+      },
+      {
+        id: "7-4",
+        type: "text",
+        text: "00000000",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 8,
+    points: 3,
+    prompt: "Unusual dice have faces -1, 2, -3, 4, -5, and 6. Which sum cannot be obtained by rolling two such dice?",
+    options: [
+      "3",
+      "4",
+      "5",
+      "7",
+      "8"
+    ],
+    answer: 3,
+    explanation: "Two even faces or two negative odd faces give an even sum. To get the odd sum 7, one face would have to be even and the other odd; the largest such sum is 6+(−1)=5. So 7 cannot be made.",
+    hint: "An odd total needs one even face and one odd face; find the largest total of that kind.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "8-0",
+        type: "text",
+        text: "3",
+        imageAlt: "A option"
+      },
+      {
+        id: "8-1",
+        type: "text",
+        text: "4",
+        imageAlt: "B option"
+      },
+      {
+        id: "8-2",
+        type: "text",
+        text: "5",
+        imageAlt: "C option"
+      },
+      {
+        id: "8-3",
+        type: "text",
+        text: "7",
+        imageAlt: "D option"
+      },
+      {
+        id: "8-4",
+        type: "text",
+        text: "8",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 9,
+    points: 3,
+    prompt: "Step by step, VELO is changed into LOVE by swapping adjacent letters. What is the minimum number of steps?",
+    options: [
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    answer: 1,
+    explanation: "One shortest sequence is VELO→VLEO→LVEO→LVOE→LOVE, using four adjacent swaps. The target order has four inversions relative to VELO, so fewer swaps cannot suffice.",
+    hint: "Count how many pairs of letters appear in the opposite order in VELO and LOVE; each adjacent swap fixes one such pair.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "9-0",
+        type: "text",
+        text: "3",
+        imageAlt: "A option"
+      },
+      {
+        id: "9-1",
+        type: "text",
+        text: "4",
+        imageAlt: "B option"
+      },
+      {
+        id: "9-2",
+        type: "text",
+        text: "5",
+        imageAlt: "C option"
+      },
+      {
+        id: "9-3",
+        type: "text",
+        text: "6",
+        imageAlt: "D option"
+      },
+      {
+        id: "9-4",
+        type: "text",
+        text: "7",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 10,
+    points: 3,
+    prompt: "Sven writes five different positive one-digit integers, and no pair sums to 10. Which number must he have written?",
+    options: [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    answer: 4,
+    explanation: "The four complementary pairs summing to 10 are (1,9), (2,8), (3,7), and (4,6). Choosing five distinct digits without a complete pair requires the middle digit 5.",
+    hint: "Group the digits into complementary pairs that sum to 10.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "10-0",
+        type: "text",
+        text: "1",
+        imageAlt: "A option"
+      },
+      {
+        id: "10-1",
+        type: "text",
+        text: "2",
+        imageAlt: "B option"
+      },
+      {
+        id: "10-2",
+        type: "text",
+        text: "3",
+        imageAlt: "C option"
+      },
+      {
+        id: "10-3",
+        type: "text",
+        text: "4",
+        imageAlt: "D option"
+      },
+      {
+        id: "10-4",
+        type: "text",
+        text: "5",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 11,
+    points: 4,
+    prompt: "For real numbers a,b,c,d, a+5=b^2-1=c^2+3=d-4. Which number is greatest?",
+    options: [
+      "a",
+      "b",
+      "c",
+      "d",
+      "It cannot be uniquely determined"
+    ],
+    answer: 3,
+    explanation: "Let the common value be k. Then a=k−5, d=k+4, b²=k+1, and c²=k−3, so k≥3. Therefore |b|=√(k+1)<k+4=d and |c|=√(k−3)<k+4=d, while a=d−9. Thus d is greatest.",
+    hint: "Set all four expressions equal to k, then compare d with the largest possible values of b and c.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "11-0",
+        type: "text",
+        text: "a",
+        imageAlt: "A option"
+      },
+      {
+        id: "11-1",
+        type: "text",
+        text: "b",
+        imageAlt: "B option"
+      },
+      {
+        id: "11-2",
+        type: "text",
+        text: "c",
+        imageAlt: "C option"
+      },
+      {
+        id: "11-3",
+        type: "text",
+        text: "d",
+        imageAlt: "D option"
+      },
+      {
+        id: "11-4",
+        type: "text",
+        text: "It cannot be uniquely determined",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 12,
+    points: 4,
+    prompt: "A 3 x 3 square grid has two unit circles inscribed in opposite corner squares. What is the shortest distance between the circles?",
+    options: [
+      "2sqrt(2)-1",
+      "sqrt(2)+1",
+      "2sqrt(2)",
+      "2",
+      "3"
+    ],
+    answer: 0,
+    explanation: "The circle centres are separated by 2sqrt(2) units diagonally. Subtract the two radii, whose sum is 1, giving 2sqrt(2)-1.",
+    hint: "Find the diagonal distance between the centres and subtract both radii.",
+    image: "/assets/kangaroo/grades-9-10/junior/2016/questions/q-12-diagram.png",
+    imageAlt: "Two unit circles in opposite corner cells of a 3-by-3 grid",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "12-0",
+        type: "text",
+        text: "2sqrt(2)-1",
+        imageAlt: "A option"
+      },
+      {
+        id: "12-1",
+        type: "text",
+        text: "sqrt(2)+1",
+        imageAlt: "B option"
+      },
+      {
+        id: "12-2",
+        type: "text",
+        text: "2sqrt(2)",
+        imageAlt: "C option"
+      },
+      {
+        id: "12-3",
+        type: "text",
+        text: "2",
+        imageAlt: "D option"
+      },
+      {
+        id: "12-4",
+        type: "text",
+        text: "3",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 13,
+    points: 4,
+    prompt: "A knockout tennis tournament has seven matches. Six results are known: Bella beats Ann, Gina beats Celine, Celine beats Donna, Celine beats Bella, Gina beats Holly, and Emma beats Farah. Which result is missing?",
+    options: [
+      "Gina beats Bella",
+      "Celine beats Ann",
+      "Emma beats Celine",
+      "Bella beats Holly",
+      "Gina beats Emma"
+    ],
+    answer: 4,
+    explanation: "The seven matches form a knockout bracket; the remaining result needed to connect the winners is Gina beats Emma.",
+    hint: "Draw the seven-match elimination bracket and place the known winners into it.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "13-0",
+        type: "text",
+        text: "Gina beats Bella",
+        imageAlt: "A option"
+      },
+      {
+        id: "13-1",
+        type: "text",
+        text: "Celine beats Ann",
+        imageAlt: "B option"
+      },
+      {
+        id: "13-2",
+        type: "text",
+        text: "Emma beats Celine",
+        imageAlt: "C option"
+      },
+      {
+        id: "13-3",
+        type: "text",
+        text: "Bella beats Holly",
+        imageAlt: "D option"
+      },
+      {
+        id: "13-4",
+        type: "text",
+        text: "Gina beats Emma",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 14,
+    points: 4,
+    prompt: "What percentage of the area of the triangle is coloured grey in the diagram?",
+    options: [
+      "80%",
+      "85%",
+      "88%",
+      "90%",
+      "It cannot be calculated"
+    ],
+    answer: 2,
+    explanation: "Each side is split into lengths 1, 3, and 1, so the whole side is 5. Each white corner triangle is similar to the large triangle with side scale 1/5, and therefore has 1/25 of its area. The three white corners total 3/25=12%, leaving 22/25=88% grey.",
+    hint: "Compare a small white corner triangle with the whole triangle by using the ratio of their corresponding side lengths.",
+    image: "/assets/kangaroo/grades-9-10/junior/2016/questions/q-14-diagram.png",
+    imageAlt: "Large triangle with grey central region and side lengths labelled 1 and 3",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "14-0",
+        type: "text",
+        text: "80%",
+        imageAlt: "A option"
+      },
+      {
+        id: "14-1",
+        type: "text",
+        text: "85%",
+        imageAlt: "B option"
+      },
+      {
+        id: "14-2",
+        type: "text",
+        text: "88%",
+        imageAlt: "C option"
+      },
+      {
+        id: "14-3",
+        type: "text",
+        text: "90%",
+        imageAlt: "D option"
+      },
+      {
+        id: "14-4",
+        type: "text",
+        text: "It cannot be calculated",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 15,
+    points: 4,
+    prompt: "Jilly makes a multiplication magic square using 1, 2, 4, 5, 10, 20, 25, 50, and 100. Products in every row, column, and diagonal are equal. Given 20 and 1 in the top row, which number goes in the marked cell?",
+    options: [
+      "2",
+      "4",
+      "5",
+      "10",
+      "25"
+    ],
+    answer: 1,
+    explanation: "Balancing the products in the rows, columns, and diagonals places 4 in the marked cell.",
+    hint: "Use prime-factor exponents for 2 and 5 in the equal products.",
+    image: "/assets/kangaroo/grades-9-10/junior/2016/questions/q-15-diagram.png",
+    imageAlt: "3-by-3 multiplication magic square with 20 and 1 given",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "15-0",
+        type: "text",
+        text: "2",
+        imageAlt: "A option"
+      },
+      {
+        id: "15-1",
+        type: "text",
+        text: "4",
+        imageAlt: "B option"
+      },
+      {
+        id: "15-2",
+        type: "text",
+        text: "5",
+        imageAlt: "C option"
+      },
+      {
+        id: "15-3",
+        type: "text",
+        text: "10",
+        imageAlt: "D option"
+      },
+      {
+        id: "15-4",
+        type: "text",
+        text: "25",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 16,
+    points: 4,
+    prompt: "Jack keeps six tubes of diameter 2 cm together with a rubber band. He arranges them in two shown ways. How do the band lengths compare?",
+    options: [
+      "Left is pi cm shorter",
+      "Left is 4 cm shorter",
+      "Right is pi cm shorter",
+      "Right is 4 cm shorter",
+      "They are equal"
+    ],
+    answer: 4,
+    explanation: "For both arrangements, the straight portions total the same length and the rounded portions together make one full circumference. The bands have equal length.",
+    hint: "Compare the perimeter of the centres' convex hull plus the same circular end contribution.",
+    image: "/assets/kangaroo/grades-9-10/junior/2016/questions/q-16-diagram.png",
+    imageAlt: "Six tubes in a parallelogram and triangular arrangement with rubber bands",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "16-0",
+        type: "text",
+        text: "Left is pi cm shorter",
+        imageAlt: "A option"
+      },
+      {
+        id: "16-1",
+        type: "text",
+        text: "Left is 4 cm shorter",
+        imageAlt: "B option"
+      },
+      {
+        id: "16-2",
+        type: "text",
+        text: "Right is pi cm shorter",
+        imageAlt: "C option"
+      },
+      {
+        id: "16-3",
+        type: "text",
+        text: "Right is 4 cm shorter",
+        imageAlt: "D option"
+      },
+      {
+        id: "16-4",
+        type: "text",
+        text: "They are equal",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 17,
+    points: 4,
+    prompt: "Peter colours a 3 x 3 square so every row, column, and both diagonals contain three different colours. What is the smallest number of colours needed?",
+    options: [
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    answer: 2,
+    explanation: "The centre must differ from the six cells on the middle row and both diagonals, so three colours cannot work. With four, name the top row A,B,C; the centre must be D. If the middle-left cell is B, the bottom-left cell has no colour allowed by its column and diagonal. If it is C, the bottom-left must be B, and the remaining row/column restrictions force a repeat at a bottom corner. Five work, for example: A B C / B D A / E A B. Thus the minimum is 5.",
+    hint: "The centre must differ from every other cell on the middle row and both diagonals; then test whether four colours can complete the bottom row.",
+    sourcePage: 2,
+    image: "/assets/kangaroo/grades-9-10/junior/2016/questions/editor-q-17.png",
+    optionContent: [
+      {
+        id: "17-0",
+        type: "text",
+        text: "3",
+        imageAlt: "A option"
+      },
+      {
+        id: "17-1",
+        type: "text",
+        text: "4",
+        imageAlt: "B option"
+      },
+      {
+        id: "17-2",
+        type: "text",
+        text: "5",
+        imageAlt: "C option"
+      },
+      {
+        id: "17-3",
+        type: "text",
+        text: "6",
+        imageAlt: "D option"
+      },
+      {
+        id: "17-4",
+        type: "text",
+        text: "7",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 18,
+    points: 4,
+    prompt: "Cards numbered 1, 2, 4, 8, 16, 32, 64, and 128 are divided between Eva and Ali. Eva's sum is 31 greater than Ali's. How many cards did Eva choose?",
+    options: [
+      "2",
+      "3",
+      "4",
+      "5",
+      "6"
+    ],
+    answer: 3,
+    explanation: "The total is 255, so Eva's sum is 143. The powers of two summing to 143 are 128+8+4+2+1, five cards.",
+    hint: "Find Eva's total from the combined sum, then write it as a sum of distinct powers of two.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "18-0",
+        type: "text",
+        text: "2",
+        imageAlt: "A option"
+      },
+      {
+        id: "18-1",
+        type: "text",
+        text: "3",
+        imageAlt: "B option"
+      },
+      {
+        id: "18-2",
+        type: "text",
+        text: "4",
+        imageAlt: "C option"
+      },
+      {
+        id: "18-3",
+        type: "text",
+        text: "5",
+        imageAlt: "D option"
+      },
+      {
+        id: "18-4",
+        type: "text",
+        text: "6",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 19,
+    points: 4,
+    prompt: "The diagram shows a cube and four marked angles. What is the sum of the four angles?",
+    options: [
+      "315 degrees",
+      "330 degrees",
+      "345 degrees",
+      "360 degrees",
+      "375 degrees"
+    ],
+    answer: 1,
+    explanation: "Projecting the four marked angles around the cube and using the right angles at its faces gives a total of 330 degrees.",
+    hint: "Unfold the relevant faces into a plane and use the angle sum around the projected path.",
+    image: "/assets/kangaroo/grades-9-10/junior/2016/questions/editor-q-19.png",
+    imageAlt: "Cube with four marked angles on its faces",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "19-0",
+        type: "text",
+        text: "315 degrees",
+        imageAlt: "A option"
+      },
+      {
+        id: "19-1",
+        type: "text",
+        text: "330 degrees",
+        imageAlt: "B option"
+      },
+      {
+        id: "19-2",
+        type: "text",
+        text: "345 degrees",
+        imageAlt: "C option"
+      },
+      {
+        id: "19-3",
+        type: "text",
+        text: "360 degrees",
+        imageAlt: "D option"
+      },
+      {
+        id: "19-4",
+        type: "text",
+        text: "375 degrees",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 20,
+    points: 4,
+    prompt: "An enclosure has 2016 red or grey kangaroos, with at least one of each colour. For each kangaroo, calculate the fraction of the other colour divided by the number of its own colour including itself. What is the sum of these 2016 fractions?",
+    options: [
+      "2016",
+      "1344",
+      "1008",
+      "672",
+      "More information is necessary"
+    ],
+    answer: 0,
+    explanation: "If there are r red and g grey kangaroos, the red contribution is r*g/r=g and the grey contribution is g*r/g=r. Their sum is r+g=2016.",
+    hint: "Group the equal fractions by colour and simplify each group's total.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "20-0",
+        type: "text",
+        text: "2016",
+        imageAlt: "A option"
+      },
+      {
+        id: "20-1",
+        type: "text",
+        text: "1344",
+        imageAlt: "B option"
+      },
+      {
+        id: "20-2",
+        type: "text",
+        text: "1008",
+        imageAlt: "C option"
+      },
+      {
+        id: "20-3",
+        type: "text",
+        text: "672",
+        imageAlt: "D option"
+      },
+      {
+        id: "20-4",
+        type: "text",
+        text: "More information is necessary",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 21,
+    points: 5,
+    prompt: "A creeping plant twists exactly five times around a post of circumference 15 cm and reaches a height of 1 m. If it grows at a constant rate, how long is the plant?",
+    options: [
+      "0.75 m",
+      "1.0 m",
+      "1.25 m",
+      "1.5 m",
+      "1.75 m"
+    ],
+    answer: 2,
+    explanation: "Unwrapping the post gives a rectangle 75 cm wide and 100 cm high. The plant length is sqrt(75^2+100^2)=125 cm=1.25 m.",
+    hint: "Unwrap the post into a rectangle and use the Pythagorean theorem.",
+    image: "/assets/kangaroo/grades-9-10/junior/2016/questions/q-21-diagram.png",
+    imageAlt: "Plant winding five times around a post marked 1 m high",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "21-0",
+        type: "text",
+        text: "0.75 m",
+        imageAlt: "A option"
+      },
+      {
+        id: "21-1",
+        type: "text",
+        text: "1.0 m",
+        imageAlt: "B option"
+      },
+      {
+        id: "21-2",
+        type: "text",
+        text: "1.25 m",
+        imageAlt: "C option"
+      },
+      {
+        id: "21-3",
+        type: "text",
+        text: "1.5 m",
+        imageAlt: "D option"
+      },
+      {
+        id: "21-4",
+        type: "text",
+        text: "1.75 m",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 22,
+    points: 5,
+    prompt: "What is the largest remainder when a two-digit number is divided by the sum of its digits?",
+    options: [
+      "13",
+      "14",
+      "15",
+      "16",
+      "17"
+    ],
+    answer: 2,
+    explanation: "A remainder is less than the digit sum, which is at most 18. Remainders 16 or 17 would require a digit sum of 17 or 18: the only numbers with those sums are 89, 98, and 99, whose remainders are 4, 13, and 9. But 79 divided by 7+9=16 leaves remainder 15, so the maximum is 15.",
+    hint: "First bound the remainder by the largest possible digit sum, then check the numbers whose digit sums could allow 16 or 17.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "22-0",
+        type: "text",
+        text: "13",
+        imageAlt: "A option"
+      },
+      {
+        id: "22-1",
+        type: "text",
+        text: "14",
+        imageAlt: "B option"
+      },
+      {
+        id: "22-2",
+        type: "text",
+        text: "15",
+        imageAlt: "C option"
+      },
+      {
+        id: "22-3",
+        type: "text",
+        text: "16",
+        imageAlt: "D option"
+      },
+      {
+        id: "22-4",
+        type: "text",
+        text: "17",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 23,
+    points: 5,
+    prompt: "A 5 x 5 board starts white. Each move changes the colours of two horizontally or vertically adjacent cells. What is the minimum number of moves needed to obtain the shown checkerboard colouring?",
+    options: [
+      "11",
+      "12",
+      "13",
+      "14",
+      "15"
+    ],
+    answer: 1,
+    explanation: "The target has 12 grey cells, and no two grey cells share an edge. A move can therefore change at most one target-grey cell, so at least 12 moves are needed. Twelve suffice: pair grey cells two steps apart within each row, except pair the two cells in the far-right column of rows 2 and 4. Flip the two adjacent edges along each pair's length-2 path; the middle cell flips twice and ends white, while each grey endpoint flips once. Thus the minimum is 12.",
+    hint: "Since no two target-grey cells are adjacent, each one needs its own move; pair grey cells two grid steps apart to build a matching sequence.",
+    image: "/assets/kangaroo/grades-9-10/junior/2016/questions/q-23-diagram.png",
+    imageAlt: "Blank 5-by-5 board and target checkerboard pattern",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "23-0",
+        type: "text",
+        text: "11",
+        imageAlt: "A option"
+      },
+      {
+        id: "23-1",
+        type: "text",
+        text: "12",
+        imageAlt: "B option"
+      },
+      {
+        id: "23-2",
+        type: "text",
+        text: "13",
+        imageAlt: "C option"
+      },
+      {
+        id: "23-3",
+        type: "text",
+        text: "14",
+        imageAlt: "D option"
+      },
+      {
+        id: "23-4",
+        type: "text",
+        text: "15",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 24,
+    points: 5,
+    prompt: "A motorboat travels downstream from X to Y in 4 hours and upstream back in 6 hours. How long does a tree trunk take to float downstream from X to Y?",
+    options: [
+      "5",
+      "10",
+      "12",
+      "20",
+      "24"
+    ],
+    answer: 4,
+    explanation: "If the distance is D, the boat speed b and stream speed s satisfy D=4(b+s)=6(b-s). This gives b=5s, so D=4(6s)=24s. A floating trunk moves at speed s and needs 24 hours.",
+    hint: "Solve the downstream and upstream equations for the stream speed, then divide the distance by it.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "24-0",
+        type: "text",
+        text: "5",
+        imageAlt: "A option"
+      },
+      {
+        id: "24-1",
+        type: "text",
+        text: "10",
+        imageAlt: "B option"
+      },
+      {
+        id: "24-2",
+        type: "text",
+        text: "12",
+        imageAlt: "C option"
+      },
+      {
+        id: "24-3",
+        type: "text",
+        text: "20",
+        imageAlt: "D option"
+      },
+      {
+        id: "24-4",
+        type: "text",
+        text: "24",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 25,
+    points: 5,
+    prompt: "In a 40-day month, days divisible by 6 and prime-numbered days are public holidays. How often is there exactly one working day between two public holidays?",
+    options: [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    answer: 0,
+    explanation: "Listing the holiday dates from 1 to 40 and checking the gaps gives one instance with exactly one working day between holidays.",
+    hint: "List all prime dates and multiples of 6, then inspect consecutive holiday gaps.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "25-0",
+        type: "text",
+        text: "1",
+        imageAlt: "A option"
+      },
+      {
+        id: "25-1",
+        type: "text",
+        text: "2",
+        imageAlt: "B option"
+      },
+      {
+        id: "25-2",
+        type: "text",
+        text: "3",
+        imageAlt: "C option"
+      },
+      {
+        id: "25-3",
+        type: "text",
+        text: "4",
+        imageAlt: "D option"
+      },
+      {
+        id: "25-4",
+        type: "text",
+        text: "5",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 26,
+    points: 5,
+    prompt: "Two heights of a triangle are 10 cm and 11 cm. Which cannot be the length of the third height?",
+    options: [
+      "5 cm",
+      "6 cm",
+      "7 cm",
+      "10 cm",
+      "100 cm"
+    ],
+    answer: 0,
+    explanation: "For a fixed area, the three side lengths are proportional to the reciprocals of the altitudes and must satisfy the triangle inequalities. A third altitude of 5 cm is impossible.",
+    hint: "Express side lengths as 2A divided by each altitude and apply the triangle inequality.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "26-0",
+        type: "text",
+        text: "5 cm",
+        imageAlt: "A option"
+      },
+      {
+        id: "26-1",
+        type: "text",
+        text: "6 cm",
+        imageAlt: "B option"
+      },
+      {
+        id: "26-2",
+        type: "text",
+        text: "7 cm",
+        imageAlt: "C option"
+      },
+      {
+        id: "26-3",
+        type: "text",
+        text: "10 cm",
+        imageAlt: "D option"
+      },
+      {
+        id: "26-4",
+        type: "text",
+        text: "100 cm",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 27,
+    points: 5,
+    prompt: "Jakob writes four consecutive positive integers. None of the sums of three of them is prime. What is the smallest possible first number?",
+    options: [
+      "12",
+      "10",
+      "7",
+      "6",
+      "3"
+    ],
+    answer: 2,
+    explanation: "Testing consecutive quadruples, the smallest start for which all four three-number sums are composite is 7.",
+    hint: "Check the four sums obtained by omitting one number from the consecutive quadruple.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "27-0",
+        type: "text",
+        text: "12",
+        imageAlt: "A option"
+      },
+      {
+        id: "27-1",
+        type: "text",
+        text: "10",
+        imageAlt: "B option"
+      },
+      {
+        id: "27-2",
+        type: "text",
+        text: "7",
+        imageAlt: "C option"
+      },
+      {
+        id: "27-3",
+        type: "text",
+        text: "6",
+        imageAlt: "D option"
+      },
+      {
+        id: "27-4",
+        type: "text",
+        text: "3",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 28,
+    points: 5,
+    prompt: "Four people sit around a table and do four different sports. The skier sits left of Sandra, the ice skater opposite Benjamin, Eva and Philipp sit next to each other, and a woman sits next to the hockey player. Which sport does Eva do?",
+    options: [
+      "Ice skating",
+      "Skiing",
+      "Hockey",
+      "Sledging",
+      "It cannot be determined"
+    ],
+    answer: 0,
+    explanation: "Applying the seating and gender constraints leaves Eva as the ice skater.",
+    hint: "Place Benjamin opposite the ice skater, then enforce the adjacency clues around the table.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "28-0",
+        type: "text",
+        text: "Ice skating",
+        imageAlt: "A option"
+      },
+      {
+        id: "28-1",
+        type: "text",
+        text: "Skiing",
+        imageAlt: "B option"
+      },
+      {
+        id: "28-2",
+        type: "text",
+        text: "Hockey",
+        imageAlt: "C option"
+      },
+      {
+        id: "28-3",
+        type: "text",
+        text: "Sledging",
+        imageAlt: "D option"
+      },
+      {
+        id: "28-4",
+        type: "text",
+        text: "It cannot be determined",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 29,
+    points: 5,
+    prompt: "A date is written DD.MM.YYYY, and a date is surprising if all eight digits are different. Starting from 17.03.2016, in which month does the next surprising date occur?",
+    options: [
+      "March",
+      "June",
+      "July",
+      "August",
+      "December"
+    ],
+    answer: 1,
+    explanation: "NEEDS_REVIEW: the answer key marks June, but the exact date convention and the 'next' surprising date need to be reconciled with the stated eight distinct digits.",
+    hint: "Check candidate dates digit by digit, including leading zeroes in the day and month.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "29-0",
+        type: "text",
+        text: "March",
+        imageAlt: "A option"
+      },
+      {
+        id: "29-1",
+        type: "text",
+        text: "June",
+        imageAlt: "B option"
+      },
+      {
+        id: "29-2",
+        type: "text",
+        text: "July",
+        imageAlt: "C option"
+      },
+      {
+        id: "29-3",
+        type: "text",
+        text: "August",
+        imageAlt: "D option"
+      },
+      {
+        id: "29-4",
+        type: "text",
+        text: "December",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 30,
+    points: 5,
+    prompt: "Exactly 2016 people are at a conference, numbered P1 to P2016. Each of P1 through P2015 has shaken hands with exactly as many people as their number indicates. How many people did P2016 shake hands with?",
+    options: [
+      "1",
+      "504",
+      "672",
+      "1008",
+      "2015"
+    ],
+    answer: 3,
+    explanation: "The specified degrees 1 through 2015 constrain the remaining degree through the graph's handshake and graphical-sequence conditions; it is 1008.",
+    hint: "Use the handshake lemma and check which remaining degree makes the full degree sequence graphical.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "30-0",
+        type: "text",
+        text: "1",
+        imageAlt: "A option"
+      },
+      {
+        id: "30-1",
+        type: "text",
+        text: "504",
+        imageAlt: "B option"
+      },
+      {
+        id: "30-2",
+        type: "text",
+        text: "672",
+        imageAlt: "C option"
+      },
+      {
+        id: "30-3",
+        type: "text",
+        text: "1008",
+        imageAlt: "D option"
+      },
+      {
+        id: "30-4",
+        type: "text",
+        text: "2015",
+        imageAlt: "E option"
+      }
+    ]
+  }
 ];
 
 const sections2016Junior: Section[] = [
-  { points: 3, label: "Section 1", range: "Questions 1-10", accent: "coral" },
-  { points: 4, label: "Section 2", range: "Questions 11-20", accent: "blue" },
-  { points: 5, label: "Section 3", range: "Questions 21-30", accent: "purple" }
+  {
+    points: 3,
+    label: "Section 1",
+    range: "Questions 1-10",
+    accent: "coral"
+  },
+  {
+    points: 4,
+    label: "Section 2",
+    range: "Questions 11-20",
+    accent: "blue"
+  },
+  {
+    points: 5,
+    label: "Section 3",
+    range: "Questions 21-30",
+    accent: "purple"
+  }
 ];
 
 export const edition2016Junior: QuestionSet = {
@@ -49,5 +1489,5 @@ export const edition2016Junior: QuestionSet = {
   timeLimitMinutes: 75,
   sourceUrl: "https://www.matematica.pt/en/docs/kangaroo/enunciados/2016/2016_Junior.pdf",
   questions: questions2016Junior,
-  sections: sections2016Junior
+  sections: sections2016Junior,
 };
