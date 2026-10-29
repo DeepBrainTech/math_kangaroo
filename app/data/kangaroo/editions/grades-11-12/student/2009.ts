@@ -1,42 +1,1477 @@
 import type { Question, QuestionSet, Section } from "../../../types";
 
 const questions2009Student: Question[] = [
-  { number: 1, points: 3, prompt: "There are 200 fish in an aquarium. Of these, 1% are blue and the rest are yellow. How many yellow fish must be removed to make the number of blue fish equal to 2% of the total number of fish?", options: ["2", "4", "20", "50", "100"], answer: 4, explanation: "There are 2 blue fish. For them to be 2% of the remaining fish, 100 fish must remain, so remove 100 yellow fish.", hint: "Keep the 2 blue fish fixed and find the total for which 2 is 2%.", sourcePage: 1 },
-  { number: 2, points: 3, prompt: "Which of the following numbers is biggest?", options: ["sqrt(2)-sqrt(1)", "sqrt(3)-sqrt(2)", "sqrt(4)-sqrt(3)", "sqrt(5)-sqrt(4)", "sqrt(6)-sqrt(5)"], answer: 0, explanation: "The difference sqrt(n+1)-sqrt(n)=1/(sqrt(n+1)+sqrt(n)) decreases as n increases, so the first difference is greatest.", hint: "Rationalize each difference to compare its denominator.", sourcePage: 1 },
-  { number: 3, points: 3, prompt: "For how many positive whole numbers n is n^2+n a prime number?", options: ["0", "1", "2", "A finite number greater than 2", "Infinitely many"], answer: 1, explanation: "n(n+1) is a product of consecutive positive integers. It is prime only for n=1, when it equals 2.", hint: "Factor the expression and check the smallest positive n.", sourcePage: 1 },
-  { number: 4, points: 3, prompt: "Mari, Ville, and Ossi each have 3 glasses of juice, 2 cups of ice cream, and 5 biscuits at a coffee shop. What value could their total bill be?", options: ["€39.20", "€38.20", "€37.20", "€36.20", "€35.20"], answer: 2, explanation: "NEEDS_REVIEW: the source page's price information or visual context is needed to verify which total is possible.", hint: "Express the bill as three times the cost of one person's order, then compare with the price constraints shown in the source.", sourcePage: 1 },
-  { number: 5, points: 3, prompt: "The shown solid is made of 6 triangles. Each vertex is assigned a number, two of which are indicated. The total of the three numbers on each triangle is the same. What is the total of all five numbers?", options: ["9", "12", "17", "18", "24"], answer: 2, explanation: "NEEDS_REVIEW: use the source solid and its given vertex labels to verify the equal-face-sum equations.", hint: "Write an equation for each triangular face, then combine the equations to find the sum of the five labels.", sourcePage: 1 },
-  { number: 6, points: 3, prompt: "Circles k1 and k2 have radii 13 and 15 and intersect at P and Q. If PQ=24, what could the distance between their centres M1 and M2 be?", options: ["2", "5", "9", "14", "18"], answer: 3, explanation: "The perpendicular distances from the centres to chord PQ are 5 and 9. The centre distance can be their sum, 14.", hint: "The perpendicular from a circle's centre bisects the common chord; use right triangles.", sourcePage: 1 },
-  { number: 7, points: 3, prompt: "A drawer contains 2 white, 3 red, and 4 blue socks. Exactly one third of the socks have holes, but Lisa does not know their colours. What is the minimum number of socks she must draw to be certain of getting a usable pair: two hole-free socks of the same colour?", options: ["2", "3", "6", "7", "8"], answer: 3, explanation: "There are 3 holey socks. In the worst case, the hole-free socks are distributed 1 white, 2 red, and 3 blue. Lisa could draw all 3 holey socks and one usable sock of each colour—6 socks without a pair. The seventh sock must give her two usable socks of one colour.", hint: "In the worst case, how many socks can she draw while taking at most one usable sock of each colour?", sourcePage: 1 },
-  { number: 8, points: 3, prompt: "The square in the diagram has side length 1. What is the radius of the small circle?", options: ["sqrt(2)-1", "1/4", "sqrt(2)/4", "1-sqrt(2)/2", "(sqrt(2)-1)^2"], answer: 4, explanation: "NEEDS_REVIEW: verify the tangencies in the source diagram before deriving the small-circle radius.", hint: "Use the distance between the two circle centres and the tangency conditions in the square.", sourcePage: 1 },
-  { number: 9, points: 3, prompt: "Each side of triangle ABC is extended to points P, Q, R, S, T, and U so that PA=AB=BS, TC=CA=AQ, and UC=CB=BR. If the area of ABC is 1, what is the area of hexagon PQRSTU?", options: ["9", "10", "12", "13", "It cannot be determined"], answer: 3, explanation: "NEEDS_REVIEW: verify the point order and equal-length extensions in the source figure before establishing the hexagon area.", hint: "Decompose the hexagon into the original triangle and the six adjacent triangles; compare each area with ABC.", sourcePage: 1 },
-  { number: 10, points: 3, prompt: "In the diagram, fields are coloured A, B, C, or D so that adjacent fields have different colours, including fields that meet at a corner. Some fields are already coloured. What colour can the grey field be?", options: ["Either A or B", "Only C", "Only D", "Either C or D", "Any of A, B, C, or D"], answer: 3, explanation: "NEEDS_REVIEW: the pre-coloured map is essential to determine the available colours.", hint: "List the colours excluded by each field touching the grey region, including corner contacts.", sourcePage: 2 },
-  { number: 11, points: 4, prompt: "A very small ball is kicked from A on a square billiard table of side length 2 m. It follows the shown path, touching the sides three times as indicated, and ends at B. What is the length of its path? The angle of incidence equals the angle of reflection.", options: ["7", "2sqrt(13)", "8", "4sqrt(3)", "2(sqrt(2)+sqrt(3))"], answer: 1, explanation: "NEEDS_REVIEW: the reflection points and terminal point B are specified by the source path diagram.", hint: "Reflect the square across the touched sides so the bouncing path becomes one straight segment.", sourcePage: 2 },
-  { number: 12, points: 4, prompt: "In a group of 2009 kangaroos, each is light or dark. The smallest light kangaroo is bigger than exactly 8 dark kangaroos; another is bigger than exactly 9, another than exactly 10, and so on. Exactly one light kangaroo is bigger than all the dark kangaroos. How many light kangaroos are there?", options: ["1000", "1001", "1002", "1003", "The situation is impossible"], answer: 1, explanation: "The light kangaroos correspond to counts 8 through D, where D is the number of dark kangaroos, so L=D-7. With L+D=2009, L=1001.", hint: "Translate the sequence of counts into a relation between the numbers of light and dark kangaroos.", sourcePage: 2 },
-  { number: 13, points: 4, prompt: "A 2x2x2 cube is made of four transparent and four opaque unit cubes, arranged so the whole cube is opaque from every axis direction. What is the minimum number of opaque unit cubes needed to make a 3x3x3 cube opaque in the same way?", options: ["6", "9", "10", "12", "18"], answer: 1, explanation: "There are 9 lines of unit cubes in each of the three axis directions. Every such line needs an opaque cube, so at least 9 are required. Nine suffice: place one cube at each (i,j,k) with k congruent to i+j modulo 3; this meets every line in all three directions.", hint: "Count the parallel lines that each need an opaque cube, then look for a 9-cube arrangement that meets every line.", sourcePage: 2 },
-  { number: 14, points: 4, prompt: "On the island of nobles and liars, 25 people stand in a queue. The first says everybody behind him is a liar. Each other person says the person in front of him is a liar. How many are liars? Nobles always tell the truth and liars always lie.", options: ["0", "12", "13", "24", "It cannot be determined"], answer: 2, explanation: "Each person after the first is a noble exactly when the person immediately ahead is a liar, so their types alternate. The first cannot be a noble, since then his statement would force everyone behind him to be a liar, contradicting the alternation. Thus the first is a liar, and the 13 odd-positioned people are liars.", hint: "The statements by people after the first force an alternating pattern; check whether the first person's statement can be true.", sourcePage: 2 },
-  { number: 15, points: 4, prompt: "Determine the units digit of 1^2-2^2+...-2008^2+2009^2.", options: ["1", "2", "3", "4", "5"], answer: 4, explanation: "Pairing consecutive terms gives (2k-1)^2-(2k)^2=1-4k. Summing 1004 pairs and adding 2009^2 gives a number ending in 5.", hint: "Pair each positive odd square with the following negative even square, then add the final term.", sourcePage: 2 },
-  { number: 16, points: 4, prompt: "An equilateral triangle with side length 3 and a circle of radius 1 have the same centre. What is the perimeter of the figure formed by putting them together?", options: ["6+pi", "3+2pi", "9+pi/3", "3pi", "9+pi"], answer: 0, explanation: "NEEDS_REVIEW: establish which arcs and triangle sides form the boundary of the union from the source diagram.", hint: "Separate the boundary into the exposed straight portions and exposed circular arcs.", sourcePage: 2 },
-  { number: 17, points: 4, prompt: "The diagram shows the graphs of functions f and g. Which equation describes the relationship between them?", options: ["g(x-2)=-f(x)", "g(x)=f(x+2)", "g(x)=-f(-x+2)", "g(-x)=-f(-x-2)", "g(2-x)=-f(x)"], answer: 0, explanation: "NEEDS_REVIEW: the graph is required to identify the reflection and translation relating f and g.", hint: "Compare corresponding features of the graphs to identify horizontal shifts and reflections.", sourcePage: 3 },
-  { number: 18, points: 4, prompt: "Of 100 students, 90 solve question 1, 85 solve question 2, 80 solve question 3, and 70 solve question 4. What is the smallest possible number who solve all four questions?", options: ["10", "15", "20", "25", "30"], answer: 3, explanation: "At most 10, 15, 20, and 30 students respectively can miss each question. Those groups can cover at most 75 students, so at least 25 solve all four.", hint: "Count how many students can fail each question and maximize the union of those groups.", sourcePage: 3 },
-  { number: 19, points: 4, prompt: "The diagram shows the bird's-eye and front views of a solid made of flat surfaces. Which of outlines I-IV can be its side view?", options: ["I", "II", "III", "IV", "None of them"], answer: 3, explanation: "NEEDS_REVIEW: compare the candidate outlines with both orthographic views in the source diagram.", hint: "The side view must be consistent with the heights and depths visible in both given projections.", sourcePage: 3 },
-  { number: 20, points: 4, prompt: "In the shown magic square, each row, column, and diagonal has the same sum. Only two numbers are visible. What number is missing from cell a?", options: ["16", "51", "54", "55", "110"], answer: 3, explanation: "NEEDS_REVIEW: the two visible entries and the location of cell a are needed to determine the missing value.", hint: "Use the common row, column, and diagonal sum to form equations from the visible cells.", sourcePage: 3 },
-  { number: 21, points: 5, prompt: "Two runners run at constant speeds around a track. They start together at the same point. Runner A takes 3 minutes per lap and first overtakes B after 8 minutes. How long does B take per lap?", options: ["6 min", "8 min", "4 min 30 sec", "4 min 48 sec", "4 min 20 sec"], answer: 3, explanation: "Their relative speed is one lap per 8 minutes: 1/3-1/T=1/8, so T=24/5 minutes, or 4 minutes 48 seconds.", hint: "Set the difference between their lap rates equal to one lap per 8 minutes.", sourcePage: 3 },
-  { number: 22, points: 5, prompt: "Let Z be the number of 8-digit numbers with distinct nonzero digits. What fraction of them are divisible by 9?", options: ["Z/8", "Z/3", "Z/9", "8Z/9", "7Z/8"], answer: 2, explanation: "A number is divisible by 9 when its digit sum is divisible by 9. The chosen eight digits omit exactly one of 1,...,9; only omitting 9 gives a sum divisible by 9, so the fraction is 1/9.", hint: "An 8-digit number uses eight of the digits 1 through 9; determine which omitted digit makes the digit sum divisible by 9.", sourcePage: 3 },
-  { number: 23, points: 5, prompt: "How many 10-digit numbers made only from 1, 2, and 3 have adjacent digits differing by exactly 1?", options: ["16", "32", "64", "80", "100"], answer: 2, explanation: "Counting length-10 walks on the transitions 1<->2<->3 gives 64 sequences.", hint: "Count valid strings by their last digit and extend them one digit at a time.", sourcePage: 3 },
-  { number: 24, points: 5, prompt: "For how many whole numbers n>=3 is there a convex polygon whose angles are in the ratio 1:2:...:n?", options: ["1", "2", "3", "5", "More than 5"], answer: 1, explanation: "The angles are proportional to 1 through n and sum to 180(n-2) degrees. Convexity requires the largest angle to be less than 180 degrees, which holds exactly for n=3 and n=4.", hint: "Scale the ratio so the angles sum to (n-2)180 degrees, then require the largest angle to be below 180 degrees.", sourcePage: 4 },
-  { number: 25, points: 5, prompt: "Fifty-five pupils take part in a competition. No two students have the same number of correct answers and the same number of incorrect answers. What is the minimum number of questions?", options: ["6", "9", "10", "11", "12"], answer: 1, explanation: "With N questions, the possible (correct, incorrect) pairs number (N+1)(N+2)/2. The smallest N with at least 55 pairs is 9.", hint: "Count nonnegative pairs (correct, incorrect) whose sum is at most the number of questions.", sourcePage: 4 },
-  { number: 26, points: 5, prompt: "In rectangle JKLM, the angle bisector at J meets diagonal KM at N. The distances from N to LM and KL are 1 and 8. How long is LM?", options: ["8+2sqrt(2)", "11-2sqrt(2)", "10", "8+3sqrt(2)", "11+sqrt(2)/2"], answer: 0, explanation: "NEEDS_REVIEW: confirm the rectangle vertex orientation and distance labels in the source diagram before deriving LM.", hint: "Place the rectangle on coordinate axes and use that N lies on the angle bisector and diagonal.", sourcePage: 4 },
-  { number: 27, points: 5, prompt: "If k=a/(b+c)=b/(c+a)=c/(a+b), how many possible real values can k have?", options: ["1", "2", "3", "4", "6"], answer: 1, explanation: "If a=b=c, then k=1/2. Otherwise summing the three equalities yields k=-1, which is also possible when a+b+c=0. Thus there are two values.", hint: "Consider the equal-variable case, then add the three equations for the general case.", sourcePage: 4 },
-  { number: 28, points: 5, prompt: "The numbers 1 through 99 are divided into groups, each with at least two numbers. No two numbers in the same group may have a sum divisible by 3. What is the smallest possible number of groups?", options: ["3", "9", "33", "34", "66"], answer: 2, explanation: "The 33 multiples of 3 must lie in separate groups, so at least 33 groups are needed. This is attainable: put one multiple of 3 in each group, distribute the 33 numbers congruent to 1 among 17 groups, and distribute the 33 numbers congruent to 2 among the other 16. Within each group, no two numbers sum to a multiple of 3, and each group has at least two numbers.", hint: "Each multiple of 3 needs its own group; then pair those groups with numbers from only one of the other two residue classes.", sourcePage: 4 },
-  { number: 29, points: 5, prompt: "Samantha and her three sisters have four reserved theatre seats. Samantha and two sisters arrive early and sit randomly in three seats. Marie arrives later and insists on her ticketed seat; any sister whose seat is displaced then insists on her own ticketed seat. What is the probability Samantha has to change seats?", options: ["3/4", "1/2", "1/3", "1/4", "1/6"], answer: 1, explanation: "NEEDS_REVIEW: model the possible initial seat assignments and the subsequent chain of required swaps from the source's precise rules.", hint: "Enumerate the possible empty seat and the seat occupied by the sister whose ticketed seat Marie needs.", sourcePage: 4 },
-  { number: 30, points: 5, prompt: "A sequence of whole numbers is defined by a0=1, a1=2, and a(n+2)=a(n)+(a(n+1))^2 for n>=0. What is the remainder when a2009 is divided by 7?", options: ["0", "1", "2", "5", "6"], answer: 1, explanation: "Modulo 7 the terms begin 1,2,5,6,6,0,6,1,0,1,1,2; the pair (a10,a11) repeats (a0,a1), so the sequence has period 10 and a2009 is congruent to a9=1.", hint: "Compute successive terms modulo 7 until a pair of consecutive residues repeats.", sourcePage: 4 }
+  {
+    number: 1,
+    points: 3,
+    prompt: "There are 200 fish in an aquarium. Of these, 1% are blue and the rest are yellow. How many yellow fish must be removed to make the number of blue fish equal to 2% of the total number of fish?",
+    options: [
+      "2",
+      "4",
+      "20",
+      "50",
+      "100"
+    ],
+    answer: 4,
+    explanation: "There are 2 blue fish. For them to be 2% of the remaining fish, 100 fish must remain, so remove 100 yellow fish.",
+    hint: "Keep the 2 blue fish fixed and find the total for which 2 is 2%.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "1-0",
+        type: "text",
+        text: "2",
+        imageAlt: "A option"
+      },
+      {
+        id: "1-1",
+        type: "text",
+        text: "4",
+        imageAlt: "B option"
+      },
+      {
+        id: "1-2",
+        type: "text",
+        text: "20",
+        imageAlt: "C option"
+      },
+      {
+        id: "1-3",
+        type: "text",
+        text: "50",
+        imageAlt: "D option"
+      },
+      {
+        id: "1-4",
+        type: "text",
+        text: "100",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 2,
+    points: 3,
+    prompt: "Which of the following numbers is biggest?",
+    options: [
+      "sqrt(2)-sqrt(1)",
+      "sqrt(3)-sqrt(2)",
+      "sqrt(4)-sqrt(3)",
+      "sqrt(5)-sqrt(4)",
+      "sqrt(6)-sqrt(5)"
+    ],
+    answer: 0,
+    explanation: "The difference sqrt(n+1)-sqrt(n)=1/(sqrt(n+1)+sqrt(n)) decreases as n increases, so the first difference is greatest.",
+    hint: "Rationalize each difference to compare its denominator.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "2-0",
+        type: "text",
+        text: "sqrt(2)-sqrt(1)",
+        imageAlt: "A option"
+      },
+      {
+        id: "2-1",
+        type: "text",
+        text: "sqrt(3)-sqrt(2)",
+        imageAlt: "B option"
+      },
+      {
+        id: "2-2",
+        type: "text",
+        text: "sqrt(4)-sqrt(3)",
+        imageAlt: "C option"
+      },
+      {
+        id: "2-3",
+        type: "text",
+        text: "sqrt(5)-sqrt(4)",
+        imageAlt: "D option"
+      },
+      {
+        id: "2-4",
+        type: "text",
+        text: "sqrt(6)-sqrt(5)",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 3,
+    points: 3,
+    prompt: "For how many positive whole numbers n is n^2+n a prime number?",
+    options: [
+      "0",
+      "1",
+      "2",
+      "A finite number greater than 2",
+      "Infinitely many"
+    ],
+    answer: 1,
+    explanation: "n(n+1) is a product of consecutive positive integers. It is prime only for n=1, when it equals 2.",
+    hint: "Factor the expression and check the smallest positive n.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "3-0",
+        type: "text",
+        text: "0",
+        imageAlt: "A option"
+      },
+      {
+        id: "3-1",
+        type: "text",
+        text: "1",
+        imageAlt: "B option"
+      },
+      {
+        id: "3-2",
+        type: "text",
+        text: "2",
+        imageAlt: "C option"
+      },
+      {
+        id: "3-3",
+        type: "text",
+        text: "A finite number greater than 2",
+        imageAlt: "D option"
+      },
+      {
+        id: "3-4",
+        type: "text",
+        text: "Infinitely many",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 4,
+    points: 3,
+    prompt: "Mari, Ville, and Ossi each have 3 glasses of juice, 2 cups of ice cream, and 5 biscuits at a coffee shop. What value could their total bill be?",
+    options: [
+      "€39.20",
+      "€38.20",
+      "€37.20",
+      "€36.20",
+      "€35.20"
+    ],
+    answer: 2,
+    explanation: "NEEDS_REVIEW: the source page's price information or visual context is needed to verify which total is possible.",
+    hint: "Express the bill as three times the cost of one person's order, then compare with the price constraints shown in the source.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "4-0",
+        type: "text",
+        text: "€39.20",
+        imageAlt: "A option"
+      },
+      {
+        id: "4-1",
+        type: "text",
+        text: "€38.20",
+        imageAlt: "B option"
+      },
+      {
+        id: "4-2",
+        type: "text",
+        text: "€37.20",
+        imageAlt: "C option"
+      },
+      {
+        id: "4-3",
+        type: "text",
+        text: "€36.20",
+        imageAlt: "D option"
+      },
+      {
+        id: "4-4",
+        type: "text",
+        text: "€35.20",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 5,
+    points: 3,
+    prompt: "The shown solid is made of 6 triangles. Each vertex is assigned a number, two of which are indicated. The total of the three numbers on each triangle is the same. What is the total of all five numbers?",
+    options: [
+      "9",
+      "12",
+      "17",
+      "18",
+      "24"
+    ],
+    answer: 2,
+    explanation: "NEEDS_REVIEW: use the source solid and its given vertex labels to verify the equal-face-sum equations.",
+    hint: "Write an equation for each triangular face, then combine the equations to find the sum of the five labels.",
+    sourcePage: 1,
+    image: "/assets/kangaroo/grades-11-12/student/2009/questions/editor-q-05.png",
+    optionContent: [
+      {
+        id: "5-0",
+        type: "text",
+        text: "9",
+        imageAlt: "A option"
+      },
+      {
+        id: "5-1",
+        type: "text",
+        text: "12",
+        imageAlt: "B option"
+      },
+      {
+        id: "5-2",
+        type: "text",
+        text: "17",
+        imageAlt: "C option"
+      },
+      {
+        id: "5-3",
+        type: "text",
+        text: "18",
+        imageAlt: "D option"
+      },
+      {
+        id: "5-4",
+        type: "text",
+        text: "24",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 6,
+    points: 3,
+    prompt: "Circles k1 and k2 have radii 13 and 15 and intersect at P and Q. If PQ=24, what could the distance between their centres M1 and M2 be?",
+    options: [
+      "2",
+      "5",
+      "9",
+      "14",
+      "18"
+    ],
+    answer: 3,
+    explanation: "The perpendicular distances from the centres to chord PQ are 5 and 9. The centre distance can be their sum, 14.",
+    hint: "The perpendicular from a circle's centre bisects the common chord; use right triangles.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "6-0",
+        type: "text",
+        text: "2",
+        imageAlt: "A option"
+      },
+      {
+        id: "6-1",
+        type: "text",
+        text: "5",
+        imageAlt: "B option"
+      },
+      {
+        id: "6-2",
+        type: "text",
+        text: "9",
+        imageAlt: "C option"
+      },
+      {
+        id: "6-3",
+        type: "text",
+        text: "14",
+        imageAlt: "D option"
+      },
+      {
+        id: "6-4",
+        type: "text",
+        text: "18",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 7,
+    points: 3,
+    prompt: "A drawer contains 2 white, 3 red, and 4 blue socks. Exactly one third of the socks have holes, but Lisa does not know their colours. What is the minimum number of socks she must draw to be certain of getting a usable pair: two hole-free socks of the same colour?",
+    options: [
+      "2",
+      "3",
+      "6",
+      "7",
+      "8"
+    ],
+    answer: 3,
+    explanation: "There are 3 holey socks. In the worst case, the hole-free socks are distributed 1 white, 2 red, and 3 blue. Lisa could draw all 3 holey socks and one usable sock of each colour—6 socks without a pair. The seventh sock must give her two usable socks of one colour.",
+    hint: "In the worst case, how many socks can she draw while taking at most one usable sock of each colour?",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "7-0",
+        type: "text",
+        text: "2",
+        imageAlt: "A option"
+      },
+      {
+        id: "7-1",
+        type: "text",
+        text: "3",
+        imageAlt: "B option"
+      },
+      {
+        id: "7-2",
+        type: "text",
+        text: "6",
+        imageAlt: "C option"
+      },
+      {
+        id: "7-3",
+        type: "text",
+        text: "7",
+        imageAlt: "D option"
+      },
+      {
+        id: "7-4",
+        type: "text",
+        text: "8",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 8,
+    points: 3,
+    prompt: "The square in the diagram has side length 1. What is the radius of the small circle?",
+    options: [
+      "sqrt(2)-1",
+      "1/4",
+      "sqrt(2)/4",
+      "1-sqrt(2)/2",
+      "(sqrt(2)-1)^2"
+    ],
+    answer: 4,
+    explanation: "NEEDS_REVIEW: verify the tangencies in the source diagram before deriving the small-circle radius.",
+    hint: "Use the distance between the two circle centres and the tangency conditions in the square.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "8-0",
+        type: "text",
+        text: "sqrt(2)-1",
+        imageAlt: "A option"
+      },
+      {
+        id: "8-1",
+        type: "text",
+        text: "1/4",
+        imageAlt: "B option"
+      },
+      {
+        id: "8-2",
+        type: "text",
+        text: "sqrt(2)/4",
+        imageAlt: "C option"
+      },
+      {
+        id: "8-3",
+        type: "text",
+        text: "1-sqrt(2)/2",
+        imageAlt: "D option"
+      },
+      {
+        id: "8-4",
+        type: "text",
+        text: "(sqrt(2)-1)^2",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-11-12/student/2009/questions/editor-q-08.png"
+  },
+  {
+    number: 9,
+    points: 3,
+    prompt: "Each side of triangle ABC is extended to points P, Q, R, S, T, and U so that PA=AB=BS, TC=CA=AQ, and UC=CB=BR. If the area of ABC is 1, what is the area of hexagon PQRSTU?",
+    options: [
+      "9",
+      "10",
+      "12",
+      "13",
+      "It cannot be determined"
+    ],
+    answer: 3,
+    explanation: "NEEDS_REVIEW: verify the point order and equal-length extensions in the source figure before establishing the hexagon area.",
+    hint: "Decompose the hexagon into the original triangle and the six adjacent triangles; compare each area with ABC.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "9-0",
+        type: "text",
+        text: "9",
+        imageAlt: "A option"
+      },
+      {
+        id: "9-1",
+        type: "text",
+        text: "10",
+        imageAlt: "B option"
+      },
+      {
+        id: "9-2",
+        type: "text",
+        text: "12",
+        imageAlt: "C option"
+      },
+      {
+        id: "9-3",
+        type: "text",
+        text: "13",
+        imageAlt: "D option"
+      },
+      {
+        id: "9-4",
+        type: "text",
+        text: "It cannot be determined",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-11-12/student/2009/questions/editor-q-09.png"
+  },
+  {
+    number: 10,
+    points: 3,
+    prompt: "In the diagram, fields are coloured A, B, C, or D so that adjacent fields have different colours, including fields that meet at a corner. Some fields are already coloured. What colour can the grey field be?",
+    options: [
+      "Either A or B",
+      "Only C",
+      "Only D",
+      "Either C or D",
+      "Any of A, B, C, or D"
+    ],
+    answer: 3,
+    explanation: "NEEDS_REVIEW: the pre-coloured map is essential to determine the available colours.",
+    hint: "List the colours excluded by each field touching the grey region, including corner contacts.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "10-0",
+        type: "text",
+        text: "Either A or B",
+        imageAlt: "A option"
+      },
+      {
+        id: "10-1",
+        type: "text",
+        text: "Only C",
+        imageAlt: "B option"
+      },
+      {
+        id: "10-2",
+        type: "text",
+        text: "Only D",
+        imageAlt: "C option"
+      },
+      {
+        id: "10-3",
+        type: "text",
+        text: "Either C or D",
+        imageAlt: "D option"
+      },
+      {
+        id: "10-4",
+        type: "text",
+        text: "Any of A, B, C, or D",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-11-12/student/2009/questions/editor-q-10.png"
+  },
+  {
+    number: 11,
+    points: 4,
+    prompt: "A very small ball is kicked from A on a square billiard table of side length 2 m. It follows the shown path, touching the sides three times as indicated, and ends at B. What is the length of its path? The angle of incidence equals the angle of reflection.",
+    options: [
+      "7",
+      "2sqrt(13)",
+      "8",
+      "4sqrt(3)",
+      "2(sqrt(2)+sqrt(3))"
+    ],
+    answer: 1,
+    explanation: "NEEDS_REVIEW: the reflection points and terminal point B are specified by the source path diagram.",
+    hint: "Reflect the square across the touched sides so the bouncing path becomes one straight segment.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "11-0",
+        type: "text",
+        text: "7",
+        imageAlt: "A option"
+      },
+      {
+        id: "11-1",
+        type: "text",
+        text: "2sqrt(13)",
+        imageAlt: "B option"
+      },
+      {
+        id: "11-2",
+        type: "text",
+        text: "8",
+        imageAlt: "C option"
+      },
+      {
+        id: "11-3",
+        type: "text",
+        text: "4sqrt(3)",
+        imageAlt: "D option"
+      },
+      {
+        id: "11-4",
+        type: "text",
+        text: "2(sqrt(2)+sqrt(3))",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-11-12/student/2009/questions/editor-q-11.png"
+  },
+  {
+    number: 12,
+    points: 4,
+    prompt: "In a group of 2009 kangaroos, each is light or dark. The smallest light kangaroo is bigger than exactly 8 dark kangaroos; another is bigger than exactly 9, another than exactly 10, and so on. Exactly one light kangaroo is bigger than all the dark kangaroos. How many light kangaroos are there?",
+    options: [
+      "1000",
+      "1001",
+      "1002",
+      "1003",
+      "The situation is impossible"
+    ],
+    answer: 1,
+    explanation: "The light kangaroos correspond to counts 8 through D, where D is the number of dark kangaroos, so L=D-7. With L+D=2009, L=1001.",
+    hint: "Translate the sequence of counts into a relation between the numbers of light and dark kangaroos.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "12-0",
+        type: "text",
+        text: "1000",
+        imageAlt: "A option"
+      },
+      {
+        id: "12-1",
+        type: "text",
+        text: "1001",
+        imageAlt: "B option"
+      },
+      {
+        id: "12-2",
+        type: "text",
+        text: "1002",
+        imageAlt: "C option"
+      },
+      {
+        id: "12-3",
+        type: "text",
+        text: "1003",
+        imageAlt: "D option"
+      },
+      {
+        id: "12-4",
+        type: "text",
+        text: "The situation is impossible",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 13,
+    points: 4,
+    prompt: "A 2x2x2 cube is made of four transparent and four opaque unit cubes, arranged so the whole cube is opaque from every axis direction. What is the minimum number of opaque unit cubes needed to make a 3x3x3 cube opaque in the same way?",
+    options: [
+      "6",
+      "9",
+      "10",
+      "12",
+      "18"
+    ],
+    answer: 1,
+    explanation: "There are 9 lines of unit cubes in each of the three axis directions. Every such line needs an opaque cube, so at least 9 are required. Nine suffice: place one cube at each (i,j,k) with k congruent to i+j modulo 3; this meets every line in all three directions.",
+    hint: "Count the parallel lines that each need an opaque cube, then look for a 9-cube arrangement that meets every line.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "13-0",
+        type: "text",
+        text: "6",
+        imageAlt: "A option"
+      },
+      {
+        id: "13-1",
+        type: "text",
+        text: "9",
+        imageAlt: "B option"
+      },
+      {
+        id: "13-2",
+        type: "text",
+        text: "10",
+        imageAlt: "C option"
+      },
+      {
+        id: "13-3",
+        type: "text",
+        text: "12",
+        imageAlt: "D option"
+      },
+      {
+        id: "13-4",
+        type: "text",
+        text: "18",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-11-12/student/2009/questions/editor-q-13.png"
+  },
+  {
+    number: 14,
+    points: 4,
+    prompt: "On the island of nobles and liars, 25 people stand in a queue. The first says everybody behind him is a liar. Each other person says the person in front of him is a liar. How many are liars? Nobles always tell the truth and liars always lie.",
+    options: [
+      "0",
+      "12",
+      "13",
+      "24",
+      "It cannot be determined"
+    ],
+    answer: 2,
+    explanation: "Each person after the first is a noble exactly when the person immediately ahead is a liar, so their types alternate. The first cannot be a noble, since then his statement would force everyone behind him to be a liar, contradicting the alternation. Thus the first is a liar, and the 13 odd-positioned people are liars.",
+    hint: "The statements by people after the first force an alternating pattern; check whether the first person's statement can be true.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "14-0",
+        type: "text",
+        text: "0",
+        imageAlt: "A option"
+      },
+      {
+        id: "14-1",
+        type: "text",
+        text: "12",
+        imageAlt: "B option"
+      },
+      {
+        id: "14-2",
+        type: "text",
+        text: "13",
+        imageAlt: "C option"
+      },
+      {
+        id: "14-3",
+        type: "text",
+        text: "24",
+        imageAlt: "D option"
+      },
+      {
+        id: "14-4",
+        type: "text",
+        text: "It cannot be determined",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 15,
+    points: 4,
+    prompt: "Determine the units digit of 1^2-2^2+...-2008^2+2009^2.",
+    options: [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    answer: 4,
+    explanation: "Pairing consecutive terms gives (2k-1)^2-(2k)^2=1-4k. Summing 1004 pairs and adding 2009^2 gives a number ending in 5.",
+    hint: "Pair each positive odd square with the following negative even square, then add the final term.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "15-0",
+        type: "text",
+        text: "1",
+        imageAlt: "A option"
+      },
+      {
+        id: "15-1",
+        type: "text",
+        text: "2",
+        imageAlt: "B option"
+      },
+      {
+        id: "15-2",
+        type: "text",
+        text: "3",
+        imageAlt: "C option"
+      },
+      {
+        id: "15-3",
+        type: "text",
+        text: "4",
+        imageAlt: "D option"
+      },
+      {
+        id: "15-4",
+        type: "text",
+        text: "5",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 16,
+    points: 4,
+    prompt: "An equilateral triangle with side length 3 and a circle of radius 1 have the same centre. What is the perimeter of the figure formed by putting them together?",
+    options: [
+      "6+pi",
+      "3+2pi",
+      "9+pi/3",
+      "3pi",
+      "9+pi"
+    ],
+    answer: 0,
+    explanation: "NEEDS_REVIEW: establish which arcs and triangle sides form the boundary of the union from the source diagram.",
+    hint: "Separate the boundary into the exposed straight portions and exposed circular arcs.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "16-0",
+        type: "text",
+        text: "6+pi",
+        imageAlt: "A option"
+      },
+      {
+        id: "16-1",
+        type: "text",
+        text: "3+2pi",
+        imageAlt: "B option"
+      },
+      {
+        id: "16-2",
+        type: "text",
+        text: "9+pi/3",
+        imageAlt: "C option"
+      },
+      {
+        id: "16-3",
+        type: "text",
+        text: "3pi",
+        imageAlt: "D option"
+      },
+      {
+        id: "16-4",
+        type: "text",
+        text: "9+pi",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-11-12/student/2009/questions/editor-q-16.png"
+  },
+  {
+    number: 17,
+    points: 4,
+    prompt: "The diagram shows the graphs of functions f and g. Which equation describes the relationship between them?",
+    options: [
+      "g(x-2)=-f(x)",
+      "g(x)=f(x+2)",
+      "g(x)=-f(-x+2)",
+      "g(-x)=-f(-x-2)",
+      "g(2-x)=-f(x)"
+    ],
+    answer: 0,
+    explanation: "NEEDS_REVIEW: the graph is required to identify the reflection and translation relating f and g.",
+    hint: "Compare corresponding features of the graphs to identify horizontal shifts and reflections.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "17-0",
+        type: "text",
+        text: "g(x-2)=-f(x)",
+        imageAlt: "A option"
+      },
+      {
+        id: "17-1",
+        type: "text",
+        text: "g(x)=f(x+2)",
+        imageAlt: "B option"
+      },
+      {
+        id: "17-2",
+        type: "text",
+        text: "g(x)=-f(-x+2)",
+        imageAlt: "C option"
+      },
+      {
+        id: "17-3",
+        type: "text",
+        text: "g(-x)=-f(-x-2)",
+        imageAlt: "D option"
+      },
+      {
+        id: "17-4",
+        type: "text",
+        text: "g(2-x)=-f(x)",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-11-12/student/2009/questions/editor-q-17.png"
+  },
+  {
+    number: 18,
+    points: 4,
+    prompt: "Of 100 students, 90 solve question 1, 85 solve question 2, 80 solve question 3, and 70 solve question 4. What is the smallest possible number who solve all four questions?",
+    options: [
+      "10",
+      "15",
+      "20",
+      "25",
+      "30"
+    ],
+    answer: 3,
+    explanation: "At most 10, 15, 20, and 30 students respectively can miss each question. Those groups can cover at most 75 students, so at least 25 solve all four.",
+    hint: "Count how many students can fail each question and maximize the union of those groups.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "18-0",
+        type: "text",
+        text: "10",
+        imageAlt: "A option"
+      },
+      {
+        id: "18-1",
+        type: "text",
+        text: "15",
+        imageAlt: "B option"
+      },
+      {
+        id: "18-2",
+        type: "text",
+        text: "20",
+        imageAlt: "C option"
+      },
+      {
+        id: "18-3",
+        type: "text",
+        text: "25",
+        imageAlt: "D option"
+      },
+      {
+        id: "18-4",
+        type: "text",
+        text: "30",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 19,
+    points: 4,
+    prompt: "The diagram shows the bird's-eye and front views of a solid made of flat surfaces. Which of outlines I-IV can be its side view?",
+    options: [
+      "I",
+      "II",
+      "III",
+      "IV",
+      "None of them"
+    ],
+    answer: 3,
+    explanation: "NEEDS_REVIEW: compare the candidate outlines with both orthographic views in the source diagram.",
+    hint: "The side view must be consistent with the heights and depths visible in both given projections.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "19-0",
+        type: "text",
+        text: "I",
+        imageAlt: "A option"
+      },
+      {
+        id: "19-1",
+        type: "text",
+        text: "II",
+        imageAlt: "B option"
+      },
+      {
+        id: "19-2",
+        type: "text",
+        text: "III",
+        imageAlt: "C option"
+      },
+      {
+        id: "19-3",
+        type: "text",
+        text: "IV",
+        imageAlt: "D option"
+      },
+      {
+        id: "19-4",
+        type: "text",
+        text: "None of them",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 20,
+    points: 4,
+    prompt: "In the shown magic square, each row, column, and diagonal has the same sum. Only two numbers are visible. What number is missing from cell a?",
+    options: [
+      "16",
+      "51",
+      "54",
+      "55",
+      "110"
+    ],
+    answer: 3,
+    explanation: "NEEDS_REVIEW: the two visible entries and the location of cell a are needed to determine the missing value.",
+    hint: "Use the common row, column, and diagonal sum to form equations from the visible cells.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "20-0",
+        type: "text",
+        text: "16",
+        imageAlt: "A option"
+      },
+      {
+        id: "20-1",
+        type: "text",
+        text: "51",
+        imageAlt: "B option"
+      },
+      {
+        id: "20-2",
+        type: "text",
+        text: "54",
+        imageAlt: "C option"
+      },
+      {
+        id: "20-3",
+        type: "text",
+        text: "55",
+        imageAlt: "D option"
+      },
+      {
+        id: "20-4",
+        type: "text",
+        text: "110",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-11-12/student/2009/questions/editor-q-20.png"
+  },
+  {
+    number: 21,
+    points: 5,
+    prompt: "Two runners run at constant speeds around a track. They start together at the same point. Runner A takes 3 minutes per lap and first overtakes B after 8 minutes. How long does B take per lap?",
+    options: [
+      "6 min",
+      "8 min",
+      "4 min 30 sec",
+      "4 min 48 sec",
+      "4 min 20 sec"
+    ],
+    answer: 3,
+    explanation: "Their relative speed is one lap per 8 minutes: 1/3-1/T=1/8, so T=24/5 minutes, or 4 minutes 48 seconds.",
+    hint: "Set the difference between their lap rates equal to one lap per 8 minutes.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "21-0",
+        type: "text",
+        text: "6 min",
+        imageAlt: "A option"
+      },
+      {
+        id: "21-1",
+        type: "text",
+        text: "8 min",
+        imageAlt: "B option"
+      },
+      {
+        id: "21-2",
+        type: "text",
+        text: "4 min 30 sec",
+        imageAlt: "C option"
+      },
+      {
+        id: "21-3",
+        type: "text",
+        text: "4 min 48 sec",
+        imageAlt: "D option"
+      },
+      {
+        id: "21-4",
+        type: "text",
+        text: "4 min 20 sec",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 22,
+    points: 5,
+    prompt: "Let Z be the number of 8-digit numbers with distinct nonzero digits. What fraction of them are divisible by 9?",
+    options: [
+      "Z/8",
+      "Z/3",
+      "Z/9",
+      "8Z/9",
+      "7Z/8"
+    ],
+    answer: 2,
+    explanation: "A number is divisible by 9 when its digit sum is divisible by 9. The chosen eight digits omit exactly one of 1,...,9; only omitting 9 gives a sum divisible by 9, so the fraction is 1/9.",
+    hint: "An 8-digit number uses eight of the digits 1 through 9; determine which omitted digit makes the digit sum divisible by 9.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "22-0",
+        type: "text",
+        text: "Z/8",
+        imageAlt: "A option"
+      },
+      {
+        id: "22-1",
+        type: "text",
+        text: "Z/3",
+        imageAlt: "B option"
+      },
+      {
+        id: "22-2",
+        type: "text",
+        text: "Z/9",
+        imageAlt: "C option"
+      },
+      {
+        id: "22-3",
+        type: "text",
+        text: "8Z/9",
+        imageAlt: "D option"
+      },
+      {
+        id: "22-4",
+        type: "text",
+        text: "7Z/8",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 23,
+    points: 5,
+    prompt: "How many 10-digit numbers made only from 1, 2, and 3 have adjacent digits differing by exactly 1?",
+    options: [
+      "16",
+      "32",
+      "64",
+      "80",
+      "100"
+    ],
+    answer: 2,
+    explanation: "Counting length-10 walks on the transitions 1<->2<->3 gives 64 sequences.",
+    hint: "Count valid strings by their last digit and extend them one digit at a time.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "23-0",
+        type: "text",
+        text: "16",
+        imageAlt: "A option"
+      },
+      {
+        id: "23-1",
+        type: "text",
+        text: "32",
+        imageAlt: "B option"
+      },
+      {
+        id: "23-2",
+        type: "text",
+        text: "64",
+        imageAlt: "C option"
+      },
+      {
+        id: "23-3",
+        type: "text",
+        text: "80",
+        imageAlt: "D option"
+      },
+      {
+        id: "23-4",
+        type: "text",
+        text: "100",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 24,
+    points: 5,
+    prompt: "For how many whole numbers n>=3 is there a convex polygon whose angles are in the ratio 1:2:...:n?",
+    options: [
+      "1",
+      "2",
+      "3",
+      "5",
+      "More than 5"
+    ],
+    answer: 1,
+    explanation: "The angles are proportional to 1 through n and sum to 180(n-2) degrees. Convexity requires the largest angle to be less than 180 degrees, which holds exactly for n=3 and n=4.",
+    hint: "Scale the ratio so the angles sum to (n-2)180 degrees, then require the largest angle to be below 180 degrees.",
+    sourcePage: 4,
+    optionContent: [
+      {
+        id: "24-0",
+        type: "text",
+        text: "1",
+        imageAlt: "A option"
+      },
+      {
+        id: "24-1",
+        type: "text",
+        text: "2",
+        imageAlt: "B option"
+      },
+      {
+        id: "24-2",
+        type: "text",
+        text: "3",
+        imageAlt: "C option"
+      },
+      {
+        id: "24-3",
+        type: "text",
+        text: "5",
+        imageAlt: "D option"
+      },
+      {
+        id: "24-4",
+        type: "text",
+        text: "More than 5",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 25,
+    points: 5,
+    prompt: "Fifty-five pupils take part in a competition. No two students have the same number of correct answers and the same number of incorrect answers. What is the minimum number of questions?",
+    options: [
+      "6",
+      "9",
+      "10",
+      "11",
+      "12"
+    ],
+    answer: 1,
+    explanation: "With N questions, the possible (correct, incorrect) pairs number (N+1)(N+2)/2. The smallest N with at least 55 pairs is 9.",
+    hint: "Count nonnegative pairs (correct, incorrect) whose sum is at most the number of questions.",
+    sourcePage: 4,
+    optionContent: [
+      {
+        id: "25-0",
+        type: "text",
+        text: "6",
+        imageAlt: "A option"
+      },
+      {
+        id: "25-1",
+        type: "text",
+        text: "9",
+        imageAlt: "B option"
+      },
+      {
+        id: "25-2",
+        type: "text",
+        text: "10",
+        imageAlt: "C option"
+      },
+      {
+        id: "25-3",
+        type: "text",
+        text: "11",
+        imageAlt: "D option"
+      },
+      {
+        id: "25-4",
+        type: "text",
+        text: "12",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 26,
+    points: 5,
+    prompt: "In rectangle JKLM, the angle bisector at J meets diagonal KM at N. The distances from N to LM and KL are 1 and 8. How long is LM?",
+    options: [
+      "8+2sqrt(2)",
+      "11-2sqrt(2)",
+      "10",
+      "8+3sqrt(2)",
+      "11+sqrt(2)/2"
+    ],
+    answer: 0,
+    explanation: "NEEDS_REVIEW: confirm the rectangle vertex orientation and distance labels in the source diagram before deriving LM.",
+    hint: "Place the rectangle on coordinate axes and use that N lies on the angle bisector and diagonal.",
+    sourcePage: 4,
+    optionContent: [
+      {
+        id: "26-0",
+        type: "text",
+        text: "8+2sqrt(2)",
+        imageAlt: "A option"
+      },
+      {
+        id: "26-1",
+        type: "text",
+        text: "11-2sqrt(2)",
+        imageAlt: "B option"
+      },
+      {
+        id: "26-2",
+        type: "text",
+        text: "10",
+        imageAlt: "C option"
+      },
+      {
+        id: "26-3",
+        type: "text",
+        text: "8+3sqrt(2)",
+        imageAlt: "D option"
+      },
+      {
+        id: "26-4",
+        type: "text",
+        text: "11+sqrt(2)/2",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-11-12/student/2009/questions/editor-q-26.png"
+  },
+  {
+    number: 27,
+    points: 5,
+    prompt: "If k=a/(b+c)=b/(c+a)=c/(a+b), how many possible real values can k have?",
+    options: [
+      "1",
+      "2",
+      "3",
+      "4",
+      "6"
+    ],
+    answer: 1,
+    explanation: "If a=b=c, then k=1/2. Otherwise summing the three equalities yields k=-1, which is also possible when a+b+c=0. Thus there are two values.",
+    hint: "Consider the equal-variable case, then add the three equations for the general case.",
+    sourcePage: 4,
+    optionContent: [
+      {
+        id: "27-0",
+        type: "text",
+        text: "1",
+        imageAlt: "A option"
+      },
+      {
+        id: "27-1",
+        type: "text",
+        text: "2",
+        imageAlt: "B option"
+      },
+      {
+        id: "27-2",
+        type: "text",
+        text: "3",
+        imageAlt: "C option"
+      },
+      {
+        id: "27-3",
+        type: "text",
+        text: "4",
+        imageAlt: "D option"
+      },
+      {
+        id: "27-4",
+        type: "text",
+        text: "6",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 28,
+    points: 5,
+    prompt: "The numbers 1 through 99 are divided into groups, each with at least two numbers. No two numbers in the same group may have a sum divisible by 3. What is the smallest possible number of groups?",
+    options: [
+      "3",
+      "9",
+      "33",
+      "34",
+      "66"
+    ],
+    answer: 2,
+    explanation: "The 33 multiples of 3 must lie in separate groups, so at least 33 groups are needed. This is attainable: put one multiple of 3 in each group, distribute the 33 numbers congruent to 1 among 17 groups, and distribute the 33 numbers congruent to 2 among the other 16. Within each group, no two numbers sum to a multiple of 3, and each group has at least two numbers.",
+    hint: "Each multiple of 3 needs its own group; then pair those groups with numbers from only one of the other two residue classes.",
+    sourcePage: 4,
+    optionContent: [
+      {
+        id: "28-0",
+        type: "text",
+        text: "3",
+        imageAlt: "A option"
+      },
+      {
+        id: "28-1",
+        type: "text",
+        text: "9",
+        imageAlt: "B option"
+      },
+      {
+        id: "28-2",
+        type: "text",
+        text: "33",
+        imageAlt: "C option"
+      },
+      {
+        id: "28-3",
+        type: "text",
+        text: "34",
+        imageAlt: "D option"
+      },
+      {
+        id: "28-4",
+        type: "text",
+        text: "66",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 29,
+    points: 5,
+    prompt: "Samantha and her three sisters have four reserved theatre seats. Samantha and two sisters arrive early and sit randomly in three seats. Marie arrives later and insists on her ticketed seat; any sister whose seat is displaced then insists on her own ticketed seat. What is the probability Samantha has to change seats?",
+    options: [
+      "3/4",
+      "1/2",
+      "1/3",
+      "1/4",
+      "1/6"
+    ],
+    answer: 1,
+    explanation: "NEEDS_REVIEW: model the possible initial seat assignments and the subsequent chain of required swaps from the source's precise rules.",
+    hint: "Enumerate the possible empty seat and the seat occupied by the sister whose ticketed seat Marie needs.",
+    sourcePage: 4,
+    optionContent: [
+      {
+        id: "29-0",
+        type: "text",
+        text: "3/4",
+        imageAlt: "A option"
+      },
+      {
+        id: "29-1",
+        type: "text",
+        text: "1/2",
+        imageAlt: "B option"
+      },
+      {
+        id: "29-2",
+        type: "text",
+        text: "1/3",
+        imageAlt: "C option"
+      },
+      {
+        id: "29-3",
+        type: "text",
+        text: "1/4",
+        imageAlt: "D option"
+      },
+      {
+        id: "29-4",
+        type: "text",
+        text: "1/6",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 30,
+    points: 5,
+    prompt: "A sequence of whole numbers is defined by a0=1, a1=2, and a(n+2)=a(n)+(a(n+1))^2 for n>=0. What is the remainder when a2009 is divided by 7?",
+    options: [
+      "0",
+      "1",
+      "2",
+      "5",
+      "6"
+    ],
+    answer: 1,
+    explanation: "Modulo 7 the terms begin 1,2,5,6,6,0,6,1,0,1,1,2; the pair (a10,a11) repeats (a0,a1), so the sequence has period 10 and a2009 is congruent to a9=1.",
+    hint: "Compute successive terms modulo 7 until a pair of consecutive residues repeats.",
+    sourcePage: 4,
+    optionContent: [
+      {
+        id: "30-0",
+        type: "text",
+        text: "0",
+        imageAlt: "A option"
+      },
+      {
+        id: "30-1",
+        type: "text",
+        text: "1",
+        imageAlt: "B option"
+      },
+      {
+        id: "30-2",
+        type: "text",
+        text: "2",
+        imageAlt: "C option"
+      },
+      {
+        id: "30-3",
+        type: "text",
+        text: "5",
+        imageAlt: "D option"
+      },
+      {
+        id: "30-4",
+        type: "text",
+        text: "6",
+        imageAlt: "E option"
+      }
+    ]
+  }
 ];
 
 const sections2009Student: Section[] = [
-  { points: 3, label: "Section 1", range: "Questions 1-10", accent: "coral" },
-  { points: 4, label: "Section 2", range: "Questions 11-20", accent: "blue" },
-  { points: 5, label: "Section 3", range: "Questions 21-30", accent: "purple" }
+  {
+    points: 3,
+    label: "Section 1",
+    range: "Questions 1-10",
+    accent: "coral"
+  },
+  {
+    points: 4,
+    label: "Section 2",
+    range: "Questions 11-20",
+    accent: "blue"
+  },
+  {
+    points: 5,
+    label: "Section 3",
+    range: "Questions 21-30",
+    accent: "purple"
+  }
 ];
 
 export const edition2009Student: QuestionSet = {
@@ -49,5 +1484,5 @@ export const edition2009Student: QuestionSet = {
   timeLimitMinutes: 75,
   sourceUrl: "https://www.matematica.pt/en/docs/kangaroo/enunciados/2009/2009_Student.pdf",
   questions: questions2009Student,
-  sections: sections2009Student
+  sections: sections2009Student,
 };
