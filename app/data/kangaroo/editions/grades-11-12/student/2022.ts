@@ -1,42 +1,1485 @@
 import type { Question, QuestionSet, Section } from "../../../types";
 
 const questions2022Student: Question[] = [
-  { number: 1, points: 3, prompt: "A smartphone diagram shows the time spent using four apps last week, sorted from most to least. This week, two apps were used for half as long and two for the same time. Which pictured diagram cannot show this week's usage?", options: ["A", "B", "C", "D", "E"], answer: 4, explanation: "NEEDS_REVIEW: compare each chart with the requirement that two values are halved and two unchanged.", hint: "Track the four original app values through the allowed changes, then preserve their order.", sourcePage: 2 },
-  { number: 2, points: 3, prompt: "How many positive three-digit integers are divisible by 13?", options: ["68", "69", "70", "76", "77"], answer: 1, explanation: "There are floor(999/13)-floor(99/13)=76-7=69 such numbers.", hint: "Count multiples up to 999 and subtract those below 100.", sourcePage: 2 },
-  { number: 3, points: 3, prompt: "Bella is older than Charly and younger than Lily. Teddy is older than Bella. Which pair could be the same age?", options: ["Charly and Teddy", "Teddy and Lily", "Lily and Charly", "Bella and Lily", "Teddy and Bella"], answer: 1, explanation: "Teddy and Lily are both older than Bella, and their relative ages are otherwise unrestricted, so they could be equal.", hint: "Record the strict inequalities and identify pairs not ordered relative to each other.", sourcePage: 2 },
-  { number: 4, points: 3, prompt: "Which number is not divisible by its own digit sum?", options: ["2022", "2023", "2024", "2025", "2027"], answer: 4, explanation: "2027 has digit sum 11, and 2027 is not divisible by 11.", hint: "Calculate each digit sum and test divisibility.", sourcePage: 2 },
-  { number: 5, points: 3, prompt: "Five pencils are distributed evenly among 25 empty boxes. How many pencils are in each box?", options: ["25^8", "25^3", "5^2", "5^3", "5^5"], answer: 0, explanation: "NEEDS_REVIEW: the source's quantities are displayed as powers and need direct image verification.", hint: "Divide the total number of pencils by the number of boxes.", sourcePage: 2 },
-  { number: 6, points: 3, prompt: "The product of the digits of a ten-digit number is 15. What is the sum of its digits?", options: ["8", "12", "15", "16", "20"], answer: 3, explanation: "To have digit product 15, the digits include 3 and 5, while the other eight digits must be 1. Their sum is 3+5+8=16.", hint: "Factor 15 into digit factors and fill the remaining positions with the only possible factors.", sourcePage: 2 },
-  { number: 7, points: 3, prompt: "Four circles of radius 1 intersect as shown. What is the perimeter of the grey region?", options: ["pi", "3pi/2", "A value between 3pi/2 and 2pi", "2pi", "3pi"], answer: 3, explanation: "NEEDS_REVIEW: identify the grey boundary arcs in the source diagram and add their lengths.", hint: "Each boundary piece is a circular arc of radius 1; determine its central angle.", sourcePage: 2 },
-  { number: 8, points: 3, prompt: "All integers from 2 to 2022 that use only the digits 0 and 2 are listed in ascending order. What is the middle number?", options: ["200", "220", "222", "2000", "2002"], answer: 1, explanation: "The numbers are 2, 20, 22, 200, 202, 220, 222, 2000, 2002, 2020, and 2022. There are 11, so the middle is the sixth number, 220.", hint: "Group the valid numbers by their number of digits, then find the sixth entry in the ordered list.", sourcePage: 2 },
-  { number: 9, points: 3, prompt: "How many real solutions does (x^2-2)^2+(x^2+2)^2=0 have?", options: ["0", "1", "2", "3", "4"], answer: 0, explanation: "A sum of two squares is zero only when both are zero, but x^2 cannot equal both 2 and -2. There are no real solutions.", hint: "Both squared expressions must vanish simultaneously.", sourcePage: 2 },
-  { number: 10, points: 3, prompt: "Points A,B,C,D lie in that order on a line. AC=12 cm and BD=18 cm. How far apart are the midpoints of AB and CD?", options: ["6 cm", "9 cm", "12 cm", "13 cm", "15 cm"], answer: 4, explanation: "Let A=0 and B=t. Then C=12 and D=t+18. The midpoints are t/2 and (t+30)/2, whose distance is 15.", hint: "Assign coordinates to the four ordered points and subtract the midpoint coordinates.", sourcePage: 2 },
-  { number: 11, points: 4, prompt: "Four lines meet at one point to form eight equal angles. Which black arc has the same length as the circumference of the small grey circle?", options: ["A", "B", "C", "D", "E"], answer: 3, explanation: "NEEDS_REVIEW: compare the marked arc angle and circle circumference in the source diagram.", hint: "All eight angles are 45 degrees; relate each arc's radius and central angle.", sourcePage: 2 },
-  { number: 12, points: 4, prompt: "Nonzero real numbers a,b,c satisfy -2a^4b^3c^2 and 3a^5b^2c^-4 have the same sign. Which statement must be true?", options: ["ab>0", "b<0", "c>0", "bc>0", "a<0"], answer: 4, explanation: "NEEDS_REVIEW: confirm the exact exponents and signs in the two source expressions before determining the forced sign.", hint: "Compare the sign parity of each variable's exponent in both products.", sourcePage: 3 },
-  { number: 13, points: 4, prompt: "All digits on a water meter display are different. What is the minimum amount of water used before this happens again?", options: ["0.006 m^3", "0.034 m^3", "0.086 m^3", "0.137 m^3", "1.048 m^3"], answer: 3, explanation: "NEEDS_REVIEW: the current meter reading and decimal-place convention are shown in the source image.", hint: "Find the next larger meter display with all distinct digits.", sourcePage: 3 },
-  { number: 14, points: 4, prompt: "A square is split into two squares and two rectangles. The shaded quadrilateral's vertices are midpoints of the smaller-square sides and its area is 3. What is the non-shaded area of the large square?", options: ["12", "15", "18", "21", "24"], answer: 3, explanation: "NEEDS_REVIEW: use the partition dimensions and midpoint quadrilateral from the source diagram.", hint: "Relate the quadrilateral area to the two smaller square side lengths, then find the whole square area.", sourcePage: 3 },
-  { number: 15, points: 4, prompt: "What is the greatest common divisor of 2^2021+2^2022 and 3^2021+3^2022?", options: ["2", "1", "2^2021", "6", "12"], answer: 4, explanation: "Factor the expressions as 3·2^2021 and 4·3^2021. Their common prime factors are 2^2 and 3, so the greatest common divisor is 12.", hint: "Factor out the smaller power in each sum, then compare the prime factors that remain.", sourcePage: 3 },
-  { number: 16, points: 4, prompt: "A map has 16 towns connected by roads. Each power plant supplies its town and every directly connected neighbouring town. What is the minimum number of plants needed?", options: ["3", "4", "5", "6", "7"], answer: 1, explanation: "NEEDS_REVIEW: find a minimum dominating set in the source road graph.", hint: "A plant covers one town and its adjacent vertices; cover all 16 vertices with as few centres as possible.", sourcePage: 3 },
-  { number: 17, points: 4, prompt: "Eight participants are randomly paired for a knockout tournament. Anita and Martina beat everyone else, and Anita beats Martina if they meet. What is the probability Martina reaches the final?", options: ["1/2", "2/7", "3/7", "4/7", "1"], answer: 4, explanation: "NEEDS_REVIEW: enumerate the bracket pairings or use symmetry to find the probability the two best players meet before the final.", hint: "Martina reaches the final unless she is paired with Anita in an earlier round.", sourcePage: 3 },
-  { number: 18, points: 4, prompt: "A cuboid with surface area X is cut by six planes parallel to its sides into 27 solids. What is the total surface area of the pieces?", options: ["X", "2X", "3X", "4X", "It depends on plane positions"], answer: 2, explanation: "The original outside faces still contribute X. For each of the three directions, the two cuts create four new faces in total, each with the area of the corresponding face of the original cuboid. Across all three directions, the added area is 2X, giving 3X altogether.", hint: "Keep the original outside area, then count the two new faces made by each of the six cuts.", sourcePage: 3 },
-  { number: 19, points: 4, prompt: "Five numbers have mean 24, the three smallest have mean 19, and the three largest have mean 28. What is the median?", options: ["20", "21", "22", "23", "24"], answer: 1, explanation: "The total is 120. The smallest three sum to 57 and largest three to 84; together they count the median twice, so the median is 57+84-120=21.", hint: "Add the two three-number sums and subtract the total of all five numbers.", sourcePage: 3 },
-  { number: 20, points: 4, prompt: "How many points with integer coordinates lie on the circle centred at (0,0) with radius 5?", options: ["5", "8", "12", "16", "20"], answer: 2, explanation: "The solutions to x^2+y^2=25 are four axis points and eight permutations/sign choices of (3,4), for 12 points.", hint: "List the integer square decompositions of 25.", sourcePage: 3 },
-  { number: 21, points: 5, prompt: "A 20-gon is labelled 1 through 20 so adjacent labels differ by 1 or 2. How many sides joining labels that differ by 1 are red?", options: ["1", "2", "4", "5", "10"], answer: 1, explanation: "NEEDS_REVIEW: the cyclic labelling and adjacency pattern constrain the number of red sides.", hint: "Consider the path through labels 1 to 20 and how the final edge closes the polygon.", sourcePage: 4 },
-  { number: 22, points: 5, prompt: "Which two pictured building blocks can be joined to form the object shown?", options: ["A", "B", "C", "D", "E"], answer: 0, explanation: "NEEDS_REVIEW: compare the source 3D block options with the target solid.", hint: "Match the target's cross-sections and exposed faces to the two pieces.", sourcePage: 4 },
-  { number: 23, points: 5, prompt: "A rectangle is split into 11 smaller rectangles, each similar to the original. The smallest rectangles have lower sides of length 1. What is the perimeter of the large rectangle?", options: ["20", "24", "27", "30", "36"], answer: 3, explanation: "NEEDS_REVIEW: derive the recursive rectangle dimensions from the source tiling diagram.", hint: "Use similarity ratios between the original rectangle and each small rectangle.", sourcePage: 4 },
-  { number: 24, points: 5, prompt: "Two rectangles of dimensions 1x5 and 2x3 are inscribed in a triangle as shown. What is the triangle's height?", options: ["3", "7/2", "8/3", "6/5", "Another number"], answer: 1, explanation: "NEEDS_REVIEW: the relative placement of the inscribed rectangles is essential to determine the height.", hint: "Use the similar triangles above or beside each rectangle to express the common height.", sourcePage: 4 },
-  { number: 25, points: 5, prompt: "How many three-digit numbers equal five times the product of their digits?", options: ["1", "2", "3", "4", "5"], answer: 0, explanation: "The number is five times a product, so its last digit is 0 or 5; it cannot be 0 because then the product is 0, so c=5. Writing the number as 100a+10b+5 and dividing the equation by 5 gives b(5a−2)=20a+1. Since 20a+1=4(5a−2)+9, we have b=4+9/(5a−2). For a≥2, the denominator is at least 8 and does not divide 9; for a=1, b=7. Thus 175 is the only number, and the answer is 1.", hint: "The number must end in 5 (it cannot end in 0); substitute that units digit into the product equation.", sourcePage: 4 },
-  { number: 26, points: 5, prompt: "Numbers 1 through 10 fill ten circles. The left and right columns each sum to 24, and the bottom row sums to 25. What is in the marked circle?", options: ["2", "4", "5", "6", "Another number"], answer: 4, explanation: "NEEDS_REVIEW: use the source circle layout to determine which entries are shared across the stated sums.", hint: "Combine the column and row totals while accounting for overlapping cells.", sourcePage: 4 },
-  { number: 27, points: 5, prompt: "Each point (x,y) of the pictured square is replaced by (1/x,1/y). Which diagram shows the resulting shape?", options: ["A", "B", "C", "D", "E"], answer: 2, explanation: "NEEDS_REVIEW: map the source square's boundary under coordinate-wise reciprocals.", hint: "Transform the four edges separately, noting that vertical and horizontal lines remain axis-parallel curves.", sourcePage: 4 },
-  { number: 28, points: 5, prompt: "For positive integer N, how many integers lie between sqrt(N^2+N+1) and sqrt(9N^2+N+1)?", options: ["N+1", "2N-1", "2N", "2N+1", "3N"], answer: 2, explanation: "Since (N+1/2)^2 < N^2+N+1 < (N+1)^2, the lower endpoint lies between N and N+1. Also, (3N)^2 < 9N^2+N+1 < (3N+1)^2, so the upper endpoint lies between 3N and 3N+1. The integers between them are N+1 through 3N, a total of 2N.", hint: "Place each square root strictly between consecutive integers by comparing its radicand with nearby perfect squares.", sourcePage: 4 },
-  { number: 29, points: 5, prompt: "A sequence has 0<a1<1 and the recurrences shown for even and odd indices. Given a7=2, what is a2?", options: ["a1", "2", "3", "4", "5"], answer: 3, explanation: "NEEDS_REVIEW: transcribe the two recurrence formulas from the source before solving for a2.", hint: "Apply the alternating recurrence forward from a1 and use the known seventh term.", sourcePage: 4 },
-  { number: 30, points: 5, prompt: "Two circles intersect a rectangle. Several lengths along the rectangle's long side outside the circles are given. What is the length x of the marked segment?", options: ["14", "15", "16", "17", "18"], answer: 2, explanation: "NEEDS_REVIEW: the rectangle, circle intersections, and labelled segments are shown in the source diagram.", hint: "Use equal tangent/secant lengths and the order of the marked points along the side.", sourcePage: 4 }
+  {
+    number: 1,
+    points: 3,
+    prompt: "A smartphone diagram shows the time spent using four apps last week, sorted from most to least. This week, two apps were used for half as long and two for the same time. Which pictured diagram cannot show this week's usage?",
+    options: [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    answer: 4,
+    explanation: "NEEDS_REVIEW: compare each chart with the requirement that two values are halved and two unchanged.",
+    hint: "Track the four original app values through the allowed changes, then preserve their order.",
+    sourcePage: 2,
+    image: "/assets/kangaroo/grades-11-12/student/2022/questions/editor-q-01.png",
+    imageExtra: "/assets/kangaroo/grades-11-12/student/2022/questions/editor-q-01-extra.png",
+    optionContent: [
+      {
+        id: "1-0",
+        type: "text",
+        text: "A",
+        imageAlt: "A option"
+      },
+      {
+        id: "1-1",
+        type: "text",
+        text: "B",
+        imageAlt: "B option"
+      },
+      {
+        id: "1-2",
+        type: "text",
+        text: "C",
+        imageAlt: "C option"
+      },
+      {
+        id: "1-3",
+        type: "text",
+        text: "D",
+        imageAlt: "D option"
+      },
+      {
+        id: "1-4",
+        type: "text",
+        text: "E",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 2,
+    points: 3,
+    prompt: "How many positive three-digit integers are divisible by 13?",
+    options: [
+      "68",
+      "69",
+      "70",
+      "76",
+      "77"
+    ],
+    answer: 1,
+    explanation: "There are floor(999/13)-floor(99/13)=76-7=69 such numbers.",
+    hint: "Count multiples up to 999 and subtract those below 100.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "2-0",
+        type: "text",
+        text: "68",
+        imageAlt: "A option"
+      },
+      {
+        id: "2-1",
+        type: "text",
+        text: "69",
+        imageAlt: "B option"
+      },
+      {
+        id: "2-2",
+        type: "text",
+        text: "70",
+        imageAlt: "C option"
+      },
+      {
+        id: "2-3",
+        type: "text",
+        text: "76",
+        imageAlt: "D option"
+      },
+      {
+        id: "2-4",
+        type: "text",
+        text: "77",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 3,
+    points: 3,
+    prompt: "Bella is older than Charly and younger than Lily. Teddy is older than Bella. Which pair could be the same age?",
+    options: [
+      "Charly and Teddy",
+      "Teddy and Lily",
+      "Lily and Charly",
+      "Bella and Lily",
+      "Teddy and Bella"
+    ],
+    answer: 1,
+    explanation: "Teddy and Lily are both older than Bella, and their relative ages are otherwise unrestricted, so they could be equal.",
+    hint: "Record the strict inequalities and identify pairs not ordered relative to each other.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "3-0",
+        type: "text",
+        text: "Charly and Teddy",
+        imageAlt: "A option"
+      },
+      {
+        id: "3-1",
+        type: "text",
+        text: "Teddy and Lily",
+        imageAlt: "B option"
+      },
+      {
+        id: "3-2",
+        type: "text",
+        text: "Lily and Charly",
+        imageAlt: "C option"
+      },
+      {
+        id: "3-3",
+        type: "text",
+        text: "Bella and Lily",
+        imageAlt: "D option"
+      },
+      {
+        id: "3-4",
+        type: "text",
+        text: "Teddy and Bella",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 4,
+    points: 3,
+    prompt: "Which number is not divisible by its own digit sum?",
+    options: [
+      "2022",
+      "2023",
+      "2024",
+      "2025",
+      "2027"
+    ],
+    answer: 4,
+    explanation: "2027 has digit sum 11, and 2027 is not divisible by 11.",
+    hint: "Calculate each digit sum and test divisibility.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "4-0",
+        type: "text",
+        text: "2022",
+        imageAlt: "A option"
+      },
+      {
+        id: "4-1",
+        type: "text",
+        text: "2023",
+        imageAlt: "B option"
+      },
+      {
+        id: "4-2",
+        type: "text",
+        text: "2024",
+        imageAlt: "C option"
+      },
+      {
+        id: "4-3",
+        type: "text",
+        text: "2025",
+        imageAlt: "D option"
+      },
+      {
+        id: "4-4",
+        type: "text",
+        text: "2027",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 5,
+    points: 3,
+    prompt: "Five pencils are distributed evenly among 25 empty boxes. How many pencils are in each box?",
+    options: [
+      "25^8",
+      "25^3",
+      "5^2",
+      "5^3",
+      "5^5"
+    ],
+    answer: 0,
+    explanation: "NEEDS_REVIEW: the source's quantities are displayed as powers and need direct image verification.",
+    hint: "Divide the total number of pencils by the number of boxes.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "5-0",
+        type: "text",
+        text: "25^8",
+        imageAlt: "A option"
+      },
+      {
+        id: "5-1",
+        type: "text",
+        text: "25^3",
+        imageAlt: "B option"
+      },
+      {
+        id: "5-2",
+        type: "text",
+        text: "5^2",
+        imageAlt: "C option"
+      },
+      {
+        id: "5-3",
+        type: "text",
+        text: "5^3",
+        imageAlt: "D option"
+      },
+      {
+        id: "5-4",
+        type: "text",
+        text: "5^5",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 6,
+    points: 3,
+    prompt: "The product of the digits of a ten-digit number is 15. What is the sum of its digits?",
+    options: [
+      "8",
+      "12",
+      "15",
+      "16",
+      "20"
+    ],
+    answer: 3,
+    explanation: "To have digit product 15, the digits include 3 and 5, while the other eight digits must be 1. Their sum is 3+5+8=16.",
+    hint: "Factor 15 into digit factors and fill the remaining positions with the only possible factors.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "6-0",
+        type: "text",
+        text: "8",
+        imageAlt: "A option"
+      },
+      {
+        id: "6-1",
+        type: "text",
+        text: "12",
+        imageAlt: "B option"
+      },
+      {
+        id: "6-2",
+        type: "text",
+        text: "15",
+        imageAlt: "C option"
+      },
+      {
+        id: "6-3",
+        type: "text",
+        text: "16",
+        imageAlt: "D option"
+      },
+      {
+        id: "6-4",
+        type: "text",
+        text: "20",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 7,
+    points: 3,
+    prompt: "Four circles of radius 1 intersect as shown. What is the perimeter of the grey region?",
+    options: [
+      "pi",
+      "3pi/2",
+      "A value between 3pi/2 and 2pi",
+      "2pi",
+      "3pi"
+    ],
+    answer: 3,
+    explanation: "NEEDS_REVIEW: identify the grey boundary arcs in the source diagram and add their lengths.",
+    hint: "Each boundary piece is a circular arc of radius 1; determine its central angle.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "7-0",
+        type: "text",
+        text: "pi",
+        imageAlt: "A option"
+      },
+      {
+        id: "7-1",
+        type: "text",
+        text: "3pi/2",
+        imageAlt: "B option"
+      },
+      {
+        id: "7-2",
+        type: "text",
+        text: "A value between 3pi/2 and 2pi",
+        imageAlt: "C option"
+      },
+      {
+        id: "7-3",
+        type: "text",
+        text: "2pi",
+        imageAlt: "D option"
+      },
+      {
+        id: "7-4",
+        type: "text",
+        text: "3pi",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-11-12/student/2022/questions/editor-q-07.png"
+  },
+  {
+    number: 8,
+    points: 3,
+    prompt: "All integers from 2 to 2022 that use only the digits 0 and 2 are listed in ascending order. What is the middle number?",
+    options: [
+      "200",
+      "220",
+      "222",
+      "2000",
+      "2002"
+    ],
+    answer: 1,
+    explanation: "The numbers are 2, 20, 22, 200, 202, 220, 222, 2000, 2002, 2020, and 2022. There are 11, so the middle is the sixth number, 220.",
+    hint: "Group the valid numbers by their number of digits, then find the sixth entry in the ordered list.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "8-0",
+        type: "text",
+        text: "200",
+        imageAlt: "A option"
+      },
+      {
+        id: "8-1",
+        type: "text",
+        text: "220",
+        imageAlt: "B option"
+      },
+      {
+        id: "8-2",
+        type: "text",
+        text: "222",
+        imageAlt: "C option"
+      },
+      {
+        id: "8-3",
+        type: "text",
+        text: "2000",
+        imageAlt: "D option"
+      },
+      {
+        id: "8-4",
+        type: "text",
+        text: "2002",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 9,
+    points: 3,
+    prompt: "How many real solutions does (x^2-2)^2+(x^2+2)^2=0 have?",
+    options: [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    answer: 0,
+    explanation: "A sum of two squares is zero only when both are zero, but x^2 cannot equal both 2 and -2. There are no real solutions.",
+    hint: "Both squared expressions must vanish simultaneously.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "9-0",
+        type: "text",
+        text: "0",
+        imageAlt: "A option"
+      },
+      {
+        id: "9-1",
+        type: "text",
+        text: "1",
+        imageAlt: "B option"
+      },
+      {
+        id: "9-2",
+        type: "text",
+        text: "2",
+        imageAlt: "C option"
+      },
+      {
+        id: "9-3",
+        type: "text",
+        text: "3",
+        imageAlt: "D option"
+      },
+      {
+        id: "9-4",
+        type: "text",
+        text: "4",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 10,
+    points: 3,
+    prompt: "Points A,B,C,D lie in that order on a line. AC=12 cm and BD=18 cm. How far apart are the midpoints of AB and CD?",
+    options: [
+      "6 cm",
+      "9 cm",
+      "12 cm",
+      "13 cm",
+      "15 cm"
+    ],
+    answer: 4,
+    explanation: "Let A=0 and B=t. Then C=12 and D=t+18. The midpoints are t/2 and (t+30)/2, whose distance is 15.",
+    hint: "Assign coordinates to the four ordered points and subtract the midpoint coordinates.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "10-0",
+        type: "text",
+        text: "6 cm",
+        imageAlt: "A option"
+      },
+      {
+        id: "10-1",
+        type: "text",
+        text: "9 cm",
+        imageAlt: "B option"
+      },
+      {
+        id: "10-2",
+        type: "text",
+        text: "12 cm",
+        imageAlt: "C option"
+      },
+      {
+        id: "10-3",
+        type: "text",
+        text: "13 cm",
+        imageAlt: "D option"
+      },
+      {
+        id: "10-4",
+        type: "text",
+        text: "15 cm",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-11-12/student/2022/questions/editor-q-10.png"
+  },
+  {
+    number: 11,
+    points: 4,
+    prompt: "Four lines meet at one point to form eight equal angles. Which black arc has the same length as the circumference of the small grey circle?",
+    options: [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    answer: 3,
+    explanation: "NEEDS_REVIEW: compare the marked arc angle and circle circumference in the source diagram.",
+    hint: "All eight angles are 45 degrees; relate each arc's radius and central angle.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "11-0",
+        type: "text",
+        text: "A",
+        imageAlt: "A option"
+      },
+      {
+        id: "11-1",
+        type: "text",
+        text: "B",
+        imageAlt: "B option"
+      },
+      {
+        id: "11-2",
+        type: "text",
+        text: "C",
+        imageAlt: "C option"
+      },
+      {
+        id: "11-3",
+        type: "text",
+        text: "D",
+        imageAlt: "D option"
+      },
+      {
+        id: "11-4",
+        type: "text",
+        text: "E",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-11-12/student/2022/questions/editor-q-11.png"
+  },
+  {
+    number: 12,
+    points: 4,
+    prompt: "Nonzero real numbers a,b,c satisfy -2a^4b^3c^2 and 3a^5b^2c^-4 have the same sign. Which statement must be true?",
+    options: [
+      "ab>0",
+      "b<0",
+      "c>0",
+      "bc>0",
+      "a<0"
+    ],
+    answer: 4,
+    explanation: "NEEDS_REVIEW: confirm the exact exponents and signs in the two source expressions before determining the forced sign.",
+    hint: "Compare the sign parity of each variable's exponent in both products.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "12-0",
+        type: "text",
+        text: "ab>0",
+        imageAlt: "A option"
+      },
+      {
+        id: "12-1",
+        type: "text",
+        text: "b<0",
+        imageAlt: "B option"
+      },
+      {
+        id: "12-2",
+        type: "text",
+        text: "c>0",
+        imageAlt: "C option"
+      },
+      {
+        id: "12-3",
+        type: "text",
+        text: "bc>0",
+        imageAlt: "D option"
+      },
+      {
+        id: "12-4",
+        type: "text",
+        text: "a<0",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 13,
+    points: 4,
+    prompt: "All digits on a water meter display are different. What is the minimum amount of water used before this happens again?",
+    options: [
+      "0.006 m^3",
+      "0.034 m^3",
+      "0.086 m^3",
+      "0.137 m^3",
+      "1.048 m^3"
+    ],
+    answer: 3,
+    explanation: "NEEDS_REVIEW: the current meter reading and decimal-place convention are shown in the source image.",
+    hint: "Find the next larger meter display with all distinct digits.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "13-0",
+        type: "text",
+        text: "0.006 m^3",
+        imageAlt: "A option"
+      },
+      {
+        id: "13-1",
+        type: "text",
+        text: "0.034 m^3",
+        imageAlt: "B option"
+      },
+      {
+        id: "13-2",
+        type: "text",
+        text: "0.086 m^3",
+        imageAlt: "C option"
+      },
+      {
+        id: "13-3",
+        type: "text",
+        text: "0.137 m^3",
+        imageAlt: "D option"
+      },
+      {
+        id: "13-4",
+        type: "text",
+        text: "1.048 m^3",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-11-12/student/2022/questions/editor-q-13.png"
+  },
+  {
+    number: 14,
+    points: 4,
+    prompt: "A square is split into two squares and two rectangles. The shaded quadrilateral's vertices are midpoints of the smaller-square sides and its area is 3. What is the non-shaded area of the large square?",
+    options: [
+      "12",
+      "15",
+      "18",
+      "21",
+      "24"
+    ],
+    answer: 3,
+    explanation: "NEEDS_REVIEW: use the partition dimensions and midpoint quadrilateral from the source diagram.",
+    hint: "Relate the quadrilateral area to the two smaller square side lengths, then find the whole square area.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "14-0",
+        type: "text",
+        text: "12",
+        imageAlt: "A option"
+      },
+      {
+        id: "14-1",
+        type: "text",
+        text: "15",
+        imageAlt: "B option"
+      },
+      {
+        id: "14-2",
+        type: "text",
+        text: "18",
+        imageAlt: "C option"
+      },
+      {
+        id: "14-3",
+        type: "text",
+        text: "21",
+        imageAlt: "D option"
+      },
+      {
+        id: "14-4",
+        type: "text",
+        text: "24",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-11-12/student/2022/questions/editor-q-14.png"
+  },
+  {
+    number: 15,
+    points: 4,
+    prompt: "What is the greatest common divisor of 2^2021+2^2022 and 3^2021+3^2022?",
+    options: [
+      "2",
+      "1",
+      "2^2021",
+      "6",
+      "12"
+    ],
+    answer: 4,
+    explanation: "Factor the expressions as 3·2^2021 and 4·3^2021. Their common prime factors are 2^2 and 3, so the greatest common divisor is 12.",
+    hint: "Factor out the smaller power in each sum, then compare the prime factors that remain.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "15-0",
+        type: "text",
+        text: "2",
+        imageAlt: "A option"
+      },
+      {
+        id: "15-1",
+        type: "text",
+        text: "1",
+        imageAlt: "B option"
+      },
+      {
+        id: "15-2",
+        type: "text",
+        text: "2^2021",
+        imageAlt: "C option"
+      },
+      {
+        id: "15-3",
+        type: "text",
+        text: "6",
+        imageAlt: "D option"
+      },
+      {
+        id: "15-4",
+        type: "text",
+        text: "12",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 16,
+    points: 4,
+    prompt: "A map has 16 towns connected by roads. Each power plant supplies its town and every directly connected neighbouring town. What is the minimum number of plants needed?",
+    options: [
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    answer: 1,
+    explanation: "NEEDS_REVIEW: find a minimum dominating set in the source road graph.",
+    hint: "A plant covers one town and its adjacent vertices; cover all 16 vertices with as few centres as possible.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "16-0",
+        type: "text",
+        text: "3",
+        imageAlt: "A option"
+      },
+      {
+        id: "16-1",
+        type: "text",
+        text: "4",
+        imageAlt: "B option"
+      },
+      {
+        id: "16-2",
+        type: "text",
+        text: "5",
+        imageAlt: "C option"
+      },
+      {
+        id: "16-3",
+        type: "text",
+        text: "6",
+        imageAlt: "D option"
+      },
+      {
+        id: "16-4",
+        type: "text",
+        text: "7",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-11-12/student/2022/questions/editor-q-16.png"
+  },
+  {
+    number: 17,
+    points: 4,
+    prompt: "Eight participants are randomly paired for a knockout tournament. Anita and Martina beat everyone else, and Anita beats Martina if they meet. What is the probability Martina reaches the final?",
+    options: [
+      "1/2",
+      "2/7",
+      "3/7",
+      "4/7",
+      "1"
+    ],
+    answer: 4,
+    explanation: "NEEDS_REVIEW: enumerate the bracket pairings or use symmetry to find the probability the two best players meet before the final.",
+    hint: "Martina reaches the final unless she is paired with Anita in an earlier round.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "17-0",
+        type: "text",
+        text: "1/2",
+        imageAlt: "A option"
+      },
+      {
+        id: "17-1",
+        type: "text",
+        text: "2/7",
+        imageAlt: "B option"
+      },
+      {
+        id: "17-2",
+        type: "text",
+        text: "3/7",
+        imageAlt: "C option"
+      },
+      {
+        id: "17-3",
+        type: "text",
+        text: "4/7",
+        imageAlt: "D option"
+      },
+      {
+        id: "17-4",
+        type: "text",
+        text: "1",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 18,
+    points: 4,
+    prompt: "A cuboid with surface area X is cut by six planes parallel to its sides into 27 solids. What is the total surface area of the pieces?",
+    options: [
+      "X",
+      "2X",
+      "3X",
+      "4X",
+      "It depends on plane positions"
+    ],
+    answer: 2,
+    explanation: "The original outside faces still contribute X. For each of the three directions, the two cuts create four new faces in total, each with the area of the corresponding face of the original cuboid. Across all three directions, the added area is 2X, giving 3X altogether.",
+    hint: "Keep the original outside area, then count the two new faces made by each of the six cuts.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "18-0",
+        type: "text",
+        text: "X",
+        imageAlt: "A option"
+      },
+      {
+        id: "18-1",
+        type: "text",
+        text: "2X",
+        imageAlt: "B option"
+      },
+      {
+        id: "18-2",
+        type: "text",
+        text: "3X",
+        imageAlt: "C option"
+      },
+      {
+        id: "18-3",
+        type: "text",
+        text: "4X",
+        imageAlt: "D option"
+      },
+      {
+        id: "18-4",
+        type: "text",
+        text: "It depends on plane positions",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-11-12/student/2022/questions/editor-q-18.png"
+  },
+  {
+    number: 19,
+    points: 4,
+    prompt: "Five numbers have mean 24, the three smallest have mean 19, and the three largest have mean 28. What is the median?",
+    options: [
+      "20",
+      "21",
+      "22",
+      "23",
+      "24"
+    ],
+    answer: 1,
+    explanation: "The total is 120. The smallest three sum to 57 and largest three to 84; together they count the median twice, so the median is 57+84-120=21.",
+    hint: "Add the two three-number sums and subtract the total of all five numbers.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "19-0",
+        type: "text",
+        text: "20",
+        imageAlt: "A option"
+      },
+      {
+        id: "19-1",
+        type: "text",
+        text: "21",
+        imageAlt: "B option"
+      },
+      {
+        id: "19-2",
+        type: "text",
+        text: "22",
+        imageAlt: "C option"
+      },
+      {
+        id: "19-3",
+        type: "text",
+        text: "23",
+        imageAlt: "D option"
+      },
+      {
+        id: "19-4",
+        type: "text",
+        text: "24",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 20,
+    points: 4,
+    prompt: "How many points with integer coordinates lie on the circle centred at (0,0) with radius 5?",
+    options: [
+      "5",
+      "8",
+      "12",
+      "16",
+      "20"
+    ],
+    answer: 2,
+    explanation: "The solutions to x^2+y^2=25 are four axis points and eight permutations/sign choices of (3,4), for 12 points.",
+    hint: "List the integer square decompositions of 25.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "20-0",
+        type: "text",
+        text: "5",
+        imageAlt: "A option"
+      },
+      {
+        id: "20-1",
+        type: "text",
+        text: "8",
+        imageAlt: "B option"
+      },
+      {
+        id: "20-2",
+        type: "text",
+        text: "12",
+        imageAlt: "C option"
+      },
+      {
+        id: "20-3",
+        type: "text",
+        text: "16",
+        imageAlt: "D option"
+      },
+      {
+        id: "20-4",
+        type: "text",
+        text: "20",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-11-12/student/2022/questions/editor-q-20.png"
+  },
+  {
+    number: 21,
+    points: 5,
+    prompt: "A 20-gon is labelled 1 through 20 so adjacent labels differ by 1 or 2. How many sides joining labels that differ by 1 are red?",
+    options: [
+      "1",
+      "2",
+      "4",
+      "5",
+      "10"
+    ],
+    answer: 1,
+    explanation: "NEEDS_REVIEW: the cyclic labelling and adjacency pattern constrain the number of red sides.",
+    hint: "Consider the path through labels 1 to 20 and how the final edge closes the polygon.",
+    sourcePage: 4,
+    optionContent: [
+      {
+        id: "21-0",
+        type: "text",
+        text: "1",
+        imageAlt: "A option"
+      },
+      {
+        id: "21-1",
+        type: "text",
+        text: "2",
+        imageAlt: "B option"
+      },
+      {
+        id: "21-2",
+        type: "text",
+        text: "4",
+        imageAlt: "C option"
+      },
+      {
+        id: "21-3",
+        type: "text",
+        text: "5",
+        imageAlt: "D option"
+      },
+      {
+        id: "21-4",
+        type: "text",
+        text: "10",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 22,
+    points: 5,
+    prompt: "Which two pictured building blocks can be joined to form the object shown?",
+    options: [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    answer: 0,
+    explanation: "NEEDS_REVIEW: compare the source 3D block options with the target solid.",
+    hint: "Match the target's cross-sections and exposed faces to the two pieces.",
+    sourcePage: 4,
+    optionContent: [
+      {
+        id: "22-0",
+        type: "text",
+        text: "A",
+        imageAlt: "A option"
+      },
+      {
+        id: "22-1",
+        type: "text",
+        text: "B",
+        imageAlt: "B option"
+      },
+      {
+        id: "22-2",
+        type: "text",
+        text: "C",
+        imageAlt: "C option"
+      },
+      {
+        id: "22-3",
+        type: "text",
+        text: "D",
+        imageAlt: "D option"
+      },
+      {
+        id: "22-4",
+        type: "text",
+        text: "E",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-11-12/student/2022/questions/editor-q-22.png",
+    imageExtra: "/assets/kangaroo/grades-11-12/student/2022/questions/editor-q-22-extra.png"
+  },
+  {
+    number: 23,
+    points: 5,
+    prompt: "A rectangle is split into 11 smaller rectangles, each similar to the original. The smallest rectangles have lower sides of length 1. What is the perimeter of the large rectangle?",
+    options: [
+      "20",
+      "24",
+      "27",
+      "30",
+      "36"
+    ],
+    answer: 3,
+    explanation: "NEEDS_REVIEW: derive the recursive rectangle dimensions from the source tiling diagram.",
+    hint: "Use similarity ratios between the original rectangle and each small rectangle.",
+    sourcePage: 4,
+    optionContent: [
+      {
+        id: "23-0",
+        type: "text",
+        text: "20",
+        imageAlt: "A option"
+      },
+      {
+        id: "23-1",
+        type: "text",
+        text: "24",
+        imageAlt: "B option"
+      },
+      {
+        id: "23-2",
+        type: "text",
+        text: "27",
+        imageAlt: "C option"
+      },
+      {
+        id: "23-3",
+        type: "text",
+        text: "30",
+        imageAlt: "D option"
+      },
+      {
+        id: "23-4",
+        type: "text",
+        text: "36",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-11-12/student/2022/questions/editor-q-23.png"
+  },
+  {
+    number: 24,
+    points: 5,
+    prompt: "Two rectangles of dimensions 1x5 and 2x3 are inscribed in a triangle as shown. What is the triangle's height?",
+    options: [
+      "3",
+      "7/2",
+      "8/3",
+      "6/5",
+      "Another number"
+    ],
+    answer: 1,
+    explanation: "NEEDS_REVIEW: the relative placement of the inscribed rectangles is essential to determine the height.",
+    hint: "Use the similar triangles above or beside each rectangle to express the common height.",
+    sourcePage: 4,
+    optionContent: [
+      {
+        id: "24-0",
+        type: "text",
+        text: "3",
+        imageAlt: "A option"
+      },
+      {
+        id: "24-1",
+        type: "text",
+        text: "7/2",
+        imageAlt: "B option"
+      },
+      {
+        id: "24-2",
+        type: "text",
+        text: "8/3",
+        imageAlt: "C option"
+      },
+      {
+        id: "24-3",
+        type: "text",
+        text: "6/5",
+        imageAlt: "D option"
+      },
+      {
+        id: "24-4",
+        type: "text",
+        text: "Another number",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-11-12/student/2022/questions/editor-q-24.png"
+  },
+  {
+    number: 25,
+    points: 5,
+    prompt: "How many three-digit numbers equal five times the product of their digits?",
+    options: [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    answer: 0,
+    explanation: "The number is five times a product, so its last digit is 0 or 5; it cannot be 0 because then the product is 0, so c=5. Writing the number as 100a+10b+5 and dividing the equation by 5 gives b(5a−2)=20a+1. Since 20a+1=4(5a−2)+9, we have b=4+9/(5a−2). For a≥2, the denominator is at least 8 and does not divide 9; for a=1, b=7. Thus 175 is the only number, and the answer is 1.",
+    hint: "The number must end in 5 (it cannot end in 0); substitute that units digit into the product equation.",
+    sourcePage: 4,
+    optionContent: [
+      {
+        id: "25-0",
+        type: "text",
+        text: "1",
+        imageAlt: "A option"
+      },
+      {
+        id: "25-1",
+        type: "text",
+        text: "2",
+        imageAlt: "B option"
+      },
+      {
+        id: "25-2",
+        type: "text",
+        text: "3",
+        imageAlt: "C option"
+      },
+      {
+        id: "25-3",
+        type: "text",
+        text: "4",
+        imageAlt: "D option"
+      },
+      {
+        id: "25-4",
+        type: "text",
+        text: "5",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 26,
+    points: 5,
+    prompt: "Numbers 1 through 10 fill ten circles. The left and right columns each sum to 24, and the bottom row sums to 25. What is in the marked circle?",
+    options: [
+      "2",
+      "4",
+      "5",
+      "6",
+      "Another number"
+    ],
+    answer: 4,
+    explanation: "NEEDS_REVIEW: use the source circle layout to determine which entries are shared across the stated sums.",
+    hint: "Combine the column and row totals while accounting for overlapping cells.",
+    sourcePage: 4,
+    optionContent: [
+      {
+        id: "26-0",
+        type: "text",
+        text: "2",
+        imageAlt: "A option"
+      },
+      {
+        id: "26-1",
+        type: "text",
+        text: "4",
+        imageAlt: "B option"
+      },
+      {
+        id: "26-2",
+        type: "text",
+        text: "5",
+        imageAlt: "C option"
+      },
+      {
+        id: "26-3",
+        type: "text",
+        text: "6",
+        imageAlt: "D option"
+      },
+      {
+        id: "26-4",
+        type: "text",
+        text: "Another number",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-11-12/student/2022/questions/editor-q-26.png"
+  },
+  {
+    number: 27,
+    points: 5,
+    prompt: "Each point (x,y) of the pictured square is replaced by (1/x,1/y). Which diagram shows the resulting shape?",
+    options: [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    answer: 2,
+    explanation: "NEEDS_REVIEW: map the source square's boundary under coordinate-wise reciprocals.",
+    hint: "Transform the four edges separately, noting that vertical and horizontal lines remain axis-parallel curves.",
+    sourcePage: 4,
+    optionContent: [
+      {
+        id: "27-0",
+        type: "text",
+        text: "A",
+        imageAlt: "A option"
+      },
+      {
+        id: "27-1",
+        type: "text",
+        text: "B",
+        imageAlt: "B option"
+      },
+      {
+        id: "27-2",
+        type: "text",
+        text: "C",
+        imageAlt: "C option"
+      },
+      {
+        id: "27-3",
+        type: "text",
+        text: "D",
+        imageAlt: "D option"
+      },
+      {
+        id: "27-4",
+        type: "text",
+        text: "E",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-11-12/student/2022/questions/editor-q-27.png",
+    imageExtra: "/assets/kangaroo/grades-11-12/student/2022/questions/editor-q-27-extra.png"
+  },
+  {
+    number: 28,
+    points: 5,
+    prompt: "For positive integer N, how many integers lie between sqrt(N^2+N+1) and sqrt(9N^2+N+1)?",
+    options: [
+      "N+1",
+      "2N-1",
+      "2N",
+      "2N+1",
+      "3N"
+    ],
+    answer: 2,
+    explanation: "Since (N+1/2)^2 < N^2+N+1 < (N+1)^2, the lower endpoint lies between N and N+1. Also, (3N)^2 < 9N^2+N+1 < (3N+1)^2, so the upper endpoint lies between 3N and 3N+1. The integers between them are N+1 through 3N, a total of 2N.",
+    hint: "Place each square root strictly between consecutive integers by comparing its radicand with nearby perfect squares.",
+    sourcePage: 4,
+    optionContent: [
+      {
+        id: "28-0",
+        type: "text",
+        text: "N+1",
+        imageAlt: "A option"
+      },
+      {
+        id: "28-1",
+        type: "text",
+        text: "2N-1",
+        imageAlt: "B option"
+      },
+      {
+        id: "28-2",
+        type: "text",
+        text: "2N",
+        imageAlt: "C option"
+      },
+      {
+        id: "28-3",
+        type: "text",
+        text: "2N+1",
+        imageAlt: "D option"
+      },
+      {
+        id: "28-4",
+        type: "text",
+        text: "3N",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 29,
+    points: 5,
+    prompt: "A sequence has 0<a1<1 and the recurrences shown for even and odd indices. Given a7=2, what is a2?",
+    options: [
+      "a1",
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    answer: 3,
+    explanation: "NEEDS_REVIEW: transcribe the two recurrence formulas from the source before solving for a2.",
+    hint: "Apply the alternating recurrence forward from a1 and use the known seventh term.",
+    sourcePage: 4,
+    optionContent: [
+      {
+        id: "29-0",
+        type: "text",
+        text: "a1",
+        imageAlt: "A option"
+      },
+      {
+        id: "29-1",
+        type: "text",
+        text: "2",
+        imageAlt: "B option"
+      },
+      {
+        id: "29-2",
+        type: "text",
+        text: "3",
+        imageAlt: "C option"
+      },
+      {
+        id: "29-3",
+        type: "text",
+        text: "4",
+        imageAlt: "D option"
+      },
+      {
+        id: "29-4",
+        type: "text",
+        text: "5",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 30,
+    points: 5,
+    prompt: "Two circles intersect a rectangle. Several lengths along the rectangle's long side outside the circles are given. What is the length x of the marked segment?",
+    options: [
+      "14",
+      "15",
+      "16",
+      "17",
+      "18"
+    ],
+    answer: 2,
+    explanation: "NEEDS_REVIEW: the rectangle, circle intersections, and labelled segments are shown in the source diagram.",
+    hint: "Use equal tangent/secant lengths and the order of the marked points along the side.",
+    sourcePage: 4,
+    optionContent: [
+      {
+        id: "30-0",
+        type: "text",
+        text: "14",
+        imageAlt: "A option"
+      },
+      {
+        id: "30-1",
+        type: "text",
+        text: "15",
+        imageAlt: "B option"
+      },
+      {
+        id: "30-2",
+        type: "text",
+        text: "16",
+        imageAlt: "C option"
+      },
+      {
+        id: "30-3",
+        type: "text",
+        text: "17",
+        imageAlt: "D option"
+      },
+      {
+        id: "30-4",
+        type: "text",
+        text: "18",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-11-12/student/2022/questions/editor-q-30.png"
+  }
 ];
 
 const sections2022Student: Section[] = [
-  { points: 3, label: "Section 1", range: "Questions 1-10", accent: "coral" },
-  { points: 4, label: "Section 2", range: "Questions 11-20", accent: "blue" },
-  { points: 5, label: "Section 3", range: "Questions 21-30", accent: "purple" }
+  {
+    points: 3,
+    label: "Section 1",
+    range: "Questions 1-10",
+    accent: "coral"
+  },
+  {
+    points: 4,
+    label: "Section 2",
+    range: "Questions 11-20",
+    accent: "blue"
+  },
+  {
+    points: 5,
+    label: "Section 3",
+    range: "Questions 21-30",
+    accent: "purple"
+  }
 ];
 
 export const edition2022Student: QuestionSet = {
@@ -49,5 +1492,5 @@ export const edition2022Student: QuestionSet = {
   timeLimitMinutes: 75,
   sourceUrl: "https://www.matematica.pt/en/docs/kangaroo/enunciados/2022/2022_Student.pdf",
   questions: questions2022Student,
-  sections: sections2022Student
+  sections: sections2022Student,
 };

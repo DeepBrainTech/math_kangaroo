@@ -1,42 +1,1482 @@
 import type { Question, QuestionSet, Section } from "../../../types";
 
 const questions2019Student: Question[] = [
-  { number: 1, points: 3, prompt: "The flag of Kangoraland is a rectangle split into three equal rectangles as shown. What is the ratio of the side lengths of the white rectangle?", options: ["1:2", "2:3", "2:5", "3:7", "4:9"], answer: 0, explanation: "NEEDS_REVIEW: the arrangement and orientation of the three rectangles are shown in the source figure.", hint: "Express the shared long and short dimensions of the three equal rectangles.", sourcePage: 1 },
-  { number: 2, points: 3, prompt: "The numbers 1,2,3,4 are placed in different cells of a 2x2 table. The row and column sums are calculated; two sums are 4 and 5. What are the other two sums?", options: ["6 and 6", "3 and 5", "4 and 5", "4 and 6", "5 and 6"], answer: 4, explanation: "The four row/column sums total twice the sum of the entries, or 20. Since two are 4 and 5, the remaining two sum to 11; the only listed pair is 5 and 6.", hint: "Add all four row and column sums; each cell is counted twice.", sourcePage: 1 },
-  { number: 3, points: 3, prompt: "A rectangle is coloured in five different ways as shown. In which picture is the grey area largest?", options: ["A", "B", "C", "D", "E"], answer: 4, explanation: "NEEDS_REVIEW: compare the shaded regions in the five source diagrams.", hint: "Use symmetry and area decomposition to compare each grey region.", sourcePage: 1 },
-  { number: 4, points: 3, prompt: "Three triangles are connected as shown. In which picture are they connected in the same way?", options: ["A", "B", "C", "D", "E"], answer: 3, explanation: "NEEDS_REVIEW: the triangle connections and overlaps are visual.", hint: "Compare which triangle sides and vertices are shared in each candidate.", sourcePage: 1 },
-  { number: 5, points: 3, prompt: "A pyramid has 23 triangular faces. How many edges does it have?", options: ["23", "24", "46", "48", "69"], answer: 2, explanation: "Each triangular side face corresponds to one edge of the polygonal base, so the base has 23 edges. There are also 23 edges joining the apex to the base vertices, for 46 edges altogether.", hint: "Count the base edges and the edges joining the apex to the base vertices separately.", sourcePage: 1 },
-  { number: 6, points: 3, prompt: "Three four-digit numbers sum to 11126. Three digits are hidden in the pictured addition. Which are the hidden digits?", options: ["1,4,7", "1,5,7", "3,3,3", "4,5,6", "4,5,7"], answer: 1, explanation: "NEEDS_REVIEW: the visible digits and their columns are required to determine the missing digits.", hint: "Use column addition, including carries, and the stated total.", sourcePage: 1 },
-  { number: 7, points: 3, prompt: "What is the first digit of the smallest positive integer whose digit sum is 2019?", options: ["2", "3", "4", "5", "6"], answer: 1, explanation: "The shortest number has 225 digits: 224 nines sum to 2016, leaving a leading digit of 3.", hint: "Use as few digits as possible, filling the later digits with 9.", sourcePage: 1 },
-  { number: 8, points: 3, prompt: "How many numbers from 2^10 through 2^13 inclusive are divisible by 2^10?", options: ["2", "4", "6", "8", "16"], answer: 3, explanation: "The multiples are 2^10 times 1 through 8, giving eight values in the interval.", hint: "Divide the interval endpoints by 2^10 and count the integers obtained.", sourcePage: 1 },
-  { number: 9, points: 3, prompt: "A die has faces marked 1, 2, or 3 with probabilities 1/2, 1/3, and 1/6, respectively. Which pictured die cannot have these labels?", options: ["A", "B", "C", "D", "E"], answer: 2, explanation: "NEEDS_REVIEW: inspect the five die diagrams and count the faces bearing each value.", hint: "The six faces must contain three 1s, two 2s, and one 3.", sourcePage: 1 },
-  { number: 10, points: 3, prompt: "Alex, Bob, and Carl walk daily. If Alex has no hat, Bob wears one; if Bob has no hat, Carl wears one. Today Carl has no hat. Which kangaroos must be wearing hats?", options: ["Only Alex and Bob", "Only Alex", "Alex, Bob, and Carl", "Neither Alex nor Bob", "Only Bob"], answer: 4, explanation: "Since Carl is not wearing a hat, Bob cannot be hatless; therefore Bob wears a hat.", hint: "Apply the second implication by its contrapositive.", sourcePage: 2 },
-  { number: 11, points: 4, prompt: "What is the highest power of 3 dividing 7!+8!+9!?", options: ["3^2", "3^4", "3^5", "3^6", "A higher power"], answer: 3, explanation: "Factor out 7!: 7!(1+8+72)=7!x81. Since 7! contains 3^2, the expression is divisible by 3^6 but not 3^7.", hint: "Factor out 7! and count the powers of 3 in both factors.", sourcePage: 2 },
-  { number: 12, points: 4, prompt: "This year the number of boys in a class increased by 20% and the number of girls decreased by 20%. There is now one more student than before. Which could be the current class size?", options: ["22", "26", "29", "31", "34"], answer: 1, explanation: "Let previous counts be b,g. The increase gives b-g=5, and integer 20% changes require b and g multiples of 5. The current total is 1.2b+0.8g; among the options, 26 is possible.", hint: "Translate the total increase into an equation and require the 20% changes to be whole numbers.", sourcePage: 2 },
-  { number: 13, points: 4, prompt: "A partly filled cuboid container holds 120 m^3 of water. Depending on its orientation, the water depth is 2 m, 3 m, or 5 m. What is the container's volume?", options: ["160 m^3", "180 m^3", "200 m^3", "220 m^3", "240 m^3"], answer: 4, explanation: "The cross-sectional areas corresponding to depths 2, 3, and 5 are 60, 40, and 24. The dimensions are 2,3,4? Their product gives 240; NEEDS_REVIEW: verify the exact side/orientation relationship in the source figure.", hint: "Use volume=water depth times the horizontal cross-section in each orientation.", sourcePage: 2 },
-  { number: 14, points: 4, prompt: "The operation x diamond y is defined as y-x. If (a diamond b) diamond c = a diamond (b diamond c), which statement must be true?", options: ["a=b", "b=c", "a=c", "a=0", "c=0"], answer: 3, explanation: "The left side is a-b+c and the right side is c-b-a. Equality gives a=-a, hence a=0.", hint: "Expand both sides using the definition of the operation.", sourcePage: 2 },
-  { number: 15, points: 4, prompt: "In the pictured pulley system, end P of one rope is pulled down 24 cm. By how many centimetres does Q move up?", options: ["24", "12", "8", "6", "24/5"], answer: 3, explanation: "NEEDS_REVIEW: count the supporting rope segments and pulley constraints from the source diagram.", hint: "Use conservation of rope length as the movable pulleys shift.", sourcePage: 2 },
-  { number: 16, points: 4, prompt: "A positive integer n is good if its largest proper factor is n-6. How many good positive integers are there?", options: ["1", "2", "3", "6", "Infinitely many"], answer: 2, explanation: "The largest proper factor is n/p for the least prime divisor p. Solving n-n/p=6 gives n=12, 9, and 7, so there are three.", hint: "Let p be the smallest prime factor of n and solve n(1-1/p)=6.", sourcePage: 2 },
-  { number: 17, points: 4, prompt: "Five balls consist of four chocolates and one boiled sweet. Johann and Maria take turns drawing without replacement, with Johann first. What is the probability Maria wins?", options: ["2/5", "3/5", "1/2", "5/6", "1/3"], answer: 0, explanation: "Maria wins if the sweet is drawn on the second or fourth draw, so the probability is 2/5.", hint: "The sweet is equally likely to occupy any of the five draw positions.", sourcePage: 2 },
-  { number: 18, points: 4, prompt: "Two adjacent squares have side lengths a<b. What is the area of the grey triangle shown?", options: ["sqrt(ab)", "a^2", "b^2", "(a+b)^2/2", "(a+b)^2/4"], answer: 1, explanation: "NEEDS_REVIEW: the shared-square layout and shaded triangle are shown in the source figure.", hint: "Use the common base and the height determined by the two square side lengths.", sourcePage: 2 },
-  { number: 19, points: 4, prompt: "What is the greatest integer less than the nested radical expression beginning sqrt(20+sqrt(20+...)) shown in the source?", options: ["4", "5", "6", "20", "25"], answer: 0, explanation: "The nested expression converges to 5 from below, so its greatest integer less than the value is 4.", hint: "Let the infinite nested radical be x and solve x=sqrt(20+x), checking the finite expression is below the limit.", sourcePage: 2 },
-  { number: 20, points: 4, prompt: "Ten intersections in a network are labelled 1 to 10. The sum of the four vertex labels of each square is the same. What is the minimum possible common sum S?", options: ["18", "19", "20", "21", "22"], answer: 2, explanation: "NEEDS_REVIEW: the square network and its label placements are required to establish the minimum.", hint: "Sum the equations for all squares and use the total of labels 1 through 10.", sourcePage: 2 },
-  { number: 21, points: 5, prompt: "Let a be the sum and b the product of all positive factors of 1024. Which relation holds?", options: ["(a-1)^5=b", "(a+1)^5=b", "a^5=b", "a-1=b", "a+1=b"], answer: 1, explanation: "The divisors of 1024=2^10 sum to 2047, so a+1=2048=2^11. Their product is 2^(0+1+...+10)=2^55=(2^11)^5.", hint: "Use the divisor sum and the sum of exponents in the product of all divisors of 2^10.", sourcePage: 3 },
-  { number: 22, points: 5, prompt: "For which values of a does 2-|x|=ax have exactly two solutions?", options: ["(-infinity,-1]", "(-1,1)", "[1,infinity)", "{0}", "{-1,1}"], answer: 1, explanation: "For x≥0, solving gives x=2/(a+1), which is valid when a>−1. For x<0, x=2/(a−1), valid when a<1. Both branches give one solution exactly when −1<a<1; at either endpoint one branch has no solution, and outside the interval only one branch does. Thus the equation has exactly two solutions for (−1,1).", hint: "Solve on the two domains x≥0 and x<0, checking when each resulting value has the required sign.", sourcePage: 3 },
-  { number: 23, points: 5, prompt: "Positive integers a,b,c satisfy a+b/c=11 and b+a/c=14. What is (a+b)/c?", options: ["1", "2", "3", "4", "5"], answer: 4, explanation: "Let s=a+b. Adding the equations gives s+s/c=25, so s=25c/(c+1), or equivalently s=25−25/(c+1). Since s is an integer, c+1 divides 25; the positive possibilities are c=4 or 24. For c=4 the original equations give a=8,b=12, so s/c=5. For c=24 they would require non-integer a,b, so the answer is 5.", hint: "Add the equations to constrain c and (a+b), then substitute the possible values of c back into the original equations.", sourcePage: 3 },
-  { number: 24, points: 5, prompt: "How many planes pass through at least three vertices of a cube?", options: ["6", "8", "12", "16", "20"], answer: 4, explanation: "There are 12 planes containing four cube vertices: the 6 face planes and 6 diagonal planes. The 56 triples of cube vertices lying in no such four-vertex plane account for 56−12·4=8 additional planes, each containing exactly three vertices. In total, 12+8=20 planes pass through at least three vertices.", hint: "Separate the planes containing four vertices from those containing exactly three, and avoid counting a plane once for each triple it contains.", sourcePage: 3 },
-  { number: 25, points: 5, prompt: "Four distinct lines through the origin intersect the parabola y=x^2-2 in eight points. What could be the product of the eight x-coordinates?", options: ["Only 16", "Only -16", "Only 8", "Only -8", "More than one value is possible"], answer: 0, explanation: "For each line y=mx, the intersections satisfy x^2-mx-2=0, whose root product is -2. Four lines give product (-2)^4=16.", hint: "Use the product of roots for each line-parabola intersection quadratic.", sourcePage: 3 },
-  { number: 26, points: 5, prompt: "For how many integers n is |n^2-2n-3| a prime number?", options: ["1", "2", "3", "4", "Infinitely many"], answer: 3, explanation: "Factor n^2-2n-3=(n-3)(n+1). A prime absolute value occurs when one factor is 1 or -1, giving n=-2,0,2,4: four integers.", hint: "Factor the quadratic and use that a prime has only one nontrivial factor pair.", sourcePage: 3 },
-  { number: 27, points: 5, prompt: "A perpendicular path DE-FB lies inside a square with DE=5, EF=1, and FB=2 as shown. What is the side length of the square?", options: ["3sqrt(2)", "7sqrt(2)/2", "11/2", "5sqrt(2)", "Another value"], answer: 4, explanation: "NEEDS_REVIEW: the path orientation and square corner labels in the source diagram determine the side length.", hint: "Place the square in coordinates and use the perpendicular path segments and endpoint positions.", sourcePage: 3 },
-  { number: 28, points: 5, prompt: "A sequence starts a1=49. Each next term is the square of one plus the digit sum of the previous term. What is a2019?", options: ["121", "25", "64", "400", "49"], answer: 2, explanation: "The first terms are 49, 196, 289, 400, 25, 64, 121, 25, … . From 25 onward the sequence repeats 25, 64, 121. Since 2019−5=2014 leaves remainder 1 upon division by 3, a2019 is the second term of this cycle, 64.", hint: "Compute terms until a cycle appears, then use the index of the first repeated term to locate a2019.", sourcePage: 3 },
-  { number: 29, points: 5, prompt: "Three circles of radius 2 are arranged so an intersection point of each pair is the centre of the third. What is the area of the grey region?", options: ["pi", "3pi", "pi/2", "2pi", "4pi"], answer: 3, explanation: "NEEDS_REVIEW: the grey region boundary must be checked against the three-circle source diagram.", hint: "Use the equilateral-triangle arrangement of centres and subtract or add the circular sectors.", sourcePage: 3 },
-  { number: 30, points: 5, prompt: "A 5x5 grid uses 1 through 5 exactly once in each row and column. The sums in the three black-bordered regions are equal. What number must go in the top-right cell?", options: ["1", "2", "3", "4", "5"], answer: 2, explanation: "NEEDS_REVIEW: the row/column clues and black-bordered regions are contained in the source grid diagram.", hint: "Apply the Latin-square row and column constraints, then equate the three marked region sums.", sourcePage: 3 }
+  {
+    number: 1,
+    points: 3,
+    prompt: "The flag of Kangoraland is a rectangle split into three equal rectangles as shown. What is the ratio of the side lengths of the white rectangle?",
+    options: [
+      "1:2",
+      "2:3",
+      "2:5",
+      "3:7",
+      "4:9"
+    ],
+    answer: 0,
+    explanation: "NEEDS_REVIEW: the arrangement and orientation of the three rectangles are shown in the source figure.",
+    hint: "Express the shared long and short dimensions of the three equal rectangles.",
+    sourcePage: 1,
+    image: "/assets/kangaroo/grades-11-12/student/2019/questions/editor-q-01.png",
+    optionContent: [
+      {
+        id: "1-0",
+        type: "text",
+        text: "1:2",
+        imageAlt: "A option"
+      },
+      {
+        id: "1-1",
+        type: "text",
+        text: "2:3",
+        imageAlt: "B option"
+      },
+      {
+        id: "1-2",
+        type: "text",
+        text: "2:5",
+        imageAlt: "C option"
+      },
+      {
+        id: "1-3",
+        type: "text",
+        text: "3:7",
+        imageAlt: "D option"
+      },
+      {
+        id: "1-4",
+        type: "text",
+        text: "4:9",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 2,
+    points: 3,
+    prompt: "The numbers 1,2,3,4 are placed in different cells of a 2x2 table. The row and column sums are calculated; two sums are 4 and 5. What are the other two sums?",
+    options: [
+      "6 and 6",
+      "3 and 5",
+      "4 and 5",
+      "4 and 6",
+      "5 and 6"
+    ],
+    answer: 4,
+    explanation: "The four row/column sums total twice the sum of the entries, or 20. Since two are 4 and 5, the remaining two sum to 11; the only listed pair is 5 and 6.",
+    hint: "Add all four row and column sums; each cell is counted twice.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "2-0",
+        type: "text",
+        text: "6 and 6",
+        imageAlt: "A option"
+      },
+      {
+        id: "2-1",
+        type: "text",
+        text: "3 and 5",
+        imageAlt: "B option"
+      },
+      {
+        id: "2-2",
+        type: "text",
+        text: "4 and 5",
+        imageAlt: "C option"
+      },
+      {
+        id: "2-3",
+        type: "text",
+        text: "4 and 6",
+        imageAlt: "D option"
+      },
+      {
+        id: "2-4",
+        type: "text",
+        text: "5 and 6",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-11-12/student/2019/questions/editor-q-02.png"
+  },
+  {
+    number: 3,
+    points: 3,
+    prompt: "A rectangle is coloured in five different ways as shown. In which picture is the grey area largest?",
+    options: [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    answer: 4,
+    explanation: "NEEDS_REVIEW: compare the shaded regions in the five source diagrams.",
+    hint: "Use symmetry and area decomposition to compare each grey region.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "3-0",
+        type: "text",
+        text: "A",
+        imageAlt: "A option"
+      },
+      {
+        id: "3-1",
+        type: "text",
+        text: "B",
+        imageAlt: "B option"
+      },
+      {
+        id: "3-2",
+        type: "text",
+        text: "C",
+        imageAlt: "C option"
+      },
+      {
+        id: "3-3",
+        type: "text",
+        text: "D",
+        imageAlt: "D option"
+      },
+      {
+        id: "3-4",
+        type: "text",
+        text: "E",
+        imageAlt: "E option"
+      }
+    ],
+    imageExtra: "/assets/kangaroo/grades-11-12/student/2019/questions/editor-q-03-extra.png"
+  },
+  {
+    number: 4,
+    points: 3,
+    prompt: "Three triangles are connected as shown. In which picture are they connected in the same way?",
+    options: [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    answer: 3,
+    explanation: "NEEDS_REVIEW: the triangle connections and overlaps are visual.",
+    hint: "Compare which triangle sides and vertices are shared in each candidate.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "4-0",
+        type: "text",
+        text: "A",
+        imageAlt: "A option"
+      },
+      {
+        id: "4-1",
+        type: "text",
+        text: "B",
+        imageAlt: "B option"
+      },
+      {
+        id: "4-2",
+        type: "text",
+        text: "C",
+        imageAlt: "C option"
+      },
+      {
+        id: "4-3",
+        type: "text",
+        text: "D",
+        imageAlt: "D option"
+      },
+      {
+        id: "4-4",
+        type: "text",
+        text: "E",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-11-12/student/2019/questions/editor-q-04.png",
+    imageExtra: "/assets/kangaroo/grades-11-12/student/2019/questions/editor-q-04-extra.png"
+  },
+  {
+    number: 5,
+    points: 3,
+    prompt: "A pyramid has 23 triangular faces. How many edges does it have?",
+    options: [
+      "23",
+      "24",
+      "46",
+      "48",
+      "69"
+    ],
+    answer: 2,
+    explanation: "Each triangular side face corresponds to one edge of the polygonal base, so the base has 23 edges. There are also 23 edges joining the apex to the base vertices, for 46 edges altogether.",
+    hint: "Count the base edges and the edges joining the apex to the base vertices separately.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "5-0",
+        type: "text",
+        text: "23",
+        imageAlt: "A option"
+      },
+      {
+        id: "5-1",
+        type: "text",
+        text: "24",
+        imageAlt: "B option"
+      },
+      {
+        id: "5-2",
+        type: "text",
+        text: "46",
+        imageAlt: "C option"
+      },
+      {
+        id: "5-3",
+        type: "text",
+        text: "48",
+        imageAlt: "D option"
+      },
+      {
+        id: "5-4",
+        type: "text",
+        text: "69",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 6,
+    points: 3,
+    prompt: "Three four-digit numbers sum to 11126. Three digits are hidden in the pictured addition. Which are the hidden digits?",
+    options: [
+      "1,4,7",
+      "1,5,7",
+      "3,3,3",
+      "4,5,6",
+      "4,5,7"
+    ],
+    answer: 1,
+    explanation: "NEEDS_REVIEW: the visible digits and their columns are required to determine the missing digits.",
+    hint: "Use column addition, including carries, and the stated total.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "6-0",
+        type: "text",
+        text: "1,4,7",
+        imageAlt: "A option"
+      },
+      {
+        id: "6-1",
+        type: "text",
+        text: "1,5,7",
+        imageAlt: "B option"
+      },
+      {
+        id: "6-2",
+        type: "text",
+        text: "3,3,3",
+        imageAlt: "C option"
+      },
+      {
+        id: "6-3",
+        type: "text",
+        text: "4,5,6",
+        imageAlt: "D option"
+      },
+      {
+        id: "6-4",
+        type: "text",
+        text: "4,5,7",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-11-12/student/2019/questions/editor-q-06.png"
+  },
+  {
+    number: 7,
+    points: 3,
+    prompt: "What is the first digit of the smallest positive integer whose digit sum is 2019?",
+    options: [
+      "2",
+      "3",
+      "4",
+      "5",
+      "6"
+    ],
+    answer: 1,
+    explanation: "The shortest number has 225 digits: 224 nines sum to 2016, leaving a leading digit of 3.",
+    hint: "Use as few digits as possible, filling the later digits with 9.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "7-0",
+        type: "text",
+        text: "2",
+        imageAlt: "A option"
+      },
+      {
+        id: "7-1",
+        type: "text",
+        text: "3",
+        imageAlt: "B option"
+      },
+      {
+        id: "7-2",
+        type: "text",
+        text: "4",
+        imageAlt: "C option"
+      },
+      {
+        id: "7-3",
+        type: "text",
+        text: "5",
+        imageAlt: "D option"
+      },
+      {
+        id: "7-4",
+        type: "text",
+        text: "6",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 8,
+    points: 3,
+    prompt: "How many numbers from 2^10 through 2^13 inclusive are divisible by 2^10?",
+    options: [
+      "2",
+      "4",
+      "6",
+      "8",
+      "16"
+    ],
+    answer: 3,
+    explanation: "The multiples are 2^10 times 1 through 8, giving eight values in the interval.",
+    hint: "Divide the interval endpoints by 2^10 and count the integers obtained.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "8-0",
+        type: "text",
+        text: "2",
+        imageAlt: "A option"
+      },
+      {
+        id: "8-1",
+        type: "text",
+        text: "4",
+        imageAlt: "B option"
+      },
+      {
+        id: "8-2",
+        type: "text",
+        text: "6",
+        imageAlt: "C option"
+      },
+      {
+        id: "8-3",
+        type: "text",
+        text: "8",
+        imageAlt: "D option"
+      },
+      {
+        id: "8-4",
+        type: "text",
+        text: "16",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 9,
+    points: 3,
+    prompt: "A die has faces marked 1, 2, or 3 with probabilities 1/2, 1/3, and 1/6, respectively. Which pictured die cannot have these labels?",
+    options: [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    answer: 2,
+    explanation: "NEEDS_REVIEW: inspect the five die diagrams and count the faces bearing each value.",
+    hint: "The six faces must contain three 1s, two 2s, and one 3.",
+    sourcePage: 1,
+    optionContent: [
+      {
+        id: "9-0",
+        type: "text",
+        text: "A",
+        imageAlt: "A option"
+      },
+      {
+        id: "9-1",
+        type: "text",
+        text: "B",
+        imageAlt: "B option"
+      },
+      {
+        id: "9-2",
+        type: "text",
+        text: "C",
+        imageAlt: "C option"
+      },
+      {
+        id: "9-3",
+        type: "text",
+        text: "D",
+        imageAlt: "D option"
+      },
+      {
+        id: "9-4",
+        type: "text",
+        text: "E",
+        imageAlt: "E option"
+      }
+    ],
+    imageExtra: "/assets/kangaroo/grades-11-12/student/2019/questions/editor-q-09-extra.png"
+  },
+  {
+    number: 10,
+    points: 3,
+    prompt: "Alex, Bob, and Carl walk daily. If Alex has no hat, Bob wears one; if Bob has no hat, Carl wears one. Today Carl has no hat. Which kangaroos must be wearing hats?",
+    options: [
+      "Only Alex and Bob",
+      "Only Alex",
+      "Alex, Bob, and Carl",
+      "Neither Alex nor Bob",
+      "Only Bob"
+    ],
+    answer: 4,
+    explanation: "Since Carl is not wearing a hat, Bob cannot be hatless; therefore Bob wears a hat.",
+    hint: "Apply the second implication by its contrapositive.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "10-0",
+        type: "text",
+        text: "Only Alex and Bob",
+        imageAlt: "A option"
+      },
+      {
+        id: "10-1",
+        type: "text",
+        text: "Only Alex",
+        imageAlt: "B option"
+      },
+      {
+        id: "10-2",
+        type: "text",
+        text: "Alex, Bob, and Carl",
+        imageAlt: "C option"
+      },
+      {
+        id: "10-3",
+        type: "text",
+        text: "Neither Alex nor Bob",
+        imageAlt: "D option"
+      },
+      {
+        id: "10-4",
+        type: "text",
+        text: "Only Bob",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 11,
+    points: 4,
+    prompt: "What is the highest power of 3 dividing 7!+8!+9!?",
+    options: [
+      "3^2",
+      "3^4",
+      "3^5",
+      "3^6",
+      "A higher power"
+    ],
+    answer: 3,
+    explanation: "Factor out 7!: 7!(1+8+72)=7!x81. Since 7! contains 3^2, the expression is divisible by 3^6 but not 3^7.",
+    hint: "Factor out 7! and count the powers of 3 in both factors.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "11-0",
+        type: "text",
+        text: "3^2",
+        imageAlt: "A option"
+      },
+      {
+        id: "11-1",
+        type: "text",
+        text: "3^4",
+        imageAlt: "B option"
+      },
+      {
+        id: "11-2",
+        type: "text",
+        text: "3^5",
+        imageAlt: "C option"
+      },
+      {
+        id: "11-3",
+        type: "text",
+        text: "3^6",
+        imageAlt: "D option"
+      },
+      {
+        id: "11-4",
+        type: "text",
+        text: "A higher power",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 12,
+    points: 4,
+    prompt: "This year the number of boys in a class increased by 20% and the number of girls decreased by 20%. There is now one more student than before. Which could be the current class size?",
+    options: [
+      "22",
+      "26",
+      "29",
+      "31",
+      "34"
+    ],
+    answer: 1,
+    explanation: "Let previous counts be b,g. The increase gives b-g=5, and integer 20% changes require b and g multiples of 5. The current total is 1.2b+0.8g; among the options, 26 is possible.",
+    hint: "Translate the total increase into an equation and require the 20% changes to be whole numbers.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "12-0",
+        type: "text",
+        text: "22",
+        imageAlt: "A option"
+      },
+      {
+        id: "12-1",
+        type: "text",
+        text: "26",
+        imageAlt: "B option"
+      },
+      {
+        id: "12-2",
+        type: "text",
+        text: "29",
+        imageAlt: "C option"
+      },
+      {
+        id: "12-3",
+        type: "text",
+        text: "31",
+        imageAlt: "D option"
+      },
+      {
+        id: "12-4",
+        type: "text",
+        text: "34",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 13,
+    points: 4,
+    prompt: "A partly filled cuboid container holds 120 m^3 of water. Depending on its orientation, the water depth is 2 m, 3 m, or 5 m. What is the container's volume?",
+    options: [
+      "160 m^3",
+      "180 m^3",
+      "200 m^3",
+      "220 m^3",
+      "240 m^3"
+    ],
+    answer: 4,
+    explanation: "The cross-sectional areas corresponding to depths 2, 3, and 5 are 60, 40, and 24. The dimensions are 2,3,4? Their product gives 240; NEEDS_REVIEW: verify the exact side/orientation relationship in the source figure.",
+    hint: "Use volume=water depth times the horizontal cross-section in each orientation.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "13-0",
+        type: "text",
+        text: "160 m^3",
+        imageAlt: "A option"
+      },
+      {
+        id: "13-1",
+        type: "text",
+        text: "180 m^3",
+        imageAlt: "B option"
+      },
+      {
+        id: "13-2",
+        type: "text",
+        text: "200 m^3",
+        imageAlt: "C option"
+      },
+      {
+        id: "13-3",
+        type: "text",
+        text: "220 m^3",
+        imageAlt: "D option"
+      },
+      {
+        id: "13-4",
+        type: "text",
+        text: "240 m^3",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-11-12/student/2019/questions/editor-q-13.png"
+  },
+  {
+    number: 14,
+    points: 4,
+    prompt: "The operation x diamond y is defined as y-x. If (a diamond b) diamond c = a diamond (b diamond c), which statement must be true?",
+    options: [
+      "a=b",
+      "b=c",
+      "a=c",
+      "a=0",
+      "c=0"
+    ],
+    answer: 3,
+    explanation: "The left side is a-b+c and the right side is c-b-a. Equality gives a=-a, hence a=0.",
+    hint: "Expand both sides using the definition of the operation.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "14-0",
+        type: "text",
+        text: "a=b",
+        imageAlt: "A option"
+      },
+      {
+        id: "14-1",
+        type: "text",
+        text: "b=c",
+        imageAlt: "B option"
+      },
+      {
+        id: "14-2",
+        type: "text",
+        text: "a=c",
+        imageAlt: "C option"
+      },
+      {
+        id: "14-3",
+        type: "text",
+        text: "a=0",
+        imageAlt: "D option"
+      },
+      {
+        id: "14-4",
+        type: "text",
+        text: "c=0",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 15,
+    points: 4,
+    prompt: "In the pictured pulley system, end P of one rope is pulled down 24 cm. By how many centimetres does Q move up?",
+    options: [
+      "24",
+      "12",
+      "8",
+      "6",
+      "24/5"
+    ],
+    answer: 3,
+    explanation: "NEEDS_REVIEW: count the supporting rope segments and pulley constraints from the source diagram.",
+    hint: "Use conservation of rope length as the movable pulleys shift.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "15-0",
+        type: "text",
+        text: "24",
+        imageAlt: "A option"
+      },
+      {
+        id: "15-1",
+        type: "text",
+        text: "12",
+        imageAlt: "B option"
+      },
+      {
+        id: "15-2",
+        type: "text",
+        text: "8",
+        imageAlt: "C option"
+      },
+      {
+        id: "15-3",
+        type: "text",
+        text: "6",
+        imageAlt: "D option"
+      },
+      {
+        id: "15-4",
+        type: "text",
+        text: "24/5",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-11-12/student/2019/questions/editor-q-15.png"
+  },
+  {
+    number: 16,
+    points: 4,
+    prompt: "A positive integer n is good if its largest proper factor is n-6. How many good positive integers are there?",
+    options: [
+      "1",
+      "2",
+      "3",
+      "6",
+      "Infinitely many"
+    ],
+    answer: 2,
+    explanation: "The largest proper factor is n/p for the least prime divisor p. Solving n-n/p=6 gives n=12, 9, and 7, so there are three.",
+    hint: "Let p be the smallest prime factor of n and solve n(1-1/p)=6.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "16-0",
+        type: "text",
+        text: "1",
+        imageAlt: "A option"
+      },
+      {
+        id: "16-1",
+        type: "text",
+        text: "2",
+        imageAlt: "B option"
+      },
+      {
+        id: "16-2",
+        type: "text",
+        text: "3",
+        imageAlt: "C option"
+      },
+      {
+        id: "16-3",
+        type: "text",
+        text: "6",
+        imageAlt: "D option"
+      },
+      {
+        id: "16-4",
+        type: "text",
+        text: "Infinitely many",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 17,
+    points: 4,
+    prompt: "Five balls consist of four chocolates and one boiled sweet. Johann and Maria take turns drawing without replacement, with Johann first. What is the probability Maria wins?",
+    options: [
+      "2/5",
+      "3/5",
+      "1/2",
+      "5/6",
+      "1/3"
+    ],
+    answer: 0,
+    explanation: "Maria wins if the sweet is drawn on the second or fourth draw, so the probability is 2/5.",
+    hint: "The sweet is equally likely to occupy any of the five draw positions.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "17-0",
+        type: "text",
+        text: "2/5",
+        imageAlt: "A option"
+      },
+      {
+        id: "17-1",
+        type: "text",
+        text: "3/5",
+        imageAlt: "B option"
+      },
+      {
+        id: "17-2",
+        type: "text",
+        text: "1/2",
+        imageAlt: "C option"
+      },
+      {
+        id: "17-3",
+        type: "text",
+        text: "5/6",
+        imageAlt: "D option"
+      },
+      {
+        id: "17-4",
+        type: "text",
+        text: "1/3",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 18,
+    points: 4,
+    prompt: "Two adjacent squares have side lengths a<b. What is the area of the grey triangle shown?",
+    options: [
+      "sqrt(ab)",
+      "a^2",
+      "b^2",
+      "(a+b)^2/2",
+      "(a+b)^2/4"
+    ],
+    answer: 1,
+    explanation: "NEEDS_REVIEW: the shared-square layout and shaded triangle are shown in the source figure.",
+    hint: "Use the common base and the height determined by the two square side lengths.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "18-0",
+        type: "text",
+        text: "sqrt(ab)",
+        imageAlt: "A option"
+      },
+      {
+        id: "18-1",
+        type: "text",
+        text: "a^2",
+        imageAlt: "B option"
+      },
+      {
+        id: "18-2",
+        type: "text",
+        text: "b^2",
+        imageAlt: "C option"
+      },
+      {
+        id: "18-3",
+        type: "text",
+        text: "(a+b)^2/2",
+        imageAlt: "D option"
+      },
+      {
+        id: "18-4",
+        type: "text",
+        text: "(a+b)^2/4",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-11-12/student/2019/questions/editor-q-18.png"
+  },
+  {
+    number: 19,
+    points: 4,
+    prompt: "What is the greatest integer less than the nested radical expression beginning sqrt(20+sqrt(20+...)) shown in the source?",
+    options: [
+      "4",
+      "5",
+      "6",
+      "20",
+      "25"
+    ],
+    answer: 0,
+    explanation: "The nested expression converges to 5 from below, so its greatest integer less than the value is 4.",
+    hint: "Let the infinite nested radical be x and solve x=sqrt(20+x), checking the finite expression is below the limit.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "19-0",
+        type: "text",
+        text: "4",
+        imageAlt: "A option"
+      },
+      {
+        id: "19-1",
+        type: "text",
+        text: "5",
+        imageAlt: "B option"
+      },
+      {
+        id: "19-2",
+        type: "text",
+        text: "6",
+        imageAlt: "C option"
+      },
+      {
+        id: "19-3",
+        type: "text",
+        text: "20",
+        imageAlt: "D option"
+      },
+      {
+        id: "19-4",
+        type: "text",
+        text: "25",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-11-12/student/2019/questions/editor-q-19.png"
+  },
+  {
+    number: 20,
+    points: 4,
+    prompt: "Ten intersections in a network are labelled 1 to 10. The sum of the four vertex labels of each square is the same. What is the minimum possible common sum S?",
+    options: [
+      "18",
+      "19",
+      "20",
+      "21",
+      "22"
+    ],
+    answer: 2,
+    explanation: "NEEDS_REVIEW: the square network and its label placements are required to establish the minimum.",
+    hint: "Sum the equations for all squares and use the total of labels 1 through 10.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "20-0",
+        type: "text",
+        text: "18",
+        imageAlt: "A option"
+      },
+      {
+        id: "20-1",
+        type: "text",
+        text: "19",
+        imageAlt: "B option"
+      },
+      {
+        id: "20-2",
+        type: "text",
+        text: "20",
+        imageAlt: "C option"
+      },
+      {
+        id: "20-3",
+        type: "text",
+        text: "21",
+        imageAlt: "D option"
+      },
+      {
+        id: "20-4",
+        type: "text",
+        text: "22",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-11-12/student/2019/questions/editor-q-20.png"
+  },
+  {
+    number: 21,
+    points: 5,
+    prompt: "Let a be the sum and b the product of all positive factors of 1024. Which relation holds?",
+    options: [
+      "(a-1)^5=b",
+      "(a+1)^5=b",
+      "a^5=b",
+      "a-1=b",
+      "a+1=b"
+    ],
+    answer: 1,
+    explanation: "The divisors of 1024=2^10 sum to 2047, so a+1=2048=2^11. Their product is 2^(0+1+...+10)=2^55=(2^11)^5.",
+    hint: "Use the divisor sum and the sum of exponents in the product of all divisors of 2^10.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "21-0",
+        type: "text",
+        text: "(a-1)^5=b",
+        imageAlt: "A option"
+      },
+      {
+        id: "21-1",
+        type: "text",
+        text: "(a+1)^5=b",
+        imageAlt: "B option"
+      },
+      {
+        id: "21-2",
+        type: "text",
+        text: "a^5=b",
+        imageAlt: "C option"
+      },
+      {
+        id: "21-3",
+        type: "text",
+        text: "a-1=b",
+        imageAlt: "D option"
+      },
+      {
+        id: "21-4",
+        type: "text",
+        text: "a+1=b",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 22,
+    points: 5,
+    prompt: "For which values of a does 2-|x|=ax have exactly two solutions?",
+    options: [
+      "(-infinity,-1]",
+      "(-1,1)",
+      "[1,infinity)",
+      "{0}",
+      "{-1,1}"
+    ],
+    answer: 1,
+    explanation: "For x≥0, solving gives x=2/(a+1), which is valid when a>−1. For x<0, x=2/(a−1), valid when a<1. Both branches give one solution exactly when −1<a<1; at either endpoint one branch has no solution, and outside the interval only one branch does. Thus the equation has exactly two solutions for (−1,1).",
+    hint: "Solve on the two domains x≥0 and x<0, checking when each resulting value has the required sign.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "22-0",
+        type: "text",
+        text: "(-infinity,-1]",
+        imageAlt: "A option"
+      },
+      {
+        id: "22-1",
+        type: "text",
+        text: "(-1,1)",
+        imageAlt: "B option"
+      },
+      {
+        id: "22-2",
+        type: "text",
+        text: "[1,infinity)",
+        imageAlt: "C option"
+      },
+      {
+        id: "22-3",
+        type: "text",
+        text: "{0}",
+        imageAlt: "D option"
+      },
+      {
+        id: "22-4",
+        type: "text",
+        text: "{-1,1}",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 23,
+    points: 5,
+    prompt: "Positive integers a,b,c satisfy a+b/c=11 and b+a/c=14. What is (a+b)/c?",
+    options: [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    answer: 4,
+    explanation: "Let s=a+b. Adding the equations gives s+s/c=25, so s=25c/(c+1), or equivalently s=25−25/(c+1). Since s is an integer, c+1 divides 25; the positive possibilities are c=4 or 24. For c=4 the original equations give a=8,b=12, so s/c=5. For c=24 they would require non-integer a,b, so the answer is 5.",
+    hint: "Add the equations to constrain c and (a+b), then substitute the possible values of c back into the original equations.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "23-0",
+        type: "text",
+        text: "1",
+        imageAlt: "A option"
+      },
+      {
+        id: "23-1",
+        type: "text",
+        text: "2",
+        imageAlt: "B option"
+      },
+      {
+        id: "23-2",
+        type: "text",
+        text: "3",
+        imageAlt: "C option"
+      },
+      {
+        id: "23-3",
+        type: "text",
+        text: "4",
+        imageAlt: "D option"
+      },
+      {
+        id: "23-4",
+        type: "text",
+        text: "5",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 24,
+    points: 5,
+    prompt: "How many planes pass through at least three vertices of a cube?",
+    options: [
+      "6",
+      "8",
+      "12",
+      "16",
+      "20"
+    ],
+    answer: 4,
+    explanation: "There are 12 planes containing four cube vertices: the 6 face planes and 6 diagonal planes. The 56 triples of cube vertices lying in no such four-vertex plane account for 56−12·4=8 additional planes, each containing exactly three vertices. In total, 12+8=20 planes pass through at least three vertices.",
+    hint: "Separate the planes containing four vertices from those containing exactly three, and avoid counting a plane once for each triple it contains.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "24-0",
+        type: "text",
+        text: "6",
+        imageAlt: "A option"
+      },
+      {
+        id: "24-1",
+        type: "text",
+        text: "8",
+        imageAlt: "B option"
+      },
+      {
+        id: "24-2",
+        type: "text",
+        text: "12",
+        imageAlt: "C option"
+      },
+      {
+        id: "24-3",
+        type: "text",
+        text: "16",
+        imageAlt: "D option"
+      },
+      {
+        id: "24-4",
+        type: "text",
+        text: "20",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 25,
+    points: 5,
+    prompt: "Four distinct lines through the origin intersect the parabola y=x^2-2 in eight points. What could be the product of the eight x-coordinates?",
+    options: [
+      "Only 16",
+      "Only -16",
+      "Only 8",
+      "Only -8",
+      "More than one value is possible"
+    ],
+    answer: 0,
+    explanation: "For each line y=mx, the intersections satisfy x^2-mx-2=0, whose root product is -2. Four lines give product (-2)^4=16.",
+    hint: "Use the product of roots for each line-parabola intersection quadratic.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "25-0",
+        type: "text",
+        text: "Only 16",
+        imageAlt: "A option"
+      },
+      {
+        id: "25-1",
+        type: "text",
+        text: "Only -16",
+        imageAlt: "B option"
+      },
+      {
+        id: "25-2",
+        type: "text",
+        text: "Only 8",
+        imageAlt: "C option"
+      },
+      {
+        id: "25-3",
+        type: "text",
+        text: "Only -8",
+        imageAlt: "D option"
+      },
+      {
+        id: "25-4",
+        type: "text",
+        text: "More than one value is possible",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 26,
+    points: 5,
+    prompt: "For how many integers n is |n^2-2n-3| a prime number?",
+    options: [
+      "1",
+      "2",
+      "3",
+      "4",
+      "Infinitely many"
+    ],
+    answer: 3,
+    explanation: "Factor n^2-2n-3=(n-3)(n+1). A prime absolute value occurs when one factor is 1 or -1, giving n=-2,0,2,4: four integers.",
+    hint: "Factor the quadratic and use that a prime has only one nontrivial factor pair.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "26-0",
+        type: "text",
+        text: "1",
+        imageAlt: "A option"
+      },
+      {
+        id: "26-1",
+        type: "text",
+        text: "2",
+        imageAlt: "B option"
+      },
+      {
+        id: "26-2",
+        type: "text",
+        text: "3",
+        imageAlt: "C option"
+      },
+      {
+        id: "26-3",
+        type: "text",
+        text: "4",
+        imageAlt: "D option"
+      },
+      {
+        id: "26-4",
+        type: "text",
+        text: "Infinitely many",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 27,
+    points: 5,
+    prompt: "A perpendicular path DE-FB lies inside a square with DE=5, EF=1, and FB=2 as shown. What is the side length of the square?",
+    options: [
+      "3sqrt(2)",
+      "7sqrt(2)/2",
+      "11/2",
+      "5sqrt(2)",
+      "Another value"
+    ],
+    answer: 4,
+    explanation: "NEEDS_REVIEW: the path orientation and square corner labels in the source diagram determine the side length.",
+    hint: "Place the square in coordinates and use the perpendicular path segments and endpoint positions.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "27-0",
+        type: "text",
+        text: "3sqrt(2)",
+        imageAlt: "A option"
+      },
+      {
+        id: "27-1",
+        type: "text",
+        text: "7sqrt(2)/2",
+        imageAlt: "B option"
+      },
+      {
+        id: "27-2",
+        type: "text",
+        text: "11/2",
+        imageAlt: "C option"
+      },
+      {
+        id: "27-3",
+        type: "text",
+        text: "5sqrt(2)",
+        imageAlt: "D option"
+      },
+      {
+        id: "27-4",
+        type: "text",
+        text: "Another value",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-11-12/student/2019/questions/editor-q-27.png"
+  },
+  {
+    number: 28,
+    points: 5,
+    prompt: "A sequence starts a1=49. Each next term is the square of one plus the digit sum of the previous term. What is a2019?",
+    options: [
+      "121",
+      "25",
+      "64",
+      "400",
+      "49"
+    ],
+    answer: 2,
+    explanation: "The first terms are 49, 196, 289, 400, 25, 64, 121, 25, … . From 25 onward the sequence repeats 25, 64, 121. Since 2019−5=2014 leaves remainder 1 upon division by 3, a2019 is the second term of this cycle, 64.",
+    hint: "Compute terms until a cycle appears, then use the index of the first repeated term to locate a2019.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "28-0",
+        type: "text",
+        text: "121",
+        imageAlt: "A option"
+      },
+      {
+        id: "28-1",
+        type: "text",
+        text: "25",
+        imageAlt: "B option"
+      },
+      {
+        id: "28-2",
+        type: "text",
+        text: "64",
+        imageAlt: "C option"
+      },
+      {
+        id: "28-3",
+        type: "text",
+        text: "400",
+        imageAlt: "D option"
+      },
+      {
+        id: "28-4",
+        type: "text",
+        text: "49",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 29,
+    points: 5,
+    prompt: "Three circles of radius 2 are arranged so an intersection point of each pair is the centre of the third. What is the area of the grey region?",
+    options: [
+      "pi",
+      "3pi",
+      "pi/2",
+      "2pi",
+      "4pi"
+    ],
+    answer: 3,
+    explanation: "NEEDS_REVIEW: the grey region boundary must be checked against the three-circle source diagram.",
+    hint: "Use the equilateral-triangle arrangement of centres and subtract or add the circular sectors.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "29-0",
+        type: "text",
+        text: "pi",
+        imageAlt: "A option"
+      },
+      {
+        id: "29-1",
+        type: "text",
+        text: "3pi",
+        imageAlt: "B option"
+      },
+      {
+        id: "29-2",
+        type: "text",
+        text: "pi/2",
+        imageAlt: "C option"
+      },
+      {
+        id: "29-3",
+        type: "text",
+        text: "2pi",
+        imageAlt: "D option"
+      },
+      {
+        id: "29-4",
+        type: "text",
+        text: "4pi",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-11-12/student/2019/questions/editor-q-29.png"
+  },
+  {
+    number: 30,
+    points: 5,
+    prompt: "A 5x5 grid uses 1 through 5 exactly once in each row and column. The sums in the three black-bordered regions are equal. What number must go in the top-right cell?",
+    options: [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    answer: 2,
+    explanation: "NEEDS_REVIEW: the row/column clues and black-bordered regions are contained in the source grid diagram.",
+    hint: "Apply the Latin-square row and column constraints, then equate the three marked region sums.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "30-0",
+        type: "text",
+        text: "1",
+        imageAlt: "A option"
+      },
+      {
+        id: "30-1",
+        type: "text",
+        text: "2",
+        imageAlt: "B option"
+      },
+      {
+        id: "30-2",
+        type: "text",
+        text: "3",
+        imageAlt: "C option"
+      },
+      {
+        id: "30-3",
+        type: "text",
+        text: "4",
+        imageAlt: "D option"
+      },
+      {
+        id: "30-4",
+        type: "text",
+        text: "5",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-11-12/student/2019/questions/editor-q-30.png"
+  }
 ];
 
 const sections2019Student: Section[] = [
-  { points: 3, label: "Section 1", range: "Questions 1-10", accent: "coral" },
-  { points: 4, label: "Section 2", range: "Questions 11-20", accent: "blue" },
-  { points: 5, label: "Section 3", range: "Questions 21-30", accent: "purple" }
+  {
+    points: 3,
+    label: "Section 1",
+    range: "Questions 1-10",
+    accent: "coral"
+  },
+  {
+    points: 4,
+    label: "Section 2",
+    range: "Questions 11-20",
+    accent: "blue"
+  },
+  {
+    points: 5,
+    label: "Section 3",
+    range: "Questions 21-30",
+    accent: "purple"
+  }
 ];
 
 export const edition2019Student: QuestionSet = {
@@ -49,5 +1489,5 @@ export const edition2019Student: QuestionSet = {
   timeLimitMinutes: 75,
   sourceUrl: "https://www.matematica.pt/en/docs/kangaroo/enunciados/2019/2019_Student.pdf",
   questions: questions2019Student,
-  sections: sections2019Student
+  sections: sections2019Student,
 };

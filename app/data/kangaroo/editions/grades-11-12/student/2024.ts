@@ -1,42 +1,1482 @@
 import type { Question, QuestionSet, Section } from "../../../types";
 
 const questions2024Student: Question[] = [
-  { number: 1, points: 3, prompt: "The angles in a triangle are in the ratio 1:3:5. What is the largest angle?", options: ["80 degrees", "90 degrees", "100 degrees", "110 degrees", "120 degrees"], answer: 2, explanation: "The nine ratio parts total 180 degrees, so each part is 20 degrees and the largest angle is 100 degrees.", hint: "Divide 180 degrees by the sum of the ratio parts.", sourcePage: 2 },
-  { number: 2, points: 3, prompt: "A tile pattern consists of identical irregular pentagons. Which tile fits into the hole to form a closed curve?", options: ["A", "B", "C", "D", "E"], answer: 2, explanation: "NEEDS_REVIEW: compare edge orientations and labels in the five source tile diagrams.", hint: "The boundary edges must match in both length and orientation to close the curve.", sourcePage: 2 },
-  { number: 3, points: 3, prompt: "Which number is 2 less than a multiple of 10, 2 more than a square, and twice a prime?", options: ["78", "58", "38", "18", "6"], answer: 2, explanation: "38 is 2 less than 40, 2 more than 36, and twice the prime 19.", hint: "Test each candidate against all three conditions.", sourcePage: 2 },
-  { number: 4, points: 3, prompt: "A pizza is cut into six equal pieces. After one is eaten, the other five pieces are rearranged with equal gaps between them. What is each gap angle?", options: ["5 degrees", "8 degrees", "9 degrees", "10 degrees", "12 degrees"], answer: 4, explanation: "The five pieces total 300 degrees, leaving 60 degrees for five equal gaps, or 12 degrees each.", hint: "Subtract the angle of the eaten slice from 360 degrees, then divide the remaining gap angle equally.", sourcePage: 2 },
-  { number: 5, points: 3, prompt: "Julia draws the xy-plane with positive coordinate directions pointing left and down. What does y=x+1 look like in her coordinate system?", options: ["A", "B", "C", "D", "E"], answer: 3, explanation: "NEEDS_REVIEW: apply the reversed axis directions to the line and compare the five source sketches.", hint: "Translate the usual intercepts and slope into Julia's left/down positive directions.", sourcePage: 2 },
-  { number: 6, points: 3, prompt: "A manipulated die gives probability 1/6 each for 2,3,4,5, and the probability of 6 is twice that of 1. What is P(6)?", options: ["1/4", "1/6", "7/36", "2/9", "5/18"], answer: 3, explanation: "The four fixed outcomes total 2/3, leaving 1/3 for 1 and 6. In the ratio 1:2, the probability of 6 is 2/9.", hint: "Let P(1)=t and P(6)=2t, then use the probabilities summing to 1.", sourcePage: 2 },
-  { number: 7, points: 3, prompt: "Which expression has the same value as the sum of four copies of 16^(1/4)?", options: ["4^31", "4^38", "4^60", "4^120", "4^122"], answer: 0, explanation: "Each fourth root of 16 equals 2, so the sum is 8; verify which exponent expression equals 8 from the source choices.", hint: "Evaluate the repeated fourth roots, then simplify the powers of 4.", sourcePage: 2 },
-  { number: 8, points: 3, prompt: "Six coins show heads. Each move turns exactly four coins over. What is the minimum number of moves to make all six tails?", options: ["2", "3", "4", "5", "6"], answer: 1, explanation: "The total number of flips must be even for each coin to end tails; three moves flip 12 coins, and an arrangement exists using each coin an odd number of times.", hint: "Model each move as toggling four coin states and check parity constraints.", sourcePage: 2 },
-  { number: 9, points: 3, prompt: "Starting from 1, Noah repeatedly multiplies by 6 or 10. Which of the listed prime-factor forms cannot be obtained?", options: ["2^100 3^20 5^80", "2^20 3^80 5^90", "2^30 3^50 5^70", "2^10 3^50 5^50", "2^50 5^50"], answer: 1, explanation: "NEEDS_REVIEW: the exponents and grouping in the five source choices are not reliably legible in extracted text.", hint: "Every multiplication by 6 adds one factor each of 2 and 3; multiplication by 10 adds one each of 2 and 5.", sourcePage: 2 },
-  { number: 10, points: 3, prompt: "Two paths divide a park into equal halves. Which relation between the areas A, B, and C is definitely true?", options: ["A=C", "B=A+C", "B=(A+C)/2", "B=2(A+C)/3", "B=2(A+C)/5"], answer: 1, explanation: "NEEDS_REVIEW: the two paths and region labels are shown in the source park diagram.", hint: "Write the equal-area equations for each path and eliminate the total park area.", sourcePage: 3 },
-  { number: 11, points: 4, prompt: "John uses black and white unit cubes to build a 3x3x3 cube whose outside surface is exactly half white and half black. What is the minimum number of black cubes needed?", options: ["14", "13", "12", "11", "Another number"], answer: 4, explanation: "The outside has 54 unit faces, so 27 must be black. A cube contributes at most 3 exposed faces, and only the eight corner cubes contribute 3 each; with nine black cubes the most possible is 8·3+2=26, which is too few. Ten black cubes suffice: take all eight corners, one edge cube (2 exposed faces), and one face-centre cube (1 exposed face), for 27 black faces.", hint: "Count the exposed faces contributed by corner, edge, and face-centre cubes; corner cubes contribute the most.", sourcePage: 3 },
-  { number: 12, points: 4, prompt: "A square of side 6 has a diagonal, semicircle, and quarter-circle as shown. What is the grey area?", options: ["9", "3pi", "6pi-9", "10pi/3", "12"], answer: 0, explanation: "NEEDS_REVIEW: the overlap boundaries in the source diagram determine the grey area.", hint: "Decompose the grey region into circular sectors and triangles.", sourcePage: 3 },
-  { number: 13, points: 4, prompt: "Four squares rest on a horizontal line as shown. Their side lengths are a,b,c and the large square side is marked. Which expression gives that side length?", options: ["(a+b+c)/2", "a^2+b^2+c^2", "(a+b)^2+c^2", "(b-a)^2+c^2", "a^2+ab+b^2+c^2"], answer: 2, explanation: "NEEDS_REVIEW: use the exact square alignment and labels A,B,C in the source figure.", hint: "Use the coincident diagonal vertices and the Pythagorean theorem on the indicated right triangles.", sourcePage: 3 },
-  { number: 14, points: 4, prompt: "For positive x<y, which expression is largest?", options: ["(x+3y)/4", "(x+2y)/3", "(x+y)/2", "(2x+y)/3", "(3x+y)/4"], answer: 0, explanation: "Each expression is a weighted average of x and y. The coefficient of y is largest in (x+3y)/4: it is 3/4, compared with 2/3, 1/2, 1/3, and 1/4. Since y>x, the expression with the greatest weight on y is largest.", hint: "Rewrite each expression as x plus a multiple of the positive difference y−x, then compare those multiples.", sourcePage: 3 },
-  { number: 15, points: 4, prompt: "A shape made of identical squares is covered by non-overlapping 2x1 dominoes. What is the maximum number of dominoes?", options: ["8", "9", "10", "11", "12"], answer: 2, explanation: "NEEDS_REVIEW: the source shape is needed to find a maximum matching and a matching upper bound.", hint: "Count the unit squares and consider a checkerboard colouring to bound the number of dominoes.", sourcePage: 3 },
-  { number: 16, points: 4, prompt: "How many three-digit numbers contain at least one of the digits 1, 2, or 3?", options: ["27", "147", "441", "557", "606"], answer: 4, explanation: "There are 900 three-digit numbers. To avoid 1, 2, and 3, the hundreds digit has 6 choices (4–9), and each of the tens and units digits has 7 choices (0 or 4–9). Thus 900−6·7·7=606 contain at least one of 1, 2, or 3.", hint: "Count all three-digit numbers, then count those whose every digit avoids 1, 2, and 3.", sourcePage: 3 },
-  { number: 17, points: 4, prompt: "A teacher inserts multiplication signs between the seven digits shown so the product of the resulting numbers is 2024. How many signs are inserted?", options: ["1", "2", "3", "4", "5"], answer: 3, explanation: "NEEDS_REVIEW: the seven source digits are essential for determining the number of inserted multiplication signs.", hint: "Factor 2024 and partition the displayed digit string into integer factors.", sourcePage: 3 },
-  { number: 18, points: 4, prompt: "Squares and triangles in the pictured pattern must be coloured so adjacent cells differ, including corner contacts. What is the minimum number of colours?", options: ["3", "4", "5", "6", "7"], answer: 2, explanation: "NEEDS_REVIEW: the adjacency graph is given by the source tiling diagram.", hint: "Model each region as a vertex and each touching pair as an edge in a graph-colouring problem.", sourcePage: 3 },
-  { number: 19, points: 4, prompt: "Exactly one of these statements about positive integer n is true: n is divisible by 3; n by 6; n is odd; n=2; n is prime. Which statement is true?", options: ["Divisible by 3", "Divisible by 6", "Odd", "n=2", "Prime"], answer: 2, explanation: "NEEDS_REVIEW: test the logical constraints across all five statements; overlapping truths make this a case-analysis problem.", hint: "Use the fact that divisibility by 6 implies divisibility by 3, and consider parity and primality.", sourcePage: 3 },
-  { number: 20, points: 4, prompt: "Two equal candles burn at constant rates, one out in 4 hours and one in 5. How long until one is exactly three times as long as the other?", options: ["40/11 hours", "45/12 hours", "63/20 hours", "3 hours", "47/14 hours"], answer: 0, explanation: "After t hours, the candles have lengths proportional to 1−t/4 and 1−t/5. The slower-burning candle is three times as long when 1−t/5=3(1−t/4), which gives 11t/20=2 and t=40/11 hours.", hint: "Express each remaining length as its starting length minus the fraction burned, then set the slower-burning candle to three times the other.", sourcePage: 4 },
-  { number: 21, points: 5, prompt: "A triangular pyramid has edge lengths 5,6,7,8,9,10. M,N,P,Q,R,S are the edge midpoints in the pictured order. What is the length of closed polyline MNPQRSM?", options: ["19", "20", "21", "22", "23"], answer: 2, explanation: "NEEDS_REVIEW: match each midpoint-to-midpoint segment to the corresponding face edge in the source tetrahedron diagram.", hint: "In each triangular face, the segment between two edge midpoints equals half the third edge.", sourcePage: 4 },
-  { number: 22, points: 5, prompt: "A quadrilateral has right angles at B and C, with AB=4, BC=8, CD=2. What is the minimum of AX+DX for X on BC?", options: ["9sqrt(2)", "12", "13", "10", "Another value"], answer: 3, explanation: "NEEDS_REVIEW: use the source's quadrilateral orientation and reflect one endpoint across BC to minimize the broken path.", hint: "Reflect A across line BC so AX+XD becomes a straight-line distance.", sourcePage: 4 },
-  { number: 23, points: 5, prompt: "Six cards have number pairs (5,12),(3,11),(0,16),(7,8),(4,14),(9,10). They can be placed in the boxes in any order and orientation. What is the smallest possible value of the shown calculation?", options: ["-23", "-24", "-25", "-26", "-27"], answer: 3, explanation: "NEEDS_REVIEW: the six-card layout and calculation signs are shown in the source image.", hint: "Assign the larger/smaller values to positions with the appropriate positive or negative coefficients.", sourcePage: 4 },
-  { number: 24, points: 5, prompt: "A four-digit number pqrs becomes pq.rs when a decimal point is placed between q and r. This equals the average of the two numbers pq and rs. What is the digit sum of N?", options: ["14", "18", "21", "25", "27"], answer: 1, explanation: "Let the two-digit numbers be P=pq and R=rs. The decimal number pq.rs is P+R/100, and the average of pq and rs is (P+R)/2. Equating gives 50P=49R. Since P and R are two-digit integers and 49 and 50 are coprime, P=49 and R=50. Thus N=4950 and its digit sum is 18.", hint: "Call the two-digit blocks P and R, write the decimal and the average in terms of them, and simplify.", sourcePage: 4 },
-  { number: 25, points: 5, prompt: "An object of seven cubes of edge length 2 is shown. What is the shortest surface path from M to N?", options: ["10", "2sqrt(5)+4sqrt(2)", "4sqrt(5)+2", "4+2sqrt(2)+2sqrt(5)", "14"], answer: 0, explanation: "NEEDS_REVIEW: unfold the relevant faces of the seven-cube object and compare candidate path lengths.", hint: "Unfold the faces crossed by the shortest route into a plane and use a straight-line distance.", sourcePage: 4 },
-  { number: 26, points: 5, prompt: "Fair 12-sided dice show 1 through 12. The probability of exactly one 12 when all dice are rolled equals the probability of no 12. How many dice are used?", options: ["8", "9", "10", "11", "12"], answer: 3, explanation: "For n dice, the probability of exactly one 12 is n·(1/12)(11/12)^(n−1), while the probability of no 12 is (11/12)^n. Equating and cancelling the common factor gives n/12=11/12, so n=11 (choice D).", hint: "Write the binomial probability for one 12 and compare it with the probability that all rolls avoid 12.", sourcePage: 4 },
-  { number: 27, points: 5, prompt: "Given 2^x=3^y and 2^z=7, which relation among x,y,z must hold?", options: ["z=y/(1+x)", "z=y/x+1", "z=y/x-1", "z=y/(x-1)", "z=y-1/x"], answer: 0, explanation: "NEEDS_REVIEW: the three exponential equalities and answer formulas were not reliably preserved in the text extraction.", hint: "Take logarithms and eliminate the common powers.", sourcePage: 4 },
-  { number: 28, points: 5, prompt: "A function satisfies f(20-x)=f(22+x) for every real x and has exactly two real zeros. What is the sum of the zeros?", options: ["-1", "20", "21", "22", "Another value"], answer: 4, explanation: "The two inputs 20−x and 22+x have midpoint 21, so the function is symmetric about x=21. Its two distinct real zeros must be equally far from 21, and therefore sum to 42, the listed “Another value.”", hint: "Rewrite the two inputs as 21−t and 21+t to see the symmetry axis.", sourcePage: 4 },
-  { number: 29, points: 5, prompt: "A four-digit number abcd satisfies abcd=a+b+c+d. What is digit a?", options: ["2", "3", "4", "5", "6"], answer: 1, explanation: "NEEDS_REVIEW: interpret abcd as the four-digit numeral and solve the digit-sum equation to verify the keyed digit 5.", hint: "The number is at least 1000a while its digit sum is at most 36; compare magnitudes.", sourcePage: 4 },
-  { number: 30, points: 5, prompt: "Eight squares start empty. Each move places one coin on each of four adjacent squares. After some stacks fall, the shown heights remain. How many coins were on the marked square before it fell?", options: ["24", "30", "36", "48", "Another value"], answer: 0, explanation: "NEEDS_REVIEW: the board adjacency and remaining stack heights are given by the source diagram.", hint: "Express each stack height as the sum of moves that included that square and solve the resulting linear constraints.", sourcePage: 4 }
+  {
+    number: 1,
+    points: 3,
+    prompt: "The angles in a triangle are in the ratio 1:3:5. What is the largest angle?",
+    options: [
+      "80 degrees",
+      "90 degrees",
+      "100 degrees",
+      "110 degrees",
+      "120 degrees"
+    ],
+    answer: 2,
+    explanation: "The nine ratio parts total 180 degrees, so each part is 20 degrees and the largest angle is 100 degrees.",
+    hint: "Divide 180 degrees by the sum of the ratio parts.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "1-0",
+        type: "text",
+        text: "80 degrees",
+        imageAlt: "A option"
+      },
+      {
+        id: "1-1",
+        type: "text",
+        text: "90 degrees",
+        imageAlt: "B option"
+      },
+      {
+        id: "1-2",
+        type: "text",
+        text: "100 degrees",
+        imageAlt: "C option"
+      },
+      {
+        id: "1-3",
+        type: "text",
+        text: "110 degrees",
+        imageAlt: "D option"
+      },
+      {
+        id: "1-4",
+        type: "text",
+        text: "120 degrees",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 2,
+    points: 3,
+    prompt: "A tile pattern consists of identical irregular pentagons. Which tile fits into the hole to form a closed curve?",
+    options: [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    answer: 2,
+    explanation: "NEEDS_REVIEW: compare edge orientations and labels in the five source tile diagrams.",
+    hint: "The boundary edges must match in both length and orientation to close the curve.",
+    sourcePage: 2,
+    image: "/assets/kangaroo/grades-11-12/student/2024/questions/editor-q-02.png",
+    imageExtra: "/assets/kangaroo/grades-11-12/student/2024/questions/editor-q-02-extra.png",
+    optionContent: [
+      {
+        id: "2-0",
+        type: "text",
+        text: "A",
+        imageAlt: "A option"
+      },
+      {
+        id: "2-1",
+        type: "text",
+        text: "B",
+        imageAlt: "B option"
+      },
+      {
+        id: "2-2",
+        type: "text",
+        text: "C",
+        imageAlt: "C option"
+      },
+      {
+        id: "2-3",
+        type: "text",
+        text: "D",
+        imageAlt: "D option"
+      },
+      {
+        id: "2-4",
+        type: "text",
+        text: "E",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 3,
+    points: 3,
+    prompt: "Which number is 2 less than a multiple of 10, 2 more than a square, and twice a prime?",
+    options: [
+      "78",
+      "58",
+      "38",
+      "18",
+      "6"
+    ],
+    answer: 2,
+    explanation: "38 is 2 less than 40, 2 more than 36, and twice the prime 19.",
+    hint: "Test each candidate against all three conditions.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "3-0",
+        type: "text",
+        text: "78",
+        imageAlt: "A option"
+      },
+      {
+        id: "3-1",
+        type: "text",
+        text: "58",
+        imageAlt: "B option"
+      },
+      {
+        id: "3-2",
+        type: "text",
+        text: "38",
+        imageAlt: "C option"
+      },
+      {
+        id: "3-3",
+        type: "text",
+        text: "18",
+        imageAlt: "D option"
+      },
+      {
+        id: "3-4",
+        type: "text",
+        text: "6",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 4,
+    points: 3,
+    prompt: "A pizza is cut into six equal pieces. After one is eaten, the other five pieces are rearranged with equal gaps between them. What is each gap angle?",
+    options: [
+      "5 degrees",
+      "8 degrees",
+      "9 degrees",
+      "10 degrees",
+      "12 degrees"
+    ],
+    answer: 4,
+    explanation: "The five pieces total 300 degrees, leaving 60 degrees for five equal gaps, or 12 degrees each.",
+    hint: "Subtract the angle of the eaten slice from 360 degrees, then divide the remaining gap angle equally.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "4-0",
+        type: "text",
+        text: "5 degrees",
+        imageAlt: "A option"
+      },
+      {
+        id: "4-1",
+        type: "text",
+        text: "8 degrees",
+        imageAlt: "B option"
+      },
+      {
+        id: "4-2",
+        type: "text",
+        text: "9 degrees",
+        imageAlt: "C option"
+      },
+      {
+        id: "4-3",
+        type: "text",
+        text: "10 degrees",
+        imageAlt: "D option"
+      },
+      {
+        id: "4-4",
+        type: "text",
+        text: "12 degrees",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-11-12/student/2024/questions/editor-q-04.png"
+  },
+  {
+    number: 5,
+    points: 3,
+    prompt: "Julia draws the xy-plane with positive coordinate directions pointing left and down. What does y=x+1 look like in her coordinate system?",
+    options: [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    answer: 3,
+    explanation: "NEEDS_REVIEW: apply the reversed axis directions to the line and compare the five source sketches.",
+    hint: "Translate the usual intercepts and slope into Julia's left/down positive directions.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "5-0",
+        type: "text",
+        text: "A",
+        imageAlt: "A option"
+      },
+      {
+        id: "5-1",
+        type: "text",
+        text: "B",
+        imageAlt: "B option"
+      },
+      {
+        id: "5-2",
+        type: "text",
+        text: "C",
+        imageAlt: "C option"
+      },
+      {
+        id: "5-3",
+        type: "text",
+        text: "D",
+        imageAlt: "D option"
+      },
+      {
+        id: "5-4",
+        type: "text",
+        text: "E",
+        imageAlt: "E option"
+      }
+    ],
+    imageExtra: "/assets/kangaroo/grades-11-12/student/2024/questions/editor-q-05-extra.png"
+  },
+  {
+    number: 6,
+    points: 3,
+    prompt: "A manipulated die gives probability 1/6 each for 2,3,4,5, and the probability of 6 is twice that of 1. What is P(6)?",
+    options: [
+      "1/4",
+      "1/6",
+      "7/36",
+      "2/9",
+      "5/18"
+    ],
+    answer: 3,
+    explanation: "The four fixed outcomes total 2/3, leaving 1/3 for 1 and 6. In the ratio 1:2, the probability of 6 is 2/9.",
+    hint: "Let P(1)=t and P(6)=2t, then use the probabilities summing to 1.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "6-0",
+        type: "text",
+        text: "1/4",
+        imageAlt: "A option"
+      },
+      {
+        id: "6-1",
+        type: "text",
+        text: "1/6",
+        imageAlt: "B option"
+      },
+      {
+        id: "6-2",
+        type: "text",
+        text: "7/36",
+        imageAlt: "C option"
+      },
+      {
+        id: "6-3",
+        type: "text",
+        text: "2/9",
+        imageAlt: "D option"
+      },
+      {
+        id: "6-4",
+        type: "text",
+        text: "5/18",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 7,
+    points: 3,
+    prompt: "Which expression has the same value as the sum of four copies of 16^(1/4)?",
+    options: [
+      "4^31",
+      "4^38",
+      "4^60",
+      "4^120",
+      "4^122"
+    ],
+    answer: 0,
+    explanation: "Each fourth root of 16 equals 2, so the sum is 8; verify which exponent expression equals 8 from the source choices.",
+    hint: "Evaluate the repeated fourth roots, then simplify the powers of 4.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "7-0",
+        type: "text",
+        text: "4^31",
+        imageAlt: "A option"
+      },
+      {
+        id: "7-1",
+        type: "text",
+        text: "4^38",
+        imageAlt: "B option"
+      },
+      {
+        id: "7-2",
+        type: "text",
+        text: "4^60",
+        imageAlt: "C option"
+      },
+      {
+        id: "7-3",
+        type: "text",
+        text: "4^120",
+        imageAlt: "D option"
+      },
+      {
+        id: "7-4",
+        type: "text",
+        text: "4^122",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 8,
+    points: 3,
+    prompt: "Six coins show heads. Each move turns exactly four coins over. What is the minimum number of moves to make all six tails?",
+    options: [
+      "2",
+      "3",
+      "4",
+      "5",
+      "6"
+    ],
+    answer: 1,
+    explanation: "The total number of flips must be even for each coin to end tails; three moves flip 12 coins, and an arrangement exists using each coin an odd number of times.",
+    hint: "Model each move as toggling four coin states and check parity constraints.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "8-0",
+        type: "text",
+        text: "2",
+        imageAlt: "A option"
+      },
+      {
+        id: "8-1",
+        type: "text",
+        text: "3",
+        imageAlt: "B option"
+      },
+      {
+        id: "8-2",
+        type: "text",
+        text: "4",
+        imageAlt: "C option"
+      },
+      {
+        id: "8-3",
+        type: "text",
+        text: "5",
+        imageAlt: "D option"
+      },
+      {
+        id: "8-4",
+        type: "text",
+        text: "6",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 9,
+    points: 3,
+    prompt: "Starting from 1, Noah repeatedly multiplies by 6 or 10. Which of the listed prime-factor forms cannot be obtained?",
+    options: [
+      "2^100 3^20 5^80",
+      "2^20 3^80 5^90",
+      "2^30 3^50 5^70",
+      "2^10 3^50 5^50",
+      "2^50 5^50"
+    ],
+    answer: 1,
+    explanation: "NEEDS_REVIEW: the exponents and grouping in the five source choices are not reliably legible in extracted text.",
+    hint: "Every multiplication by 6 adds one factor each of 2 and 3; multiplication by 10 adds one each of 2 and 5.",
+    sourcePage: 2,
+    optionContent: [
+      {
+        id: "9-0",
+        type: "text",
+        text: "2^100 3^20 5^80",
+        imageAlt: "A option"
+      },
+      {
+        id: "9-1",
+        type: "text",
+        text: "2^20 3^80 5^90",
+        imageAlt: "B option"
+      },
+      {
+        id: "9-2",
+        type: "text",
+        text: "2^30 3^50 5^70",
+        imageAlt: "C option"
+      },
+      {
+        id: "9-3",
+        type: "text",
+        text: "2^10 3^50 5^50",
+        imageAlt: "D option"
+      },
+      {
+        id: "9-4",
+        type: "text",
+        text: "2^50 5^50",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 10,
+    points: 3,
+    prompt: "Two paths divide a park into equal halves. Which relation between the areas A, B, and C is definitely true?",
+    options: [
+      "A=C",
+      "B=A+C",
+      "B=(A+C)/2",
+      "B=2(A+C)/3",
+      "B=2(A+C)/5"
+    ],
+    answer: 1,
+    explanation: "NEEDS_REVIEW: the two paths and region labels are shown in the source park diagram.",
+    hint: "Write the equal-area equations for each path and eliminate the total park area.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "10-0",
+        type: "text",
+        text: "A=C",
+        imageAlt: "A option"
+      },
+      {
+        id: "10-1",
+        type: "text",
+        text: "B=A+C",
+        imageAlt: "B option"
+      },
+      {
+        id: "10-2",
+        type: "text",
+        text: "B=(A+C)/2",
+        imageAlt: "C option"
+      },
+      {
+        id: "10-3",
+        type: "text",
+        text: "B=2(A+C)/3",
+        imageAlt: "D option"
+      },
+      {
+        id: "10-4",
+        type: "text",
+        text: "B=2(A+C)/5",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-11-12/student/2024/questions/editor-q-10.png"
+  },
+  {
+    number: 11,
+    points: 4,
+    prompt: "John uses black and white unit cubes to build a 3x3x3 cube whose outside surface is exactly half white and half black. What is the minimum number of black cubes needed?",
+    options: [
+      "14",
+      "13",
+      "12",
+      "11",
+      "Another number"
+    ],
+    answer: 4,
+    explanation: "The outside has 54 unit faces, so 27 must be black. A cube contributes at most 3 exposed faces, and only the eight corner cubes contribute 3 each; with nine black cubes the most possible is 8·3+2=26, which is too few. Ten black cubes suffice: take all eight corners, one edge cube (2 exposed faces), and one face-centre cube (1 exposed face), for 27 black faces.",
+    hint: "Count the exposed faces contributed by corner, edge, and face-centre cubes; corner cubes contribute the most.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "11-0",
+        type: "text",
+        text: "14",
+        imageAlt: "A option"
+      },
+      {
+        id: "11-1",
+        type: "text",
+        text: "13",
+        imageAlt: "B option"
+      },
+      {
+        id: "11-2",
+        type: "text",
+        text: "12",
+        imageAlt: "C option"
+      },
+      {
+        id: "11-3",
+        type: "text",
+        text: "11",
+        imageAlt: "D option"
+      },
+      {
+        id: "11-4",
+        type: "text",
+        text: "Another number",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 12,
+    points: 4,
+    prompt: "A square of side 6 has a diagonal, semicircle, and quarter-circle as shown. What is the grey area?",
+    options: [
+      "9",
+      "3pi",
+      "6pi-9",
+      "10pi/3",
+      "12"
+    ],
+    answer: 0,
+    explanation: "NEEDS_REVIEW: the overlap boundaries in the source diagram determine the grey area.",
+    hint: "Decompose the grey region into circular sectors and triangles.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "12-0",
+        type: "text",
+        text: "9",
+        imageAlt: "A option"
+      },
+      {
+        id: "12-1",
+        type: "text",
+        text: "3pi",
+        imageAlt: "B option"
+      },
+      {
+        id: "12-2",
+        type: "text",
+        text: "6pi-9",
+        imageAlt: "C option"
+      },
+      {
+        id: "12-3",
+        type: "text",
+        text: "10pi/3",
+        imageAlt: "D option"
+      },
+      {
+        id: "12-4",
+        type: "text",
+        text: "12",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-11-12/student/2024/questions/editor-q-12.png"
+  },
+  {
+    number: 13,
+    points: 4,
+    prompt: "Four squares rest on a horizontal line as shown. Their side lengths are a,b,c and the large square side is marked. Which expression gives that side length?",
+    options: [
+      "(a+b+c)/2",
+      "a^2+b^2+c^2",
+      "(a+b)^2+c^2",
+      "(b-a)^2+c^2",
+      "a^2+ab+b^2+c^2"
+    ],
+    answer: 2,
+    explanation: "NEEDS_REVIEW: use the exact square alignment and labels A,B,C in the source figure.",
+    hint: "Use the coincident diagonal vertices and the Pythagorean theorem on the indicated right triangles.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "13-0",
+        type: "text",
+        text: "(a+b+c)/2",
+        imageAlt: "A option"
+      },
+      {
+        id: "13-1",
+        type: "text",
+        text: "a^2+b^2+c^2",
+        imageAlt: "B option"
+      },
+      {
+        id: "13-2",
+        type: "text",
+        text: "(a+b)^2+c^2",
+        imageAlt: "C option"
+      },
+      {
+        id: "13-3",
+        type: "text",
+        text: "(b-a)^2+c^2",
+        imageAlt: "D option"
+      },
+      {
+        id: "13-4",
+        type: "text",
+        text: "a^2+ab+b^2+c^2",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-11-12/student/2024/questions/editor-q-13.png"
+  },
+  {
+    number: 14,
+    points: 4,
+    prompt: "For positive x<y, which expression is largest?",
+    options: [
+      "(x+3y)/4",
+      "(x+2y)/3",
+      "(x+y)/2",
+      "(2x+y)/3",
+      "(3x+y)/4"
+    ],
+    answer: 0,
+    explanation: "Each expression is a weighted average of x and y. The coefficient of y is largest in (x+3y)/4: it is 3/4, compared with 2/3, 1/2, 1/3, and 1/4. Since y>x, the expression with the greatest weight on y is largest.",
+    hint: "Rewrite each expression as x plus a multiple of the positive difference y−x, then compare those multiples.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "14-0",
+        type: "text",
+        text: "(x+3y)/4",
+        imageAlt: "A option"
+      },
+      {
+        id: "14-1",
+        type: "text",
+        text: "(x+2y)/3",
+        imageAlt: "B option"
+      },
+      {
+        id: "14-2",
+        type: "text",
+        text: "(x+y)/2",
+        imageAlt: "C option"
+      },
+      {
+        id: "14-3",
+        type: "text",
+        text: "(2x+y)/3",
+        imageAlt: "D option"
+      },
+      {
+        id: "14-4",
+        type: "text",
+        text: "(3x+y)/4",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 15,
+    points: 4,
+    prompt: "A shape made of identical squares is covered by non-overlapping 2x1 dominoes. What is the maximum number of dominoes?",
+    options: [
+      "8",
+      "9",
+      "10",
+      "11",
+      "12"
+    ],
+    answer: 2,
+    explanation: "NEEDS_REVIEW: the source shape is needed to find a maximum matching and a matching upper bound.",
+    hint: "Count the unit squares and consider a checkerboard colouring to bound the number of dominoes.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "15-0",
+        type: "text",
+        text: "8",
+        imageAlt: "A option"
+      },
+      {
+        id: "15-1",
+        type: "text",
+        text: "9",
+        imageAlt: "B option"
+      },
+      {
+        id: "15-2",
+        type: "text",
+        text: "10",
+        imageAlt: "C option"
+      },
+      {
+        id: "15-3",
+        type: "text",
+        text: "11",
+        imageAlt: "D option"
+      },
+      {
+        id: "15-4",
+        type: "text",
+        text: "12",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-11-12/student/2024/questions/editor-q-15.png"
+  },
+  {
+    number: 16,
+    points: 4,
+    prompt: "How many three-digit numbers contain at least one of the digits 1, 2, or 3?",
+    options: [
+      "27",
+      "147",
+      "441",
+      "557",
+      "606"
+    ],
+    answer: 4,
+    explanation: "There are 900 three-digit numbers. To avoid 1, 2, and 3, the hundreds digit has 6 choices (4–9), and each of the tens and units digits has 7 choices (0 or 4–9). Thus 900−6·7·7=606 contain at least one of 1, 2, or 3.",
+    hint: "Count all three-digit numbers, then count those whose every digit avoids 1, 2, and 3.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "16-0",
+        type: "text",
+        text: "27",
+        imageAlt: "A option"
+      },
+      {
+        id: "16-1",
+        type: "text",
+        text: "147",
+        imageAlt: "B option"
+      },
+      {
+        id: "16-2",
+        type: "text",
+        text: "441",
+        imageAlt: "C option"
+      },
+      {
+        id: "16-3",
+        type: "text",
+        text: "557",
+        imageAlt: "D option"
+      },
+      {
+        id: "16-4",
+        type: "text",
+        text: "606",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 17,
+    points: 4,
+    prompt: "A teacher inserts multiplication signs between the seven digits shown so the product of the resulting numbers is 2024. How many signs are inserted?",
+    options: [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    answer: 3,
+    explanation: "NEEDS_REVIEW: the seven source digits are essential for determining the number of inserted multiplication signs.",
+    hint: "Factor 2024 and partition the displayed digit string into integer factors.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "17-0",
+        type: "text",
+        text: "1",
+        imageAlt: "A option"
+      },
+      {
+        id: "17-1",
+        type: "text",
+        text: "2",
+        imageAlt: "B option"
+      },
+      {
+        id: "17-2",
+        type: "text",
+        text: "3",
+        imageAlt: "C option"
+      },
+      {
+        id: "17-3",
+        type: "text",
+        text: "4",
+        imageAlt: "D option"
+      },
+      {
+        id: "17-4",
+        type: "text",
+        text: "5",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-11-12/student/2024/questions/editor-q-17.png"
+  },
+  {
+    number: 18,
+    points: 4,
+    prompt: "Squares and triangles in the pictured pattern must be coloured so adjacent cells differ, including corner contacts. What is the minimum number of colours?",
+    options: [
+      "3",
+      "4",
+      "5",
+      "6",
+      "7"
+    ],
+    answer: 2,
+    explanation: "NEEDS_REVIEW: the adjacency graph is given by the source tiling diagram.",
+    hint: "Model each region as a vertex and each touching pair as an edge in a graph-colouring problem.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "18-0",
+        type: "text",
+        text: "3",
+        imageAlt: "A option"
+      },
+      {
+        id: "18-1",
+        type: "text",
+        text: "4",
+        imageAlt: "B option"
+      },
+      {
+        id: "18-2",
+        type: "text",
+        text: "5",
+        imageAlt: "C option"
+      },
+      {
+        id: "18-3",
+        type: "text",
+        text: "6",
+        imageAlt: "D option"
+      },
+      {
+        id: "18-4",
+        type: "text",
+        text: "7",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-11-12/student/2024/questions/editor-q-18.png"
+  },
+  {
+    number: 19,
+    points: 4,
+    prompt: "Exactly one of these statements about positive integer n is true: n is divisible by 3; n by 6; n is odd; n=2; n is prime. Which statement is true?",
+    options: [
+      "Divisible by 3",
+      "Divisible by 6",
+      "Odd",
+      "n=2",
+      "Prime"
+    ],
+    answer: 2,
+    explanation: "NEEDS_REVIEW: test the logical constraints across all five statements; overlapping truths make this a case-analysis problem.",
+    hint: "Use the fact that divisibility by 6 implies divisibility by 3, and consider parity and primality.",
+    sourcePage: 3,
+    optionContent: [
+      {
+        id: "19-0",
+        type: "text",
+        text: "Divisible by 3",
+        imageAlt: "A option"
+      },
+      {
+        id: "19-1",
+        type: "text",
+        text: "Divisible by 6",
+        imageAlt: "B option"
+      },
+      {
+        id: "19-2",
+        type: "text",
+        text: "Odd",
+        imageAlt: "C option"
+      },
+      {
+        id: "19-3",
+        type: "text",
+        text: "n=2",
+        imageAlt: "D option"
+      },
+      {
+        id: "19-4",
+        type: "text",
+        text: "Prime",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 20,
+    points: 4,
+    prompt: "Two equal candles burn at constant rates, one out in 4 hours and one in 5. How long until one is exactly three times as long as the other?",
+    options: [
+      "40/11 hours",
+      "45/12 hours",
+      "63/20 hours",
+      "3 hours",
+      "47/14 hours"
+    ],
+    answer: 0,
+    explanation: "After t hours, the candles have lengths proportional to 1−t/4 and 1−t/5. The slower-burning candle is three times as long when 1−t/5=3(1−t/4), which gives 11t/20=2 and t=40/11 hours.",
+    hint: "Express each remaining length as its starting length minus the fraction burned, then set the slower-burning candle to three times the other.",
+    sourcePage: 4,
+    optionContent: [
+      {
+        id: "20-0",
+        type: "text",
+        text: "40/11 hours",
+        imageAlt: "A option"
+      },
+      {
+        id: "20-1",
+        type: "text",
+        text: "45/12 hours",
+        imageAlt: "B option"
+      },
+      {
+        id: "20-2",
+        type: "text",
+        text: "63/20 hours",
+        imageAlt: "C option"
+      },
+      {
+        id: "20-3",
+        type: "text",
+        text: "3 hours",
+        imageAlt: "D option"
+      },
+      {
+        id: "20-4",
+        type: "text",
+        text: "47/14 hours",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 21,
+    points: 5,
+    prompt: "A triangular pyramid has edge lengths 5,6,7,8,9,10. M,N,P,Q,R,S are the edge midpoints in the pictured order. What is the length of closed polyline MNPQRSM?",
+    options: [
+      "19",
+      "20",
+      "21",
+      "22",
+      "23"
+    ],
+    answer: 2,
+    explanation: "NEEDS_REVIEW: match each midpoint-to-midpoint segment to the corresponding face edge in the source tetrahedron diagram.",
+    hint: "In each triangular face, the segment between two edge midpoints equals half the third edge.",
+    sourcePage: 4,
+    optionContent: [
+      {
+        id: "21-0",
+        type: "text",
+        text: "19",
+        imageAlt: "A option"
+      },
+      {
+        id: "21-1",
+        type: "text",
+        text: "20",
+        imageAlt: "B option"
+      },
+      {
+        id: "21-2",
+        type: "text",
+        text: "21",
+        imageAlt: "C option"
+      },
+      {
+        id: "21-3",
+        type: "text",
+        text: "22",
+        imageAlt: "D option"
+      },
+      {
+        id: "21-4",
+        type: "text",
+        text: "23",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-11-12/student/2024/questions/editor-q-21.png"
+  },
+  {
+    number: 22,
+    points: 5,
+    prompt: "A quadrilateral has right angles at B and C, with AB=4, BC=8, CD=2. What is the minimum of AX+DX for X on BC?",
+    options: [
+      "9sqrt(2)",
+      "12",
+      "13",
+      "10",
+      "Another value"
+    ],
+    answer: 3,
+    explanation: "NEEDS_REVIEW: use the source's quadrilateral orientation and reflect one endpoint across BC to minimize the broken path.",
+    hint: "Reflect A across line BC so AX+XD becomes a straight-line distance.",
+    sourcePage: 4,
+    optionContent: [
+      {
+        id: "22-0",
+        type: "text",
+        text: "9sqrt(2)",
+        imageAlt: "A option"
+      },
+      {
+        id: "22-1",
+        type: "text",
+        text: "12",
+        imageAlt: "B option"
+      },
+      {
+        id: "22-2",
+        type: "text",
+        text: "13",
+        imageAlt: "C option"
+      },
+      {
+        id: "22-3",
+        type: "text",
+        text: "10",
+        imageAlt: "D option"
+      },
+      {
+        id: "22-4",
+        type: "text",
+        text: "Another value",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-11-12/student/2024/questions/editor-q-22.png"
+  },
+  {
+    number: 23,
+    points: 5,
+    prompt: "Six cards have number pairs (5,12),(3,11),(0,16),(7,8),(4,14),(9,10). They can be placed in the boxes in any order and orientation. What is the smallest possible value of the shown calculation?",
+    options: [
+      "-23",
+      "-24",
+      "-25",
+      "-26",
+      "-27"
+    ],
+    answer: 3,
+    explanation: "NEEDS_REVIEW: the six-card layout and calculation signs are shown in the source image.",
+    hint: "Assign the larger/smaller values to positions with the appropriate positive or negative coefficients.",
+    sourcePage: 4,
+    optionContent: [
+      {
+        id: "23-0",
+        type: "text",
+        text: "-23",
+        imageAlt: "A option"
+      },
+      {
+        id: "23-1",
+        type: "text",
+        text: "-24",
+        imageAlt: "B option"
+      },
+      {
+        id: "23-2",
+        type: "text",
+        text: "-25",
+        imageAlt: "C option"
+      },
+      {
+        id: "23-3",
+        type: "text",
+        text: "-26",
+        imageAlt: "D option"
+      },
+      {
+        id: "23-4",
+        type: "text",
+        text: "-27",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-11-12/student/2024/questions/editor-q-23.png"
+  },
+  {
+    number: 24,
+    points: 5,
+    prompt: "A four-digit number pqrs becomes pq.rs when a decimal point is placed between q and r. This equals the average of the two numbers pq and rs. What is the digit sum of N?",
+    options: [
+      "14",
+      "18",
+      "21",
+      "25",
+      "27"
+    ],
+    answer: 1,
+    explanation: "Let the two-digit numbers be P=pq and R=rs. The decimal number pq.rs is P+R/100, and the average of pq and rs is (P+R)/2. Equating gives 50P=49R. Since P and R are two-digit integers and 49 and 50 are coprime, P=49 and R=50. Thus N=4950 and its digit sum is 18.",
+    hint: "Call the two-digit blocks P and R, write the decimal and the average in terms of them, and simplify.",
+    sourcePage: 4,
+    optionContent: [
+      {
+        id: "24-0",
+        type: "text",
+        text: "14",
+        imageAlt: "A option"
+      },
+      {
+        id: "24-1",
+        type: "text",
+        text: "18",
+        imageAlt: "B option"
+      },
+      {
+        id: "24-2",
+        type: "text",
+        text: "21",
+        imageAlt: "C option"
+      },
+      {
+        id: "24-3",
+        type: "text",
+        text: "25",
+        imageAlt: "D option"
+      },
+      {
+        id: "24-4",
+        type: "text",
+        text: "27",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 25,
+    points: 5,
+    prompt: "An object of seven cubes of edge length 2 is shown. What is the shortest surface path from M to N?",
+    options: [
+      "10",
+      "2sqrt(5)+4sqrt(2)",
+      "4sqrt(5)+2",
+      "4+2sqrt(2)+2sqrt(5)",
+      "14"
+    ],
+    answer: 0,
+    explanation: "NEEDS_REVIEW: unfold the relevant faces of the seven-cube object and compare candidate path lengths.",
+    hint: "Unfold the faces crossed by the shortest route into a plane and use a straight-line distance.",
+    sourcePage: 4,
+    optionContent: [
+      {
+        id: "25-0",
+        type: "text",
+        text: "10",
+        imageAlt: "A option"
+      },
+      {
+        id: "25-1",
+        type: "text",
+        text: "2sqrt(5)+4sqrt(2)",
+        imageAlt: "B option"
+      },
+      {
+        id: "25-2",
+        type: "text",
+        text: "4sqrt(5)+2",
+        imageAlt: "C option"
+      },
+      {
+        id: "25-3",
+        type: "text",
+        text: "4+2sqrt(2)+2sqrt(5)",
+        imageAlt: "D option"
+      },
+      {
+        id: "25-4",
+        type: "text",
+        text: "14",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-11-12/student/2024/questions/editor-q-25.png"
+  },
+  {
+    number: 26,
+    points: 5,
+    prompt: "Fair 12-sided dice show 1 through 12. The probability of exactly one 12 when all dice are rolled equals the probability of no 12. How many dice are used?",
+    options: [
+      "8",
+      "9",
+      "10",
+      "11",
+      "12"
+    ],
+    answer: 3,
+    explanation: "For n dice, the probability of exactly one 12 is n·(1/12)(11/12)^(n−1), while the probability of no 12 is (11/12)^n. Equating and cancelling the common factor gives n/12=11/12, so n=11 (choice D).",
+    hint: "Write the binomial probability for one 12 and compare it with the probability that all rolls avoid 12.",
+    sourcePage: 4,
+    optionContent: [
+      {
+        id: "26-0",
+        type: "text",
+        text: "8",
+        imageAlt: "A option"
+      },
+      {
+        id: "26-1",
+        type: "text",
+        text: "9",
+        imageAlt: "B option"
+      },
+      {
+        id: "26-2",
+        type: "text",
+        text: "10",
+        imageAlt: "C option"
+      },
+      {
+        id: "26-3",
+        type: "text",
+        text: "11",
+        imageAlt: "D option"
+      },
+      {
+        id: "26-4",
+        type: "text",
+        text: "12",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 27,
+    points: 5,
+    prompt: "Given 2^x=3^y and 2^z=7, which relation among x,y,z must hold?",
+    options: [
+      "z=y/(1+x)",
+      "z=y/x+1",
+      "z=y/x-1",
+      "z=y/(x-1)",
+      "z=y-1/x"
+    ],
+    answer: 0,
+    explanation: "NEEDS_REVIEW: the three exponential equalities and answer formulas were not reliably preserved in the text extraction.",
+    hint: "Take logarithms and eliminate the common powers.",
+    sourcePage: 4,
+    optionContent: [
+      {
+        id: "27-0",
+        type: "text",
+        text: "z=y/(1+x)",
+        imageAlt: "A option"
+      },
+      {
+        id: "27-1",
+        type: "text",
+        text: "z=y/x+1",
+        imageAlt: "B option"
+      },
+      {
+        id: "27-2",
+        type: "text",
+        text: "z=y/x-1",
+        imageAlt: "C option"
+      },
+      {
+        id: "27-3",
+        type: "text",
+        text: "z=y/(x-1)",
+        imageAlt: "D option"
+      },
+      {
+        id: "27-4",
+        type: "text",
+        text: "z=y-1/x",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 28,
+    points: 5,
+    prompt: "A function satisfies f(20-x)=f(22+x) for every real x and has exactly two real zeros. What is the sum of the zeros?",
+    options: [
+      "-1",
+      "20",
+      "21",
+      "22",
+      "Another value"
+    ],
+    answer: 4,
+    explanation: "The two inputs 20−x and 22+x have midpoint 21, so the function is symmetric about x=21. Its two distinct real zeros must be equally far from 21, and therefore sum to 42, the listed “Another value.”",
+    hint: "Rewrite the two inputs as 21−t and 21+t to see the symmetry axis.",
+    sourcePage: 4,
+    optionContent: [
+      {
+        id: "28-0",
+        type: "text",
+        text: "-1",
+        imageAlt: "A option"
+      },
+      {
+        id: "28-1",
+        type: "text",
+        text: "20",
+        imageAlt: "B option"
+      },
+      {
+        id: "28-2",
+        type: "text",
+        text: "21",
+        imageAlt: "C option"
+      },
+      {
+        id: "28-3",
+        type: "text",
+        text: "22",
+        imageAlt: "D option"
+      },
+      {
+        id: "28-4",
+        type: "text",
+        text: "Another value",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 29,
+    points: 5,
+    prompt: "A four-digit number abcd satisfies abcd=a+b+c+d. What is digit a?",
+    options: [
+      "2",
+      "3",
+      "4",
+      "5",
+      "6"
+    ],
+    answer: 1,
+    explanation: "NEEDS_REVIEW: interpret abcd as the four-digit numeral and solve the digit-sum equation to verify the keyed digit 5.",
+    hint: "The number is at least 1000a while its digit sum is at most 36; compare magnitudes.",
+    sourcePage: 4,
+    optionContent: [
+      {
+        id: "29-0",
+        type: "text",
+        text: "2",
+        imageAlt: "A option"
+      },
+      {
+        id: "29-1",
+        type: "text",
+        text: "3",
+        imageAlt: "B option"
+      },
+      {
+        id: "29-2",
+        type: "text",
+        text: "4",
+        imageAlt: "C option"
+      },
+      {
+        id: "29-3",
+        type: "text",
+        text: "5",
+        imageAlt: "D option"
+      },
+      {
+        id: "29-4",
+        type: "text",
+        text: "6",
+        imageAlt: "E option"
+      }
+    ]
+  },
+  {
+    number: 30,
+    points: 5,
+    prompt: "Eight squares start empty. Each move places one coin on each of four adjacent squares. After some stacks fall, the shown heights remain. How many coins were on the marked square before it fell?",
+    options: [
+      "24",
+      "30",
+      "36",
+      "48",
+      "Another value"
+    ],
+    answer: 0,
+    explanation: "NEEDS_REVIEW: the board adjacency and remaining stack heights are given by the source diagram.",
+    hint: "Express each stack height as the sum of moves that included that square and solve the resulting linear constraints.",
+    sourcePage: 4,
+    optionContent: [
+      {
+        id: "30-0",
+        type: "text",
+        text: "24",
+        imageAlt: "A option"
+      },
+      {
+        id: "30-1",
+        type: "text",
+        text: "30",
+        imageAlt: "B option"
+      },
+      {
+        id: "30-2",
+        type: "text",
+        text: "36",
+        imageAlt: "C option"
+      },
+      {
+        id: "30-3",
+        type: "text",
+        text: "48",
+        imageAlt: "D option"
+      },
+      {
+        id: "30-4",
+        type: "text",
+        text: "Another value",
+        imageAlt: "E option"
+      }
+    ],
+    image: "/assets/kangaroo/grades-11-12/student/2024/questions/editor-q-30.png"
+  }
 ];
 
 const sections2024Student: Section[] = [
-  { points: 3, label: "Section 1", range: "Questions 1-10", accent: "coral" },
-  { points: 4, label: "Section 2", range: "Questions 11-20", accent: "blue" },
-  { points: 5, label: "Section 3", range: "Questions 21-30", accent: "purple" }
+  {
+    points: 3,
+    label: "Section 1",
+    range: "Questions 1-10",
+    accent: "coral"
+  },
+  {
+    points: 4,
+    label: "Section 2",
+    range: "Questions 11-20",
+    accent: "blue"
+  },
+  {
+    points: 5,
+    label: "Section 3",
+    range: "Questions 21-30",
+    accent: "purple"
+  }
 ];
 
 export const edition2024Student: QuestionSet = {
@@ -49,5 +1489,5 @@ export const edition2024Student: QuestionSet = {
   timeLimitMinutes: 75,
   sourceUrl: "https://www.matematica.pt/en/docs/kangaroo/enunciados/2024/2024_Student.pdf",
   questions: questions2024Student,
-  sections: sections2024Student
+  sections: sections2024Student,
 };
