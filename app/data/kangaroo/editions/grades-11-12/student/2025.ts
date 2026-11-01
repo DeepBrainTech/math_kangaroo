@@ -1408,6 +1408,7 @@ const questions2025Student: Question[] = [
         imageAlt: "E option"
       }
     ]
+    image: "/assets/kangaroo/grades-11-12/student/2025/questions/editor-q-29.png"
   },
   {
     number: 30,
